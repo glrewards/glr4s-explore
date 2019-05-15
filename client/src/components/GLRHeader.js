@@ -6,7 +6,7 @@ import M from 'materialize-css';
 
 class GLRHeader extends Component {
     componentDidMount() {
-        //M.AutoInit();
+        M.AutoInit();
     }
 
     renderContentTop(side) {
@@ -41,27 +41,26 @@ class GLRHeader extends Component {
                         <Link
                             to={this.props.auth ? "/surveys" : "/"}
                             className="left">
-                            {//--<img src={logo} alt="logo" width="150" height="65"/>
-                                }
                             GLR4S - DEV
                         </Link>
-                        <Link to="#" data-target="mobile-demo" className="sidenav-trigger">
-                            <i className="material-icons">menu</i>
-                        </Link>
+                        <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                            className="material-icons">menu</i></a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             {this.renderContentTop("t")}
                         </ul>
-                        <div className="nav-content">
-                            <ul className="tabs tabs-transparent">
-                                <li className="tab"><a href="#test1">Homework</a></li>
-                                <li className="tab"><a className="active" href="#test2">Shop</a></li>
-                                <li className="tab disabled"><a href="#test3">Admin</a></li>
-                                <li className="tab"><a href="#test4">School Shop</a></li>
-                            </ul>
-                        </div>
-                    </div>
 
+                    </div>
+                    <div className="nav-content">
+                        <ul className="tabs tabs-transparent">
+                            <li className="tab"><a href="#test1">Homework</a></li>
+                            <li className="tab"><a className="active" href="#test2">Shop</a></li>
+                            <li className="tab disabled"><a href="#test3">Admin</a></li>
+                            <li className="tab"><a href="#test4">School Shop</a></li>
+                        </ul>
+                    </div>
                 </nav>
+
+          
                 <ul className="sidenav" id="mobile-demo">
                     {this.renderContentTop("m")}
                 </ul>
