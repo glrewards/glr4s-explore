@@ -7,6 +7,7 @@ import Header from "./Header";
 import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
+import GLRShop from './shop/GLRShop';
 
 
 class App extends Component {
@@ -27,7 +28,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
-          </div>
+            <Route path="/shop" component={GLRShop} />
+           </div>
         </BrowserRouter>
       </div>
     );

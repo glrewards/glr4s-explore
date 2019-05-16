@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import logo from '../images/logo.png';
 import M from 'materialize-css';
+import GLRSubHeader  from './GLRSubHeader';
 
 class GLRHeader extends Component {
     componentDidMount() {
@@ -14,7 +15,7 @@ class GLRHeader extends Component {
             case null:
                 return;
             case false:
-                console.log(this.props);
+                //console.log(this.props);
                 return (
                     <li key = {side+"0"}>
                         <a href="/auth/google">Login with Google</a>
@@ -31,6 +32,19 @@ class GLRHeader extends Component {
                     </li>
                 ];
         }
+    }
+
+    renderContentSub(){
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                //console.log(this.props);
+                return;
+            default:
+                return (<GLRSubHeader />);
+        }
+
     }
 
     render() {
@@ -50,16 +64,10 @@ class GLRHeader extends Component {
                         </ul>
 
                     </div>
-                    <div className="nav-content">
-                        <ul className="tabs tabs-transparent">
-                            <li className="tab"><a href="#test1">Homework</a></li>
-                            <li className="tab"><a className="active" href="#test2">Shop</a></li>
-                            <li className="tab disabled"><a href="#test3">Admin</a></li>
-                            <li className="tab"><a href="#test4">School Shop</a></li>
-                        </ul>
-                    </div>
-                </nav>
 
+                    {this.renderContentSub()}
+
+                </nav>
 
                 <ul className="sidenav" id="mobile-demo">
                     {this.renderContentTop("m")}
