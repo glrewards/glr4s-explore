@@ -8,7 +8,18 @@ import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import GLRShop from './shop/GLRShop';
+import ApolloClient from 'apollo-boost';
+import {HttpLink} from 'apollo-link-http';
+import { ApolloLink, concat } from 'apollo-link';
 
+
+const link = new HttpLink({ uri: 'https://glrdev.myshopify.com/admin/api/graphql.json' });
+
+const client = new ApolloClient({
+    fetchOptions: {
+        credentials: 'include'
+    }
+});
 
 class App extends Component {
     componentDidMount() {
@@ -19,8 +30,12 @@ class App extends Component {
         this.props.fetchUser();
     }
 
+
     render() {
-    return (
+        console.log(process.env.REACT_APP_SHOPIFY_GQL);
+        console.log(process.env.REACT_APP_X_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
+
+        return (
       <div className="container">
         <BrowserRouter>
           <div>

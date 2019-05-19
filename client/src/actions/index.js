@@ -1,6 +1,7 @@
 import axios from "axios";
 import { FETCH_USER } from "./types";
 import {FETCH_SURVEYS} from "./types";
+import {FETCH_PRODUCTS} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -34,5 +35,11 @@ export const submitSurvey = (values,history) => async dispatch => {
 export const fetchSurveys = () => async dispatch =>{
   const res = await axios.get('/api/surveys');
   dispatch({type: FETCH_SURVEYS, payload: res.data});
+
+};
+
+export const fetchProducts = () => async dispatch =>{
+  const res = await axios.get('/api/shop/products');
+  dispatch({type: FETCH_PRODUCTS, payload: res.data});
 
 };

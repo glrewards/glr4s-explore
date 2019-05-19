@@ -6,5 +6,8 @@ module.exports = {
     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     stripeSecretKey:process.env.STRIPE_SECRET_KEY,
     sendgridKey:process.env.SENDGRID_KEY,
-    redirectDomain:process.env.REDIRECT_DOMAIN
+    redirectDomain:process.env.REDIRECT_DOMAIN,
+    shopifyAPIKey:process.env.SHOPIFY_API_KEY,
+    shopifyAPIPassword:process.env.SHOPIFY_API_PASSWORD,
+    shopifySharedSecret:process.env.SHOPIFY_SHARED_SECRET
 };
