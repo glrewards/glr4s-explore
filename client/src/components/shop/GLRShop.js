@@ -166,7 +166,7 @@ const query = gql`
     shop {
       name
       description
-      products(first:9) {
+      products(first:7) {
         pageInfo {
           hasNextPage
           hasPreviousPage
@@ -200,7 +200,7 @@ const query = gql`
                 }
               }
             }
-            images(first: 5) {
+            images(first: 2) {
               pageInfo {
                 hasNextPage
                 hasPreviousPage

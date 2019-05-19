@@ -20,6 +20,7 @@ import ApolloProvider from "react-apollo/ApolloProvider";
 //import axios from 'axios';
 //window.axios = axios;
 
+
 const httpLink = createHttpLink({ uri: process.env.REACT_APP_SHOPIFY_GQL})
 
 const middlewareLink = setContext(() => ({
@@ -27,6 +28,18 @@ const middlewareLink = setContext(() => ({
         'X-Shopify-Storefront-Access-Token': process.env.REACT_APP_X_SHOPIFY_STOREFRONT_ACCESS_TOKEN
     }
 }))
+
+
+/*
+const httpLink = createHttpLink({ uri: 'https://direct-glr.myshopify.com/api/graphql'})
+
+const middlewareLink = setContext(() => ({
+    headers: {
+        'X-Shopify-Storefront-Access-Token': '4fca4676c0ecfbdcb376f47a955373f5'
+    }
+}))
+
+ */
 
 const client = new ApolloClient({
     link: middlewareLink.concat(httpLink),

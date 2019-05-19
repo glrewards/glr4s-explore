@@ -54,7 +54,13 @@ class Product extends Component {
   }
 
   render() {
-    let variantImage = this.state.selectedVariantImage || this.props.product.images.edges[0].node.src
+    let variantImage = null;
+    if(this.props.product.images.edges[0]){
+      variantImage = this.props.product.images.edges[0].node.src;
+    }else{
+      variantImage = this.state.selectedVariantImage;
+    }
+    //let variantImage = this.state.selectedVariantImage || this.props.product.images.edges[0].node.src
     let variant = this.state.selectedVariant || this.props.product.variants.edges[0].node
     let variantQuantity = this.state.selectedVariantQuantity || 1
     let variant_selectors = this.props.product.options.map((option) => {
