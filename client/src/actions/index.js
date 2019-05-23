@@ -2,6 +2,8 @@ import axios from "axios";
 import { FETCH_USER } from "./types";
 import {FETCH_SURVEYS} from "./types";
 import {FETCH_PRODUCTS} from "./types";
+import {FETCH_CATEGORIES} from "./types";
+import {FETCH_ALL_STUDENTS} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -12,6 +14,7 @@ import {FETCH_PRODUCTS} from "./types";
     we are using it here because we don't want to dispatch until after our
     async get has returned something - at which point we can trigger the refresh that
     goes with this
+
 
      */
 export const fetchUser = () => async dispatch => {
@@ -43,3 +46,16 @@ export const fetchProducts = () => async dispatch =>{
   dispatch({type: FETCH_PRODUCTS, payload: res.data});
 
 };
+
+export const submitCategory = (values) => async dispatch =>{
+  console.log("in submitCategory action");
+  const res = await axios.post('/api/categories',values);
+  console.log("in submitCategory");
+  dispatch({type: FETCH_USER, payload: res.data});
+};
+
+export const fetchAllStudents = () => async dispatch => {
+  const res = await axios.get("/api/students/all");
+  dispatch({ type: FETCH_ALL_STUDENTS, payload: res.data });
+};
+

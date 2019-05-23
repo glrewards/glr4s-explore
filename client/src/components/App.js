@@ -8,9 +8,11 @@ import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import GLRShop from './shop/GLRShop';
+import CategoryNew from './admin/CategoryNew';
 import ApolloClient from 'apollo-boost';
 import {HttpLink} from 'apollo-link-http';
 import { ApolloLink, concat } from 'apollo-link';
+import StudentDashboard from "./student/StudentDashboard";
 
 
 const link = new HttpLink({ uri: 'https://glrdev.myshopify.com/admin/api/graphql.json' });
@@ -44,6 +46,8 @@ class App extends Component {
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
             <Route path="/shop" component={GLRShop} />
+            <Route path="/categories" component={CategoryNew} />
+            <Route exact path="/students/all" component={StudentDashboard} />
            </div>
         </BrowserRouter>
       </div>
