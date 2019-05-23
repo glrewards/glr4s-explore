@@ -16,14 +16,28 @@ class StudentList extends Component{
 
         return this.props.students.reverse().map(student =>{
             return(
-                <div key={student._id} className="card lime darken-1 ">
+                <div key={student._id} className="card grey lighten-1">
                     <div className="card-content">
-                        <span className="card-title">{student.lastName}</span>
-                        <p>
-                            {student.currentPoints}
-                        </p>
+                        <span className="card-title">{student.firstName} {student.lastName} - Year: {student.year}</span>
+                        <div className="card grey lighten-3">Activities</div>
+                        <div className="card grey lighten-2">
+                            <div className="card-content">
+                                <div className="card-tabs">
+                                    <ul className="tabs tabs-fixed-width grey lighten-1">
+                                        <li className="tab">Current Points: {student.currentPoints}</li>
+                                        <li className="tab">Max Points: {student.maxPoints}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
+                    <div className="card-action">
+                        <a className="red-text">School</a>
+                        <a className="red-text">Classes</a>
+                        <a className="red-text">Orders</a>
+                    </div>
+
                 </div>
 
             );

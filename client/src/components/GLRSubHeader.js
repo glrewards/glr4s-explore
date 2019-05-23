@@ -53,9 +53,6 @@ class GLRSubHeader extends Component {
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <a href="#!">three</a>
-            </li>
-            <li>
               <a href="#!">
                 <i className="material-icons">view_module</i>four
               </a>

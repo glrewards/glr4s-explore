@@ -166,7 +166,7 @@ const query = gql`
     shop {
       name
       description
-      products(first:7) {
+      products(query: "inventory_total:>0", first:10) {
         pageInfo {
           hasNextPage
           hasPreviousPage
