@@ -19,4 +19,5 @@ module.exports = app => {
         const students = await Student.find({_school: req.school._id});
         res.send(students);
     });
+
 };

@@ -54,6 +54,14 @@ class Product extends Component {
   }
 
   render() {
+
+    let glrpoints = null;
+    if(!this.props.product.metafield) {
+      glrpoints = null;
+    }else{
+      glrpoints = this.props.product.metafield.metavalue;
+    }
+
     let variantImage = null;
     if(this.props.product.images.edges[0]){
       variantImage = this.props.product.images.edges[0].node.src;
@@ -76,7 +84,7 @@ class Product extends Component {
       <div className="Product">
         {this.props.product.images.edges.length ? <img src={variantImage} alt={`${this.props.product.title} product shot`}/> : null}
         <h5 className="Product__title">{this.props.product.title}</h5>
-        <span className="Product__price">${variant.price}</span>
+        {glrpoints ? <span>GLRPoints: {glrpoints} </span> :  <span className="Product__price">£{variant.price}</span>}
         {variant_selectors}
         <label className="Product__option">
           Quantity

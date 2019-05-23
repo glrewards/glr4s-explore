@@ -180,6 +180,10 @@ const query = gql`
               name
               values
             }
+            metafield(key: "glrpoints", namespace: "GLR") {
+             metakey: key
+             metavalue: value
+            }
             variants(first: 5) {
               pageInfo {
                 hasNextPage

@@ -9,7 +9,6 @@ const studentSchema = new Schema({
     year: {type: Number, required: true},
     maxPoints: {type: Number, default: 0},
     currentPoints: {type: Number, default: 0},
-    _studentClasses: [{type: Schema.Types.ObjectId, ref: 'StudentClasses'}],
     _currentActivities: [{type: Schema.Types.ObjectId, ref: 'CurrentActivities'}],
     _pastActivities: [{type: Schema.Types.ObjectId, ref: 'PastClasses'}]
 
