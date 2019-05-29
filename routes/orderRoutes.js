@@ -2,9 +2,57 @@ const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireGLRPoints = require("../middlewares/requireGLRPoints");
 const requireStudent = require("../middlewares/requireStudent");
+const keys = require("../config/keys");
+//const querystring = require('querystring');
+//const request = require('request-promise');
+const {request} = require('graphql-request');
+const {GraphQLClient} = require('graphql-request');
 
 
 const Order = mongoose.model("orders");
+/*
+const DraftOrderFragment = gql`
+  fragment DraftOrderFragment on DraftOrder{
+    id
+    webUrl
+    totalTax
+    subtotalPrice
+    totalPrice
+    customer{
+      displayName
+    }
+    lineItems (first: 250) {
+      edges {
+        node {
+          id
+          title
+          variant {
+            id
+            title
+            image {
+              src
+            }
+            price
+          }
+          quantity
+        }
+      }
+    }
+  }
+`;
+
+const draftOrderMutation = gql `mutation {
+  draftOrderCreate($input: DraftOrderInput!) {
+    draftOrder {
+      ...DraftOrderFragment
+     }
+
+    }
+  }
+}
+${DraftOrderFragment}
+`;
+*/
 
 module.exports = app => {
   app.get("/api/orders", requireLogin, requireStudent, async (req, res) => {
@@ -80,73 +128,37 @@ module.exports = app => {
   });
 
   //TODO: remove this completely it is just a test to prove we can write and run a graphql route NOT USING the storefront api
-  app.post("/api/orders/test2", requireGLRPoints, async (req, res) => {
+  app.get("/api/orders/test2", async (req, res) => {
     //start with a simple gql get using the admin api
-    const query = gql`
-      query {
-        shop {
-          name
-          description
-          products(query: "inventory_total:>0", first: 10) {
-            pageInfo {
-              hasNextPage
-              hasPreviousPage
-            }
-            edges {
-              node {
-                id
-                title
-                options {
-                  id
-                  name
-                  values
-                }
-                metafield(key: "glrpoints", namespace: "GLR") {
-                  metakey: key
-                  metavalue: value
-                }
-                variants(first: 5) {
-                  pageInfo {
-                    hasNextPage
-                    hasPreviousPage
-                  }
-                  edges {
-                    node {
-                      id
-                      title
-                      selectedOptions {
-                        name
-                        value
-                      }
-                      image {
-                        src
-                      }
-                      price
-                    }
-                  }
-                }
-                images(first: 2) {
-                  pageInfo {
-                    hasNextPage
-                    hasPreviousPage
-                  }
-                  edges {
-                    node {
-                      src
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+    const query = `
+{
+  draftOrders(first: 10) {
+    edges {
+      node {
+        totalTax
+        totalPrice
       }
-    `;
-      //POST https://{shop}.myshopify.com/admin/api/2019-04/graphql.json
+    }
+  }
+}`;
+      //POST https://glrdev.myshopify.com/admin/api/2019-04/graphql.json
+    console.log("in api/orders/test2");
     try {
+      const endpoint = 'https://' + keys.shopifyStoreName + '.myshopify.com/admin/api/' + keys.shopifyAPIVersion + '/graphql.json';
+
+      const graphQLClient = new GraphQLClient(endpoint, {
+        headers: {
+          'X-Shopify-Access-Token': keys.shopifyAPIPassword,
+        },
+      } );
+
+        const data = await graphQLClient.request(query);
+      console.log(JSON.stringify(data, undefined, 2));
+      res.send(data);
+
 
     } catch (err) {
-      console.error("error saving order: ", order, err);
+      console.error("error saving order: ", err);
       res.status(422).send(err);
     }
   });
