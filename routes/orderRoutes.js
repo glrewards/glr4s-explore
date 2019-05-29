@@ -8,7 +8,7 @@ const Order = mongoose.model("orders");
 
 module.exports = app => {
   app.get("/api/orders", requireLogin, requireStudent, async (req, res) => {
-    const orders = await Order.find({ _student: req.student.id }).select({
+    const orders = await Order.find({ _school: req.student._school }).select({
       _lineItems: false
     });
     res.send(orders);
@@ -150,4 +150,8 @@ module.exports = app => {
       res.status(422).send(err);
     }
   });
+    app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
+        console.log(req.body);
+        res.send({}); //respond to indicate receipt
+    });
 };

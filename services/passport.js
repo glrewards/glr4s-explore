@@ -6,7 +6,7 @@ const keys = require("../config/keys");
 const User = mongoose.model("users"); //This is how we reference our model class as user - Not using require
 
 passport.serializeUser((user, done) => {
-  console.log(user);
+  //console.log(user);
   done(null, user.id);
 });
 

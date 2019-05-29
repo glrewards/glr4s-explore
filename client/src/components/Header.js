@@ -9,7 +9,7 @@ class Header extends Component {
       case null:
         return;
       case false:
-        console.log(this.props);
+        //console.log(this.props);
         return (
 
           <li>
@@ -54,6 +54,7 @@ class Header extends Component {
 }
 
 function mapStateToProps({ auth }) {
+  console.log("testing auth",auth);
   return { auth: auth };
 }
 

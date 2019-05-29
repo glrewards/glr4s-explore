@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
+import Payments from "./ThemeExample";
 
 class GLRSubHeader extends Component {
   componentDidMount() {
@@ -10,7 +11,24 @@ class GLRSubHeader extends Component {
     M.Dropdown.init(elems);
   }
 
-  renderContent() {}
+  renderShopItem() {
+    //make sure we have a valid user before we start using it
+    if(!this.props.auth){
+      return;
+    }
+    switch (this.props.auth._student) {
+      case null:
+        return;
+      case false:
+        console.log("no student role linked to this user");
+        return;
+      default:
+        return(
+          <li>
+            <Link to="/shop">Shop</Link>
+          </li>);
+    }
+  }
 
   render() {
     console.log(this.props.auth);
@@ -21,9 +39,7 @@ class GLRSubHeader extends Component {
             <li>
               <a href="#test1">Homework</a>
             </li>
-            <li>
-              <Link to={this.props.auth ? "/shop" : "/"}>Shop</Link>
-            </li>
+            {this.renderShopItem()}
             <li>
               <Link to={this.props.auth ? "/categories" : "/"}>Admin</Link>
             </li>
@@ -69,6 +85,7 @@ class GLRSubHeader extends Component {
   }
 }
 
+//this is where we start referencing the user on the response as auth - it is just a name and throwback to the tutorial
 function mapStateToProps({ auth }) {
   return { auth: auth };
 }

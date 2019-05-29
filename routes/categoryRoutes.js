@@ -7,6 +7,10 @@ const { URL } = require("url");
 const Category = mongoose.model("categories");
 
 module.exports = app => {
+  app.get('/api/surveys', requireLogin, async (req, res) => {
+    const categories = await Category.find();
+    res.send(categories);
+  });
   app.post("/api/categories", requireLogin, async (req, res) => {
     console.log(req.body);
     const { categoryType } = req.body;
@@ -23,4 +27,5 @@ module.exports = app => {
       res.status(403).send(err);
     }
   });
+
 };
