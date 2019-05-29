@@ -41,6 +41,13 @@ export const fetchSurveys = () => async dispatch =>{
 
 };
 
+export const fetchCategories = () => async dispatch =>{
+  console.log("in fetchCateglories()");
+  const res = await axios.get('/api/categories');
+  dispatch({type: FETCH_CATEGORIES, payload: res.data});
+
+};
+
 export const fetchProducts = () => async dispatch =>{
   const res = await axios.get('/api/shop/products');
   dispatch({type: FETCH_PRODUCTS, payload: res.data});

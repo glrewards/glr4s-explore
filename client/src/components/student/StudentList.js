@@ -53,7 +53,7 @@ class StudentList extends Component{
 }
 
 function mapStateToProps (state){
-    console.log("StudentList: mapStateToProps() ",state);
+    //console.log("StudentList: mapStateToProps() ",state);
     return {students: state.students};
 }
 

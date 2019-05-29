@@ -7,8 +7,9 @@ const { URL } = require("url");
 const Category = mongoose.model("categories");
 
 module.exports = app => {
-  app.get('/api/surveys', requireLogin, async (req, res) => {
+  app.get('/api/categories', requireLogin, async (req, res) => {
     const categories = await Category.find();
+    console.log("in fetch categories",categories);
     res.send(categories);
   });
   app.post("/api/categories", requireLogin, async (req, res) => {
