@@ -7,7 +7,8 @@ const SchoolSchema = new Schema({
         required: true,
         unique: true
     },
-    address: {type: String}
+    address: {type: String},
+    shopifCustomerygid: String
 });
 
 mongoose.model("schools", schoolsSchema);

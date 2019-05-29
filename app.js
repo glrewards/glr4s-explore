@@ -8,6 +8,7 @@ require("./models/User");
 require("./models/Survey");
 require("./models/Category");
 require("./models/Student");
+require("./models/shop/order/Order");
 require("./services/passport");
 
 const options = {
@@ -50,6 +51,7 @@ require("./routes/surveyRoutes")(app);
 require("./routes/shopRoutes")(app);
 require("./routes/categoryRoutes")(app);
 require("./routes/studentRoutes")(app);
+require("./routes/orderRoutes")(app);
 
 
 

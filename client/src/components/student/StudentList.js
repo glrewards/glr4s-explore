@@ -20,10 +20,10 @@ class StudentList extends Component{
                     <div className="card-content">
                         <span className="card-title">{student.firstName} {student.lastName} - Year: {student.year}</span>
                         <div className="card grey lighten-3">Activities</div>
-                        <div className="card grey lighten-2">
+                        <div className="card grey lighten-3">
                             <div className="card-content">
                                 <div className="card-tabs">
-                                    <ul className="tabs tabs-fixed-width grey lighten-1">
+                                    <ul className="tabs tabs-fixed-width grey lighten-3">
                                         <li className="tab">Current Points: {student.currentPoints}</li>
                                         <li className="tab">Max Points: {student.maxPoints}</li>
                                     </ul>

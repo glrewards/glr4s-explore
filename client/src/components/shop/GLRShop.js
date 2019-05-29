@@ -1,7 +1,5 @@
 
 //REMEMBER THIS IS MOST LIKE THE DASHBOARD FROM THE TUTORIAL
-import {Link} from 'react-router-dom';
-import SurveyList from '../surveys/SurveyList';
 import './shop.css';
 import React, { Component } from 'react';
 import Product from './tutorial/Product';
@@ -121,26 +119,14 @@ class GLRShop extends Component {
                 <div className="Flash__message-wrapper">
                     <p className={`Flash__message ${this.state.accountVerificationMessage ? 'Flash__message--open' : ''}`}>We have sent you an email, please click the link included to verify your email address</p>
                 </div>
-                <CustomerAuthWithMutation
-                    closeCustomerAuth={this.closeCustomerAuth}
-                    isCustomerAuthOpen={this.state.isCustomerAuthOpen}
-                    newCustomer={this.state.isNewCustomer}
-                    associateCustomerCheckout={this.associateCustomerCheckout}
-                    showAccountVerificationMessage={this.showAccountVerificationMessage}
-                />
                 <header className="App__header">
-                    <ul className="App__nav">
-                        <li className="button App__customer-actions" onClick={this.openCustomerAuth} data-customer-type="new-customer">Create an Account</li>
-                        <li className="login App__customer-actions" onClick={this.openCustomerAuth}>Log in</li>
-                    </ul>
                     {!this.state.isCartOpen &&
                     <div className="App__view-cart-wrapper">
-                        <button className="App__view-cart" onClick={()=> this.setState({isCartOpen: true})}>Cart</button>
+                        <button className="App__view-cart" onClick={()=> this.setState({isCartOpen: true})}>My GLR4Schools Cart</button>
                     </div>
                     }
                     <div className="App__title">
-                        <h1>{this.props.data.shop.name}: React Example</h1>
-                        <h2>{this.props.data.shop.description}</h2>
+                        <h1>{this.props.data.shop.name}: Sample Store</h1>
                     </div>
                 </header>
                 <div className="Product-wrapper">
@@ -162,11 +148,11 @@ class GLRShop extends Component {
 }
 
 const query = gql`
-  query query {
+  query {
     shop {
       name
       description
-      products(query: "inventory_total:>0", first:10) {
+      products(query:"inventory_total:>0", first:10) {
         pageInfo {
           hasNextPage
           hasPreviousPage

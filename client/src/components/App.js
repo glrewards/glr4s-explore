@@ -3,19 +3,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Landing from './Landing';
-import Header from "./Header";
 import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import GLRShop from './shop/GLRShop';
 import CategoryNew from './admin/CategoryNew';
 import ApolloClient from 'apollo-boost';
-import {HttpLink} from 'apollo-link-http';
-import { ApolloLink, concat } from 'apollo-link';
 import StudentDashboard from "./student/StudentDashboard";
-
-
-const link = new HttpLink({ uri: 'https://glrdev.myshopify.com/admin/api/graphql.json' });
 
 const client = new ApolloClient({
     fetchOptions: {

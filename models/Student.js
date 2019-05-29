@@ -11,9 +11,6 @@ const studentSchema = new Schema({
     currentPoints: {type: Number, default: 0},
     _currentActivities: [{type: Schema.Types.ObjectId, ref: 'CurrentActivities'}],
     _pastActivities: [{type: Schema.Types.ObjectId, ref: 'PastClasses'}]
-
-
-
 });
 
 mongoose.model("students", studentSchema);

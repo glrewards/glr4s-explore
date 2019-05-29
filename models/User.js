@@ -3,8 +3,10 @@ const {Schema} = mongoose;
 
 const userSchema = new Schema({
     googleId: String,
-    credits: {type: Number, default: 0}
+    credits: {type: Number, default: 0},
+    _student: {type: Schema.Types.ObjectId, ref: 'StudentData'},
+    _teacher: {type: Schema.Types.ObjectId, ref: 'TeacherData'}
 });
 
 mongoose.model('users',userSchema);
-mongoose.model('users2',userSchema);
+//mongoose.model('users2',userSchema);

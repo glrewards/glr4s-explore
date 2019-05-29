@@ -4,8 +4,6 @@ import CategoryForm from './CategoryForm'
 import * as actions from '../../actions';
 import {submitCategory} from "../../actions";
 import {connect} from "react-redux";
-import {reduxForm} from "redux-form";
-import {fetchSurveys} from "../../actions";
 
 class CategoryNew extends Component{
 

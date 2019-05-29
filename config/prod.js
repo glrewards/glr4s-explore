@@ -9,5 +9,6 @@ module.exports = {
     redirectDomain:process.env.REDIRECT_DOMAIN,
     shopifyAPIKey:process.env.SHOPIFY_API_KEY,
     shopifyAPIPassword:process.env.SHOPIFY_API_PASSWORD,
-    shopifySharedSecret:process.env.SHOPIFY_SHARED_SECRET
+    shopifySharedSecret:process.env.SHOPIFY_SHARED_SECRET,
+    shopifyStoreName:process.env.SHOPIFY_STORE_NAME
 };

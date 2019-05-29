@@ -13,7 +13,6 @@ import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import { HttpLink } from 'apollo-link-http';
 import ApolloProvider from "react-apollo/ApolloProvider";
 
 //USE THESE DEBUG HElping lines
@@ -28,18 +27,6 @@ const middlewareLink = setContext(() => ({
         'X-Shopify-Storefront-Access-Token': process.env.REACT_APP_X_SHOPIFY_STOREFRONT_ACCESS_TOKEN
     }
 }))
-
-
-/*
-const httpLink = createHttpLink({ uri: 'https://direct-glr.myshopify.com/api/graphql'})
-
-const middlewareLink = setContext(() => ({
-    headers: {
-        'X-Shopify-Storefront-Access-Token': '4fca4676c0ecfbdcb376f47a955373f5'
-    }
-}))
-
- */
 
 const client = new ApolloClient({
     link: middlewareLink.concat(httpLink),
