@@ -9,19 +9,19 @@ const Category = mongoose.model("categories");
 module.exports = app => {
   app.get('/api/categories', requireLogin, async (req, res) => {
     const categories = await Category.find();
-    console.log("in fetch categories",categories);
+    //console.log("in fetch categories",categories);
     res.send(categories);
   });
   app.post("/api/categories", requireLogin, async (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     const { categoryType } = req.body;
-    console.log(categoryType);
+    //console.log(categoryType);
     const cat = new Category({
       categoryType
     });
     try {
       await cat.save();
-      console.log("saved category",cat);
+      //console.log("saved category",cat);
       res.send(cat);
     } catch (err) {
       console.error("error saving category: ", cat);

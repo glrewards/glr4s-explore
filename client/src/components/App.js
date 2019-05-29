@@ -9,7 +9,7 @@ import SurveyNew from './surveys/SurveyNew';
 import GLRShop from './shop/GLRShop';
 import ApolloClient from 'apollo-boost';
 import StudentDashboard from "./student/StudentDashboard";
-import CategoryList from "./admin/CategoryList";
+import CategoryDashboard from "./admin/CategoryDashboard";
 
 const client = new ApolloClient({
     fetchOptions: {
@@ -40,7 +40,7 @@ class App extends Component {
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
             <Route path="/shop" component={GLRShop} />
-            <Route path="/categories" component={CategoryList} />
+            <Route path="/categories" component={CategoryDashboard} />
             <Route exact path="/students/all" component={StudentDashboard} />
            </div>
         </BrowserRouter>

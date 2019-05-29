@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import CategoryForm from './CategoryForm'
 import * as actions from '../../actions';
 import {submitCategory} from "../../actions";
+import {fetchCategories} from "../../actions";
 import {connect} from "react-redux";
 
 class CategoryNew extends Component{
@@ -11,6 +12,7 @@ class CategoryNew extends Component{
         console.log("in handleSubmit",values);
         console.log(actions);
         this.props.submitCategory(values);
+        this.props.fetchCategories();
     };
 
     renderContent() {
@@ -36,4 +38,4 @@ function mapStateToProps(state){
     return {actions: state.actions}
 }
 
-export default connect(mapStateToProps,{submitCategory})(CategoryNew);
+export default connect(mapStateToProps,{submitCategory,fetchCategories})(CategoryNew);

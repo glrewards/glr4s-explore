@@ -54,7 +54,7 @@ class Header extends Component {
 }
 
 function mapStateToProps({ auth }) {
-  console.log("testing auth",auth);
+  //console.log("testing auth",auth);
   return { auth: auth };
 }
 

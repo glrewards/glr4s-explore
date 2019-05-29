@@ -12,6 +12,7 @@ class CategoryList extends Component{
 
 
     renderCategories(){
+        console.log(this.props.categories);
         return this.props.categories.reverse().map(category =>{
             return(
                     <li key={category._id} className="collection-item">{category.categoryType}</li>
@@ -30,7 +31,7 @@ class CategoryList extends Component{
 }
 
 function mapStateToProps (state){
-    console.log(state);
+    console.log("category list state: ", state);
     return {categories: state.categories};
 }
 
