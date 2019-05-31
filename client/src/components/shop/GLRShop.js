@@ -19,6 +19,7 @@ import {
     removeLineItemInCart,
     associateCustomerCheckout
 } from './tutorial/checkout';
+import {connect} from "react-redux";
 
 class GLRShop extends Component {
     constructor() {
@@ -131,7 +132,7 @@ class GLRShop extends Component {
                 </header>
                 <div className="Product-wrapper">
                     { this.props.data.shop.products.edges.map(product =>
-                        <Product addVariantToCart={this.addVariantToCart} checkout={this.state.checkout} key={product.node.id.toString()} product={product.node} />
+                        <Product user={this.props.auth} addVariantToCart={this.addVariantToCart} checkout={this.state.checkout} key={product.node.id.toString()} product={product.node} />
                     )}
                 </div>
                 <Cart
@@ -217,4 +218,9 @@ const AppWithDataAndMutation = compose(
     graphql(checkoutCustomerAssociate, {name: "checkoutCustomerAssociate"})
 )(GLRShop);
 
-export default AppWithDataAndMutation;
+
+function mapStateToProps({ auth }) {
+    return { auth: auth };
+}
+export default connect(mapStateToProps)(AppWithDataAndMutation);
+//export default AppWithDataAndMutation;

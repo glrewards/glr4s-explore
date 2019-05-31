@@ -4,10 +4,11 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const keys = require("./config/keys");
+require("./models/Student");
+require("./models/Teacher");
 require("./models/User");
 require("./models/Survey");
 require("./models/Category");
-require("./models/Student");
 require("./models/shop/order/Order");
 require("./services/passport");
 

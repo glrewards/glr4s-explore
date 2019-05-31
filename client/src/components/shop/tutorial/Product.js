@@ -54,12 +54,17 @@ class Product extends Component {
   }
 
   render() {
-
+    console.log("testing",this.props);
     let glrpoints = null;
     if(!this.props.product.metafield) {
       glrpoints = null;
     }else{
       glrpoints = this.props.product.metafield.metavalue;
+      if(glrpoints < this.props.user._student.currentPoints){
+        this.state.haveEnough = 'blue';
+      }else{
+        this.state.haveEnough = 'red';
+      }
     }
 
     let variantImage = null;
@@ -84,7 +89,7 @@ class Product extends Component {
       <div className="Product">
         {this.props.product.images.edges.length ? <img src={variantImage} alt={`${this.props.product.title} product shot`}/> : null}
         <h5 className="Product__title">{this.props.product.title}</h5>
-        {glrpoints ? <span>GLRPoints: {glrpoints} </span> :  <span className="Product__price">£{variant.price}</span>}
+        {glrpoints ? <span style={{color: this.state.haveEnough}}>GLRPoints: {glrpoints} </span> :  <span className="Product__price">£{variant.price}</span>}
         {variant_selectors}
         <label className="Product__option">
           Quantity

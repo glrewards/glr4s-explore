@@ -3,17 +3,16 @@ const { Schema } = mongoose;
 const LineItemSchema = require('./LineItem');
 
 const orderSchema = new Schema({
-    finStatus: String,
-    fulfillStatus: String,
-    _school: {type: Schema.Types.ObjectId, ref: 'School'},
+    finStatus: {type: String, enum: ['paid', 'unpaid']},
+    fulfillStatus: {type: String, enum: ['fulfilled', 'unfulfilled']},
+    _school: {type: Schema.Types.ObjectId, ref: 'schools'},
     lineItems: [LineItemSchema],
     orderTotal: Number,
     taxTotal: Number,
-    totalGLRPoints: Number,
     shopifyOrderId: String,
     shopifyDraftOrderId: String,
     dateReceived: Date,
-    dateFullfilled: Date
+    dateFulfilled: Date
 });
 
 mongoose.model("orders", orderSchema);

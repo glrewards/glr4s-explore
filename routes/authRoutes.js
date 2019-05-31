@@ -1,11 +1,14 @@
 const passport = require("passport");
+//const mongoose = require("mongoose");
+
+
+//const user = mongoose.model("users");
 /* handle redirect to google oauth. */
 
 module.exports = app => {
 
   app.get(
-    "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] })
+    "/auth/google", passport.authenticate("google", {scope: ["profile", "email"]})
   );
 
   app.get(

@@ -5,11 +5,11 @@ const requireStudent = require("../middlewares/requireStudent");
 const keys = require("../config/keys");
 //const querystring = require('querystring');
 //const request = require('request-promise');
-const {request} = require('graphql-request');
-const {GraphQLClient} = require('graphql-request');
-
+const { request } = require("graphql-request");
+const { GraphQLClient } = require("graphql-request");
 
 const Order = mongoose.model("orders");
+const Student = mongoose.model("students");
 /*
 const DraftOrderFragment = gql`
   fragment DraftOrderFragment on DraftOrder{
@@ -104,25 +104,41 @@ module.exports = app => {
     });
 */
   //TODO: add back in requireLogin requireStudent and change the url when ready
-  app.post("/api/orders/test1", requireGLRPoints, async (req, res) => {
-    const { finStatus, fulfillStatus, _school, _lineItems } = req.body;
-    console.log(req.body);
-    const order = new Order({
+  app.post("/api/orders/test1", async (req, res) => {
+    const { finStatus, fulfillStatus, _school } = req.body.order;
+    const studentId = req.body.user._student._id;
+
+    const lineItems = req.body.order.lineItems;
+    const newOrder = new Order({
       finStatus,
       fulfillStatus,
       _school,
-      _lineItems,
+      lineItems,
       dateReceived: Date.now()
     });
     //save the order
     try {
-      await order.save();
       //TODO: need to implement code to update students points - leave for now https://trello.com/c/ipzQalPr
-      const user = await req.order.save();
-      console.log(order);
-      res.send(user);
+      //TODO: put all this into a proper mongoose transaction
+      let orderPoints = calcGLRPointsTotal(lineItems);
+      const order = await newOrder.save();
+      //assuming no errors we now amend the user points and save these.
+      const student = await Student.findById(studentId);
+      console.log(student);
+      if (student){
+          if (orderPoints > student.currentPoints){
+            throw("Not enough points");
+          }else{
+            let newPoints = student.currentPoints - orderPoints;
+            student.currentPoints = newPoints;
+            student.save();
+
+          }
+        }
+
+      res.send(order);
     } catch (err) {
-      console.error("error saving order: ", order, err);
+      console.error("error saving order: ", newOrder, err);
       res.status(422).send(err);
     }
   });
@@ -132,38 +148,71 @@ module.exports = app => {
     //start with a simple gql get using the admin api
     const query = `
 {
-  draftOrders(first: 10) {
+  draftOrders(first: 5) {
     edges {
       node {
         totalTax
         totalPrice
+        customer {
+          id
+          totalSpentV2 {
+            amount
+            currencyCode
+          }
+          updatedAt
+        }
+        note2
+        name
+        updatedAt
       }
+      cursor
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
     }
   }
 }`;
-      //POST https://glrdev.myshopify.com/admin/api/2019-04/graphql.json
-    console.log("in api/orders/test2");
     try {
-      const endpoint = 'https://' + keys.shopifyStoreName + '.myshopify.com/admin/api/' + keys.shopifyAPIVersion + '/graphql.json';
+      const endpoint =
+        "https://" +
+        keys.shopifyStoreName +
+        ".myshopify.com/admin/api/" +
+        keys.shopifyAPIVersion +
+        "/graphql.json";
 
       const graphQLClient = new GraphQLClient(endpoint, {
         headers: {
-          'X-Shopify-Access-Token': keys.shopifyAPIPassword,
-        },
-      } );
+          "X-Shopify-Access-Token": keys.shopifyAPIPassword
+        }
+      });
 
-        const data = await graphQLClient.request(query);
+      const data = await graphQLClient.request(query);
       console.log(JSON.stringify(data, undefined, 2));
       res.send(data);
-
-
     } catch (err) {
       console.error("error saving order: ", err);
       res.status(422).send(err);
     }
   });
-    app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
-        console.log(req.body);
-        res.send({}); //respond to indicate receipt
+  app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
+    console.log(req.body);
+    res.send({}); //respond to indicate receipt
+  });
+
+  function getSum(total, num) {
+    return total + num;
+  }
+
+  function calcGLRPointsTotal(lineItems) {
+    let lineItemPoints = lineItems.map(line => {
+      return line.glrpoints;
     });
+    console.log("calcGLRPointsTotal(): ", lineItemPoints);
+    let totalPoints = lineItemPoints.reduce(getSum,0);
+    //console.log(lineItemPoints);
+    //console.log(totalPoints);
+    return totalPoints;
+  }
+
 };

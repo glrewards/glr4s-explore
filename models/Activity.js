@@ -15,13 +15,13 @@ const activitySchema = new Schema({
 
     _category: {
         type: String,
-        Category: {type: Schema.Types.ObjectId, ref: 'Category'},
+        Category: {type: Schema.Types.ObjectId, ref: 'categories'},
         required:true
     },
-    _schoolClass:{type: Schema.Types.ObjectId, ref: 'SchoolClass'},
-    _students: [{type:Schema.Types.ObjectId, ref: 'Student'}]
+    _schoolClass:{type: Schema.Types.ObjectId, ref: 'classes'},
+    _students: [{type:Schema.Types.ObjectId, ref: 'students'}]
 
 });
 
-mongoose.model('Activity',activitySchema);
+mongoose.model('activities',activitySchema);
 

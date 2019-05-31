@@ -11,6 +11,16 @@ class GLRHeader extends Component {
     M.AutoInit();
   }
 
+  renderGLRPoints(){
+    if(this.props.auth._student){
+      return "GLRPoints: " + this.props.auth._student.currentPoints;
+
+    }else{
+      return "No GLR Points Found";
+    }
+
+  }
+
   renderContentTop(side) {
     switch (this.props.auth) {
       case null:
@@ -25,8 +35,7 @@ class GLRHeader extends Component {
       default:
         return [
           <li key={side + "1"} style={{ margin: "0 10px" }}>
-            {" "}
-            GLRPoints: {this.props.auth.credits}
+            {this.renderGLRPoints()}
           </li>,
           <li key={side + "2"}>
             <a href="/api/logout">Logout</a>

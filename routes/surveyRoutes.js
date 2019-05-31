@@ -6,15 +6,16 @@ const surveyTemplate = require("../services/emailTemplates/surveyTemplates");
 const _ = require("lodash");
 const Path = require("path-parser").default;
 const { URL } = require("url");
+require('../models/Teacher');
 
-const Survey = mongoose.model("surveys");
+const User  = mongoose.model("users");
+const Survey  = mongoose.model("surveys");
 
 module.exports = app => {
     app.get('/api/surveys', requireLogin, async (req, res) => {
         const surveys = await Survey.find({ _user: req.user.id }).select({
             recipients: false
         });
-
         res.send(surveys);
     });
 

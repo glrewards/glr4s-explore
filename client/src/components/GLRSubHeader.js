@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
-import Payments from "./ThemeExample";
+//import Payments from "./ThemeExample";
 
 class GLRSubHeader extends Component {
   componentDidMount() {
@@ -31,7 +31,6 @@ class GLRSubHeader extends Component {
   }
 
   render() {
-    console.log(this.props.auth);
     return (
       <div className="nav">
         <div className="nav-wrapper blue-grey">

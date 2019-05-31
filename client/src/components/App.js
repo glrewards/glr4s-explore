@@ -11,12 +11,13 @@ import ApolloClient from 'apollo-boost';
 import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 
+/*
 const client = new ApolloClient({
     fetchOptions: {
         credentials: 'include'
     }
 });
-
+*/
 class App extends Component {
     componentDidMount() {
         //like an initialize function
@@ -28,8 +29,6 @@ class App extends Component {
 
 
     render() {
-        console.log(process.env.REACT_APP_SHOPIFY_GQL);
-        console.log(process.env.REACT_APP_X_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
 
         return (
       <div className="container">
