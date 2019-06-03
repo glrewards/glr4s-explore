@@ -21,6 +21,13 @@ class GLRHeader extends Component {
 
   }
 
+  renderProfileMenu() {
+    if(this.props.auth._student){
+      return (<li style={{ margin: "0 10px" }}><Link>Profile</Link></li>);
+
+    }
+  }
+
   renderContentTop(side) {
     switch (this.props.auth) {
       case null:
@@ -39,7 +46,8 @@ class GLRHeader extends Component {
           </li>,
           <li key={side + "2"}>
             <a href="/api/logout">Logout</a>
-          </li>
+          </li>,
+          this.renderProfileMenu()
         ];
     }
   }

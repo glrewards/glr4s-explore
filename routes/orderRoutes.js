@@ -10,6 +10,7 @@ const { GraphQLClient } = require("graphql-request");
 
 const Order = mongoose.model("orders");
 const Student = mongoose.model("students");
+
 /*
 const DraftOrderFragment = gql`
   fragment DraftOrderFragment on DraftOrder{
@@ -105,36 +106,55 @@ module.exports = app => {
 */
   //TODO: add back in requireLogin requireStudent and change the url when ready
   app.post("/api/orders/test1", async (req, res) => {
-    const { finStatus, fulfillStatus, _school } = req.body.order;
+    const _school = req.body.user._student._school;
     const studentId = req.body.user._student._id;
+    const lineItems = req.body.lineItems;
+    let newOrder = null;
 
-    const lineItems = req.body.order.lineItems;
-    const newOrder = new Order({
-      finStatus,
-      fulfillStatus,
-      _school,
-      lineItems,
-      dateReceived: Date.now()
-    });
-    //save the order
+    //TODO: first check to see if there is an open order for the school - if so, add these lineitems to the order. otherwise
+    //TODO: create a new order with these lineitems if no OPEN order exists
+
     try {
-      //TODO: need to implement code to update students points - leave for now https://trello.com/c/ipzQalPr
+      const orders = await findOpenOrderForSchool(_school);
+      if (orders.length > 1) {
+        //console.log("I found an array", orders);
+        //TODO: there should not be more than one ABORT
+        throw "too many orders found";
+      } else if (orders.length === 1) {
+        //console.log("I found a single order Object", orders);
+        //add the lineitems to this
+        //console.log(orders.lineItems);
+        newOrder = orders[0];
+        let oldLineItems = newOrder.lineItems;
+        oldLineItems.push.apply(oldLineItems, lineItems);
+        newOrder.lineItems = oldLineItems;
+
+      } else {
+        //didn't find anything so create a new one
+        newOrder = new Order({
+          finStatus: "unpaid",
+          fulfillStatus: "unfulfilled",
+          _school,
+          lineItems,
+          dateReceived: Date.now()
+        });
+      }
+      // if too many orders we wont get to this because we will have thrown an error
       //TODO: put all this into a proper mongoose transaction
       let orderPoints = calcGLRPointsTotal(lineItems);
-      const order = await newOrder.save();
+      let order = null;
       //assuming no errors we now amend the user points and save these.
       const student = await Student.findById(studentId);
-      console.log(student);
-      if (student){
-          if (orderPoints > student.currentPoints){
-            throw("Not enough points");
-          }else{
-            let newPoints = student.currentPoints - orderPoints;
-            student.currentPoints = newPoints;
-            student.save();
-
-          }
+      if (student) {
+        if (orderPoints > student.currentPoints) {
+          throw "Not enough points";
+        } else {
+          let newPoints = student.currentPoints - orderPoints;
+          student.currentPoints = newPoints;
+          student.save();
+          order = await newOrder.save();
         }
+      }
 
       res.send(order);
     } catch (err) {
@@ -208,11 +228,21 @@ module.exports = app => {
     let lineItemPoints = lineItems.map(line => {
       return line.glrpoints;
     });
-    console.log("calcGLRPointsTotal(): ", lineItemPoints);
-    let totalPoints = lineItemPoints.reduce(getSum,0);
-    //console.log(lineItemPoints);
-    //console.log(totalPoints);
+    let totalPoints = lineItemPoints.reduce(getSum, 0);
     return totalPoints;
   }
 
+  async function findOpenOrderForSchool(schoolId) {
+    //we will only use our own db for saving and amending orders and line items
+    //separately we will be using BULL or similar to schedule the sync of this data with shopify
+
+    //first check to see if we have an order for that school in our db
+    //console.log(schoolId);
+    const orders = await Order.find({
+      _school: schoolId,
+      finStatus: "unpaid",
+      fulfillStatus: "unfulfilled"
+    });
+    return orders;
+  }
 };
