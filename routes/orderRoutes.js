@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireGLRPoints = require("../middlewares/requireGLRPoints");
 const requireStudent = require("../middlewares/requireStudent");
+const findStudentSchool = require("../middlewares/findStudentSchool");
 const keys = require("../config/keys");
 //const querystring = require('querystring');
 //const request = require('request-promise');
@@ -56,6 +57,22 @@ ${DraftOrderFragment}
 */
 
 module.exports = app => {
+  // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
+  //pagination
+  //TODO: add requireLogin middleware back in
+  app.get("/api/orders/:studentId",findStudentSchool, async (req,res) => {
+    //get all the open orders for the school
+    const orders = await Order.find({_school: req.school});
+    if (orders.length > 1 || orders.length === 0) {
+      throw "too many or zero orders  found";
+    }
+
+    //now search the array to find the lineitems that belong to the the student only
+    let myItems = filterByStudent(orders[0].lineItems,req.params.studentId);
+    res.send(myItems);
+  });
+
+  //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
   app.get("/api/orders", requireLogin, requireStudent, async (req, res) => {
     const orders = await Order.find({ _school: req.student._school }).select({
       _lineItems: false
@@ -111,14 +128,10 @@ module.exports = app => {
     const lineItems = req.body.lineItems;
     let newOrder = null;
 
-    //TODO: first check to see if there is an open order for the school - if so, add these lineitems to the order. otherwise
-    //TODO: create a new order with these lineitems if no OPEN order exists
-
     try {
       const orders = await findOpenOrderForSchool(_school);
       if (orders.length > 1) {
         //console.log("I found an array", orders);
-        //TODO: there should not be more than one ABORT
         throw "too many orders found";
       } else if (orders.length === 1) {
         //console.log("I found a single order Object", orders);
@@ -216,7 +229,7 @@ module.exports = app => {
     }
   });
   app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
-    console.log(req.body);
+    console.log("webhook fired: ",req.body);
     res.send({}); //respond to indicate receipt
   });
 
@@ -244,5 +257,14 @@ module.exports = app => {
       fulfillStatus: "unfulfilled"
     });
     return orders;
+  }
+
+  function filterByStudent(arr,student){
+    if (!arr || typeof arr != 'object') return;
+    if (typeof student == 'undefined' || student == null) return arr;
+    return arr.filter((line) => {
+      console.log("made it to the filter",line,student);
+      return line._student == student;
+    });
   }
 };

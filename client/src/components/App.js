@@ -10,6 +10,7 @@ import GLRShop from './shop/GLRShop';
 import ApolloClient from 'apollo-boost';
 import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
+import OrderDashboard from "./shop/OrderDashboard";
 
 /*
 const client = new ApolloClient({
@@ -38,9 +39,10 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
-            <Route path="/shop" component={GLRShop} />
+            <Route exact path="/shop" component={GLRShop} />
             <Route path="/categories" component={CategoryDashboard} />
             <Route exact path="/students/all" component={StudentDashboard} />
+            <Route exact path="/shop/myitems" component={OrderDashboard} />
            </div>
         </BrowserRouter>
       </div>
