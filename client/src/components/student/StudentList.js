@@ -6,13 +6,12 @@ class StudentList extends Component{
 
 
     componentDidMount(){
-        console.log("in componentDidMount");
         this.props.fetchAllStudents();
     }
 
 
     renderStudents(){
-        console.log(this.props);
+        //console.log(this.props);
 
         return this.props.students.reverse().map(student =>{
             return(
@@ -35,7 +34,7 @@ class StudentList extends Component{
                     <div className="card-action">
                         <a className="red-text">School</a>
                         <a className="red-text">Classes</a>
-                        <a className="red-text">Orders</a>
+                        <a className="red-text">Orders - </a>
                     </div>
 
                 </div>

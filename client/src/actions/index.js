@@ -5,6 +5,7 @@ import {FETCH_PRODUCTS} from "./types";
 import {FETCH_CATEGORIES} from "./types";
 import {FETCH_ALL_STUDENTS} from "./types";
 import {NEW_CATEGORY} from "./types";
+import {FETCH_LINEITEMS} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -31,7 +32,6 @@ export const handleToken = (token) => async dispatch => {
 export const submitSurvey = (values,history) => async dispatch => {
   const res = await axios.post('/api/surveys',values);
   history.push('/surveys');
-  console.log("in submitSurvey");
   dispatch({type: FETCH_USER, payload: res.data});
 };
 
@@ -43,7 +43,6 @@ export const fetchSurveys = () => async dispatch =>{
 };
 
 export const fetchCategories = () => async dispatch =>{
-  console.log("in fetchCategories()");
   const res = await axios.get('/api/categories');
   dispatch({type: FETCH_CATEGORIES, payload: res.data});
 
@@ -65,5 +64,13 @@ export const submitCategory = (values) => async dispatch =>{
 export const fetchAllStudents = () => async dispatch => {
   const res = await axios.get("/api/students/all");
   dispatch({ type: FETCH_ALL_STUDENTS, payload: res.data });
+};
+
+export const fetchLineItems = (student) => async dispatch => {
+  const url = "/api/orders/" + student._id;
+  const res = await axios.get(url);
+  dispatch({ type: FETCH_LINEITEMS, payload: res.data });
+
+
 };
 

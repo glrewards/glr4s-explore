@@ -6,6 +6,7 @@ class SurveyList extends Component{
 
 
     componentDidMount(){
+        console.log("SurveyList componentDidMount(): ", this.props);
         this.props.fetchSurveys();
     }
 

@@ -23,7 +23,7 @@ class GLRHeader extends Component {
 
   renderProfileMenu() {
     if(this.props.auth._student){
-      return (<li style={{ margin: "0 10px" }}><Link>Profile</Link></li>);
+      return (<li key="profile" style={{ margin: "0 10px" }}>Profile</li>);
 
     }
   }

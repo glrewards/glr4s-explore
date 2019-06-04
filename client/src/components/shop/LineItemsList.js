@@ -1,11 +1,50 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchSurveys } from "../../actions";
+import { fetchLineItems, fetchUser } from "../../actions";
 
 class LineItemsList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { date: new Date() };
+  }
+
+  componentDidMount() {
+    if (!this.props.auth) {
+      this.props.fetchUser();
+    }
+    this.props.fetchLineItems(this.props.auth._student);
+  }
+
+  renderListItems() {
+    return this.props.lineItems.map(line => {
+      return (
+        <div key={line._id} className="card lime darken-1 ">
+          <div className="card-content">
+            <span className="card-title">{line.productTitle}</span>
+            <p className="right">GLRPoints: {line.glrpoints}</p>
+          </div>
+        </div>
+      );
+    });
+  }
+
   render() {
-    return (
-      <div>
+    return <div>{this.renderListItems()}</div>;
+  }
+}
+
+function mapStateToProps(state) {
+  return { lineItems: state.lineItems, auth: state.auth };
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchLineItems, fetchUser }
+)(LineItemsList);
+
+/*
+ <div>
         <ul className="collection">
           <li className="collection-item avatar">
             <img src="images/yuna.jpg" alt="" className="circle" />
@@ -41,16 +80,4 @@ class LineItemsList extends Component {
           </li>
         </ul>
       </div>
-    );
-  }
-}
-
-function mapStateToProps (state){
-  //console.log("StudentList: mapStateToProps() ",state);
-  return {students: state.students};
-}
-
-export default connect(
-  mapStateToProps,
-  { fetchSurveys }
-)(LineItemsList);
+ */

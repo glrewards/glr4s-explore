@@ -5,11 +5,13 @@ import authReducer from './authReducer';
 import surveyReducer from './surveysReducer';
 import studentReducer from './studentReducer';
 import categorysReducer from "./categorysReducer";
+import lineItemReducer from "./lineItemsReducer";
 
 export default combineReducers({
     auth: authReducer,
     form: reduxForm,
     surveys: surveyReducer,
     students: studentReducer,
-    categories: categorysReducer
+    categories: categorysReducer,
+    lineItems: lineItemReducer
 });

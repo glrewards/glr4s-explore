@@ -60,7 +60,7 @@ module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
   //TODO: add requireLogin middleware back in
-  app.get("/api/orders/:studentId",findStudentSchool, async (req,res) => {
+  app.get("/api/orders/:studentId",requireLogin, findStudentSchool, async (req,res) => {
     //get all the open orders for the school
     const orders = await Order.find({_school: req.school});
     if (orders.length > 1 || orders.length === 0) {
@@ -263,7 +263,6 @@ module.exports = app => {
     if (!arr || typeof arr != 'object') return;
     if (typeof student == 'undefined' || student == null) return arr;
     return arr.filter((line) => {
-      console.log("made it to the filter",line,student);
       return line._student == student;
     });
   }
