@@ -168,7 +168,8 @@ module.exports = app => {
           order = await newOrder.save();
         }
       }
-
+      //TODO: this should not return the order - just the order Id and line items that belong to the student
+      //TODO: or just an ok
       res.send(order);
     } catch (err) {
       console.error("error saving order: ", newOrder, err);
@@ -228,6 +229,7 @@ module.exports = app => {
       res.status(422).send(err);
     }
   });
+
   app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
     console.log("webhook fired: ",req.body);
     res.send({}); //respond to indicate receipt

@@ -117,9 +117,6 @@ class GLRShop extends Component {
 
         return (
             <div className="App">
-                <div className="Flash__message-wrapper">
-                    <p className={`Flash__message ${this.state.accountVerificationMessage ? 'Flash__message--open' : ''}`}>We have sent you an email, please click the link included to verify your email address</p>
-                </div>
                 <header className="App__header">
                     {!this.state.isCartOpen &&
                     <div className="App__view-cart-wrapper">
