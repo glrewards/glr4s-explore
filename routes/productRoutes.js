@@ -26,7 +26,12 @@ module.exports = app => {
       });
       //now we want to remove any items that might not have a metafield:{value:} field
       const prods = filterIfNoMeta(data.collection.products.edges);
-      console.log(JSON.stringify(prods, undefined, 2));
+      if(!prods){
+        throw {
+          code: 404,
+          message: "no products found"
+          }
+      }
       res.send(prods);
     } catch (err) {
       console.error("error getting products: ", err);

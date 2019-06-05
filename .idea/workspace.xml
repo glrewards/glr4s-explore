@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/shop/_GLRShop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shop/GLRShop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shop/GLRShop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shop/ProductGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shop/ProductGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/productRoutes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/shop/ProductGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="86">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -58,20 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/shop/GLRShop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/shop/OrderDashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" lean-forward="true" selection-end-line="30" />
+            <state relative-caret-position="90">
+              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -80,13 +65,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+        <entry file="file://$PROJECT_DIR$/routes/productRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="465">
+              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/orderRoutes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2326">
+              <caret line="269" column="3" selection-start-line="269" selection-start-column="3" selection-end-line="269" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -96,15 +87,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/reducers/productsReducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -184,7 +166,6 @@
         <option value="$PROJECT_DIR$/client/src/actions/types.js" />
         <option value="$PROJECT_DIR$/client/src/actions/types.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/lineItemsReducer.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/GLRHeader.js" />
         <option value="$PROJECT_DIR$/client/src/components/student/StudentList.js" />
         <option value="$PROJECT_DIR$/client/src/components/Dashboard.js" />
@@ -199,14 +180,15 @@
         <option value="$PROJECT_DIR$/models/shop/product/Product.js" />
         <option value="$PROJECT_DIR$/config/dev.js" />
         <option value="$PROJECT_DIR$/config/prod.js" />
-        <option value="$PROJECT_DIR$/routes/productRoutes.js" />
         <option value="$PROJECT_DIR$/graphql/gqlTemplates.js" />
         <option value="$PROJECT_DIR$/client/src/components/App.js" />
-        <option value="$PROJECT_DIR$/client/src/components/shop/GLRShop.js" />
         <option value="$PROJECT_DIR$/client/src/components/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/shop/ProductGrid.js" />
         <option value="$PROJECT_DIR$/client/src/actions/index.js" />
         <option value="$PROJECT_DIR$/client/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/client/src/components/shop/GLRShop.js" />
+        <option value="$PROJECT_DIR$/routes/productRoutes.js" />
       </list>
     </option>
   </component>
@@ -280,7 +262,20 @@
               <item name="glr4s" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glr4s" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glr4s" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glr4s" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glr4s" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="glr4s" type="b2602c69:ProjectViewProjectNode" />
@@ -432,21 +427,7 @@
       <workItem from="1558084848847" duration="564000" />
       <workItem from="1558099355698" duration="51910000" />
       <workItem from="1558634064652" duration="23000" />
-      <workItem from="1558634102180" duration="101688000" />
-    </task>
-    <task id="LOCAL-00003" summary="changed the welcome text">
-      <created>1556140446531</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1556140446531</updated>
-    </task>
-    <task id="LOCAL-00004" summary="almost finished first stage of google checkin">
-      <created>1556276490100</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1556276490100</updated>
+      <workItem from="1558634102180" duration="102945000" />
     </task>
     <task id="LOCAL-00005" summary="major refactor triggered by me forgetting that I have to whitelist my IP address every time I reconnect to the web">
       <created>1556562197884</created>
@@ -777,11 +758,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559747869619</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="added simple product gui">
+      <created>1559749037180</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1559749037180</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fixed bug with metafield checking">
+      <created>1559752932045</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1559752932045</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329789000" />
+    <option name="totallyTimeSpent" value="331046000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -803,7 +798,7 @@
       <window_info anchor="bottom" id="REST Client" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4996986" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.67872214" weight="0.3132653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.67872214" visible="true" weight="0.3132653" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -897,8 +892,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="End of section 138 of course - mailer finished" />
-    <MESSAGE value="testing the mailer - found and corrected a few issues but still have a problem with the mapping or the array stuff" />
     <MESSAGE value="completed up to session 150 - boilerplate surveynew and surveyform" />
     <MESSAGE value="completed up to session 159 - moving on to form validation" />
     <MESSAGE value="completed up to session 165" />
@@ -922,12 +915,11 @@
     <MESSAGE value="retrieving order lineitems for the student" />
     <MESSAGE value="retrieving products from shopify on node&#10;added the corresponding mongoose objects for product and variant but not using these yet." />
     <MESSAGE value="added config variables for the product gql" />
-    <option name="LAST_COMMIT_MESSAGE" value="added config variables for the product gql" />
+    <MESSAGE value="added simple product gui" />
+    <MESSAGE value="fixed bug with metafield checking" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug with metafield checking" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/categorysReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/reducers/lineItemsReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1125,13 +1117,6 @@
     <entry file="file://$PROJECT_DIR$/config/keys.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/orderRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="269" column="3" selection-start-line="269" selection-start-column="3" selection-end-line="269" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/shop/tutorial/checkout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1800">
@@ -1180,13 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/productRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/shop/product/Variant.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1194,40 +1172,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/shop/OrderDashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphql/gqlTemplates.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/shop/GLRShop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/shop/ProductGrid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1265,6 +1213,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -1272,6 +1227,50 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/shop/ProductGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/shop/OrderDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/shop/GLRShop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/orderRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2326">
+          <caret line="269" column="3" selection-start-line="269" selection-start-column="3" selection-end-line="269" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/productRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
