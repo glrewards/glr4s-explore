@@ -11,6 +11,7 @@ import ApolloClient from 'apollo-boost';
 import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
+import NotFound from './errorpages/notfound/NotFound';
 
 /*
 const client = new ApolloClient({

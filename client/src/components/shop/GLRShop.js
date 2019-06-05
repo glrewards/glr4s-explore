@@ -4,7 +4,6 @@ import ProductGrid from "./ProductGrid";
 const GLRShop = () => {
     return (
         <div>
-            <h2>Choose your product</h2>
             <div>
                 <ProductGrid />
             </div>

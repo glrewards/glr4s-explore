@@ -7,7 +7,7 @@ import M from "materialize-css";
 
 class GLRSubHeader extends Component {
   componentDidMount() {
-    var elems = document.querySelectorAll(".dropdown-trigger");
+    let elems = document.querySelectorAll(".dropdown-trigger");
     M.Dropdown.init(elems);
   }
 
