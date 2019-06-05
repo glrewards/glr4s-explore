@@ -37,7 +37,8 @@ module.exports = app => {
   function filterIfNoMeta(products){
     if (!products || typeof products != 'object') return;
     return products.filter((product) => {
-      if (!product || typeof product != 'object') {
+      console.log(product);
+      if (!product.node.metafield) {
         return false;
       }else{
         return true;
