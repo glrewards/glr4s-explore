@@ -2,63 +2,6 @@ import React, {Component} from "react";
 import {connect} from 'react-redux';
 import {fetchProducts} from "../../actions";
 
-const query = gql`
-  query query {
-    shop {
-      name
-      description
-      products(first:5) {
-        pageInfo {
-          hasNextPage
-          hasPreviousPage
-        }
-        edges {
-          node {
-            id
-            title
-            options {
-              id
-              name
-              values
-            }
-            variants(first: 5) {
-              pageInfo {
-                hasNextPage
-                hasPreviousPage
-              }
-              edges {
-                node {
-                  id
-                  title
-                  selectedOptions {
-                    name
-                    value
-                  }
-                  image {
-                    src
-                  }
-                  price
-                }
-              }
-            }
-            images(first: 5) {
-              pageInfo {
-                hasNextPage
-                hasPreviousPage
-              }
-              edges {
-                node {
-                  src
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
 
 class ProductGrid extends Component{
 
@@ -68,23 +11,17 @@ class ProductGrid extends Component{
     }
 
 
-    renderSurveys(){
-        return this.props.surveys.reverse().map(survey =>{
+    renderProducts(){
+        return this.props.products.map(product =>{
             return(
-                <div key={survey._id} className="card lime darken-1 ">
+                <div key={product.node.id} className="card lime darken-1 ">
                     <div className="card-content">
-                        <span className="card-title">{survey.title}</span>
+                        <span className="card-title">{product.node.title}</span>
                         <p>
-                            {survey.body}
-                        </p>
-                        <p className="right">
-                            Sent on: {new Date(survey.dateSent).toLocaleDateString()}
+                            {product.node.description}
                         </p>
 
-                    </div>
-                    <div className="card-action">
-                        <a className="red-text">Yes: {survey.yes}</a>
-                        <a className="red-text">No: {survey.no}</a>
+
                     </div>
                 </div>
 
@@ -94,13 +31,14 @@ class ProductGrid extends Component{
     render(){
         return (
             <div>
-                {this.renderSurveys()}
+                {this.renderProducts()}
             </div>
         );
     }
 }
 
 function mapStateToProps (state){
+    console.log(state.products);
     return {products: state.products};
 }
 

@@ -6,6 +6,7 @@ import surveyReducer from './surveysReducer';
 import studentReducer from './studentReducer';
 import categorysReducer from "./categorysReducer";
 import lineItemReducer from "./lineItemsReducer";
+import productsReducer from "./productsReducer";
 
 export default combineReducers({
     auth: authReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
     surveys: surveyReducer,
     students: studentReducer,
     categories: categorysReducer,
+    products: productsReducer,
     lineItems: lineItemReducer
 });
