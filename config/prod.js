@@ -11,5 +11,8 @@ module.exports = {
     shopifyAPIPassword:process.env.SHOPIFY_API_PASSWORD,
     shopifySharedSecret:process.env.SHOPIFY_SHARED_SECRET,
     shopifyStoreName:process.env.SHOPIFY_STORE_NAME,
-    shopifyAPIVersion:process.env.SHOPIFY_API_VERSION
+    shopifyAPIVersion:process.env.SHOPIFY_API_VERSION,
+    shopifyCollectionId: process.env.SHOPIFY_COLLECTION_ID,
+    shopifyMetaNamespace: process.env.SHOPIFY_META_NAMESPACE,
+    shopifyMetaKey: process.env.SHOPIFY_META_KEY
 };

@@ -20,9 +20,9 @@ module.exports = app => {
       });
 
       const data = await graphQLClient.request(glr4sProductQuery, {
-        collectionId: "gid://shopify/Collection/102679248963",
-        metaNameSpace: "GLR",
-        metaKey: "glrpoints"
+        collectionId: keys.shopifyCollectionId,
+        metaNamespace: keys.shopifyMetaNamespace,
+        metaKey: keys.shopifyMetaKey
       });
       //now we want to remove any items that might not have a metafield:{value:} field
       const prods = filterIfNoMeta(data.collection.products.edges);

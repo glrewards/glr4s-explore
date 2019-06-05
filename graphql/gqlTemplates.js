@@ -1,5 +1,5 @@
 const gl4sProductQuery =  `
-query getGLR4SPValidProducts($collectionId: ID!,$metaNameSpace: String!, $metaKey: String!){
+query getGLR4SPValidProducts($collectionId: ID!,$metaNamespace: String!, $metaKey: String!){
   collection(id: $collectionId) {
     products(first: 10) {
       pageInfo {
@@ -22,7 +22,7 @@ query getGLR4SPValidProducts($collectionId: ID!,$metaNameSpace: String!, $metaKe
               }
             }
           }
-          metafield(namespace: $metaNameSpace, key: $metaKey) {
+          metafield(namespace: $metaNamespace, key: $metaKey) {
             value
           }
           title
@@ -41,12 +41,23 @@ query getGLR4SPValidProducts($collectionId: ID!,$metaNameSpace: String!, $metaKe
           variants(first:5){
             edges{
                 node{
-                id
-                sku
-                title
-                inventoryQuantity
-                price
-                image
+                    id
+                    sku
+                    title
+                    inventoryQuantity
+                    price
+                    image{
+                        id
+                        altText
+                        src
+                    }
+                    images(first:5){
+
+                                id
+                                src
+                                altText
+
+                    }
                 
                 }
             }
