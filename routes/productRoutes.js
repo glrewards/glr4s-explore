@@ -32,7 +32,13 @@ module.exports = app => {
           message: "no products found"
           }
       }
-      res.send(prods);
+      //add back in some lost info - we need to know page info for example
+      let finalData =
+          {
+            page: data.collection.products.pageInfo,
+            prods: prods
+          };
+      res.send(finalData);
     } catch (err) {
       console.error("error getting products: ", err);
       res.status(422).send(err);

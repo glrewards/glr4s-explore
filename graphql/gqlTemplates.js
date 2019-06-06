@@ -1,7 +1,7 @@
 const gl4sProductQuery =  `
-query getGLR4SPValidProducts($collectionId: ID!,$metaNamespace: String!, $metaKey: String!){
+query getGLR4SPValidProducts($collectionId: ID!, $cursor: String, $metaNamespace: String!, $metaKey: String!){
   collection(id: $collectionId) {
-    products(first: 10) {
+    products(first: 10 after: $cursor) {
       pageInfo {
         hasNextPage
         hasPreviousPage

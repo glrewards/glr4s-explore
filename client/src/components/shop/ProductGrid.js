@@ -4,13 +4,23 @@ import { fetchProducts } from "../../actions";
 import M from "materialize-css";
 
 class ProductGrid extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   componentDidMount() {
-    M.AutoInit();
+    //M.AutoInit();
+    //console.log(this.props);
     this.props.fetchProducts();
+  }
+  componentWillMount() {
+    console.log()
   }
 
   renderProducts() {
-    return this.props.products.map(product => {
+    console.log("in render: ", this.props);
+    return this.props.products.prods.map(product => {
       return (
         <div className="row" key={product.node.id}>
           <div className="col s12">
@@ -22,9 +32,7 @@ class ProductGrid extends Component {
                   src={product.node.featuredImage.src}
                   alt={product.node.featuredImage.altText}
                 />
-                <p className="blue-text flow-text">
-                  GLRPoints: {product.node.metafield.value}
-                </p>
+                {this.renderGLRPoints(product)}
               </div>
               <div className="card-content">
                 <span className="card-title activator">
@@ -45,14 +53,55 @@ class ProductGrid extends Component {
       );
     });
   }
+
+  renderGLRPoints(product) {
+    if (product.node.metafield.value < this.props.user._student.currentPoints) {
+      return (
+        <p className="blue-text flow-text">
+          GLRPoints: {product.node.metafield.value}
+          <i className="material-icons right-aligned">check</i>
+        </p>
+      );
+    }
+    return (
+      <p className="red-text flow-text align">
+        GLRPoints: {product.node.metafield.value}
+        <i className="material-icons right-aligned">clear</i>
+      </p>
+    );
+  }
+
   render() {
-    return <div>{this.renderProducts()}</div>;
+    return (
+      <div>
+        <div>
+          <ul className="pagination blue-grey lighten-1">
+            <li className="disabled">
+              <a href="#!">
+                <i className="material-icons">chevron_left</i>
+              </a>
+            </li>
+            <li className="waves-effect">
+              <a href="#!">
+                <i className="material-icons">chevron_right</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {//remember render happens before componentdidmount so this first time round we do not want to try and
+          //parse arrays etc
+          this.props.products ? this.renderProducts(): ""}
+      </div>
+    );
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state.products);
-  return { products: state.products };
+  return {
+    products: state.products,
+    user: state.auth
+  };
 }
 
 export default connect(

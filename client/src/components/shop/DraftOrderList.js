@@ -34,7 +34,7 @@ class DraftOrderList extends Component{
 }
 
 function mapStateToProps (state){
-    console.log("category list state: ", state);
+    //console.log("category list state: ", state);
     return {categories: state.categories};
 }
 

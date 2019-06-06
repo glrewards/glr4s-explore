@@ -50,7 +50,6 @@ export const fetchCategories = () => async dispatch =>{
 
 export const fetchProducts = () => async dispatch =>{
   const res = await axios.get('/api/shop/products');
-  console.log("in fetchProducts(): ", res);
   dispatch({type: FETCH_PRODUCTS, payload: res.data});
 
 };

@@ -54,7 +54,7 @@ class Product extends Component {
   }
 
   render() {
-    console.log("testing",this.props);
+    //console.log("testing",this.props);
     let glrpoints = null;
     if(!this.props.product.metafield) {
       glrpoints = null;
