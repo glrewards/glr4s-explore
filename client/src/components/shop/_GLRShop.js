@@ -61,9 +61,9 @@ class GLRShop extends Component {
             error: PropTypes.object,
             shop: PropTypes.object,
         }).isRequired,
-        createCheckout: PropTypes.func.isRequired,
-        checkoutLineItemsAdd: PropTypes.func.isRequired,
-        checkoutLineItemsUpdate: PropTypes.func.isRequired
+        createStudentCheckout: PropTypes.func.isRequired,
+        studentCheckoutLineItemsAdd: PropTypes.func.isRequired,
+        studentCheckoutLineItemsUpdate: PropTypes.func.isRequired
     }
 
     handleCartOpen() {
@@ -129,7 +129,7 @@ class GLRShop extends Component {
                 </header>
                 <div className="Product-wrapper">
                     { this.props.data.shop.products.edges.map(product =>
-                        <Product user={this.props.auth} addVariantToCart={this.addVariantToCart} checkout={this.state.checkout} key={product.node.id.toString()} product={product.node} />
+                        <Product user={this.props.auth} addVariantToCart={this.addVariantToCart} checkout={this.state.checkout} key={product.id.toString()} product={product.node} />
                     )}
                 </div>
                 <Cart

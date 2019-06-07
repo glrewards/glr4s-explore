@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchProducts, storeProdCursor } from "../../actions";
-import M from "materialize-css";
-import { STORE_PROD_CURSOR } from "../../actions/types";
+import { fetchProducts } from "../../actions";
+import ProductCard from "./ProductCard";
+import './shop.css';
 
 class ProductGrid extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class ProductGrid extends Component {
   handleBackwardClick(event) {
     let backward = true;
     console.log("handlebackward");
-    this.props.fetchProducts(event.target.id,backward);
+    this.props.fetchProducts(event.target.id, backward);
   }
   componentDidMount() {
     this.props.fetchProducts();
@@ -26,8 +26,10 @@ class ProductGrid extends Component {
 
   renderProducts() {
     console.log("in render: ", this.props);
-
+    /*
+    //original working render
     return this.props.products.prods.map(product => {
+
       return (
         <div className="row" key={product.node.id}>
           <div className="col s12">
@@ -46,6 +48,7 @@ class ProductGrid extends Component {
                   {product.node.title}
                   <i className="material-icons right">more_vert</i>
                 </span>
+
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">
@@ -59,6 +62,20 @@ class ProductGrid extends Component {
         </div>
       );
     });
+    */
+    return (
+      <div className="Product-wrapper">
+        {this.props.products.prods.map(product => (
+          <ProductCard
+            user={this.props.auth}
+            addVariantToStudentCart={this.addVariantToStudentCart}
+            checkout={this.state.studentCheckout}
+            key={product.node.id.toString()}
+            product={product.node}
+          />
+        ))}
+      </div>
+    );
   }
 
   renderGLRPoints(product) {
@@ -112,18 +129,18 @@ class ProductGrid extends Component {
     }
 
     return (
-      <ul className="pagination blue-grey lighten-1 ">
-        <li key="back" className={prevClass} >
+      <ul className="pagination yellow darken-4 ">
+        <li key="back" className={prevClass}>
           <a
-              href="#1"
-              key="backward"
-              id={this.props.products.firstCursor}
-              onClick={this.handleBackwardClick}
+            href="#1"
+            key="backward"
+            id={this.props.products.firstCursor}
+            onClick={this.handleBackwardClick}
           >
             <i
-                className="material-icons disabled"
-                key="backward"
-                id={this.props.products.firstCursor}
+              className="material-icons disabled"
+              key="backward"
+              id={this.props.products.firstCursor}
             >
               chevron_left
             </i>

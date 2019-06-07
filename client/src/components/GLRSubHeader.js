@@ -33,7 +33,7 @@ class GLRSubHeader extends Component {
   render() {
     return (
       <div className="nav">
-        <div className="nav-wrapper blue-grey">
+        <div className="nav-wrapper orange">
           <ul>
             <li>
               <a href="#test1">Homework</a>
@@ -59,7 +59,7 @@ class GLRSubHeader extends Component {
         </div>
 
         <div>
-          <ul id="dropdown1" className="dropdown-content">
+          <ul id="dropdown1" className="dropdown-content orange">
             <li>
                 <Link to={this.props.auth ? "/categories" : "/"}>Categories</Link>
             </li>

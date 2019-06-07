@@ -5,10 +5,10 @@ class Cart extends Component {
   constructor(props) {
   super(props);
 
-    this.openCheckout = this.openCheckout.bind(this);
+    this.openCart = this.openCart.bind(this);
   }
 
-  openCheckout() {
+  openCart() {
     //TODO: instead of doing this we need to redirect to our node route and find and order for the school or create a
     //TODO: new one
     window.open(this.props.checkout.webUrl);

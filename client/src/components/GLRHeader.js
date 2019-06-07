@@ -68,7 +68,7 @@ class GLRHeader extends Component {
     return (
         <div>
           <nav className="nav">
-            <div className="nav-wrapper blue-grey">
+            <div className="nav-wrapper orange">
               <Link to={this.props.auth ? "/surveys" : "/"} className="left">
                 GLR4S - DEV
               </Link>

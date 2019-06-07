@@ -9,7 +9,6 @@ module.exports = app => {
     let backward = req.query.backward;
 
     let gqlQuery = backward === 'true'? glr4sProductQuerys.gl4sProductBack : glr4sProductQuerys.gl4sProductQuery;
-    console.log(req.query);
     if(req.query.cursor){
       cursor = req.query.cursor;
     }
@@ -26,7 +25,6 @@ module.exports = app => {
           "X-Shopify-Access-Token": keys.shopifyAPIPassword
         }
       });
-      console.log("cursor",cursor);
       const data = await graphQLClient.request(gqlQuery, {
         collectionId: keys.shopifyCollectionId,
         metaNamespace: keys.shopifyMetaNamespace,
