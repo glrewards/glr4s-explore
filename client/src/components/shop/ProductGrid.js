@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchProducts } from "../../actions";
+import { fetchProducts, storeProdCursor } from "../../actions";
 import M from "materialize-css";
+import { STORE_PROD_CURSOR } from "../../actions/types";
 
 class ProductGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleForwardClick = this.handleForwardClick.bind(this);
+    this.handleBackwardClick = this.handleBackwardClick.bind(this);
   }
 
-  componentDidMount() {
-    //M.AutoInit();
-    //console.log(this.props);
-    this.props.fetchProducts();
+  handleForwardClick(event) {
+    this.props.fetchProducts(event.target.id, false);
   }
-  componentWillMount() {
-    console.log()
+  handleBackwardClick(event) {
+    let backward = true;
+    console.log("handlebackward");
+    this.props.fetchProducts(event.target.id,backward);
+  }
+  componentDidMount() {
+    this.props.fetchProducts();
   }
 
   renderProducts() {
     console.log("in render: ", this.props);
+
     return this.props.products.prods.map(product => {
       return (
         <div className="row" key={product.node.id}>
@@ -55,6 +62,16 @@ class ProductGrid extends Component {
   }
 
   renderGLRPoints(product) {
+    if (!this.props.user._student) {
+      //this should not happen but it means this user is not assigned a student role
+      return (
+        <p className="blue-text flow-text">
+          GLRPoints: cannot be displayed. User not Student
+          <i className="material-icons right-aligned">error</i>
+        </p>
+      );
+    }
+
     if (product.node.metafield.value < this.props.user._student.currentPoints) {
       return (
         <p className="blue-text flow-text">
@@ -71,27 +88,75 @@ class ProductGrid extends Component {
     );
   }
 
+  renderPagination() {
+    console.log("renderPagination", this.props);
+    if (!this.props.products.page) {
+      return;
+    }
+    //only carry on if we have the data
+
+    let prevClass = "disabled";
+    if (this.props.products.page.hasPreviousPage) {
+      prevClass = "wave-effect";
+    }
+    let nextClass = "wave-effect";
+    if (!this.props.products.page.hasNextPage) {
+      nextClass = "disabled";
+    }
+    // don't show pagination if not required
+    if (
+      this.props.products.page.hasPreviousPage === false &&
+      this.props.products.page.hasNextPage === false
+    ) {
+      return;
+    }
+
+    return (
+      <ul className="pagination blue-grey lighten-1 ">
+        <li key="back" className={prevClass} >
+          <a
+              href="#1"
+              key="backward"
+              id={this.props.products.firstCursor}
+              onClick={this.handleBackwardClick}
+          >
+            <i
+                className="material-icons disabled"
+                key="backward"
+                id={this.props.products.firstCursor}
+            >
+              chevron_left
+            </i>
+          </a>
+        </li>
+        <li key="forward" className={nextClass}>
+          <a
+            href="#1"
+            key="forward"
+            id={this.props.products.lastCursor}
+            onClick={this.handleForwardClick}
+          >
+            <i
+              className="material-icons disabled"
+              key="forward"
+              id={this.props.products.lastCursor}
+            >
+              chevron_right
+            </i>
+          </a>
+        </li>
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div>
-        <div>
-          <ul className="pagination blue-grey lighten-1">
-            <li className="disabled">
-              <a href="#!">
-                <i className="material-icons">chevron_left</i>
-              </a>
-            </li>
-            <li className="waves-effect">
-              <a href="#!">
-                <i className="material-icons">chevron_right</i>
-              </a>
-            </li>
-          </ul>
-        </div>
+        {this.props.products ? this.renderPagination() : ""}
 
         {//remember render happens before componentdidmount so this first time round we do not want to try and
-          //parse arrays etc
-          this.props.products ? this.renderProducts(): ""}
+        //parse arrays etc
+        this.props.products ? this.renderProducts() : ""}
       </div>
     );
   }

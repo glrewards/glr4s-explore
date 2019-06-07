@@ -1,10 +1,18 @@
-const glr4sProductQuery = require("../graphql/gqlTemplates");
+const glr4sProductQuerys = require("../graphql/gqlTemplates");
 const { GraphQLClient } = require("graphql-request");
 const keys = require("../config/keys");
 
 module.exports = app => {
   //TODO: add requireLogin and requiresStudent back in
   app.get("/api/shop/products", async (req, res) => {
+    let cursor = null;
+    let backward = req.query.backward;
+
+    let gqlQuery = backward === 'true'? glr4sProductQuerys.gl4sProductBack : glr4sProductQuerys.gl4sProductQuery;
+    console.log(req.query);
+    if(req.query.cursor){
+      cursor = req.query.cursor;
+    }
     try {
       const endpoint =
         "https://" +
@@ -18,11 +26,12 @@ module.exports = app => {
           "X-Shopify-Access-Token": keys.shopifyAPIPassword
         }
       });
-
-      const data = await graphQLClient.request(glr4sProductQuery, {
+      console.log("cursor",cursor);
+      const data = await graphQLClient.request(gqlQuery, {
         collectionId: keys.shopifyCollectionId,
         metaNamespace: keys.shopifyMetaNamespace,
-        metaKey: keys.shopifyMetaKey
+        metaKey: keys.shopifyMetaKey,
+        cursor: cursor
       });
       //now we want to remove any items that might not have a metafield:{value:} field
       const prods = filterIfNoMeta(data.collection.products.edges);

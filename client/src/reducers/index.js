@@ -8,6 +8,7 @@ import categorysReducer from "./categorysReducer";
 import lineItemReducer from "./lineItemsReducer";
 import productsReducer from "./productsReducer";
 
+
 export default combineReducers({
     auth: authReducer,
     form: reduxForm,

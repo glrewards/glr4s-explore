@@ -48,8 +48,21 @@ export const fetchCategories = () => async dispatch =>{
 
 };
 
-export const fetchProducts = () => async dispatch =>{
-  const res = await axios.get('/api/shop/products');
+export const fetchProducts = (cursor,backward) => async dispatch =>{
+  console.log("fetchProducts", cursor);
+  let url = '/api/shop/products';
+  if(cursor){
+    url = url + "?cursor=" + cursor;
+  }
+  if(backward){
+    if (!cursor){
+      url = url + "?backward=" + backward;
+    }else{
+      url = url + "&backward=" + backward;
+    }
+  }
+  console.log(url);
+  const res = await axios.get(url);
   dispatch({type: FETCH_PRODUCTS, payload: res.data});
 
 };
@@ -69,8 +82,8 @@ export const fetchAllStudents = () => async dispatch => {
 export const fetchLineItems = (student) => async dispatch => {
   const url = "/api/orders/" + student._id;
   const res = await axios.get(url);
-  dispatch({ type: FETCH_LINEITEMS, payload: res.data });
-
-
+  dispatch({type: FETCH_LINEITEMS, payload: res.data});
 };
+
+
 
