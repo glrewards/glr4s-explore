@@ -5,10 +5,10 @@ import {
   addVariantToStudentCart,
   removeLineItemInStudentCart,
   updateLineItemInStudentCart,
-    createStudentCheckout
+  createStudentCheckout
 } from "./GLRcheckout";
 import Cart from "./tutorial/Cart";
-import ProductCard from "./ProductCard";
+import { connect } from "react-redux";
 
 class GLRShop extends Component {
   constructor() {
@@ -26,7 +26,6 @@ class GLRShop extends Component {
     this.updateLineItemInStudentCart = updateLineItemInStudentCart.bind(this);
     this.removeLineItemInStudentCart = removeLineItemInStudentCart.bind(this);
     this.createStudentCheckout = createStudentCheckout.bind(this); //looks for an open school order or creates one
-
   }
 
   handleStudentCartOpen() {
@@ -59,7 +58,6 @@ class GLRShop extends Component {
   };
 
   render() {
-
     return (
       <div className="App">
         <header className="App__header">
@@ -80,11 +78,12 @@ class GLRShop extends Component {
         <div>
           <ProductGrid />
         </div>
-
       </div>
     );
   }
 }
 
-
-export default GLRShop;
+function mapStateToProps({ auth }) {
+  return { auth: auth };
+}
+export default connect(mapStateToProps)(GLRShop);

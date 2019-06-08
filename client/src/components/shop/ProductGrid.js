@@ -25,7 +25,8 @@ class ProductGrid extends Component {
   }
 
   renderProducts() {
-    console.log("in render: ", this.props);
+    console.log("in render props: ", this.props);
+    console.log("in render state: ", this.state);
     /*
     //original working render
     return this.props.products.prods.map(product => {
@@ -129,7 +130,7 @@ class ProductGrid extends Component {
     }
 
     return (
-      <ul className="pagination yellow darken-4 ">
+      <ul className="pagination yellow darken-4 valign-wrapper">
         <li key="back" className={prevClass}>
           <a
             href="#1"

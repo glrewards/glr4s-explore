@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import VariantSelector from "./VariantSelector";
+import {connect} from "react-redux";
 
 class ProductCard extends Component {
   constructor(props) {
@@ -32,6 +33,34 @@ class ProductCard extends Component {
 
     return (image || primary).src;
   }
+
+    renderGLRPoints() {
+      console.log(this.props);
+        if (!this.props.auth._student) {
+            //this should not happen but it means this user is not assigned a student role
+            return (
+                <p className="blue-text flow-text">
+                    GLRPoints: cannot be displayed. User not Student
+                    <i className="material-icons right-aligned">error</i>
+                </p>
+            );
+        }
+
+        if (this.props.product.metafield.value < this.props.auth._student.currentPoints) {
+            return (
+                <p className="blue-text flow-text">
+                    GLRPoints: {this.props.product.metafield.value}
+                    <i className="material-icons right-aligned">check</i>
+                </p>
+            );
+        }
+        return (
+            <p className="red-text flow-text align">
+                GLRPoints: {this.props.product.metafield.value}
+                <i className="material-icons right-aligned">clear</i>
+            </p>
+        );
+    }
 
   // removed options logic as we don't use it
 
@@ -88,7 +117,7 @@ class ProductCard extends Component {
               </span>
               <div>
                 <h5 className="Product__title">{this.props.product.title}</h5>
-                <span className="Product__price">${variant.price}</span>
+                <span className="Product__price">{this.renderGLRPoints()}</span>
                 <label className="Product__option">
                   Quantity
                   <input
@@ -126,5 +155,7 @@ class ProductCard extends Component {
     );
   }
 }
-
-export default ProductCard;
+function mapStateToProps({ auth }) {
+    return { auth: auth };
+}
+export default connect(mapStateToProps)(ProductCard);
