@@ -69,7 +69,7 @@ class ProductCard extends Component {
     let selectedOptions = this.state.selectedOptions;
     selectedOptions[target.name] = target.value;
 
-    const selectedVariant = this.props.product.node.variants.edges.find(
+    const selectedVariant = this.props.product.variants.edges.find(
       variant => {
         return variant.node.selectedOptions.every(selectedOption => {
           return selectedOptions[selectedOption.name] === selectedOption.value;
@@ -108,7 +108,6 @@ class ProductCard extends Component {
                 src={this.props.product.featuredImage.src}
                 alt={this.props.product.featuredImage.altText}
               />
-              {/*this.renderGLRPoints(this.props.product)*/}
             </div>
             <div className="card-content">
               <span className="card-title activator">
@@ -130,11 +129,15 @@ class ProductCard extends Component {
                 <div className="right-aligned">
                   <button
                     className="btn yellow darken-3 waves-effect waves-light"
-                    onClick={() =>
-                      this.props.addVariantToStudentCart(
-                        variant.id,
-                        variantQuantity
-                      )
+                    onClick={() => {
+                        console.log("onclick: ",variant.id);
+                        this.props.addVariantToStudentCart(
+                            this.props.auth._student,
+                            this.props.product.id,
+                            variant.id,
+                            variantQuantity
+                        )
+                    }
                     }
                   >
                     Add to Cart
@@ -155,7 +158,10 @@ class ProductCard extends Component {
     );
   }
 }
-function mapStateToProps({ auth }) {
-    return { auth: auth };
+function mapStateToProps(state) {
+    console.log("prodcard state:", state);
+    return {
+        auth: state.auth
+        };
 }
 export default connect(mapStateToProps)(ProductCard);

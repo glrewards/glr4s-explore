@@ -17,7 +17,7 @@ class GLRShop extends Component {
     this.state = {
       isStudentCartOpen: false,
       products: [],
-      studentCheckout: { lineItems: { edges: [] } }
+      studentCheckout: { lineItems: [] }
     };
 
     this.handleStudentCartClose = this.handleStudentCartClose.bind(this);
@@ -25,7 +25,6 @@ class GLRShop extends Component {
     this.addVariantToStudentCart = addVariantToStudentCart.bind(this);
     this.updateLineItemInStudentCart = updateLineItemInStudentCart.bind(this);
     this.removeLineItemInStudentCart = removeLineItemInStudentCart.bind(this);
-    this.createStudentCheckout = createStudentCheckout.bind(this); //looks for an open school order or creates one
   }
 
   handleStudentCartOpen() {
@@ -41,10 +40,9 @@ class GLRShop extends Component {
   }
 
   componentWillMount() {
-    //TODO: as the component loads we now need to create a checkout
-    this.setState({
-      studentCheckout: { summary: "JT just creates this with a set state" }
-    });
+    //as we are not using apollo now - there is no need to create a checkout in shopify
+    //the initial state is created in the constructor and that is an empty array of line items
+    console.log("GLRSHOP: componentWillMount(): state: ", this.state);
   }
 
   static propTypes = {
@@ -52,7 +50,6 @@ class GLRShop extends Component {
       loading: PropTypes.bool,
       error: PropTypes.object
     }).isRequired,
-    createStudentCheckout: PropTypes.func.isRequired,
     studentCheckoutLineItemsAdd: PropTypes.func.isRequired,
     studentCheckoutLineItemsUpdate: PropTypes.func.isRequired
   };
@@ -76,7 +73,8 @@ class GLRShop extends Component {
           </div>
         </header>
         <div>
-          <ProductGrid />
+          <ProductGrid addVariantToStudentCart={this.addVariantToStudentCart}
+                       studentCheckout={this.state.studentCheckout}/>
         </div>
       </div>
     );
@@ -84,6 +82,8 @@ class GLRShop extends Component {
 }
 
 function mapStateToProps({ auth }) {
-  return { auth: auth };
+  return {
+    auth: auth
+  };
 }
 export default connect(mapStateToProps)(GLRShop);

@@ -7,7 +7,7 @@ import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import GLRShop from './shop/GLRShop';
-import ApolloClient from 'apollo-boost';
+import GLRShop2 from './shop/GLRShop2';
 import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
@@ -40,7 +40,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
-            <Route exact path="/shop" component={GLRShop} />
+            <Route exact path="/shop" component={GLRShop2} />
             <Route path="/categories" component={CategoryDashboard} />
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />

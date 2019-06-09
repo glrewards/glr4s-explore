@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../../actions";
 import ProductCard from "./ProductCard";
+import {addVariantToStudentCart} from "./GLRcheckout";
 import './shop.css';
 
 class ProductGrid extends Component {
@@ -10,6 +11,7 @@ class ProductGrid extends Component {
     this.state = {};
     this.handleForwardClick = this.handleForwardClick.bind(this);
     this.handleBackwardClick = this.handleBackwardClick.bind(this);
+    //this.addVariantToStudentCart = addVariantToStudentCart.bind(this);
   }
 
   handleForwardClick(event) {
@@ -17,7 +19,6 @@ class ProductGrid extends Component {
   }
   handleBackwardClick(event) {
     let backward = true;
-    console.log("handlebackward");
     this.props.fetchProducts(event.target.id, backward);
   }
   componentDidMount() {
@@ -66,11 +67,12 @@ class ProductGrid extends Component {
     */
     return (
       <div className="Product-wrapper">
+        {console.log("rendering Product Card: state: ", this.state)}
+        {console.log("rendering Product Card: props: ", this.props)}
         {this.props.products.prods.map(product => (
           <ProductCard
             user={this.props.auth}
-            addVariantToStudentCart={this.addVariantToStudentCart}
-            checkout={this.state.studentCheckout}
+            addVariantToStudentCart={this.props.onAddToCartClick}
             key={product.node.id.toString()}
             product={product.node}
           />

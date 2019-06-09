@@ -7,6 +7,7 @@ import studentReducer from './studentReducer';
 import categorysReducer from "./categorysReducer";
 import lineItemReducer from "./lineItemsReducer";
 import productsReducer from "./productsReducer";
+import cartReducer from "./cartReducer";
 
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
     students: studentReducer,
     categories: categorysReducer,
     products: productsReducer,
-    lineItems: lineItemReducer
+    lineItems: lineItemReducer,
+    cart: cartReducer
 });
