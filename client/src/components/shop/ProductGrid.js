@@ -26,8 +26,6 @@ class ProductGrid extends Component {
   }
 
   renderProducts() {
-    console.log("in render props: ", this.props);
-    console.log("in render state: ", this.state);
     /*
     //original working render
     return this.props.products.prods.map(product => {
@@ -67,8 +65,6 @@ class ProductGrid extends Component {
     */
     return (
       <div className="Product-wrapper">
-        {console.log("rendering Product Card: state: ", this.state)}
-        {console.log("rendering Product Card: props: ", this.props)}
         {this.props.products.prods.map(product => (
           <ProductCard
             user={this.props.auth}
@@ -109,7 +105,6 @@ class ProductGrid extends Component {
   }
 
   renderPagination() {
-    console.log("renderPagination", this.props);
     if (!this.props.products.page) {
       return;
     }

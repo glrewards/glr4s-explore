@@ -17,7 +17,6 @@ export default function(state = null, action) {
         case FETCH_PRODUCTS:
             let firstCursor = null;
             let lastCursor = null;
-            console.log(action.payload);
             if(action.payload.prods) {
                 lastCursor = getProductCursor(action.payload.prods);
                 firstCursor = getProductCursor(action.payload.prods,true);
@@ -34,8 +33,6 @@ export default function(state = null, action) {
 }
 
 function getProductCursor(products, reverse) {
-    console.log("in getLastProductCursor",products);
-
     if (!products) {
         return;
     }

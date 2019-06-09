@@ -5,10 +5,22 @@ import M from "materialize-css";
 import GLRSubHeader from "./GLRSubHeader";
 
 class GLRHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+}
   componentDidMount() {
+
     let elems = document.querySelectorAll(".dropdown-trigger");
     M.Dropdown.init(elems);
     M.AutoInit();
+
+  }
+
+  renderCartLink(){
+    if(this.props.cart.length > 0){
+      return (<li key="cart"style={{ margin: "0 10px" }}><i className="material-icons">shopping_basket</i> </li>);
+    }
   }
 
   renderGLRPoints(){
@@ -29,6 +41,7 @@ class GLRHeader extends Component {
   }
 
   renderContentTop(side) {
+    console.log("component did render",this.props);
     switch (this.props.auth) {
       case null:
         return;
@@ -41,13 +54,14 @@ class GLRHeader extends Component {
         );
       default:
         return [
+            this.renderCartLink(),
           <li key={side + "1"} style={{ margin: "0 10px" }}>
             {this.renderGLRPoints()}
           </li>,
           <li key={side + "2"}>
             <a href="/api/logout">Logout</a>
           </li>,
-          this.renderProfileMenu()
+          this.renderProfileMenu(),
         ];
     }
   }
@@ -95,8 +109,11 @@ class GLRHeader extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth: auth };
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+    cart: state.cart.cart
+  };
 }
 
 export default connect(mapStateToProps)(GLRHeader);

@@ -10,8 +10,6 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
-    console.log("dispatcher state: ",state);
-    console.log("dispatcher action: ",action);
     switch (action.type) {
         case ADD_LINE:
             return Object.assign({}, state, {

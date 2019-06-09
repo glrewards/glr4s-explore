@@ -35,7 +35,6 @@ class ProductCard extends Component {
   }
 
     renderGLRPoints() {
-      console.log(this.props);
         if (!this.props.auth._student) {
             //this should not happen but it means this user is not assigned a student role
             return (
@@ -90,7 +89,6 @@ class ProductCard extends Component {
   }
 
   render() {
-    console.log(this.props.product);
     //let variantImage = this.state.selectedVariantImage || this.props.product.variants.edges[0].node.src
     let variantImage = this.props.product.images.edges[0].node.src;
     let variant =
@@ -159,7 +157,6 @@ class ProductCard extends Component {
   }
 }
 function mapStateToProps(state) {
-    console.log("prodcard state:", state);
     return {
         auth: state.auth
         };

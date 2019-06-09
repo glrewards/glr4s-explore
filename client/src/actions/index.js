@@ -6,6 +6,7 @@ import {FETCH_CATEGORIES} from "./types";
 import {FETCH_ALL_STUDENTS} from "./types";
 import {NEW_CATEGORY} from "./types";
 import {FETCH_LINEITEMS} from "./types";
+import {SAVE_LINEITEMS} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -48,8 +49,9 @@ export const fetchCategories = () => async dispatch =>{
 
 };
 
+/* this is the shopify fetch products route */
+
 export const fetchProducts = (cursor,backward) => async dispatch =>{
-  console.log("fetchProducts", cursor);
   let url = '/api/shop/products';
   if(cursor){
     url = url + "?cursor=" + cursor;
@@ -61,7 +63,6 @@ export const fetchProducts = (cursor,backward) => async dispatch =>{
       url = url + "&backward=" + backward;
     }
   }
-  console.log(url);
   const res = await axios.get(url);
   dispatch({type: FETCH_PRODUCTS, payload: res.data});
 
@@ -79,11 +80,16 @@ export const fetchAllStudents = () => async dispatch => {
   dispatch({ type: FETCH_ALL_STUDENTS, payload: res.data });
 };
 
+/* There are the order and line items routes */
 export const fetchLineItems = (student) => async dispatch => {
   const url = "/api/orders/" + student._id;
   const res = await axios.get(url);
   dispatch({type: FETCH_LINEITEMS, payload: res.data});
 };
 
+export const submitLineItems = (lines) => async dispatch => {
+  const res = await axios.post('/api/orders/test1', lines);
+  dispatch ({type:SAVE_LINEITEMS, payload: res.data});
+};
 
 
