@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import M from "materialize-css";
 import GLRSubHeader from "./GLRSubHeader";
-
+import SimpleCartList from "./shop/SimpleCartList";
 class GLRHeader extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class GLRHeader extends Component {
 
   renderCartLink(){
     if(this.props.cart.length > 0){
-      return (<li key="cart"style={{ margin: "0 10px" }}><i className="material-icons">shopping_basket</i> </li>);
+      return (<li key="cart"style={{ margin: "0 10px" }}><Link to="/shop/cart"><i className="material-icons">shopping_basket</i> </Link></li>);
     }
   }
 

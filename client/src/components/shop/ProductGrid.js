@@ -11,7 +11,6 @@ class ProductGrid extends Component {
     this.state = {};
     this.handleForwardClick = this.handleForwardClick.bind(this);
     this.handleBackwardClick = this.handleBackwardClick.bind(this);
-    //this.addVariantToStudentCart = addVariantToStudentCart.bind(this);
   }
 
   handleForwardClick(event) {
@@ -26,45 +25,8 @@ class ProductGrid extends Component {
   }
 
   renderProducts() {
-    /*
-    //original working render
-    return this.props.products.prods.map(product => {
-
-      return (
-        <div className="row" key={product.node.id}>
-          <div className="col s12">
-            <div key={product.node.id} className="card horizontal ">
-              <div className="card-image waves-effect waves-block waves-light">
-                <img
-                  className="activator"
-                  style={{ maxWidth: "80%", maxHeight: "80%" }}
-                  src={product.node.featuredImage.src}
-                  alt={product.node.featuredImage.altText}
-                />
-                {this.renderGLRPoints(product)}
-              </div>
-              <div className="card-content">
-                <span className="card-title activator">
-                  {product.node.title}
-                  <i className="material-icons right">more_vert</i>
-                </span>
-
-              </div>
-              <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4">
-                  {product.node.title}
-                  <i className="material-icons right">close</i>
-                </span>
-                <p> {product.node.description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    });
-    */
     return (
-      <div className="Product-wrapper">
+      <div>
         {this.props.products.prods.map(product => (
           <ProductCard
             user={this.props.auth}
@@ -74,33 +36,6 @@ class ProductGrid extends Component {
           />
         ))}
       </div>
-    );
-  }
-
-  renderGLRPoints(product) {
-    if (!this.props.user._student) {
-      //this should not happen but it means this user is not assigned a student role
-      return (
-        <p className="blue-text flow-text">
-          GLRPoints: cannot be displayed. User not Student
-          <i className="material-icons right-aligned">error</i>
-        </p>
-      );
-    }
-
-    if (product.node.metafield.value < this.props.user._student.currentPoints) {
-      return (
-        <p className="blue-text flow-text">
-          GLRPoints: {product.node.metafield.value}
-          <i className="material-icons right-aligned">check</i>
-        </p>
-      );
-    }
-    return (
-      <p className="red-text flow-text align">
-        GLRPoints: {product.node.metafield.value}
-        <i className="material-icons right-aligned">clear</i>
-      </p>
     );
   }
 

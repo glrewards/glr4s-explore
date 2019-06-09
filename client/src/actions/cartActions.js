@@ -9,8 +9,8 @@ export const AMEND_LINE = 'AMEND_LINE'
  * action creators
  */
 
-export function addLine(student,productId, variantId, quantity) {
-    return { type: ADD_LINE, student, productId, variantId, quantity }
+export function addLine(student,productId, productTitle, variantId, quantity,glrpoints, img) {
+    return { type: ADD_LINE, student, productId, productTitle, variantId, quantity, glrpoints,img }
 }
 
 export function amendLine(index) {

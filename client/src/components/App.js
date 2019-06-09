@@ -11,6 +11,7 @@ import GLRShop2 from './shop/GLRShop2';
 import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
+import SimpleCartList from "./shop/SimpleCartList";
 import NotFound from './errorpages/notfound/NotFound';
 
 /*
@@ -44,6 +45,7 @@ class App extends Component {
             <Route path="/categories" component={CategoryDashboard} />
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />
+            <Route exact path="/shop/cart" component={SimpleCartList} />
            </div>
         </BrowserRouter>
       </div>

@@ -18,8 +18,12 @@ export default function (state = initialState, action) {
                     {
                         student: action.student,
                         productId: action.productId,
+                        productTitle: action.productTitle,
                         variantId: action.variantId,
-                        quantity: action.quantity
+                        quantity: action.quantity,
+                        glrpoints: action.glrpoints,
+                        img: action.img
+
                     }
 
                 ]

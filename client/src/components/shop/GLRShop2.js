@@ -13,8 +13,8 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddToCartClick: (student, productId, variantId, quantity) => {
-      dispatch(addLine(student,productId,variantId,quantity))
+    onAddToCartClick: (student, productId, productTitle, variantId, quantity,glrpoints,img) => {
+      dispatch(addLine(student,productId,productTitle, variantId,quantity,glrpoints,img))
     }
   }
 }

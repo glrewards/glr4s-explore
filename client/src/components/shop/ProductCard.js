@@ -128,12 +128,14 @@ class ProductCard extends Component {
                   <button
                     className="btn yellow darken-3 waves-effect waves-light"
                     onClick={() => {
-                        console.log("onclick: ",variant.id);
                         this.props.addVariantToStudentCart(
                             this.props.auth._student,
                             this.props.product.id,
+                            this.props.product.title,
                             variant.id,
-                            variantQuantity
+                            variantQuantity,
+                            this.props.product.metafield.value,
+                            this.props.product.featuredImage.src
                         )
                     }
                     }
