@@ -134,7 +134,7 @@ class ProductCard extends Component {
                             this.props.product.title,
                             variant.id,
                             variantQuantity,
-                            this.props.product.metafield.value,
+                            Number(this.props.product.metafield.value),
                             this.props.product.featuredImage.src
                         )
                     }

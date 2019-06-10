@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import {
     ADD_LINE,
     AMEND_LINE,
-    REMOVE_LINE
+    REMOVE_LINE,
+    DELETE_ALL_LINES
 } from '../actions/cartActions'
 
 const initialState = {
@@ -16,7 +17,7 @@ export default function (state = initialState, action) {
                 cart: [
                     ...state.cart,
                     {
-                        student: action.student,
+                        _student: action.student._id,
                         productId: action.productId,
                         productTitle: action.productTitle,
                         variantId: action.variantId,
@@ -27,6 +28,11 @@ export default function (state = initialState, action) {
                     }
 
                 ]
+            })
+        case DELETE_ALL_LINES:
+            return Object.assign({},state,{
+                cart:[],
+                lineItems: state.lineItems
             })
         case AMEND_LINE:
             return state.map((amendedLine, index) => {

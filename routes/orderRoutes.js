@@ -122,7 +122,7 @@ module.exports = app => {
     });
 */
   //TODO: add back in requireLogin requireStudent and change the url when ready
-  app.post("/api/orders/test1", async (req, res) => {
+  app.post("/api/orders/", requireLogin, requireStudent, async (req, res) => {
     const _school = req.body.user._student._school;
     const studentId = req.body.user._student._id;
     const lineItems = req.body.lineItems;
@@ -158,6 +158,7 @@ module.exports = app => {
       let order = null;
       //assuming no errors we now amend the user points and save these.
       const student = await Student.findById(studentId);
+      //console.log("available points: " + student.currentPoints + " order points: " + orderPoints);
       if (student) {
         if (orderPoints > student.currentPoints) {
           throw "Not enough points";
@@ -166,11 +167,15 @@ module.exports = app => {
           student.currentPoints = newPoints;
           student.save();
           order = await newOrder.save();
+
         }
       }
-      //TODO: this should not return the order - just the order Id and line items that belong to the student
-      //TODO: or just an ok
-      res.send(order);
+      //add the updated user info (new points total)
+      let origUser = req.body.user;
+      origUser._student = student;
+      let newRes = Object.assign(origUser,order.toObject());
+      console.log(newRes);
+      res.send(newRes);
     } catch (err) {
       console.error("error saving order: ", newOrder, err);
       res.status(422).send(err);
@@ -241,8 +246,9 @@ module.exports = app => {
 
   function calcGLRPointsTotal(lineItems) {
     let lineItemPoints = lineItems.map(line => {
-      return line.glrpoints;
+      return line.glrpoints * line.quantity;
     });
+    console.log("lineItemPoints: ",lineItemPoints);
     let totalPoints = lineItemPoints.reduce(getSum, 0);
     return totalPoints;
   }
