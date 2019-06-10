@@ -19,7 +19,7 @@ class LineItemsList extends Component {
   renderListItems() {
     return this.props.lineItems.map(line => {
       return (
-        <div key={line._id} className="card lime darken-1 ">
+        <div key={line._id} className="card yellow darken-1 ">
           <div className="card-content">
             <span className="card-title">{line.productTitle}</span>
             <p className="right">GLRPoints: {line.glrpoints}</p>

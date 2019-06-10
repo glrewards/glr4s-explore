@@ -6,13 +6,12 @@ import Landing from './Landing';
 import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
-import GLRShop from './shop/GLRShop';
 import GLRShop2 from './shop/GLRShop2';
 import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
-import NotFound from './errorpages/notfound/NotFound';
+
 
 /*
 const client = new ApolloClient({

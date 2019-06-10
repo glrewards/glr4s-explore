@@ -6,7 +6,6 @@ import {FETCH_CATEGORIES} from "./types";
 import {FETCH_ALL_STUDENTS} from "./types";
 import {NEW_CATEGORY} from "./types";
 import {FETCH_LINEITEMS} from "./types";
-import {SAVE_LINEITEMS} from "./types";
 import {DELETE_ALL_LINES} from "./cartActions";
 
 /*
@@ -23,7 +22,6 @@ import {DELETE_ALL_LINES} from "./cartActions";
      */
 export const fetchUser = () => async dispatch => {
   const res = await axios.get("/api/current_user");
-  console.log("fetch_user",res.data);
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
@@ -91,7 +89,6 @@ export const fetchLineItems = (student) => async dispatch => {
 
 export const submitLineItems = (reqBody,history) => async dispatch => {
   const res = await axios.post('/api/orders', reqBody);
-  console.log("response from order update: ", res.data);
   dispatch({type:DELETE_ALL_LINES});//actually we clear the the local cart and then can populate the lineitems
   dispatch({type:FETCH_USER, payload: res.data});
   history.push('/shop');

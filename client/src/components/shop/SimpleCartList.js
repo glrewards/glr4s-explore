@@ -18,21 +18,18 @@ class SimpleCartList extends Component {
       let finalReqBody = {
           lineItems: cart,
           user: this.props.auth}
-          console.log(finalReqBody);
 
         this.props.submitLineItemsOnClick(finalReqBody,this.props.history);
 
     }
   renderListItems() {
-    console.log();
     return this.props.cart.map((line, index) => {
-      console.log(line);
       return (
           <div className="row" key={index}>
             <div className="col s12">
               <ul className="collection">
                 <li key={line.variantId} className="collection-item avatar">
-                  <img className="circle" src={line.img} />
+                  <img className="circle" src={line.img} alt="temp"/>
                   <span className="card-title">{line.productTitle}</span>
                   <div>
                     <ul>

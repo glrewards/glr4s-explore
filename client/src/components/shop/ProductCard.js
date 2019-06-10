@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import VariantSelector from "./VariantSelector";
 import {connect} from "react-redux";
 
 class ProductCard extends Component {
@@ -89,8 +88,6 @@ class ProductCard extends Component {
   }
 
   render() {
-    //let variantImage = this.state.selectedVariantImage || this.props.product.variants.edges[0].node.src
-    let variantImage = this.props.product.images.edges[0].node.src;
     let variant =
       this.state.selectedVariant || this.props.product.variants.edges[0].node;
     let variantQuantity = this.state.selectedVariantQuantity || 1;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actions from "../actions";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 //import Payments from "./ThemeExample";
@@ -20,7 +19,6 @@ class GLRSubHeader extends Component {
       case null:
         return;
       case false:
-        console.log("no student role linked to this user");
         return;
       default:
         return(

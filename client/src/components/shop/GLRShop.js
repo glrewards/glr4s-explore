@@ -42,7 +42,6 @@ class GLRShop extends Component {
   componentWillMount() {
     //as we are not using apollo now - there is no need to create a checkout in shopify
     //the initial state is created in the constructor and that is an empty array of line items
-    console.log("GLRSHOP: componentWillMount(): state: ", this.state);
   }
 
   static propTypes = {

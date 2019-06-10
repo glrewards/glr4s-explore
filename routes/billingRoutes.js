@@ -17,7 +17,6 @@ module.exports = app =>{
             const user = await req.user.save();
             res.send(user);
         }catch(err){
-            console.error('caught an error calling save on user: ', err);
         }
 
         });

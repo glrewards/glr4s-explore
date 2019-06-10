@@ -174,10 +174,8 @@ module.exports = app => {
       let origUser = req.body.user;
       origUser._student = student;
       let newRes = Object.assign(origUser,order.toObject());
-      console.log(newRes);
       res.send(newRes);
     } catch (err) {
-      console.error("error saving order: ", newOrder, err);
       res.status(422).send(err);
     }
   });
@@ -227,16 +225,13 @@ module.exports = app => {
       });
 
       const data = await graphQLClient.request(query);
-      console.log(JSON.stringify(data, undefined, 2));
       res.send(data);
     } catch (err) {
-      console.error("error saving order: ", err);
       res.status(422).send(err);
     }
   });
 
   app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
-    console.log("webhook fired: ",req.body);
     res.send({}); //respond to indicate receipt
   });
 
@@ -248,7 +243,6 @@ module.exports = app => {
     let lineItemPoints = lineItems.map(line => {
       return line.glrpoints * line.quantity;
     });
-    console.log("lineItemPoints: ",lineItemPoints);
     let totalPoints = lineItemPoints.reduce(getSum, 0);
     return totalPoints;
   }

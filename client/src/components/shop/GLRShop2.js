@@ -1,5 +1,4 @@
 import ProductGrid from "./ProductGrid";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {addLine} from "../../actions/cartActions";
 

@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import {
     ADD_LINE,
     AMEND_LINE,
@@ -34,6 +33,9 @@ export default function (state = initialState, action) {
                 cart:[],
                 lineItems: state.lineItems
             })
+        case REMOVE_LINE:
+            //TODO: replace this place holder with proper logic
+            return state;
         case AMEND_LINE:
             return state.map((amendedLine, index) => {
                 if (index === action.index) {

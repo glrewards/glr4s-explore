@@ -10,11 +10,6 @@ export function addVariantToStudentCart(student, product, variantId, quantity) {
   });
 
    */
-    console.log("lineItem: ", variantId);
-    console.log("quantity: ", quantity);
-
-  console.log("in addVariantToStudentCart(): props: ", this.props);
-  console.log("in addVariantToStudentCart(): state: ", this.state);
 
 /*
     {
@@ -38,8 +33,6 @@ export function addVariantToStudentCart(student, product, variantId, quantity) {
 
  */
     this.setState(function (state,props) {
-        console.log("set state props: ",props);
-        console.log("set state state: ",state);
     return {
         studentCheckout: this.state.studentCheckout.lineItems.push({variantId: variantId,quantity: quantity})
     };
@@ -61,10 +54,7 @@ export function updateLineItemInStudentCart(lineItemId, quantity) {
   });
 
    */
-  console.log("lineItem: ", lineItemId);
-    console.log("quantity: ", quantity);
-  console.log("in updateLineItemInStudentCart(): props: ", this.props);
-  console.log("in updateLineItemInStudentCart(): state: ", this.state);
+
 }
 
 export function removeLineItemInStudentCart(lineItemId) {
@@ -79,11 +69,7 @@ export function removeLineItemInStudentCart(lineItemId) {
   });
 
    */
-  console.log("in removeLineItemInStudentCart(): props: ", this.props);
-  console.log("in removeLineItemInStudentCart(): state: ", this.state);
 }
 export function createStudentCheckout(studentId) {
   //TODO:create a local list of items that will be added if directed at the end by the student
-  console.log("in createStudentCheckout(): props: ", this.props);
-  console.log("in createStudentCheckout(): state: ", this.state);
 }

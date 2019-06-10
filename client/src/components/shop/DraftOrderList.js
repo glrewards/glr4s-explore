@@ -9,13 +9,11 @@ class DraftOrderList extends Component{
 
 
     componentDidMount(){
-        console.log("in componentDidMount()");
         this.props.fetchDraftOrders();
     }
 
 
     renderCategories(){
-        console.log(this.props.draftorders);
         return this.props.draftorders.reverse().map(draftOrder =>{
             return(
                 <li key={category._id} className="collection-item">{category.categoryType}</li>

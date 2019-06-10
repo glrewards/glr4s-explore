@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import M from "materialize-css";
 import GLRSubHeader from "./GLRSubHeader";
-import SimpleCartList from "./shop/SimpleCartList";
 class GLRHeader extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +40,6 @@ class GLRHeader extends Component {
   }
 
   renderContentTop(side) {
-    console.log("component did render",this.props);
     switch (this.props.auth) {
       case null:
         return;

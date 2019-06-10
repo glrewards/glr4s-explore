@@ -24,7 +24,6 @@ module.exports = app => {
       //console.log("saved category",cat);
       res.send(cat);
     } catch (err) {
-      console.error("error saving category: ", cat);
       res.status(403).send(err);
     }
   });

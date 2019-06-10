@@ -9,8 +9,6 @@ import {connect} from "react-redux";
 class CategoryNew extends Component{
 
     handleSubmit  = (values) => {
-        console.log("in handleSubmit",values);
-        console.log(actions);
         this.props.submitCategory(values);
         this.props.fetchCategories();
     };

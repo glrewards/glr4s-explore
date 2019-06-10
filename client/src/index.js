@@ -8,16 +8,18 @@ import reduxThunk from "redux-thunk";
 
 import App from "./components/App";
 import reducers from "./reducers";
+
+/*
 import { ApolloClient } from "apollo-client";
 import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
-import ApolloProvider from "react-apollo/ApolloProvider";
 
 //USE THESE DEBUG HElping lines
 //import axios from 'axios';
 //window.axios = axios;
+
 
 const httpLink = createHttpLink({ uri: process.env.REACT_APP_SHOPIFY_GQL });
 
@@ -28,10 +30,13 @@ const middlewareLink = setContext(() => ({
   }
 }));
 
+
 const client = new ApolloClient({
   link: middlewareLink.concat(httpLink),
   cache: new InMemoryCache()
 });
+*/
+
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 

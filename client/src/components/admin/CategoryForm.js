@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
-import _ from "lodash";
 import { Link } from "react-router-dom";
 //import CategoryField from "./CategoryField";
 

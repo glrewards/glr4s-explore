@@ -1,6 +1,5 @@
 import React from "react";
 import LineItemslist from "./LineItemsList";
-import Studentist from "../student/StudentList";
 
 const OrderDashboard = () => {
   return (

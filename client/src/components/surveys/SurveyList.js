@@ -6,7 +6,6 @@ class SurveyList extends Component{
 
 
     componentDidMount(){
-        console.log("SurveyList componentDidMount(): ", this.props);
         this.props.fetchSurveys();
     }
 
@@ -26,8 +25,8 @@ class SurveyList extends Component{
 
                    </div>
                    <div className="card-action">
-                       <a className="red-text">Yes: {survey.yes}</a>
-                       <a className="red-text">No: {survey.no}</a>
+                       <button className="button">Yes: {survey.yes}</button>
+                       <button className="button">No: {survey.no}</button>
                    </div>
                </div>
 

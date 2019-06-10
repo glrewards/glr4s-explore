@@ -2,7 +2,6 @@
 import React from 'react';
 
 export default props => {
-    console.log(props.input);
     let input = props.input;
     let label = props.label;
     //let meta = props.meta;

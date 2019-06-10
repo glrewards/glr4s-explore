@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../../actions";
 import ProductCard from "./ProductCard";
-import {addVariantToStudentCart} from "./GLRcheckout";
 import './shop.css';
 
 class ProductGrid extends Component {
