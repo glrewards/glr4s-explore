@@ -17,7 +17,7 @@ class XODStudentList extends Component {
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems);
         });
-        this.props.fetchAllXODStudents(3281102);
+
     }
 
     handleSelectChange(event){
