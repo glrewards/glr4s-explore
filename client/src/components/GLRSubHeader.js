@@ -27,6 +27,25 @@ class GLRSubHeader extends Component {
           </li>);
     }
   }
+  renderAdminItem(){
+    if(!this.props.auth.isAdmin){
+      return;
+    }else{
+      return (
+          <li>
+            <a
+                className="dropdown-trigger"
+                href="#!"
+                data-target="dropdown1"
+                data-beloworigin="false"
+            >
+              Admin<i className="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+
+      );
+    }
+  }
 
   render() {
     return (
@@ -43,16 +62,8 @@ class GLRSubHeader extends Component {
             <li>
               <a href="">School Shop</a>
             </li>
-            <li>
-              <a
-                className="dropdown-trigger"
-                href="#!"
-                data-target="dropdown1"
-                data-beloworigin="true"
-              >
-                New Admin<i className="material-icons right">arrow_drop_down</i>
-              </a>
-            </li>
+            {this.renderAdminItem()}
+
           </ul>
         </div>
 
@@ -64,15 +75,9 @@ class GLRSubHeader extends Component {
             <li>
                 <Link to={this.props.auth ? "/students/all" : "/"}>All Students List</Link>
             </li>
-            <li className="divider" tabIndex="-1" />
             <li>
               <a href="#!">
-                <i className="material-icons">view_module</i>four
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <i className="material-icons">cloud</i>five
+                <i className="material-icons">cloud</i>XOD Students
               </a>
             </li>
           </ul>

@@ -5,7 +5,8 @@ const userSchema = new Schema({
     googleId: String,
     credits: {type: Number, default: 0},
     _student: {type: Schema.Types.ObjectId, ref: 'students'},
-    _teacher: {type: Schema.Types.ObjectId, ref: 'teachers'}
+    _teacher: {type: Schema.Types.ObjectId, ref: 'teachers'},
+    isAdmin: Boolean
 });
 
 mongoose.model('users',userSchema);
