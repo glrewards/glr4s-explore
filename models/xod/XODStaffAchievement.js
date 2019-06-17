@@ -16,4 +16,4 @@ const XODStaffAchievementSchema = new Schema({
 
 });
 
-mongoose.model("xodstaffachievements", XODStaffAchievementSchema);
+module.exports = XODStaffAchievementSchema;

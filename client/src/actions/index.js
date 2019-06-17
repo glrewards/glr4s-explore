@@ -4,6 +4,7 @@ import {FETCH_SURVEYS} from "./types";
 import {FETCH_PRODUCTS} from "./types";
 import {FETCH_CATEGORIES} from "./types";
 import {FETCH_ALL_STUDENTS} from "./types";
+import {FETCH_ALL_XOD_STUDENTS} from "./types";
 import {NEW_CATEGORY} from "./types";
 import {FETCH_LINEITEMS} from "./types";
 import {DELETE_ALL_LINES} from "./cartActions";
@@ -80,6 +81,11 @@ export const fetchAllStudents = () => async dispatch => {
   dispatch({ type: FETCH_ALL_STUDENTS, payload: res.data });
 };
 
+export const fetchAllXODStudents = (schoolId) => async dispatch => {
+  const url = "/api/Students/School/" + schoolId;
+  const res = await axios.get(url);
+  dispatch({ type: FETCH_ALL_XOD_STUDENTS, payload: res.data });
+};
 /* There are the order and line items routes */
 export const fetchLineItems = (student) => async dispatch => {
   const url = "/api/orders/" + student._id;

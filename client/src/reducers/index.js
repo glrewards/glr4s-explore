@@ -8,6 +8,7 @@ import categorysReducer from "./categorysReducer";
 import lineItemReducer from "./lineItemsReducer";
 import productsReducer from "./productsReducer";
 import cartReducer from "./cartReducer";
+import XODstudentReducer from "./XODstudentReducer";
 
 
 export default combineReducers({
@@ -15,6 +16,7 @@ export default combineReducers({
     form: reduxForm,
     surveys: surveyReducer,
     students: studentReducer,
+    xodstudents: XODstudentReducer,
     categories: categorysReducer,
     products: productsReducer,
     lineItems: lineItemReducer,

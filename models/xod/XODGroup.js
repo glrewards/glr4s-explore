@@ -26,4 +26,4 @@ const XODGroupSchema = new Schema({
 
 });
 
-mongoose.model("xodgroups", XODGroupSchema);
+module.exports = XODGroupSchema;

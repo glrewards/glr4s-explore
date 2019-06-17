@@ -25,4 +25,4 @@ const XODSchoolInfoSchema = new Schema({
 
 });
 
-mongoose.model("xodschoolinfo", XODSchoolInfoSchema);
+module.exports = XODSchoolInfoSchema;

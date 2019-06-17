@@ -54,4 +54,4 @@ const XODStaffSchema = new Schema({
 
 });
 
-mongoose.model("xodstaff", XODStaffSchema);
+module.exports = XODStaffSchema;

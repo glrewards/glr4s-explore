@@ -11,6 +11,7 @@ import StudentDashboard from "./student/StudentDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
+import XODStudentDashboard from "./student/XODStudentDashboard";
 
 
 /*
@@ -42,6 +43,7 @@ class App extends Component {
             <Route path="/surveys/new" component={SurveyNew} />
             <Route exact path="/shop" component={GLRShop2} />
             <Route path="/categories" component={CategoryDashboard} />
+            <Route path="/students/school" component={XODStudentDashboard} />
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />
             <Route exact path="/shop/cart" component={SimpleCartList} />

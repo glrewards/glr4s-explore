@@ -23,4 +23,4 @@ const XODAchievementSchema = new Schema({
 });
 
 
-mongoose.model("xodachievements", XODAchievementSchema);
+module.exports = XODAchievementSchema;

@@ -105,4 +105,6 @@ const XODStudentSchema = new Schema({
   ParentXIDs: {type: String, required: false},
 });
 
-mongoose.model("xodstudents", XODStudentSchema);
+//mongoose.model("xodstudents", XODStudentSchema);
+
+module.exports = XODStudentSchema;

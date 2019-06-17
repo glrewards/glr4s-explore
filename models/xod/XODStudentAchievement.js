@@ -14,4 +14,4 @@ const XODStudentAchievementSchema = new Schema({
   RowHash: {type: String, required: true}
 });
 
-mongoose.model("xodstudentachievements", XODStudentAchievementSchema);
+module.exports = XODStudentAchievementSchema;
