@@ -1,6 +1,7 @@
 import React from "react";
 import Studentist from "./StudentList";
 import { Link } from "react-router-dom";
+import M from "materialize-css";
 
 const StudentDashboard = () => {
   return (
@@ -19,11 +20,10 @@ const StudentDashboard = () => {
         </div>
         <div className="col s12 m8 l10 yellow lighten-1">
           <p>s12 m5</p>
-          <ul className="collapsible amber accent-2">
+          <ul className="collapsible expandable amber accent-2">
             <li>
-              <div className="collapsible-header transparent">
-                <i className="material-icons">filter_drama</i>Completed
-                Activities
+              <div className="collapsible-header transparent active">
+                Completed Activities
               </div>
               <div className="collapsible-body">
                 <span>

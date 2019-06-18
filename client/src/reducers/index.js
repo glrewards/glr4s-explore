@@ -9,6 +9,7 @@ import lineItemReducer from "./lineItemsReducer";
 import productsReducer from "./productsReducer";
 import cartReducer from "./cartReducer";
 import XODstudentReducer from "./XODstudentReducer";
+import XODSchoolReducer from "./XODSchoolReducer";
 
 
 export default combineReducers({
@@ -17,6 +18,7 @@ export default combineReducers({
     surveys: surveyReducer,
     students: studentReducer,
     xodstudents: XODstudentReducer,
+    xodschool:XODSchoolReducer,
     categories: categorysReducer,
     products: productsReducer,
     lineItems: lineItemReducer,
