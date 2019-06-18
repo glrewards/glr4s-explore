@@ -7,5 +7,6 @@ export const FETCH_ALL_XOD_STUDENTS = 'fetch_xod_students;';
 export const NEW_CATEGORY = 'new_category';
 export const FETCH_LINEITEMS = 'fetch_lineitems';
 export const SAVE_LINEITEMS = 'save_lineitems';
+export const FETCH_XOD_STUDENT= 'FETCH_XOD_STUDENT';
 
 

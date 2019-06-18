@@ -7,7 +7,7 @@ import GLRHeader from "./GLRHeader";
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import GLRShop2 from './shop/GLRShop2';
-import StudentDashboard from "./student/StudentDashboard";
+import StudentDashboard from "./student/StudentProfileDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
@@ -48,7 +48,7 @@ class App extends Component {
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />
             <Route exact path="/shop/cart" component={SimpleCartList} />
-            <Route path="/student/:userId" component={StudentDashboard} />
+            <Route path="/school/:schoolId/student/:studentId" component={StudentDashboard} />
             <Route path="/admin" component={AdminDashboard}/>
            </div>
         </BrowserRouter>

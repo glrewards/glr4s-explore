@@ -2,8 +2,9 @@ import React from "react";
 import XODStudentList from './XODStudentList';
 import {selectSchool} from "../../actions/XODSchoolActions";
 import { connect } from "react-redux";
-import ProductGrid from "../shop/ProductGrid";
-import {fetchProducts} from "../../actions";
+
+
+
 
 function mapStateToProps(state) {
     return {

@@ -40,7 +40,7 @@ module.exports = app => {
         // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
         //model. and we can then create the model
         const fetcher = mongoose.model("xodstudents" + "-" + schoolId, XODStudentSchema);
-        const student = await fetcher.find({Id: studentId});
+        const student = await fetcher.findOne({Id: studentId});
         res.send(student);
 
     });

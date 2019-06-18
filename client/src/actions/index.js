@@ -8,6 +8,7 @@ import {FETCH_ALL_XOD_STUDENTS} from "./types";
 import {NEW_CATEGORY} from "./types";
 import {FETCH_LINEITEMS} from "./types";
 import {DELETE_ALL_LINES} from "./cartActions";
+import {FETCH_XOD_STUDENT} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -85,6 +86,12 @@ export const fetchAllXODStudents = (schoolId) => async dispatch => {
   const url = "/api/Students/School/" + schoolId;
   const res = await axios.get(url);
   dispatch({ type: FETCH_ALL_XOD_STUDENTS, payload: res.data });
+};
+
+export const fetchXODStudent = (schoolId,studentId) => async dispatch => {
+  const url = "/api/School/" + schoolId + "/Student/" + studentId;
+  const res = await axios.get(url);
+  dispatch({ type: FETCH_XOD_STUDENT, payload: res.data });
 };
 /* There are the order and line items routes */
 export const fetchLineItems = (student) => async dispatch => {
