@@ -3,41 +3,41 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import M from "materialize-css";
 import GLRSubHeader from "./GLRSubHeader";
+
 class GLRHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-}
-  componentDidMount() {
-
-    let elems = document.querySelectorAll(".dropdown-trigger");
-    M.Dropdown.init(elems);
     M.AutoInit();
-
+    this.renderContentSub = this.renderContentSub.bind(this);
+    this.renderCartLink = this.renderCartLink.bind(this);
+    this.renderContentTop = this.renderContentTop.bind(this);
+    this.renderAdminItem = this.renderAdminItem.bind(this);
+  }
+  componentDidMount() {
+    M.AutoInit();
   }
 
-  renderCartLink(){
-    if(this.props.cart.length > 0){
-      return (<li key="cart"style={{ margin: "0 10px" }}><Link to="/shop/cart"><i className="material-icons">shopping_basket</i> </Link></li>);
+  renderCartLink() {
+    if (this.props.cart.length > 0) {
+      return (
+        <li key="cart" style={{ margin: "0 10px" }}>
+          <Link to="/shop/cart">
+            <i className="material-icons">shopping_basket</i>{" "}
+          </Link>
+        </li>
+      );
     }
   }
 
-  renderGLRPoints(){
-    if(this.props.auth._student){
+  renderGLRPoints() {
+    if (this.props.auth._student) {
       return "GLRPoints: " + this.props.auth._student.currentPoints;
-
-    }else{
+    } else {
       return "No GLR Points Found";
     }
-
   }
 
-  renderProfileMenu() {
-    if(this.props.auth._student){
-      return (<li key="profile" style={{ margin: "0 10px" }}>Profile</li>);
-
-    }
-  }
 
   renderContentTop(side) {
     switch (this.props.auth) {
@@ -47,19 +47,24 @@ class GLRHeader extends Component {
         //console.log(this.props);
         return (
           <li key={side + "0"}>
-            <a href="/auth/google">Login with Google</a>
+            <a href="/auth/google"><h6>Login with Google</h6></a>
           </li>
         );
       default:
         return [
-            this.renderCartLink(),
+          <li key={side + "0"} className="left">
+            <Link to={this.props.auth ? "/surveys" : "/"}>
+              <h6>GLR4S - DEV</h6>
+            </Link>{" "}
+          </li>,
+          this.renderCartLink(),
           <li key={side + "1"} style={{ margin: "0 10px" }}>
-            {this.renderGLRPoints()}
+            <h6>{this.renderGLRPoints()}</h6>
           </li>,
           <li key={side + "2"}>
-            <a href="/api/logout">Logout</a>
+            <h6><a href="/api/logout">Logout</a></h6>
           </li>,
-          this.renderProfileMenu(),
+          this.renderAdminItem()
         ];
     }
   }
@@ -76,33 +81,39 @@ class GLRHeader extends Component {
     }
   }
 
+  renderAdminItem() {
+    if (!this.props.auth.isAdmin) {
+      return;
+    } else {
+      return (
+        <li key="admin-drop">
+          <Link to="/admin">
+            <h6>Admin</h6>
+          </Link>
+        </li>
+      );
+    }
+  }
+
   render() {
     return (
-        <div>
-          <nav className="nav">
-            <div className="nav-wrapper orange">
-              <Link to={this.props.auth ? "/surveys" : "/"} className="left">
-                GLR4S - DEV
-              </Link>
-              <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-                <i className="material-icons">menu</i>
-              </a>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
-                {this.renderContentTop("t")}
-              </ul>
-                <div>
-                    <ul>{this.renderContentSub()}</ul>
-                </div>
-            </div>
+      <div>
+        <nav className="nav-extended flow-text">
+          <div className="nav-wrapper orange">
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              {this.renderContentTop("t")}
+            </ul>
+          </div>
+          {this.renderContentSub()}
+        </nav>
 
-          </nav>
-
-          <ul className="sidenav" id="mobile-demo">
-            {this.renderContentTop("m")}
-          </ul>
-
-        </div>
-
+        <ul className="sidenav" id="mobile-demo">
+          {this.renderContentTop("m")}
+        </ul>
+      </div>
     );
   }
 }

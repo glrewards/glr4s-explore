@@ -12,6 +12,7 @@ import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
+import AdminDashboard from "./admin/AdminDashBoard";
 
 
 /*
@@ -47,6 +48,8 @@ class App extends Component {
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />
             <Route exact path="/shop/cart" component={SimpleCartList} />
+            <Route path="/students/:userId" />
+            <Route path="/admin" component={AdminDashboard}/>
            </div>
         </BrowserRouter>
       </div>
