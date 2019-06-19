@@ -4,25 +4,20 @@ import Studentist from "./StudentList";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 import { fetchXODStudent } from "../../actions";
-
+import StudentIdCard from "./StudentIdCard";
 class StudentProfileDashboard extends Component {
   constructor(props) {
     super(props);
-    this.renderImage = this.renderImage.bind(this);
   }
 
   componentDidMount() {
     console.log(this.props.match.params);
-    this.props.fetchXODStudent(this.props.match.params.schoolId,this.props.match.params.studentId);
+    this.props.fetchXODStudent(
+      this.props.match.params.schoolId,
+      this.props.match.params.studentId
+    );
   }
 
-  renderImage(){
-    if (this.props.xodselectedstudent){
-      return <img className="center-align" src={"data:image/png;base64," + this.props.xodselectedstudent.Photo}/>
-    }else{
-      return <img/>
-    }
-  }
   render() {
     return (
       <div>
@@ -31,14 +26,8 @@ class StudentProfileDashboard extends Component {
             <p>s12</p>
             <p> Chart HERE</p>
           </div>
-          <div className="col s12 m4 l2 orange lighten-3">
-            <p>
-              {this.renderImage()}
-            </p>
-            <p>s12 m4</p>
-            <p className="white-text">
-              <Link to={"/shop/myitems"}>My Items</Link>
-            </p>
+          <div className="col s12 m4 l2 amber lighten-3">
+            <StudentIdCard />
           </div>
           <div className="col s12 m8 l10 yellow lighten-1">
             <p>s12 m5</p>
@@ -110,7 +99,6 @@ class StudentProfileDashboard extends Component {
             <p> s12 m6 l3 </p>
           </div>
           <div className="col s12 m6 l3">
-            {" "}
             <p> s12 m6 l3 </p>
           </div>
         </div>
@@ -120,8 +108,6 @@ class StudentProfileDashboard extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
-  console.log(this.props);
   return {
     auth: state.auth,
     xodschool: state.xodschool,
