@@ -8,6 +8,7 @@ import { fetchXODStudent } from "../../actions";
 class StudentProfileDashboard extends Component {
   constructor(props) {
     super(props);
+    this.renderImage = this.renderImage.bind(this);
   }
 
   componentDidMount() {
@@ -15,6 +16,13 @@ class StudentProfileDashboard extends Component {
     this.props.fetchXODStudent(this.props.match.params.schoolId,this.props.match.params.studentId);
   }
 
+  renderImage(){
+    if (this.props.xodselectedstudent){
+      return <img className="center-align" src={"data:image/png;base64," + this.props.xodselectedstudent.Photo}/>
+    }else{
+      return <img/>
+    }
+  }
   render() {
     return (
       <div>
@@ -25,7 +33,7 @@ class StudentProfileDashboard extends Component {
           </div>
           <div className="col s12 m4 l2 orange lighten-3">
             <p>
-              <img src="https://cdn.shopify.com/s/files/1/1427/2590/t/1/assets/logo.png?23" />
+              {this.renderImage()}
             </p>
             <p>s12 m4</p>
             <p className="white-text">
@@ -117,7 +125,7 @@ function mapStateToProps(state) {
   return {
     auth: state.auth,
     xodschool: state.xodschool,
-    xodselectedstudent: state.xodselectedstudent
+    xodselectedstudent: state.xodSingleStudent
   };
 }
 

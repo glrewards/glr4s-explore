@@ -22,7 +22,7 @@ const XODStudentSchema = new Schema({
   IdaasEmail :{type: String, required: false},
   UPN : {type: String, required: false},
   formerUPN: {type: String, required: false},
-  Photo: {type: Buffer, required: false},
+  Photo: {type: String, required: false},
   DateofBirth : {type: Date, required: false},
   UniqueLearnerNumber: {type: String, required: false},
   MiddleName : {type: String, required: false},
