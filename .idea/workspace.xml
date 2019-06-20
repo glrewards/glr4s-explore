@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/reducers/XODAchivementReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentStatsCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/admin/AdminDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/AdminDashBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/admin/AdminSideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/AdminSideNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/StudentActivitiesList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/StudentIdCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/XODStudentsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/XODStudentsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+            <state relative-caret-position="313">
+              <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -48,8 +37,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+            <state relative-caret-position="105">
+              <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#983#1410#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentStatsCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -60,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="185">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -112,8 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/components/surveys/SurveyList.js" />
-        <option value="$PROJECT_DIR$/routes/billingRoutes.js" />
         <option value="$PROJECT_DIR$/routes/categoryRoutes.js" />
         <option value="$PROJECT_DIR$/routes/orderRoutes.js" />
         <option value="$PROJECT_DIR$/routes/surveyRoutes.js" />
@@ -161,8 +161,10 @@
         <option value="$PROJECT_DIR$/client/src/reducers/XODStudentsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/XODAchivementReducer.js" />
+        <option value="$PROJECT_DIR$/client/src/components/student/XODStudentStatsCard.js" />
         <option value="$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js" />
         <option value="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" />
+        <option value="$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js" />
       </list>
     </option>
   </component>
@@ -172,7 +174,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="347" />
     <option name="height" value="1050" />
   </component>
@@ -413,21 +415,7 @@
       <workItem from="1560078261835" duration="39858000" />
       <workItem from="1560344028396" duration="13928000" />
       <workItem from="1560794909461" duration="12224000" />
-      <workItem from="1560849601500" duration="33136000" />
-    </task>
-    <task id="LOCAL-00029" summary="completed up to session 165">
-      <created>1557815086990</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1557815086990</updated>
-    </task>
-    <task id="LOCAL-00030" summary="completed up to session 174 - everything seems to be working correctly having found a missing await">
-      <created>1557845642416</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1557845642416</updated>
+      <workItem from="1560849601500" duration="37050000" />
     </task>
     <task id="LOCAL-00031" summary="completed up to session 202">
       <created>1557920924447</created>
@@ -758,11 +746,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561023014491</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="student achievements list working">
+      <created>1561028609669</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1561028609669</updated>
+    </task>
+    <task id="LOCAL-00079" summary="student achievements list working">
+      <created>1561028887567</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1561028887567</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513192000" />
+    <option name="totallyTimeSpent" value="517106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -774,7 +776,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60107094" visible="true" weight="0.18565401" />
@@ -880,7 +882,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added simple product gui" />
     <MESSAGE value="fixed bug with metafield checking" />
     <MESSAGE value="added a throw if no products are returned" />
     <MESSAGE value="tried to fix again" />
@@ -905,7 +906,8 @@
     <MESSAGE value="started with side nav and improved student card" />
     <MESSAGE value="retrieving achievements correctly to state. Starting on achievement react components" />
     <MESSAGE value="working checkpoint on achievement table react work" />
-    <option name="LAST_COMMIT_MESSAGE" value="working checkpoint on achievement table react work" />
+    <MESSAGE value="student achievements list working" />
+    <option name="LAST_COMMIT_MESSAGE" value="student achievements list working" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -917,9 +919,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/lineItemsReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/surveys/formFields.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1243,16 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1263,10 +1252,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentStatsCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        <state relative-caret-position="313">
+          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -1275,10 +1284,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+        <state relative-caret-position="105">
+          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#983#1410#0" />
           </folding>
         </state>
       </provider>

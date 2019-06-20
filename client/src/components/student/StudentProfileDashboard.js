@@ -6,6 +6,7 @@ import { fetchXODStudent } from "../../actions";
 import { fetchXODStudentAchievements } from "../../actions";
 import XODStudentIdCard from "./XODStudentIdCard";
 import XODStudentActivitiesList from "./XODStudentActivitiesList";
+import XODStudentStatsCard from "./XODStudentStatsCard";
 import { Collapsible, CollapsibleItem } from "react-materialize";
 class StudentProfileDashboard extends Component {
   constructor(props) {
@@ -18,8 +19,8 @@ class StudentProfileDashboard extends Component {
       this.props.match.params.studentId
     );
     this.props.fetchXODStudentAchievements(
-        this.props.match.params.schoolId,
-        this.props.match.params.studentId
+      this.props.match.params.schoolId,
+      this.props.match.params.studentId
     );
   }
 
@@ -28,13 +29,21 @@ class StudentProfileDashboard extends Component {
       <div>
         <div className="row orange lighten-5">
           <div className="col s12 orange lighten-1">
-            <p>s12</p>
-            <p> Chart HERE</p>
+            <div className="col s4">
+              {" "}
+              <XODStudentIdCard />
+            </div>
+            <div className="col s8">
+              {" "}
+              {this.props.xodachievements.length > 0 ? (
+                <XODStudentStatsCard />
+              ) : (
+                "No Activities this year"
+              )}{" "}
+            </div>
           </div>
-          <div className="col s12 m4 l2 amber lighten-3">
-            <XODStudentIdCard />
-          </div>
-          <div className="col s12 m8 l10 yellow lighten-1">
+          <div className="col s12 m612l12 amber lighten-3" />
+          <div className="col s12 m12 l12 yellow lighten-1">
             <p>s12 m5</p>
             <Collapsible popout>
               <CollapsibleItem header="Open Activities">
@@ -42,8 +51,7 @@ class StudentProfileDashboard extends Component {
                   <XODStudentActivitiesList />
                 </span>
               </CollapsibleItem>
-              <CollapsibleItem header="Closed Activities">
-              </CollapsibleItem>
+              <CollapsibleItem header="Closed Activities" />
               <CollapsibleItem header="Open Shop Orders">
                 <p>Stuff here</p>
               </CollapsibleItem>
@@ -74,7 +82,8 @@ function mapStateToProps(state) {
   return {
     auth: state.auth,
     xodschool: state.xodschool,
-    xodselectedstudent: state.xodSingleStudent
+    xodselectedstudent: state.xodSingleStudent,
+    xodachievements: state.xodAchievements
   };
 }
 

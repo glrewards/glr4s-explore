@@ -25,10 +25,8 @@ class XODStudentIdCard extends Component {
 
   render() {
     let imageDvStyle = {
-      display: "table-cell",
       verticalAlign: "middle",
-      textAlign: "center",
-      border: "5px solid orange"
+      textAlign: "center"
     };
     return (
       <div className="card" style={imageDvStyle}>

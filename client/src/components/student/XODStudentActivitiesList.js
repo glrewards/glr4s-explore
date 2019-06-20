@@ -47,7 +47,7 @@ class XODStudentAchievementList extends Component {
         <tr>
           <th>Date</th>
           <th>Achievement Type</th>
-          <th>Category</th>
+          <th>Activity</th>
           <th>Subject</th>
           <th>Recorded By</th>
         </tr>
@@ -60,8 +60,8 @@ class XODStudentAchievementList extends Component {
      return( <tr>
           <td>{item.Date}</td>
           <td>{item.AchievementType}</td>
-          <td>{item.Category}</td>
-         <td>{item.subject}</td>
+          <td>{item.Activity}</td>
+         <td>{item.Subject}</td>
           <td>{item.RecordedBy}</td>
       </tr>);
   }
