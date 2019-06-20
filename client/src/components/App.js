@@ -13,6 +13,7 @@ import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
+import M from "materialize-css";
 
 
 /*
@@ -23,6 +24,10 @@ const client = new ApolloClient({
 });
 */
 class App extends Component {
+    constructor(props){
+        super(props);
+        M.AutoInit();
+    }
     componentDidMount() {
         //like an initialize function
         //we imported connect above to link react components to the redux store stuff

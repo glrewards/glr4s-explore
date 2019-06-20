@@ -7,24 +7,14 @@ import M from "materialize-css";
 class XODStudentList extends Component {
   constructor(props) {
     super(props);
-      document.addEventListener("DOMContentLoaded", function() {
-          var elems = document.querySelectorAll("select");
-          var instances = M.FormSelect.init(elems);
-      });
     this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
-  componentDidMount() {
-    document.addEventListener("DOMContentLoaded", function() {
-      var elems = document.querySelectorAll("select");
-      var instances = M.FormSelect.init(elems);
-    });
-  }
+  componentDidMount() {}
 
   handleSelectChange(event) {
-      this.props.onSchoolSelected(event.target.value);
-      this.props.fetchAllXODStudents(event.target.value);
-
+    this.props.onSchoolSelected(event.target.value);
+    this.props.fetchAllXODStudents(event.target.value);
   }
 
   renderHeader() {
@@ -45,7 +35,9 @@ class XODStudentList extends Component {
       return (
         <tr key={student.Id} className="hover">
           <td>
-            <Link to={`/school/${this.props.schoolId}/student/${student.Id}`}>{student.DisplayName} </Link>
+            <Link to={`/school/${this.props.schoolId}/student/${student.Id}`}>
+              {student.DisplayName}{" "}
+            </Link>
           </td>
           <td>{student.HouseGroup}</td>
           <td>{student.YearGroup}</td>
@@ -60,9 +52,13 @@ class XODStudentList extends Component {
       <div className="container">
         <div className="container">
           <div className="input-field col s12">
-
-              <span><label>School Identifier</label></span>
-            <select className="browser-default" onChange={this.handleSelectChange}>
+            <span>
+              <label>School Identifier</label>
+            </span>
+            <select
+              className="browser-default"
+              onChange={this.handleSelectChange}
+            >
               <option value="" disabled selected>
                 Choose your option
               </option>

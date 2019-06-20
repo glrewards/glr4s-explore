@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // this displays a simple summary and image of the student based on values mapped into the props taken
 // from the redux state
-class StudentIdCard extends Component {
+class XODStudentIdCard extends Component {
   constructor(props) {
     super(props);
     this.renderImage = this.renderImage.bind(this);
@@ -56,4 +56,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(StudentIdCard);
+export default connect(mapStateToProps)(XODStudentIdCard);
