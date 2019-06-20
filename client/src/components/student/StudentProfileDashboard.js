@@ -39,37 +39,10 @@ class StudentProfileDashboard extends Component {
             <Collapsible popout>
               <CollapsibleItem header="Open Activities">
                 <span>
-                  <table className="striped responsive-table">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Item Name</th>
-                        <th>Item Price</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                      </tr>
-                      <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                      </tr>
-                      <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <XODStudentActivitiesList />
                 </span>
               </CollapsibleItem>
               <CollapsibleItem header="Closed Activities">
-                  <XODStudentActivitiesList />
               </CollapsibleItem>
               <CollapsibleItem header="Open Shop Orders">
                 <p>Stuff here</p>
