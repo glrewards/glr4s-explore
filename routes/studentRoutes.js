@@ -47,7 +47,6 @@ module.exports = app => {
             let ach = await achFetcher.findOne({
                 StudentId: items[i].Id
             });
-            console.log(items[0]);
             let hasAch = false;
             if(ach){
                 hasAch = true;
