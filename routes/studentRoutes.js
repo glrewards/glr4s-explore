@@ -35,11 +35,30 @@ module.exports = app => {
         "xodstudents" + "-" + schoolId,
         XODStudentSchema
       );
+        const achFetcher = mongoose.model( "xodstudentachievements" + "-" + schoolId,XODStudentAchievementSchema);
       const items = await fetcher.find(
         {},
         "Forename Surname DisplayName YearGroup HouseGroup Id"
       );
-      res.send(items);
+      //need to loop
+        let enriched = [];
+        for (i = 0; i < items.length; i++) {
+            //build a new array
+            let ach = await achFetcher.findOne({
+                StudentId: items[i].Id
+            });
+            console.log(items[0]);
+            let hasAch = false;
+            if(ach){
+                hasAch = true;
+            }
+            let combined = {
+                xodstudent: items[i],
+            hasachievements: hasAch};
+            enriched.push(combined);
+            };
+
+      res.send(enriched);
     }
   );
 
@@ -52,7 +71,8 @@ module.exports = app => {
       const schoolId = req.params.schoolId;
       // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
       //model. and we can then create the model
-      const fetcher = mongoose.model(
+      const achFetcher = mongoose.model( "xodstudentachievements" + "-" + schoolId);
+        const fetcher = mongoose.model(
         "xodstudents" + "-" + schoolId,
         XODStudentSchema
       );
@@ -80,19 +100,20 @@ module.exports = app => {
         StudentId: studentId
       });
       //now for each of these we need to get the related achievement details
-console.log(studentAchievements);
-        let enriched = [];
-        for(i = 0; i< studentAchievements.length; i++){
-            //build a new array
-            let rootAchievement = await achievementsModel.findOne({ Id: studentAchievements[i].AchievementId});
-            let combined = {
-                studentAchievements: studentAchievements[i],
-                rootAchievement: rootAchievement
-            }
-            enriched.push(combined);
 
-            }
-      console.log(enriched);
+      let enriched = [];
+      for (i = 0; i < studentAchievements.length; i++) {
+        //build a new array
+        let rootAchievement = await achievementsModel.findOne({
+          Id: studentAchievements[i].AchievementId
+        });
+        let combined = {
+          studentAchievements: studentAchievements[i],
+          rootAchievement: rootAchievement
+        };
+        enriched.push(combined);
+      }
+
       res.send(enriched);
     }
   );

@@ -15,10 +15,10 @@ import {HandleProgressBar} from "../ProgressBar";
 class StudentProfileDashboard extends Component {
   constructor(props) {
     super(props);
+    this.complete = this.complete.bind(this);
   }
 
   componentDidMount() {
-    this.props.setProgressBar("OPEN");
     this.props.fetchXODStudent(
       this.props.match.params.schoolId,
       this.props.match.params.studentId
@@ -30,10 +30,26 @@ class StudentProfileDashboard extends Component {
     this.props.setProgressBar("");
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    this.complete(this.props);
+  }
+
+  componentWillMount() {
+    this.props.setProgressBar("OPEN");
+  }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    this.props.setProgressBar("OPEN");
+
+  }
+
+  complete(props){
+    props.setProgressBar("");
+
+  }
   render() {
     return (
       <div>
-        <HandleProgressBar/>
         <div className="row orange">
           <div className="col s12 orange lighten-2">
             <div className="col s4">
@@ -94,5 +110,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { fetchXODStudent, fetchXODStudentAchievements,setProgressBar }
+  { fetchXODStudent, fetchXODStudentAchievements, setProgressBar }
 )(StudentProfileDashboard);

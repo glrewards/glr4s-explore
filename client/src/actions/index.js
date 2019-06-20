@@ -86,6 +86,7 @@ export const fetchAllStudents = () => async dispatch => {
 export const fetchAllXODStudents = (schoolId) => async dispatch => {
   const url = "/api/Students/School/" + schoolId;
   const res = await axios.get(url);
+  console.log(res.data);
   dispatch({ type: FETCH_ALL_XOD_STUDENTS, payload: res.data });
 };
 
