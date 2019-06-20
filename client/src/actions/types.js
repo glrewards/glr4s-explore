@@ -9,5 +9,6 @@ export const FETCH_LINEITEMS = 'fetch_lineitems';
 export const SAVE_LINEITEMS = 'save_lineitems';
 export const FETCH_XOD_STUDENT = 'FETCH_XOD_STUDENT';
 export const FETCH_XOD_ACHIEVEMENTS  = 'FETCH_XOD_ACHIEVEMENTS';
+export const SET_PROGRESS_BAR = 'SET_PROGRESS_BAR';
 
 

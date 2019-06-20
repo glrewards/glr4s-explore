@@ -18,7 +18,6 @@ class XODStudentAchievementList extends Component {
       rootAchievements = achievements.map(item => {
         return (item.rootAchievement);
       });
-      console.log(rootAchievements);
       return rootAchievements;
     }
   }
@@ -56,8 +55,7 @@ class XODStudentAchievementList extends Component {
   }
 
   renderRow(item) {
-      console.log("render row",item);
-     return( <tr>
+     return( <tr key={item.Id}>
           <td>{item.Date}</td>
           <td>{item.AchievementType}</td>
           <td>{item.Activity}</td>
@@ -82,7 +80,6 @@ class XODStudentAchievementList extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     student: state.xodSingleStudent,
     auth: state.auth,

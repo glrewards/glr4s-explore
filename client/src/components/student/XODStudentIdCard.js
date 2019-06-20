@@ -34,10 +34,9 @@ class XODStudentIdCard extends Component {
         <div className="card-content">
             <div className="card-image">{this.renderImage()}</div>
          <div className="card-action">
-             <span><ul>
-                 <li><Link to={"/shop/myitems"}>My Items</Link></li>
-                 <li><Link>My Classes</Link></li>
-         </ul></span>
+             <span><Link to={"/shop/myitems"}>My Items</Link>
+                 <Link>My Classes</Link>
+         </span>
          </div>
         </div>
       </div>
@@ -46,7 +45,6 @@ class XODStudentIdCard extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     student: state.xodSingleStudent,
     auth: state.auth,

@@ -11,7 +11,6 @@ class XODStudentStatsCard extends Component {
   }
 
   static totalUpRewards(achievements) {
-      console.log(achievements);
     // map reduce the achievements to get a total
     // count the number of activities to get a total
       const count = achievements.length;
@@ -21,7 +20,6 @@ class XODStudentStatsCard extends Component {
       }).reduce((total,number) => {
           return total + number;
       })
-      console.log(totalPoints);
       return totalPoints;
   }
   render() {
@@ -45,7 +43,6 @@ class XODStudentStatsCard extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log("XODStudentStatsCard: mapState: ",state);
   return {
     student: state.xodSingleStudent,
     auth: state.auth,

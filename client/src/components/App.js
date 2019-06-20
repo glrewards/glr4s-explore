@@ -14,6 +14,7 @@ import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
 import M from "materialize-css";
+import { HandleProgressBar } from "./ProgressBar"
 
 
 /*
@@ -43,6 +44,7 @@ class App extends Component {
       <div className="container">
         <BrowserRouter>
           <div>
+              <HandleProgressBar/>
             <GLRHeader />
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />

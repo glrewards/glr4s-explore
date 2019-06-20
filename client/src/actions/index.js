@@ -10,6 +10,7 @@ import {FETCH_LINEITEMS} from "./types";
 import {DELETE_ALL_LINES} from "./cartActions";
 import {FETCH_XOD_STUDENT} from "./types";
 import {FETCH_XOD_ACHIEVEMENTS} from "./types";
+import {SET_PROGRESS_BAR} from "./types";
 /*
     remember dispatch is a function (it is the action dispatcher
     which we can use here because have imported reactThunk
@@ -97,7 +98,6 @@ export const fetchXODStudent = (schoolId,studentId) => async dispatch => {
 export const fetchXODStudentAchievements = (schoolId,studentId) => async dispatch => {
   const url = "/api/School/" + schoolId + "/Student/" + studentId + "/AchievementSummary";
   const res = await axios.get(url);
-  console.log(res.data);
   dispatch({ type: FETCH_XOD_ACHIEVEMENTS, payload: res.data });
 };
 /* There are the order and line items routes */
@@ -114,5 +114,11 @@ export const submitLineItems = (reqBody,history) => async dispatch => {
   history.push('/shop');
 
 };
+
+export const setProgressBar = (isOpen) => (
+    {
+        type: SET_PROGRESS_BAR,
+        isOpen: isOpen
+    });
 
 

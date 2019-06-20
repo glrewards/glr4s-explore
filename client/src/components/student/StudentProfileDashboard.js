@@ -7,13 +7,18 @@ import { fetchXODStudentAchievements } from "../../actions";
 import XODStudentIdCard from "./XODStudentIdCard";
 import XODStudentActivitiesList from "./XODStudentActivitiesList";
 import XODStudentStatsCard from "./XODStudentStatsCard";
+import XODStudentSummaryCharts from "./XODStudentSummaryCharts";
+import {setProgressBar} from "../../actions";
 import { Collapsible, CollapsibleItem } from "react-materialize";
+import {HandleProgressBar} from "../ProgressBar";
+
 class StudentProfileDashboard extends Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
+    this.props.setProgressBar("OPEN");
     this.props.fetchXODStudent(
       this.props.match.params.schoolId,
       this.props.match.params.studentId
@@ -22,28 +27,27 @@ class StudentProfileDashboard extends Component {
       this.props.match.params.schoolId,
       this.props.match.params.studentId
     );
+    this.props.setProgressBar("");
   }
 
   render() {
     return (
       <div>
-        <div className="row orange lighten-5">
-          <div className="col s12 orange lighten-1">
+        <HandleProgressBar/>
+        <div className="row orange">
+          <div className="col s12 orange lighten-2">
             <div className="col s4">
-              {" "}
               <XODStudentIdCard />
             </div>
             <div className="col s8">
-              {" "}
               {this.props.xodachievements.length > 0 ? (
                 <XODStudentStatsCard />
               ) : (
                 "No Activities this year"
-              )}{" "}
+              )}
             </div>
           </div>
-          <div className="col s12 m612l12 amber lighten-3" />
-          <div className="col s12 m12 l12 yellow lighten-1">
+          <div className="col s12 m12 l12 amber">
             <p>s12 m5</p>
             <Collapsible popout>
               <CollapsibleItem header="Open Activities">
@@ -59,6 +63,7 @@ class StudentProfileDashboard extends Component {
           </div>
         </div>
         <div className="row amber darken-2">
+          <XODStudentSummaryCharts />
           <div className="col s12 m6 l3">
             <p> s12 m6 l3 </p>
           </div>
@@ -89,5 +94,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { fetchXODStudent, fetchXODStudentAchievements }
+  { fetchXODStudent, fetchXODStudentAchievements,setProgressBar }
 )(StudentProfileDashboard);
