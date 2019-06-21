@@ -39,7 +39,7 @@ module.exports = app => {
       const items = await fetcher.find(
         {},
         "Forename Surname DisplayName YearGroup HouseGroup Id"
-      );
+      ).limit(100);
       //need to loop
         let enriched = [];
         for (i = 0; i < items.length; i++) {
