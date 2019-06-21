@@ -15,7 +15,7 @@ import {HandleProgressBar} from "../ProgressBar";
 class StudentProfileDashboard extends Component {
   constructor(props) {
     super(props);
-    this.complete = this.complete.bind(this);
+
   }
 
   componentDidMount() {
@@ -27,26 +27,17 @@ class StudentProfileDashboard extends Component {
       this.props.match.params.schoolId,
       this.props.match.params.studentId
     );
-    this.props.setProgressBar("");
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    this.complete(this.props);
-  }
 
-  componentWillMount() {
-    this.props.setProgressBar("OPEN");
-  }
+
 
   componentWillUpdate(nextProps, nextState, nextContext) {
-    this.props.setProgressBar("OPEN");
+
 
   }
 
-  complete(props){
-    props.setProgressBar("");
 
-  }
   render() {
     return (
       <div>
