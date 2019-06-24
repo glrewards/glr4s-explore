@@ -30,7 +30,6 @@ export class ProgressBar extends React.Component {
 
 //redux container component
 const mapStateToProps = (state, ownProps) => {
-    console.log(state)
     return({
         progressBarStatus: state.ui.progressBarStatus
     });

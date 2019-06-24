@@ -32,7 +32,6 @@ module.exports = app => {
       );
       try {
           const count = await fetcher.estimatedDocumentCount();
-          console.log(count);
           let ret = {
               totalstudents: count
           }
@@ -52,7 +51,6 @@ module.exports = app => {
     let skip = 0;
     let limit = 25;
     if (req.query) {
-      console.log(req.query);
       page = req.query.page;
       limit = Number(req.query.limit);
       skip = page * limit;

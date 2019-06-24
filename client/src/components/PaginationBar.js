@@ -25,7 +25,6 @@ class PaginationBar extends Component{
 
 
     render(){
-        console.log(this.props.total);
         return(
         <Pagination items={this.howManyPages(this.props.total,this.props.limit)} activePage={1} maxButtons={8} onSelect={this.handlePageClick}/>
         )

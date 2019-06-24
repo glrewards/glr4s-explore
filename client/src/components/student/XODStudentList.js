@@ -27,7 +27,6 @@ class XODStudentList extends Component {
     //this is where we page through the student list. This is fired because we have passed it as the function to
     //trigger when the user interacts with the pagination bar. Meaning we manage data here - not inside the pagination
     //bar
-    console.log("handlePageClick",event);
     this.props.fetchAllXODStudents(this.props.schoolId,event,this.props.limit);
   }
 

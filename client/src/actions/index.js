@@ -97,7 +97,6 @@ export const fetchAllXODStudents = (
       url += "&limit=" + limit;
     }
   }
-console.log(url);
   //const url = "/api/Students/School/" + schoolId;
   const res = await axios.get(url);
   dispatch({ type: FETCH_ALL_XOD_STUDENTS, payload: res.data });
@@ -106,7 +105,6 @@ console.log(url);
 export const fetchXODStudentCount = schoolId => async dispatch => {
   let url = "/api/StudentsCount/School/" + schoolId;
   const res = await axios.get(url);
-  console.log(res.data);
   dispatch({ type: SET_STUDENT_PAGES, payload: res.data });
 };
 
