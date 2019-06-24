@@ -29,7 +29,6 @@ class XODStudentList extends Component {
     //bar
     console.log("handlePageClick",event);
     this.props.fetchAllXODStudents(this.props.schoolId,event,this.props.limit);
-
   }
 
   renderHeader() {

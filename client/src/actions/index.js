@@ -88,7 +88,7 @@ export const fetchAllXODStudents = (
 ) => async dispatch => {
   let url = "/api/Students/School/" + schoolId;
   if (page) {
-    url += "/?page=" + page;
+    url += "/?page=" + (page - 1);
   }
   if (!page && limit) {
     url += "/?limit=" + limit;
