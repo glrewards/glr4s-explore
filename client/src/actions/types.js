@@ -10,5 +10,6 @@ export const SAVE_LINEITEMS = 'save_lineitems';
 export const FETCH_XOD_STUDENT = 'FETCH_XOD_STUDENT';
 export const FETCH_XOD_ACHIEVEMENTS  = 'FETCH_XOD_ACHIEVEMENTS';
 export const SET_PROGRESS_BAR = 'SET_PROGRESS_BAR';
+export const SET_STUDENT_PAGES = 'SET_STUDENT_PAGES';
 
 

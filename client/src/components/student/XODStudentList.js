@@ -2,31 +2,34 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAllXODStudents } from "../../actions";
 import { Link } from "react-router-dom";
-import M from "materialize-css";
 import {HandleProgressBar} from "../ProgressBar";
 import {setProgressBar} from "../../actions";
+import PaginationBar from "../PaginationBar";
+import {fetchXODStudentCount} from "../../actions";
 
 class XODStudentList extends Component {
   constructor(props) {
     super(props);
     this.handleSelectChange = this.handleSelectChange.bind(this);
-    this.complete = this.complete.bind(this);
-  }
-
-  componentDidMount() {
-    this.complete(this.props);
-
-  }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    this.complete(this.props);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
 
   handleSelectChange(event) {
-
     this.props.onSchoolSelected(event.target.value);
-    this.props.setProgressBar("OPEN");
-    this.props.fetchAllXODStudents(event.target.value);
+    this.props.fetchXODStudentCount(event.target.value);
+    //get the first page
+    this.props.fetchAllXODStudents(event.target.value,0,this.props.limit);
+  }
+
+
+  handlePageClick(event){
+    //this is where we page through the student list. This is fired because we have passed it as the function to
+    //trigger when the user interacts with the pagination bar. Meaning we manage data here - not inside the pagination
+    //bar
+    console.log("handlePageClick",event);
+    this.props.fetchAllXODStudents(this.props.schoolId,event,this.props.limit);
+
   }
 
   renderHeader() {
@@ -62,10 +65,6 @@ class XODStudentList extends Component {
     return vals;
   }
 
-    complete(props){
-      props.setProgressBar("");
-
-    }
 
   render() {
 
@@ -89,6 +88,12 @@ class XODStudentList extends Component {
           </div>
         </div>
         <div className="divider" />
+        <div><PaginationBar
+            total = {this.props.total}
+            limit = {this.props.limit}
+            handlePageClick = {this.handlePageClick}
+
+        /></div>
         <div>
           <table className="responsive-table highlight striped amber accent-2">
             {this.renderHeader()}
@@ -100,12 +105,16 @@ class XODStudentList extends Component {
   }
 }
 function mapStateToProps(state) {
-  console.log("XODStudentList: mapStateToProps() ", state);
-  console.log(state);
-  return { schoolId: state.xodschool, students: state.xodstudents };
+  return {
+
+    total: state.ui.totalstudents,
+    schoolId: state.xodschool,
+    students: state.xodstudents,
+    limit:  25
+  };
 }
 
 export default connect(
   mapStateToProps,
-  { fetchAllXODStudents, setProgressBar}
+  { fetchAllXODStudents, setProgressBar,fetchXODStudentCount}
 )(XODStudentList);

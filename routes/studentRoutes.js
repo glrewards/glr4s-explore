@@ -11,55 +11,86 @@ const { URL } = require("url");
 const Student = mongoose.model("students");
 
 module.exports = app => {
+    //this route access my old POC collection of students and not the XOD data
   app.get("/api/students/all", requireLogin, async (req, res) => {
     //console.log("in /students/all",req.body);
     const students = await Student.find();
     //console.log(students);
     res.send(students);
   });
-
+    //this route access my old POC collection of students and not the XOD data
   app.get("/api/students", requireLogin, requireSchool, async (req, res) => {
     const students = await Student.find({ _school: req.school._id });
     res.send(students);
   });
 
-  app.get(
-    "/api/Students/School/:schoolId",
-    requireLogin,
-    requireLogin,
-    async (req, res) => {
+  app.get("/api/StudentsCount/School/:schoolId", requireLogin, requireAdmin, async (req,res) =>{
       const schoolId = req.params.schoolId;
-      // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
-      //model. and we can then create the model
       const fetcher = mongoose.model(
-        "xodstudents" + "-" + schoolId,
-        XODStudentSchema
+          "xodstudents" + "-" + schoolId,
+          XODStudentSchema
       );
-        const achFetcher = mongoose.model( "xodstudentachievements" + "-" + schoolId,XODStudentAchievementSchema);
-      const items = await fetcher.find(
-        {},
-        "Forename Surname DisplayName YearGroup HouseGroup Id"
-      ).limit(100);
-      //need to loop
-        let enriched = [];
-        for (i = 0; i < items.length; i++) {
-            //build a new array
-            let ach = await achFetcher.findOne({
-                StudentId: items[i].Id
-            });
-            let hasAch = false;
-            if(ach){
-                hasAch = true;
-            }
-            let combined = {
-                xodstudent: items[i],
-            hasachievements: hasAch};
-            enriched.push(combined);
-            };
+      try {
+          const count = await fetcher.estimatedDocumentCount();
+          console.log(count);
+          let ret = {
+              totalstudents: count
+          }
+          res.send(ret);
+      }catch(err){
+          console.log(err.message,err);
+          res.send(err);
+      }
 
-      res.send(enriched);
+
+  });
+
+  app.get("/api/Students/School/:schoolId",requireLogin, requireAdmin, async (req, res) => {
+    const schoolId = req.params.schoolId;
+    //check to see if there is a query and if so check that it contains an Id
+    let page = 0;
+    let skip = 0;
+    let limit = 25;
+    if (req.query) {
+      console.log(req.query);
+      page = req.query.page;
+      limit = Number(req.query.limit);
+      skip = page * limit;
     }
-  );
+    // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
+    //model. and we can then create the model
+    const fetcher = mongoose.model(
+      "xodstudents" + "-" + schoolId,
+      XODStudentSchema
+    );
+    const achFetcher = mongoose.model(
+      "xodstudentachievements" + "-" + schoolId,
+      XODStudentAchievementSchema
+    );
+
+    const items = await fetcher
+      .find({}, "_id Forename Surname DisplayName YearGroup HouseGroup Id")
+        .skip(skip)
+      .limit(limit);
+    //need to loop
+    let enriched = [];
+    for (i = 0; i < items.length; i++) {
+      //build a new array
+      let ach = await achFetcher.findOne({
+        StudentId: items[i].Id
+      });
+      let hasAch = false;
+      if (ach) {
+        hasAch = true;
+      }
+      let combined = {
+        xodstudent: items[i],
+        hasachievements: hasAch
+      };
+      enriched.push(combined);
+    }
+    res.send(enriched);
+  });
 
   app.get(
     "/api/School/:schoolId/Student/:studentId",
@@ -70,8 +101,10 @@ module.exports = app => {
       const schoolId = req.params.schoolId;
       // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
       //model. and we can then create the model
-      const achFetcher = mongoose.model( "xodstudentachievements" + "-" + schoolId);
-        const fetcher = mongoose.model(
+      const achFetcher = mongoose.model(
+        "xodstudentachievements" + "-" + schoolId
+      );
+      const fetcher = mongoose.model(
         "xodstudents" + "-" + schoolId,
         XODStudentSchema
       );

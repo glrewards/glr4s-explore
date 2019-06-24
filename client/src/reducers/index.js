@@ -12,6 +12,7 @@ import XODstudentReducer from "./XODStudentsReducer";
 import XODSchoolReducer from "./XODSchoolReducer";
 import XODSingleStudentReducer from "./XODSingleStudentReducer";
 import XODAchievementsReducer from "./XODAchivementReducer";
+import XODStudentListCursorReducer from "./XODStudentListCursorReducer";
 import UIReducer from "./UIReducer";
 
 export default combineReducers({
@@ -20,6 +21,7 @@ export default combineReducers({
     surveys: surveyReducer,
     students: studentReducer,
     xodstudents: XODstudentReducer,
+    xodstudentcursor:XODStudentListCursorReducer,
     xodSingleStudent: XODSingleStudentReducer,
     xodschool:XODSchoolReducer,
     xodAchievements: XODAchievementsReducer,

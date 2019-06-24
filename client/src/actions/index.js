@@ -1,16 +1,17 @@
 import axios from "axios";
 import { FETCH_USER } from "./types";
-import {FETCH_SURVEYS} from "./types";
-import {FETCH_PRODUCTS} from "./types";
-import {FETCH_CATEGORIES} from "./types";
-import {FETCH_ALL_STUDENTS} from "./types";
-import {FETCH_ALL_XOD_STUDENTS} from "./types";
-import {NEW_CATEGORY} from "./types";
-import {FETCH_LINEITEMS} from "./types";
-import {DELETE_ALL_LINES} from "./cartActions";
-import {FETCH_XOD_STUDENT} from "./types";
-import {FETCH_XOD_ACHIEVEMENTS} from "./types";
-import {SET_PROGRESS_BAR} from "./types";
+import { FETCH_SURVEYS } from "./types";
+import { FETCH_PRODUCTS } from "./types";
+import { FETCH_CATEGORIES } from "./types";
+import { FETCH_ALL_STUDENTS } from "./types";
+import { FETCH_ALL_XOD_STUDENTS } from "./types";
+import { NEW_CATEGORY } from "./types";
+import { FETCH_LINEITEMS } from "./types";
+import { DELETE_ALL_LINES } from "./cartActions";
+import { FETCH_XOD_STUDENT } from "./types";
+import { FETCH_XOD_ACHIEVEMENTS } from "./types";
+import { SET_PROGRESS_BAR } from "./types";
+import { SET_STUDENT_PAGES } from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -29,54 +30,50 @@ export const fetchUser = () => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const handleToken = (token) => async dispatch => {
-  const res = await axios.post('/api/stripe',token);
-  dispatch({type: FETCH_USER,payload: res.data});
+export const handleToken = token => async dispatch => {
+  const res = await axios.post("/api/stripe", token);
+  dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const submitSurvey = (values,history) => async dispatch => {
-  const res = await axios.post('/api/surveys',values);
-  history.push('/surveys');
-  dispatch({type: FETCH_USER, payload: res.data});
+export const submitSurvey = (values, history) => async dispatch => {
+  const res = await axios.post("/api/surveys", values);
+  history.push("/surveys");
+  dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-
-export const fetchSurveys = () => async dispatch =>{
-  const res = await axios.get('/api/surveys');
-  dispatch({type: FETCH_SURVEYS, payload: res.data});
-
+export const fetchSurveys = () => async dispatch => {
+  const res = await axios.get("/api/surveys");
+  dispatch({ type: FETCH_SURVEYS, payload: res.data });
 };
 
-export const fetchCategories = () => async dispatch =>{
-  const res = await axios.get('/api/categories');
-  dispatch({type: FETCH_CATEGORIES, payload: res.data});
-
+export const fetchCategories = () => async dispatch => {
+  const res = await axios.get("/api/categories");
+  dispatch({ type: FETCH_CATEGORIES, payload: res.data });
 };
 
 /* this is the shopify fetch products route */
 
-export const fetchProducts = (cursor,backward) => async dispatch =>{
-  let url = '/api/shop/products';
-  if(cursor){
+export const fetchProducts = (cursor, backward) => async dispatch => {
+  let url = "/api/shop/products";
+  if (cursor) {
     url = url + "?cursor=" + cursor;
   }
-  if(backward){
-    if (!cursor){
+  if (backward) {
+    if (!cursor) {
       url = url + "?backward=" + backward;
-    }else{
+    } else {
       url = url + "&backward=" + backward;
     }
   }
   const res = await axios.get(url);
-  dispatch({type: FETCH_PRODUCTS, payload: res.data});
-
+  dispatch({ type: FETCH_PRODUCTS, payload: res.data });
 };
 
-export const submitCategory = (values) => async dispatch =>{
+export const submitCategory = values => async dispatch => {
   //console.log("in submitCategory action");
-  const res = await axios.post('/api/categories',values);
+  const res = await axios.post("/api/categories", values);
   //console.log("in submitCategory");
-  dispatch({type: NEW_CATEGORY, payload: res.data});
+  dispatch({ type: NEW_CATEGORY, payload: res.data });
 };
 
 export const fetchAllStudents = () => async dispatch => {
@@ -84,45 +81,66 @@ export const fetchAllStudents = () => async dispatch => {
   dispatch({ type: FETCH_ALL_STUDENTS, payload: res.data });
 };
 
-export const fetchAllXODStudents = (schoolId) => async dispatch => {
-    setProgressBar("OPEN");
-  const url = "/api/Students/School/" + schoolId;
+export const fetchAllXODStudents = (
+  schoolId,
+  page,
+  limit
+) => async dispatch => {
+  let url = "/api/Students/School/" + schoolId;
+  if (page) {
+    url += "/?page=" + page;
+  }
+  if (!page && limit) {
+    url += "/?limit=" + limit;
+  } else {
+    if (limit) {
+      url += "&limit=" + limit;
+    }
+  }
+console.log(url);
+  //const url = "/api/Students/School/" + schoolId;
   const res = await axios.get(url);
-  setProgressBar("");
   dispatch({ type: FETCH_ALL_XOD_STUDENTS, payload: res.data });
 };
 
-export const fetchXODStudent = (schoolId,studentId) => async dispatch => {
+export const fetchXODStudentCount = schoolId => async dispatch => {
+  let url = "/api/StudentsCount/School/" + schoolId;
+  const res = await axios.get(url);
+  console.log(res.data);
+  dispatch({ type: SET_STUDENT_PAGES, payload: res.data });
+};
+
+export const fetchXODStudent = (schoolId, studentId) => async dispatch => {
   const url = "/api/School/" + schoolId + "/Student/" + studentId;
   const res = await axios.get(url);
   dispatch({ type: FETCH_XOD_STUDENT, payload: res.data });
 };
 
-export const fetchXODStudentAchievements = (schoolId,studentId) => async dispatch => {
-  const url = "/api/School/" + schoolId + "/Student/" + studentId + "/AchievementSummary";
+export const fetchXODStudentAchievements = (
+  schoolId,
+  studentId
+) => async dispatch => {
+  const url =
+    "/api/School/" + schoolId + "/Student/" + studentId + "/AchievementSummary";
   const res = await axios.get(url);
 
   dispatch({ type: FETCH_XOD_ACHIEVEMENTS, payload: res.data });
 };
 /* There are the order and line items routes */
-export const fetchLineItems = (student) => async dispatch => {
+export const fetchLineItems = student => async dispatch => {
   const url = "/api/orders/" + student._id;
   const res = await axios.get(url);
-  dispatch({type: FETCH_LINEITEMS, payload: res.data});
+  dispatch({ type: FETCH_LINEITEMS, payload: res.data });
 };
 
-export const submitLineItems = (reqBody,history) => async dispatch => {
-  const res = await axios.post('/api/orders', reqBody);
-  dispatch({type:DELETE_ALL_LINES});//actually we clear the the local cart and then can populate the lineitems
-  dispatch({type:FETCH_USER, payload: res.data});
-  history.push('/shop');
-
+export const submitLineItems = (reqBody, history) => async dispatch => {
+  const res = await axios.post("/api/orders", reqBody);
+  dispatch({ type: DELETE_ALL_LINES }); //actually we clear the the local cart and then can populate the lineitems
+  dispatch({ type: FETCH_USER, payload: res.data });
+  history.push("/shop");
 };
 
-export const setProgressBar = (isOpen) => (
-    {
-        type: SET_PROGRESS_BAR,
-        isOpen: isOpen
-    });
-
-
+export const setProgressBar = isOpen => ({
+  type: SET_PROGRESS_BAR,
+  isOpen: isOpen
+});

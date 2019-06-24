@@ -16,6 +16,7 @@ class StudentProfileDashboard extends Component {
   constructor(props) {
     super(props);
 
+
   }
 
   componentDidMount() {
@@ -27,14 +28,6 @@ class StudentProfileDashboard extends Component {
       this.props.match.params.schoolId,
       this.props.match.params.studentId
     );
-  }
-
-
-
-
-  componentWillUpdate(nextProps, nextState, nextContext) {
-
-
   }
 
 

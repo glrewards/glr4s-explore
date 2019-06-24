@@ -16,24 +16,24 @@ class XODStudentAchievementList extends Component {
     let rootAchievements = undefined;
     if (achievements) {
       rootAchievements = achievements.map(item => {
-        return (item.rootAchievement);
+        return item.rootAchievement;
       });
       return rootAchievements;
     }
   }
 
   renderTable() {
-      let items = XODStudentAchievementList.findRootAchievements(this.props.achievements);
+    let items = XODStudentAchievementList.findRootAchievements(
+      this.props.achievements
+    );
     return (
       <div>
         <table className="striped responsive-table">
           {this.renderHeader()}
           <tbody>
-          {
-              items.map((item) => {
-                  return (this.renderRow(item));
-              })
-          }
+            {items.map(item => {
+              return this.renderRow(item);
+            })}
           </tbody>
         </table>
       </div>
@@ -55,13 +55,15 @@ class XODStudentAchievementList extends Component {
   }
 
   renderRow(item) {
-     return( <tr key={item.Id}>
-          <td>{item.Date}</td>
-          <td>{item.AchievementType}</td>
-          <td>{item.Activity}</td>
-         <td>{item.Subject}</td>
-          <td>{item.RecordedBy}</td>
-      </tr>);
+    return (
+      <tr key={item.Id}>
+        <td>{item.Date}</td>
+        <td>{item.AchievementType}</td>
+        <td>{item.Activity}</td>
+        <td>{item.Subject}</td>
+        <td>{item.RecordedBy}</td>
+      </tr>
+    );
   }
 
   render() {
@@ -75,7 +77,8 @@ class XODStudentAchievementList extends Component {
     if (!items) {
       return <p> No activities</p>;
     }
-    return (<div>{this.renderTable(this.props.achievements)}</div>);
+    return <div>
+        {this.renderTable(this.props.achievements)}</div>;
   }
 }
 
