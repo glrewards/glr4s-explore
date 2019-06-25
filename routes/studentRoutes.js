@@ -100,7 +100,7 @@ module.exports = app => {
       // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
       //model. and we can then create the model
       const achFetcher = mongoose.model(
-        "xodstudentachievements" + "-" + schoolId
+        "xodstudentachievements" + "-" + schoolId, XODStudentAchievementSchema
       );
       const fetcher = mongoose.model(
         "xodstudents" + "-" + schoolId,

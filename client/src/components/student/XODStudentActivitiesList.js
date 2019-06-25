@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 class XODStudentAchievementList extends Component {
   constructor(props) {
     super(props);
-    XODStudentAchievementList.findRootAchievements = XODStudentAchievementList.findRootAchievements.bind(
-      this
-    );
+    this.findRootAchievements = this.findRootAchievements.bind(this);
+    this.state = {};
+
   }
 
-  static findRootAchievements(achievements) {
+findRootAchievements(achievements) {
     let rootAchievements = undefined;
     if (achievements) {
       rootAchievements = achievements.map(item => {
@@ -23,7 +23,7 @@ class XODStudentAchievementList extends Component {
   }
 
   renderTable() {
-    let items = XODStudentAchievementList.findRootAchievements(
+    let items = this.findRootAchievements(
       this.props.achievements
     );
     return (
@@ -70,7 +70,7 @@ class XODStudentAchievementList extends Component {
     // we need to map through the achievements finding the root achievements and return only the items we want to
     //display
 
-    const items = XODStudentAchievementList.findRootAchievements(
+    const items = this.findRootAchievements(
       this.props.achievements
     );
     // now need to build the table
