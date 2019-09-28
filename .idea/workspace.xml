@@ -4,9 +4,7 @@
     <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,13 +220,6 @@
       <workItem from="1568908132764" duration="135000" />
       <workItem from="1568908721305" duration="1192000" />
       <workItem from="1569396860350" duration="3657000" />
-    </task>
-    <task id="LOCAL-00041" summary="lots of bits of change now about to work them into order processing">
-      <created>1559112465490</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1559112465490</updated>
     </task>
     <task id="LOCAL-00042" summary="only show the shop menu item if the user has the student role">
       <created>1559120722677</created>
@@ -566,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561475285105</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="added demo hot fix to authRoutes">
+      <created>1569668416290</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1569668416290</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView">
@@ -622,7 +620,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="local cart working" />
     <MESSAGE value="hqve cart icon logic in place" />
     <MESSAGE value="basic cart display linked to cart icon" />
     <MESSAGE value="completed order flow for POC - order and lineitems can be created and saved. no ability to amend cart etc. can do this later" />
@@ -647,7 +644,8 @@
     <MESSAGE value="got pagination working well - limit is hardcoded to 25" />
     <MESSAGE value="fixed small pagination bug and removed references to student cursor" />
     <MESSAGE value="first graph working" />
-    <option name="LAST_COMMIT_MESSAGE" value="first graph working" />
+    <MESSAGE value="added demo hot fix to authRoutes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added demo hot fix to authRoutes" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
