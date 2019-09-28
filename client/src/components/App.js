@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import {connect} from 'react-redux';
-import * as actions from '../actions';
-import Landing from './Landing';
+import { connect } from "react-redux";
+import * as actions from "../actions";
+import Landing from "./Landing";
 import GLRHeader from "./GLRHeader";
-import Dashboard from './Dashboard';
-import SurveyNew from './surveys/SurveyNew';
-import GLRShop2 from './shop/GLRShop2';
+import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/SurveyNew";
+import GLRShop2 from "./shop/GLRShop2";
 import StudentDashboard from "./student/StudentProfileDashboard";
 import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
@@ -14,8 +14,8 @@ import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
 import M from "materialize-css";
-import { HandleProgressBar } from "./ProgressBar"
-
+import { HandleProgressBar } from "./ProgressBar";
+import AdminSideNav from "./admin/AdminSideNav";
 
 /*
 const client = new ApolloClient({
@@ -25,27 +25,26 @@ const client = new ApolloClient({
 });
 */
 class App extends Component {
-    constructor(props){
-        super(props);
-        M.AutoInit();
-    }
-    componentDidMount() {
-        //like an initialize function
-        //we imported connect above to link react components to the redux store stuff
-        //the exp[ort at the bottom means the actions will not be in the props for this
-        //class
-        this.props.fetchUser();
-    }
+  constructor(props) {
+    super(props);
+    M.AutoInit();
+  }
+  componentDidMount() {
+    //like an initialize function
+    //we imported connect above to link react components to the redux store stuff
+    //the exp[ort at the bottom means the actions will not be in the props for this
+    //class
+    this.props.fetchUser();
+  }
 
-
-    render() {
-
-        return (
-      <div className="container">
+  render() {
+    return (
+      <div>
         <BrowserRouter>
-          <div>
-              <HandleProgressBar/>
+          <div className="container">
+            <HandleProgressBar />
             <GLRHeader />
+            <AdminSideNav/>
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
@@ -55,13 +54,19 @@ class App extends Component {
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />
             <Route exact path="/shop/cart" component={SimpleCartList} />
-            <Route path="/school/:schoolId/student/:studentId" component={StudentDashboard} />
-            <Route path="/admin" component={AdminDashboard}/>
-           </div>
+            <Route
+              path="/school/:schoolId/student/:studentId"
+              component={StudentDashboard}
+            />
+            <Route path="/admin" component={AdminDashboard} />
+          </div>
         </BrowserRouter>
       </div>
     );
   }
 }
 
-export default connect(null, actions) (App);
+export default connect(
+  null,
+  actions
+)(App);

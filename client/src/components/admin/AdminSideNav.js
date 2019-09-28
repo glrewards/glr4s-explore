@@ -13,23 +13,24 @@ class AdminSideNav extends Component {
   render() {
     return (
       <div>
-          <ul id="slide-out" className="sidenav">
+          <ul id="slide-out" class="sidenav sidenav-fixed">
               <li>
-                  <Link className="white-text text-darken-2" to={"/categories"}>
+                  <Link to={"/categories"}>
                       <h5>Categories</h5>
                   </Link>
               </li>
               <li>
-                  <Link className="white-text text-darken-2" to={"/students/all"}>
+                  <Link to={"/students/all"}>
                       <h5>All Students List</h5>
                   </Link>
               </li>
               <li>
-                  <Link className="white-text text-darken-2" to={"/students/school"}>
+                  <Link to={"/students/school"}>
                       <h5>XOD Students</h5>
                   </Link>
               </li>
           </ul>
+          <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
       </div>
     );
   }

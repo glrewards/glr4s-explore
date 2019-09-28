@@ -6,7 +6,7 @@ const requireLogin = require("../middlewares/requireLogin");
 const requireSchool = require("../middlewares/requireSchool");
 const requireAdmin = require("../middlewares/requireAdmin");
 
-const { URL } = require("url");
+//const { URL } = require("url");
 
 const Student = mongoose.model("students");
 
@@ -34,7 +34,7 @@ module.exports = app => {
           const count = await fetcher.estimatedDocumentCount();
           let ret = {
               totalstudents: count
-          }
+          };
           res.send(ret);
       }catch(err){
           console.log(err.message,err);
@@ -72,7 +72,7 @@ module.exports = app => {
       .limit(limit);
     //need to loop
     let enriched = [];
-    for (i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
       //build a new array
       let ach = await achFetcher.findOne({
         StudentId: items[i].Id
@@ -96,12 +96,15 @@ module.exports = app => {
     requireAdmin,
     async (req, res) => {
       const studentId = req.params.studentId;
+        console.log("student Id param: " + studentId);
       const schoolId = req.params.schoolId;
       // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
       //model. and we can then create the model
+      /*
       const achFetcher = mongoose.model(
         "xodstudentachievements" + "-" + schoolId, XODStudentAchievementSchema
       );
+       */
       const fetcher = mongoose.model(
         "xodstudents" + "-" + schoolId,
         XODStudentSchema
@@ -118,7 +121,7 @@ module.exports = app => {
       const schoolId = req.params.schoolId;
       // we need to use the schoolId parameter to identify the right underlying collection for the mongoose
       //model. and we can then create the model
-      const studentAchievmentsModel = mongoose.model(
+      const studentAchievementsModel = mongoose.model(
         "xodstudentachievements" + "-" + schoolId,
         XODStudentAchievementSchema
       );
@@ -126,13 +129,13 @@ module.exports = app => {
         "xodachievements" + "-" + schoolId,
         XODAchievementSchema
       );
-      const studentAchievements = await studentAchievmentsModel.find({
+      const studentAchievements = await studentAchievementsModel.find({
         StudentId: studentId
       });
       //now for each of these we need to get the related achievement details
 
       let enriched = [];
-      for (i = 0; i < studentAchievements.length; i++) {
+      for (let i = 0; i < studentAchievements.length; i++) {
         //build a new array
         let rootAchievement = await achievementsModel.findOne({
           Id: studentAchievements[i].AchievementId

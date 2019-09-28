@@ -83,7 +83,7 @@ class GLRHeader extends Component {
 
   renderAdminItem() {
     if (!this.props.auth.isAdmin) {
-      return;
+
     } else {
       return (
         <li key="admin-drop">
@@ -100,19 +100,12 @@ class GLRHeader extends Component {
       <div>
         <nav className="nav-extended flow-text">
           <div className="nav-wrapper orange">
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-              <i className="material-icons">menu</i>
-            </a>
-            <ul id="nav-mobile" className="right hide-on-small-and-down">
+            <ul>
               {this.renderContentTop("t")}
             </ul>
           </div>
           {this.renderContentSub()}
         </nav>
-
-        <ul className="sidenav" id="mobile-demo">
-          {this.renderContentTop("m")}
-        </ul>
       </div>
     );
   }

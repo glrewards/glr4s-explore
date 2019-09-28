@@ -63,7 +63,7 @@ class XODStudentSummaryCharts extends Component {
 
     return (
       <Chart
-        width={300}
+        width={600}
         height={300}
         chartType="ColumnChart"
         loader={<div>Loading Chart</div>}
