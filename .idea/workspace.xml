@@ -161,10 +161,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.dev (1)" />
-      <item itemvalue="npm.dev (2)" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.server" />
+      <item itemvalue="npm.dev (1)" />
+      <item itemvalue="npm.dev (2)" />
       <item itemvalue="npm.start" />
     </list>
     <recent_temporary>
