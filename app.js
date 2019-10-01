@@ -7,8 +7,6 @@ const keys = require("./config/keys");
 require("./models/Student");
 require("./models/Teacher");
 require("./models/User");
-require("./models/Survey");
-require("./models/Category");
 require("./models/shop/order/Order");
 require("./services/passport");
 
@@ -48,9 +46,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
-require("./routes/surveyRoutes")(app);
 //require("./routes/shopRoutes")(app); removed so it did not clash with product routes
-require("./routes/categoryRoutes")(app);
 require("./routes/studentRoutes")(app);
 require("./routes/orderRoutes")(app);
 require("./routes/productRoutes")(app);

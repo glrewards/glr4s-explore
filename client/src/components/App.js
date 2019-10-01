@@ -11,6 +11,7 @@ import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
+import M from "materialize-css";
 import { HandleProgressBar } from "./ProgressBar";
 
 /*

@@ -1,13 +1,4 @@
-const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
-const requireCredits = require("../middlewares/requireCredits");
-const Mailer = require("../services/Mailer");
-const surveyTemplate = require("../services/emailTemplates/surveyTemplates");
-const _ = require("lodash");
-const Path = require("path-parser").default;
-const { URL } = require("url");
-
-//const Survey = mongoose.model("surveys");
 
 //TODO: I need to handle pagination and link control of this to the GUI - this will require request Arguements
 //TODO: and linking these to how graphql works
