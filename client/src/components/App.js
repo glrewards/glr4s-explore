@@ -5,17 +5,13 @@ import * as actions from "../actions";
 import Landing from "./Landing";
 import GLRHeader from "./GLRHeader";
 import Dashboard from "./Dashboard";
-import SurveyNew from "./surveys/SurveyNew";
 import GLRShop2 from "./shop/GLRShop2";
 import StudentDashboard from "./student/StudentProfileDashboard";
-import CategoryDashboard from "./admin/CategoryDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
-import M from "materialize-css";
 import { HandleProgressBar } from "./ProgressBar";
-import AdminSideNav from "./admin/AdminSideNav";
 
 /*
 const client = new ApolloClient({
@@ -44,12 +40,9 @@ class App extends Component {
           <div className="container">
             <HandleProgressBar />
             <GLRHeader />
-            <AdminSideNav/>
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
             <Route exact path="/shop" component={GLRShop2} />
-            <Route path="/categories" component={CategoryDashboard} />
             <Route path="/students/school" component={XODStudentDashboard} />
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />

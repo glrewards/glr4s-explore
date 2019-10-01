@@ -28,13 +28,7 @@ class GLRSubHeader extends Component {
     return (
       <div className="nav-content orange">
         <ul className="tabs tabs-transparent">
-          <li>
-            <a href="#test1">Homework</a>
-          </li>
           {this.renderShopItem()}
-          <li>
-            <a href="">School Shop</a>
-          </li>
         </ul>
       </div>
     );
