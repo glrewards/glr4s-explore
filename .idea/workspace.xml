@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRSubHeader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,14 +228,7 @@
       <workItem from="1568908132764" duration="135000" />
       <workItem from="1568908721305" duration="1192000" />
       <workItem from="1569396860350" duration="4843000" />
-      <workItem from="1570009537159" duration="6720000" />
-    </task>
-    <task id="LOCAL-00044" summary="categories working and refreshing">
-      <created>1559140859635</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1559140859635</updated>
+      <workItem from="1570009537159" duration="7868000" />
     </task>
     <task id="LOCAL-00045" summary="got a basic graphql query working in orderRouter. now deploying to heroku to ensure it works there too....might break as there are a lot of draft orders">
       <created>1559152136079</created>
@@ -572,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570034640158</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="glrs-clean:0.3: Menus cleaned up">
+      <created>1570034739756</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1570034739756</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView">

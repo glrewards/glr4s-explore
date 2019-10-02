@@ -61,7 +61,7 @@ class GLRHeader extends Component {
           <li key={side + "2"}>
             <a href="/api/logout">Logout</a>
           </li>,
-            <li key={side + "3"}> <Link to="/shop">Shop</Link>
+            <li key={side + "3"}> <Link to="/shop">Student Dashboard</Link>
             </li>,
           this.renderAdminItem(),
           <li key={side + "1"}  className="right">
@@ -78,7 +78,7 @@ class GLRHeader extends Component {
       return (
         <li key="admin-drop">
           <Link to="/admin">
-            Admin
+            Admin Dashboard
           </Link>
         </li>
       );
