@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import M from "materialize-css";
-import GLRSubHeader from "./GLRSubHeader";
 
 class GLRHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {};
     M.AutoInit();
-    this.renderContentSub = this.renderContentSub.bind(this);
     this.renderCartLink = this.renderCartLink.bind(this);
     this.renderContentTop = this.renderContentTop.bind(this);
     this.renderAdminItem = this.renderAdminItem.bind(this);
+    this.renderGLRPoints = this.renderGLRPoints.bind(this);
   }
   componentDidMount() {
     M.AutoInit();
@@ -54,30 +53,21 @@ class GLRHeader extends Component {
         return [
           <li key={side + "0"} className="left">
             <Link to={this.props.auth ? "/surveys" : "/"}>
-              <h6>GLR4S - DEV</h6>
-            </Link>{" "}
+              GLR4S - DEV
+            </Link>
           </li>,
           this.renderCartLink(),
-          <li key={side + "1"} style={{ margin: "0 10px" }}>
-            <h6>{this.renderGLRPoints()}</h6>
-          </li>,
-          <li key={side + "2"}>
-            <h6><a href="/api/logout">Logout</a></h6>
-          </li>,
-          this.renderAdminItem()
-        ];
-    }
-  }
 
-  renderContentSub() {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        //console.log(this.props);
-        return;
-      default:
-        return <GLRSubHeader />;
+          <li key={side + "2"}>
+            <a href="/api/logout">Logout</a>
+          </li>,
+            <li key={side + "3"}> <Link to="/shop">Shop</Link>
+            </li>,
+          this.renderAdminItem(),
+          <li key={side + "1"}  className="right">
+            {this.renderGLRPoints()}
+          </li>
+        ]
     }
   }
 
@@ -88,7 +78,7 @@ class GLRHeader extends Component {
       return (
         <li key="admin-drop">
           <Link to="/admin">
-            <h6>Admin</h6>
+            Admin
           </Link>
         </li>
       );
@@ -104,7 +94,6 @@ class GLRHeader extends Component {
               {this.renderContentTop("t")}
             </ul>
           </div>
-          {this.renderContentSub()}
         </nav>
       </div>
     );

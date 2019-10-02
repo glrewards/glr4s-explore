@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/XODSchoolActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/XODSchoolActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentActivitiesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentIdCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentStatsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentStatsCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentSummaryCharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentSummaryCharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/xod/XODStudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/xod/XODStudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +57,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="glrs-clean" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,14 +68,20 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProjectId" id="1R3uVOPcDc8pQLrAVc7f3f7WXCm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT&#10;JavaScript" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript&#10;TEXT" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="11.14.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/reducers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -86,7 +91,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -229,14 +234,7 @@
       <workItem from="1568908132764" duration="135000" />
       <workItem from="1568908721305" duration="1192000" />
       <workItem from="1569396860350" duration="4843000" />
-      <workItem from="1570009537159" duration="1351000" />
-    </task>
-    <task id="LOCAL-00042" summary="only show the shop menu item if the user has the student role">
-      <created>1559120722677</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1559120722677</updated>
+      <workItem from="1570009537159" duration="6417000" />
     </task>
     <task id="LOCAL-00043" summary="categories now just pulls a list of categories. Need to now compine with the form and see the list auto update when a new item is added">
       <created>1559125404062</created>
@@ -574,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569664698007</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model">
+      <created>1570025639105</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1570025639105</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TodoView">
@@ -630,7 +635,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hqve cart icon logic in place" />
     <MESSAGE value="basic cart display linked to cart icon" />
     <MESSAGE value="completed order flow for POC - order and lineitems can be created and saved. no ability to amend cart etc. can do this later" />
     <MESSAGE value="cleaned up warnings and console.log lines throughout the project. Clean point to START FOCUS  on schools data" />
@@ -655,7 +659,8 @@
     <MESSAGE value="fixed small pagination bug and removed references to student cursor" />
     <MESSAGE value="first graph working" />
     <MESSAGE value="Check in before major branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check in before major branch" />
+    <MESSAGE value="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
