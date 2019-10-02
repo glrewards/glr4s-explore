@@ -4,8 +4,6 @@ const requireGLRPoints = require("../middlewares/requireGLRPoints");
 const requireStudent = require("../middlewares/requireStudent");
 const findStudentSchool = require("../middlewares/findStudentSchool");
 const keys = require("../config/keys");
-//const querystring = require('querystring');
-//const request = require('request-promise');
 const { request } = require("graphql-request");
 const { GraphQLClient } = require("graphql-request");
 
