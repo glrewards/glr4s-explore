@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Studentist from "./StudentList";
-import { Link } from "react-router-dom";
 import { fetchXODStudent } from "../../actions";
 import { fetchXODStudentAchievements } from "../../actions";
 import XODStudentIdCard from "./XODStudentIdCard";
@@ -10,14 +8,8 @@ import XODStudentStatsCard from "./XODStudentStatsCard";
 import XODStudentSummaryCharts from "./XODStudentSummaryCharts";
 import {setProgressBar} from "../../actions";
 import { Collapsible, CollapsibleItem } from "react-materialize";
-import {HandleProgressBar} from "../ProgressBar";
 
 class StudentProfileDashboard extends Component {
-  constructor(props) {
-    super(props);
-
-
-  }
 
   componentDidMount() {
     this.props.fetchXODStudent(

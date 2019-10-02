@@ -13,13 +13,13 @@ class XODStudentIdCard extends Component {
   renderImage() {
     if (this.props.student) {
       return (
-        <img
+        <img alt="student"
           className="center-align"
           src={"data:image/png;base64," + this.props.student.Photo}
         />
       );
     } else {
-      return <img />;
+      return <img alt="blank"/>;
     }
   }
 
@@ -35,7 +35,6 @@ class XODStudentIdCard extends Component {
             <div className="card-image">{this.renderImage()}</div>
          <div className="card-action">
              <span><Link to={"/shop/myitems"}>My Items</Link>
-                 <Link>My Classes</Link>
          </span>
          </div>
         </div>

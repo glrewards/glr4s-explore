@@ -1,7 +1,6 @@
-import { Chart } from "react-google-charts";
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import {Chart} from "react-google-charts";
+import React, {Component} from "react";
+import {connect} from "react-redux";
 
 class XODStudentSummaryCharts extends Component {
   constructor(props) {
@@ -21,21 +20,17 @@ class XODStudentSummaryCharts extends Component {
 
       //we want to return the subject (from root) and the total points ( sum of the array of points inside
       //studentAchievements
-      let points = 0;
-      //console.log("map item: ",item);
-      //console.log("map subject and points", item.rootAchievement.Subject, item.studentAchievements.Points);
-      let mapObj = {
-        subject: item.rootAchievement.Subject,
-        points: item.studentAchievements.Points
+        return {
+          subject: item.rootAchievement.Subject,
+          points: item.studentAchievements.Points
       };
-      return mapObj;
     });
 
     if (data.length === 0) {
       return;
     }
     let initialValue = [];
-    let reduced = data.reduce((acc, value, idx) => {
+    let reduced = data.reduce((acc, value) => {
       //check to see if we have  sub array that starts with the value subject. this means we need to loop through
       //the array
 

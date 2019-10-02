@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import XODStudentList from './XODStudentList';
 import {selectSchool} from "../../actions/XODSchoolActions";
 import { connect } from "react-redux";
@@ -17,11 +17,11 @@ const mapDispatchToProps = dispatch => {
             dispatch(selectSchool(schoolId))
         }
     }
-}
+};
 
 const XODStudentDashboard = connect(
     mapStateToProps,
     mapDispatchToProps
-)(XODStudentList)
+)(XODStudentList);
 
 export default connect(mapStateToProps)(XODStudentDashboard);

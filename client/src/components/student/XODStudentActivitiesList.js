@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 // this displays a simple summary and image of the student based on values mapped into the props taken
 // from the redux state

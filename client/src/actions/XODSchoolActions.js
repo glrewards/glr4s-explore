@@ -1,8 +1,5 @@
 //types
-
-import axios from "axios";
-
-export const SELECT_SCHOOL = 'SELECT_SCHOOL'
+export const SELECT_SCHOOL = 'SELECT_SCHOOL';
 
 /*
  * action creators

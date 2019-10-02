@@ -1,11 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchAllXODStudents } from "../../actions";
-import { Link } from "react-router-dom";
-import {HandleProgressBar} from "../ProgressBar";
-import {setProgressBar} from "../../actions";
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {fetchAllXODStudents, fetchXODStudentCount, setProgressBar} from "../../actions";
+import {Link} from "react-router-dom";
 import PaginationBar from "../PaginationBar";
-import {fetchXODStudentCount} from "../../actions";
 
 class XODStudentList extends Component {
   constructor(props) {
@@ -45,22 +42,21 @@ class XODStudentList extends Component {
   }
 
   renderRows() {
-    let vals = this.props.students.map(student => {
-      return (
-          <tr key={student.xodstudent.Id} className="hover">
-            <td>
-              <Link to={`/school/${this.props.schoolId}/student/${student.xodstudent.Id}`}>
-                {student.xodstudent.DisplayName}{" "}
-              </Link>
-            </td>
-            <td>{student.xodstudent.HouseGroup}</td>
-            <td>{student.xodstudent.YearGroup}</td>
-            <td>{student.xodstudent.Id}</td>
-            <td>{student.hasachievements.toString()}</td>
-          </tr>
-      );
+      return this.props.students.map(student => {
+        return (
+            <tr key={student.xodstudent.Id} className="hover">
+                <td>
+                    <Link to={`/school/${this.props.schoolId}/student/${student.xodstudent.Id}`}>
+                        {student.xodstudent.DisplayName}{" "}
+                    </Link>
+                </td>
+                <td>{student.xodstudent.HouseGroup}</td>
+                <td>{student.xodstudent.YearGroup}</td>
+                <td>{student.xodstudent.Id}</td>
+                <td>{student.hasachievements.toString()}</td>
+            </tr>
+        );
     });
-    return vals;
   }
 
 

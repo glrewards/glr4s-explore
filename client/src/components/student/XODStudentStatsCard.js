@@ -1,26 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, {Component} from "react";
+import {connect} from "react-redux";
 
 // this displays a simple summary and image of the student based on values mapped into the props taken
 // from the redux state
 class XODStudentStatsCard extends Component {
-  constructor(props) {
-    super(props);
-    //this.totalUpRewards = this.totalUpRewards.bind(this);
-  }
 
   static totalUpRewards(achievements) {
     // map reduce the achievements to get a total
     // count the number of activities to get a total
-      const count = achievements.length;
 
-      let totalPoints = achievements.map((item) => {
+      return achievements.map((item) => {
           return item.studentAchievements.Points;
-      }).reduce((total,number) => {
+      }).reduce((total, number) => {
           return total + number;
-      })
-      return totalPoints;
+      });
   }
   render() {
     return (
