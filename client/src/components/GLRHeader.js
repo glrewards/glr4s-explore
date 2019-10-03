@@ -46,7 +46,7 @@ class GLRHeader extends Component {
         //console.log(this.props);
         return (
           <li key={side + "0"}>
-            <a href="/auth/google"><h6>Login with Google</h6></a>
+            <a href={"/auth/google"}><h6>Login with Google</h6></a>
           </li>
         );
       default:
@@ -59,9 +59,9 @@ class GLRHeader extends Component {
           this.renderCartLink(),
 
           <li key={side + "2"}>
-            <a href="/api/logout">Logout</a>
+            <a href={"/api/logout"}>Logout</a>
           </li>,
-            <li key={side + "3"}> <Link to="/shop">Student Dashboard</Link>
+            <li key={side + "3"}> <Link to="/shop">Student Shop</Link>
             </li>,
           this.renderAdminItem(),
           <li key={side + "1"}  className="right">
@@ -76,7 +76,7 @@ class GLRHeader extends Component {
 
     } else {
       return (
-        <li key="admin-drop">
+        <li key="admin">
           <Link to="/admin">
             Admin Dashboard
           </Link>
