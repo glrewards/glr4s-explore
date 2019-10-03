@@ -25,7 +25,7 @@ class ProductGrid extends Component {
 
   renderProducts() {
     return (
-      <div>
+      <div className="row">
         {this.props.products.prods.map(product => (
           <ProductCard
             user={this.props.auth}

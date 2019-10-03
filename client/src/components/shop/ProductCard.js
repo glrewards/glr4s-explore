@@ -93,65 +93,61 @@ class ProductCard extends Component {
     let variantQuantity = this.state.selectedVariantQuantity || 1;
 
     return (
-      <div className="row">
-        <div className="col s12">
-          <div className="card horizontal">
-            <div className="card-image waves-effect waves-block waves-light">
-              <img
-                className="activator"
-                style={{ maxWidth: "80%", maxHeight: "80%" }}
-                src={this.props.product.featuredImage.src}
-                alt={this.props.product.featuredImage.altText}
-              />
-            </div>
-            <div className="card-content">
-              <span className="card-title activator">
-                {this.props.product.title}
-                <i className="material-icons right">more_vert</i>
-              </span>
-              <div>
-                <h5 className="Product__title">{this.props.product.title}</h5>
-                <span className="Product__price">{this.renderGLRPoints()}</span>
-                <label className="Product__option">
-                  Quantity
-                  <input
-                    min="1"
-                    type="number"
-                    defaultValue={variantQuantity}
-                    onChange={this.handleQuantityChange}
-                  />
-                </label>
-                <div className="right-aligned">
-                  <button
-                    className="btn yellow darken-3 waves-effect waves-light"
-                    onClick={() => {
-                        this.props.addVariantToStudentCart(
-                            this.props.auth._student,
-                            this.props.product.id,
-                            this.props.product.title,
-                            variant.id,
-                            variantQuantity,
-                            Number(this.props.product.metafield.value),
-                            this.props.product.featuredImage.src
-                        )
-                    }
-                    }
-                  >
-                    Add to Cart
-                  </button>
+        <div className="col s12 m6 l4">
+            <div className="card medium">
+                <div className="card-image waves-effect waves-block waves-light">
+                    <img
+                        className="activator"
+                        style={{ maxWidth: "80%", maxHeight: "80%" }}
+                        src={this.props.product.featuredImage.src}
+                        alt={this.props.product.featuredImage.altText}
+                    />
+
                 </div>
-              </div>
-            </div>
-            <div className="card-reveal">
+                <div className="card-content">
+                    <span className="card-title"> {this.props.product.title}</span>
+                  <i className="material-icons right">more_vert</i>
+                    <div>
+                        <span className="Product__price">{this.renderGLRPoints()}</span>
+                        <label className="Product__option">
+                            Quantity
+                            <input
+                                min="1"
+                                type="number"
+                                defaultValue={variantQuantity}
+                                onChange={this.handleQuantityChange}
+                            />
+                        </label>
+                        <div className="right-aligned">
+                            <button
+                                className="btn yellow darken-3 waves-effect waves-light"
+                                onClick={() => {
+                                    this.props.addVariantToStudentCart(
+                                        this.props.auth._student,
+                                        this.props.product.id,
+                                        this.props.product.title,
+                                        variant.id,
+                                        variantQuantity,
+                                        Number(this.props.product.metafield.value),
+                                        this.props.product.featuredImage.src
+                                    )
+                                }
+                                }
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="card-reveal">
               <span className="card-title grey-text text-darken-4">
                 {this.props.product.title}
-                <i className="material-icons right">close</i>
+                  <i className="material-icons right">close</i>
               </span>
-              <p> {this.props.product.description}</p>
+                    <p> {this.props.product.description}</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     );
   }
 }
