@@ -9,11 +9,6 @@ const AdminDashboard = () => {
         <div className="col s12 m4 l3 grey lighten-1">
           <ul>
             <li>
-              <Link className="white-text text-darken-2" to={"/students/all"}>
-                <h5>All Students List</h5>
-              </Link>
-            </li>
-            <li>
               <Link
                 className="white-text text-darken-2"
                 to={"/students/school"}

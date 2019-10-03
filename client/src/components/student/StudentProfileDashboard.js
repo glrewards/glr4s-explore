@@ -5,7 +5,6 @@ import { fetchXODStudentAchievements } from "../../actions";
 import XODStudentIdCard from "./XODStudentIdCard";
 import XODStudentActivitiesList from "./XODStudentActivitiesList";
 import XODStudentStatsCard from "./XODStudentStatsCard";
-import XODStudentSummaryCharts from "./XODStudentSummaryCharts";
 import {setProgressBar} from "../../actions";
 import { Collapsible, CollapsibleItem } from "react-materialize";
 
@@ -55,7 +54,6 @@ class StudentProfileDashboard extends Component {
           </div>
         </div>
         <div className="row amber darken-2">
-          <XODStudentSummaryCharts />
           <div className="col s12 m6 l3">
             <p> s12 m6 l3 </p>
           </div>

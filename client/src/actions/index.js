@@ -1,8 +1,6 @@
 import axios from "axios";
 import { FETCH_USER } from "./types";
-import { FETCH_SURVEYS } from "./types";
 import { FETCH_PRODUCTS } from "./types";
-import { FETCH_CATEGORIES } from "./types";
 import { FETCH_ALL_STUDENTS } from "./types";
 import { FETCH_ALL_XOD_STUDENTS } from "./types";
 import { NEW_CATEGORY } from "./types";
