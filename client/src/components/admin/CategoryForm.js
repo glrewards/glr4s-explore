@@ -24,9 +24,6 @@ class CategoryForm extends Component {
             <div>
                 <form onSubmit={handleSubmit}>
                     {this.renderFields()}
-                    <Link to="/" className="red btn waves-effect waves-light">
-                        Cancel<i className="material-icons right">close</i>
-                    </Link>
                     <button
                         type="submit"
                         className="btn waves-effect waves-light red right">
