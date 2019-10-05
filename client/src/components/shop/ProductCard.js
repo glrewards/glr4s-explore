@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
+import {Button, Icon} from "react-materialize";
 
 class ProductCard extends Component {
   constructor(props) {
@@ -94,18 +95,19 @@ class ProductCard extends Component {
 
     return (
         <div className="col s12 m6 l4">
-            <div className="card medium">
+            <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
                     <img
                         className="activator"
-                        style={{ maxWidth: "80%", maxHeight: "80%" }}
+                        style={{ maxWidth: "60%", maxHeight: "60%" }}
                         src={this.props.product.featuredImage.src}
                         alt={this.props.product.featuredImage.altText}
                     />
 
                 </div>
                 <div className="card-content">
-                    <span className="card-title"> {this.props.product.title}</span>
+                    <span> <h6>{this.props.product.title}</h6></span>
+                    <p> {this.props.product.description}</p>
                   <i className="material-icons right">more_vert</i>
                     <div>
                         <span className="Product__price">{this.renderGLRPoints()}</span>
@@ -118,26 +120,26 @@ class ProductCard extends Component {
                                 onChange={this.handleQuantityChange}
                             />
                         </label>
-                        <div className="right-aligned">
-                            <button
-                                className="btn yellow darken-3 waves-effect waves-light"
-                                onClick={() => {
-                                    this.props.addVariantToStudentCart(
-                                        this.props.auth._student,
-                                        this.props.product.id,
-                                        this.props.product.title,
-                                        variant.id,
-                                        variantQuantity,
-                                        Number(this.props.product.metafield.value),
-                                        this.props.product.featuredImage.src
-                                    )
-                                }
-                                }
-                            >
-                                Add to Cart
-                            </button>
-                        </div>
                     </div>
+                </div>
+                <div className="card-action">
+                    <Button className="orange darken-1 waves-effect"
+                            onClick={() => {
+                        this.props.addVariantToStudentCart(
+                            this.props.auth._student,
+                            this.props.product.id,
+                            this.props.product.title,
+                            variant.id,
+                            variantQuantity,
+                            Number(this.props.product.metafield.value),
+                            this.props.product.featuredImage.src
+                        )
+                    }
+                    }>Add to Cart
+                        <Icon>
+                            shopping_basket
+                        </Icon>
+                    </Button>
                 </div>
                 <div className="card-reveal">
               <span className="card-title grey-text text-darken-4">

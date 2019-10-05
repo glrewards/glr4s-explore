@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Navbar, Row, Col, Button, Icon,Table, Modal} from "react-materialize";
+import {Row, Col, Button, Icon,Table, Modal} from "react-materialize";
 import CategoryForm from "./CategoryForm";
 
 
@@ -23,24 +23,33 @@ const AdminDashboard = () => {
           <Button className="col s12 orange darken-1" disabled node="a" style={{margin:3}}>
             Buy Points
           </Button>
-          <Button className=" col s12 orange darken-1" node="a" style={{margin:3}}>
+          <Button tooltip="Open the reports area"
+                  tooltipOptions={{position: 'right'}}
+                  className=" col s12 orange darken-1"
+                  node="a" style={{margin:3}}>
             View Reports
             <Icon right>
               trending_up
             </Icon>
           </Button>
-          <Button className=" col s12 orange darken-1" node="a" style={{margin:3}}>
+          <Button  tooltip="View previous school orders"
+                   tooltipOptions={{position: 'right'}}
+                   className=" col s12 orange darken-1" node="a" style={{margin:3}}>
             Order History
           </Button>
-          <Button className="col s12 orange darken-1" node="a" style={{margin:3}}>
+          <Button  tooltip="View the existing order in detail"
+                   tooltipOptions={{position: 'right'}}
+                   className="col s12 orange darken-1" node="a" style={{margin:3}}>
             Current Basket
             <Icon right>
               shopping_basket
             </Icon>
           </Button>
-          <Button href="#modal1" className="col s12 modal-trigger orange darken-1" style={{margin:3}}>
+          <Button  tooltip="Send us an email"
+                   tooltipOptions={{position: 'right'}}
+                   href="#modal1" className="col s12 modal-trigger orange darken-1" style={{margin:3}}>
             Contact GLR...
-            <Icon>
+            <Icon right>
               email
             </Icon>
           </Button>
