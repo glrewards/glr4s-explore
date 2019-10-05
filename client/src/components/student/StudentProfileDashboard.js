@@ -25,8 +25,8 @@ class StudentProfileDashboard extends Component {
   render() {
     return (
       <div>
-        <div className="row orange">
-          <div className="col s12 orange lighten-2">
+        <div className="row light-blue lighten-4">
+          <div className="col s12 light-blue lighten-4">
             <div className="col s4">
               <XODStudentIdCard />
             </div>
@@ -38,7 +38,7 @@ class StudentProfileDashboard extends Component {
               )}
             </div>
           </div>
-          <div className="col s12 m12 l12 amber">
+          <div className="col s12 m12 l12 light-blue lighten-4">
             <p>s12 m5</p>
             <Collapsible popout>
               <CollapsibleItem header="Open Activities">
@@ -53,7 +53,7 @@ class StudentProfileDashboard extends Component {
             </Collapsible>
           </div>
         </div>
-        <div className="row amber darken-2">
+        <div className="row light-blue lighten-4">
           <div className="col s12 m6 l3">
             <p> s12 m6 l3 </p>
           </div>

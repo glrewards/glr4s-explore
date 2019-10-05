@@ -89,7 +89,7 @@ class XODStudentList extends Component {
 
         /></div>
         <div>
-          <table className="responsive-table highlight striped amber accent-2">
+          <table className="responsive-table highlight striped light-blue lighten-4">
             {this.renderHeader()}
             <tbody>{this.renderRows()}</tbody>
           </table>

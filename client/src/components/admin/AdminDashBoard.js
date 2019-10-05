@@ -9,7 +9,7 @@ const AdminDashboard = () => {
 
 
       <Row>
-        <Col s={12} m={4} l={2} className="grey lighten-1">
+        <Col s={12} m={4} l={2} className=" light-blue darken-2">
           <ul>
             <li>
               <Link
@@ -20,12 +20,12 @@ const AdminDashboard = () => {
               </Link>
             </li>
           </ul>
-          <Button className="col s12 orange darken-1" disabled node="a" style={{margin:3}}>
+          <Button className="col s12 amber darken-4" disabled node="a" style={{margin:3}}>
             Buy Points
           </Button>
           <Button tooltip="Open the reports area"
                   tooltipOptions={{position: 'right'}}
-                  className=" col s12 orange darken-1"
+                  className=" col s12 amber darken-4 waves-effect"
                   node="a" style={{margin:3}}>
             View Reports
             <Icon right>
@@ -34,12 +34,12 @@ const AdminDashboard = () => {
           </Button>
           <Button  tooltip="View previous school orders"
                    tooltipOptions={{position: 'right'}}
-                   className=" col s12 orange darken-1" node="a" style={{margin:3}}>
+                   className=" col s12 amber darken-4 waves-effect" node="a" style={{margin:3}}>
             Order History
           </Button>
           <Button  tooltip="View the existing order in detail"
                    tooltipOptions={{position: 'right'}}
-                   className="col s12 orange darken-1" node="a" style={{margin:3}}>
+                   className="col s12 amber darken-4 waves-effect" node="a" style={{margin:3}}>
             Current Basket
             <Icon right>
               shopping_basket
@@ -47,14 +47,14 @@ const AdminDashboard = () => {
           </Button>
           <Button  tooltip="Send us an email"
                    tooltipOptions={{position: 'right'}}
-                   href="#modal1" className="col s12 modal-trigger orange darken-1" style={{margin:3}}>
+                   href="#modal1" className="col s12 modal-trigger amber darken-4 waves-effect" style={{margin:3}}>
             Contact GLR...
             <Icon right>
               email
             </Icon>
           </Button>
         </Col>
-      <Col s={12} m={8} l={10} className="amber">
+      <Col s={12} m={8} l={10} className="light-blue lighten-4">
 
 
         <Row>

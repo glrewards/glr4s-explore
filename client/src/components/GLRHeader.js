@@ -89,7 +89,7 @@ class GLRHeader extends Component {
     return (
       <div>
         <nav className="nav-extended flow-text">
-          <div className="nav-wrapper orange">
+          <div className="nav-wrapper light-blue darken-1">
             <ul>
               {this.renderContentTop("t")}
             </ul>

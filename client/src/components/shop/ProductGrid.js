@@ -61,7 +61,7 @@ class ProductGrid extends Component {
     }
 
     return (
-      <ul className="pagination yellow darken-4 valign-wrapper">
+      <ul className="pagination light-blue lighten-4 valign-wrapper">
         <li key="back" className={prevClass}>
           <a
             href="#1"
