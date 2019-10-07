@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/email/EmailField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/email/EmailForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/email/EmailFormReview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/email/EmailNew.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/email/formFields.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/admin/AdminDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/AdminDashBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shop/ProductGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shop/ProductGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/StudentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/StudentList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/StudentProfileDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/student/XODStudentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/student/XODStudentList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -234,14 +239,7 @@
       <workItem from="1568908721305" duration="1192000" />
       <workItem from="1569396860350" duration="4843000" />
       <workItem from="1570009537159" duration="7868000" />
-      <workItem from="1570270796903" duration="2679000" />
-    </task>
-    <task id="LOCAL-00046" summary="got a check in client for enough points. implemented a simple save order route that creates an order but does some checking on glrpoints and updates the user points.">
-      <created>1559331011249</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1559331011250</updated>
+      <workItem from="1570270796903" duration="9458000" />
     </task>
     <task id="LOCAL-00047" summary="the order creation logic for mongo is working&#10;Look for an existing order, create if not there&#10;add lineitems&#10;save&#10;&#10;What is not here is anyy checking for duplicate lineitems&#10;Not sure that is even required.">
       <created>1559558537390</created>
@@ -579,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570276385148</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="changed colours to toby suggestions">
+      <created>1570301466188</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1570301466188</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView">
@@ -635,7 +640,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cleaned up warnings and console.log lines throughout the project. Clean point to START FOCUS  on schools data" />
     <MESSAGE value="added in xod model" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED REMEMBER" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED but better as now using the selection but still hardcoded" />
@@ -660,7 +664,8 @@
     <MESSAGE value="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model" />
     <MESSAGE value="glrs-clean:0.3: Menus cleaned up" />
     <MESSAGE value="product grid cleaned up and working" />
-    <option name="LAST_COMMIT_MESSAGE" value="product grid cleaned up and working" />
+    <MESSAGE value="changed colours to toby suggestions" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed colours to toby suggestions" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

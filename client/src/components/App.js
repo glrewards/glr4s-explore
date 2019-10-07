@@ -13,6 +13,7 @@ import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
 import M from "materialize-css";
 import { HandleProgressBar } from "./ProgressBar";
+import EmailNew from "./email/EmailNew";
 
 /*
 const client = new ApolloClient({
@@ -48,6 +49,7 @@ class App extends Component {
             <Route exact path="/students/all" component={StudentDashboard} />
             <Route exact path="/shop/myitems" component={OrderDashboard} />
             <Route exact path="/shop/cart" component={SimpleCartList} />
+            <Route path="/email/new" component={EmailNew} />
             <Route
               path="/school/:schoolId/student/:studentId"
               component={StudentDashboard}

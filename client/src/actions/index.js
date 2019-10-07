@@ -4,6 +4,7 @@ import { FETCH_PRODUCTS } from "./types";
 import { FETCH_ALL_STUDENTS } from "./types";
 import { FETCH_ALL_XOD_STUDENTS } from "./types";
 import { NEW_CATEGORY } from "./types";
+import { NEW_EMAIL} from "./types";
 import { FETCH_LINEITEMS } from "./types";
 import { DELETE_ALL_LINES } from "./cartActions";
 import { FETCH_XOD_STUDENT } from "./types";
@@ -56,6 +57,13 @@ export const submitCategory = values => async dispatch => {
   const res = await axios.post("/api/categories", values);
   //console.log("in submitCategory");
   dispatch({ type: NEW_CATEGORY, payload: res.data });
+};
+
+export const submitEmail = (values,history) => async dispatch => {
+  const res = await axios.post('/api/surveys',values);
+  history.push('/admin');
+  console.log("in submitEmail");
+  dispatch({type: NEW_CATEGORY, payload: res.data});
 };
 
 export const fetchAllStudents = () => async dispatch => {

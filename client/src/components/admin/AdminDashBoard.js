@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Row, Col, Button, Icon,Table, Modal} from "react-materialize";
-import CategoryForm from "./CategoryForm";
+import {SideNav, SideNavItem, Row, Col, Button, Icon,Table, Modal} from "react-materialize";
+import EmailNew from "../email/EmailNew";
 
 
 const AdminDashboard = () => {
@@ -164,8 +164,8 @@ const AdminDashboard = () => {
 
       </Col>
 
-        <Modal id="modal1" header="Modal Header">
-          <CategoryForm/>
+        <Modal id="modal1" header="Send Email to GLR">
+          <EmailNew />
         </Modal>
       </Row>
   );
