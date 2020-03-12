@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import M from "materialize-css";
 import Landing from "./Landing";
 import GLRHeader from "./GLRHeader";
 import Dashboard from "./Dashboard";
@@ -11,8 +12,8 @@ import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
-import M from "materialize-css";
 import { HandleProgressBar } from "./ProgressBar";
+import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
 
 /*
@@ -55,6 +56,7 @@ class App extends Component {
               component={StudentDashboard}
             />
             <Route path="/admin" component={AdminDashboard} />
+            <Route exact path="/admin/cart" component={AdminDashOrderDetails} />
           </div>
         </BrowserRouter>
       </div>

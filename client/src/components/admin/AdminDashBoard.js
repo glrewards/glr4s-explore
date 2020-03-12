@@ -24,7 +24,6 @@ const AdminDashboard = () => {
             Buy Points
           </Button>
           <Button tooltip="Open the reports area"
-                  tooltipOptions={{position: 'right'}}
                   className=" col s12 amber darken-4 waves-effect"
                   node="a" style={{margin:3}}>
             View Reports
@@ -33,20 +32,17 @@ const AdminDashboard = () => {
             </Icon>
           </Button>
           <Button  tooltip="View previous school orders"
-                   tooltipOptions={{position: 'right'}}
                    className=" col s12 amber darken-4 waves-effect" node="a" style={{margin:3}}>
             Order History
           </Button>
           <Button  tooltip="View the existing order in detail"
-                   tooltipOptions={{position: 'right'}}
-                   className="col s12 amber darken-4 waves-effect" node="a" style={{margin:3}}>
+                   className="col s12 amber darken-4 waves-effect" node="a" href="/admin/cart" to={"/admin/cart"} style={{margin:3}}>
             Current Basket
             <Icon right>
               shopping_basket
             </Icon>
           </Button>
           <Button  tooltip="Send us an email"
-                   tooltipOptions={{position: 'right'}}
                    href="#modal1" className="col s12 modal-trigger amber darken-4 waves-effect" style={{margin:3}}>
             Contact GLR...
             <Icon right>
@@ -66,7 +62,7 @@ const AdminDashboard = () => {
             sdfsdfs
             </p>
           </Col>
-          <Col s={12} m={8} l={9} classNmae={"white"}>
+          <Col s={12} m={8} l={9} className={"white"}>
             <Table style={{border:'1px solid orange'}} striped={true}>
               <thead>
               <tr>

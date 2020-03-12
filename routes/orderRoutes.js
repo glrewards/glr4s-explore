@@ -57,7 +57,6 @@ ${DraftOrderFragment}
 module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
-  //TODO: add requireLogin middleware back in
   app.get("/api/orders/:studentId",requireLogin, findStudentSchool, async (req,res) => {
     //get all the open orders for the school
     const orders = await Order.find({_school: req.school});
@@ -72,6 +71,7 @@ module.exports = app => {
 
   //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
   app.get("/api/orders", requireLogin, requireStudent, async (req, res) => {
+    console.log("yup");
     const orders = await Order.find({ _school: req.student._school }).select({
       _lineItems: false
     });
@@ -119,7 +119,6 @@ module.exports = app => {
         res.send("Thanks for Voting!");
     });
 */
-  //TODO: add back in requireLogin requireStudent and change the url when ready
   app.post("/api/orders/", requireLogin, requireStudent, async (req, res) => {
     const _school = req.body.user._student._school;
     const studentId = req.body.user._student._id;
@@ -161,8 +160,7 @@ module.exports = app => {
         if (orderPoints > student.currentPoints) {
           throw "Not enough points";
         } else {
-          let newPoints = student.currentPoints - orderPoints;
-          student.currentPoints = newPoints;
+          student.currentPoints = student.currentPoints - orderPoints;
           student.save();
           order = await newOrder.save();
 
@@ -263,7 +261,7 @@ module.exports = app => {
     if (!arr || typeof arr != 'object') return;
     if (typeof student == 'undefined' || student == null) return arr;
     return arr.filter((line) => {
-      return line._student == student;
+      return line._student === student;
     });
   }
 };
