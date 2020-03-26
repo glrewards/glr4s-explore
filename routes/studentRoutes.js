@@ -13,7 +13,7 @@ const Student = mongoose.model("students");
 
 module.exports = app => {
     //this route access my old POC collection of students and not the XOD data
-  app.get("/api/students/all", async (req, res) => {
+  app.get("/api/students/all", requireLogin, async (req, res) => {
     //console.log("in /students/all",req.body);
     const students = await Student.find();
     //console.log(students);

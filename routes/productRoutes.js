@@ -2,7 +2,6 @@ const glr4sProductQuerys = require("../graphql/gqlTemplates");
 const { GraphQLClient } = require("graphql-request");
 const keys = require("../config/keys");
 
-
 module.exports = app => {
   //TODO: add requireLogin and requiresStudent back in
   app.get("/api/shop/products", async (req, res) => {
