@@ -6,31 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ApiClient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Body.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/CartApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ExperienceApiApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/InlineResponse200.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/LineItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProcessApiApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductCollection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/School.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/SchoolApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/StoreApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Student.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/StudentApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/SystemApiApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/User.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Variant.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,14 +244,7 @@
       <workItem from="1584877039339" duration="9499000" />
       <workItem from="1585136501624" duration="445000" />
       <workItem from="1585150059871" duration="1235000" />
-      <workItem from="1585175745622" duration="3535000" />
-    </task>
-    <task id="LOCAL-00048" summary="got a basic line item retrieval working - need to add more students to fully prove it works">
-      <created>1559586755060</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1559586755060</updated>
+      <workItem from="1585175745622" duration="3981000" />
     </task>
     <task id="LOCAL-00049" summary="retrieving order lineitems for the student">
       <created>1559650229704</created>
@@ -614,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585215522494</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="removed swagger generated client code and uses of it">
+      <created>1585216543626</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1585216543626</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED REMEMBER" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED but better as now using the selection but still hardcoded" />
     <MESSAGE value="STARTED GET INDIVIDUAL STUDENT ROUTE" />
     <MESSAGE value="sorted out redraw issue for now" />
@@ -686,7 +660,8 @@
     <MESSAGE value="product grid cleaned up and working" />
     <MESSAGE value="changed colours to toby suggestions" />
     <MESSAGE value="removed requireLogin from student routes to test" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed requireLogin from student routes to test" />
+    <MESSAGE value="removed swagger generated client code and uses of it" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed swagger generated client code and uses of it" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584542589208">
@@ -701,30 +676,30 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="241" y="399" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1680.1027@0.23.1680.1027" timestamp="1585159767401" />
-    <state x="79" y="139" key="CommitChangelistDialog2" timestamp="1585215522239">
+    <state x="79" y="139" key="CommitChangelistDialog2" timestamp="1585216543352">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="79" y="139" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585215522239" />
-    <state width="1140" height="212" key="GridCell.Tab.0.bottom" timestamp="1585216489972">
+    <state x="79" y="139" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585216543352" />
+    <state width="1140" height="212" key="GridCell.Tab.0.bottom" timestamp="1585217428264">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
-    <state width="1140" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489972" />
-    <state width="1140" height="212" key="GridCell.Tab.0.center" timestamp="1585216489971">
+    <state width="1140" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585217428264" />
+    <state width="1140" height="212" key="GridCell.Tab.0.center" timestamp="1585217428263">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
-    <state width="1140" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489971" />
-    <state width="1140" height="212" key="GridCell.Tab.0.left" timestamp="1585216489971">
+    <state width="1140" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585217428263" />
+    <state width="1140" height="212" key="GridCell.Tab.0.left" timestamp="1585217428263">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
-    <state width="1140" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489971" />
-    <state width="1140" height="212" key="GridCell.Tab.0.right" timestamp="1585216489972">
+    <state width="1140" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585217428263" />
+    <state width="1140" height="212" key="GridCell.Tab.0.right" timestamp="1585217428264">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
-    <state width="1140" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489972" />
+    <state width="1140" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585217428264" />
     <state width="1379" height="329" key="GridCell.Tab.1.bottom" timestamp="1584027883425">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -773,10 +748,18 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1379" height="329" key="GridCell.Tab.3.right/0.23.1680.1027@0.23.1680.1027" timestamp="1584027883429" />
+    <state x="393" y="265" key="RollbackChangesDialog" timestamp="1585217401318">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="393" y="265" key="RollbackChangesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585217401318" />
     <state x="597" y="315" key="git4idea.merge.GitMergeDialog" timestamp="1584029322696">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="597" y="315" key="git4idea.merge.GitMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1584029322696" />
+    <state x="390" y="438" key="git4idea.ui.GitResetDialog" timestamp="1585217421508">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="390" y="438" key="git4idea.ui.GitResetDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585217421508" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
