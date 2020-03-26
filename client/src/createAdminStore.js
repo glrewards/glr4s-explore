@@ -24,9 +24,8 @@ export default ({
         admin: adminReducer,
         i18n: i18nReducer(locale, i18nProvider(locale)),
         form: formReducer,
-        router: routerReducer,
-    { /* add your own reducers here */ },
-});
+        router: routerReducer
+   });
     const resettableAppReducer = (state, action) =>
         reducer(action.type !== USER_LOGOUT ? state : undefined, action);
 

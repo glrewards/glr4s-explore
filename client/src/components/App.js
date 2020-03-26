@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import { connect } from "react-redux";
+import React, {Component} from "react";
+import {BrowserRouter, Route} from "react-router-dom";
+import {connect} from "react-redux";
 import * as actions from "../actions";
 import M from "materialize-css";
 import Landing from "./Landing";
@@ -12,9 +12,13 @@ import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
-import { HandleProgressBar } from "./ProgressBar";
+import {HandleProgressBar} from "./ProgressBar";
 import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
+import ApiClient from "../swagger/swagclient/ApiClient";
+import ProductApi from "../swagger/swagclient/ProductApi";
+import InlineResponse200 from "../swagger/swagclient/InlineResponse200";
+
 
 /*
 const client = new ApolloClient({
@@ -27,6 +31,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     M.AutoInit();
+    const {instance} = ApiClient;
+    let defaultClient = instance;
+// Configure API key authorization: ApiKeyAuth
+    let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+    ApiKeyAuth.apiKey = "ryC5CggcgpeBB23gJJORiYK9oWIUfyew";
+
+    let apiInstance = new ProductApi();
+    let opts = {
+      'searchString': 'bookmark' // String | pass a string that is used to search the title and description
+    };
+    apiInstance.getProducts(opts, (error, data, response) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log('API called successfully. Returned data: ' + data);
+      }
+    });
   }
   componentDidMount() {
     //like an initialize function
