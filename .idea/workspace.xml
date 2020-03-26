@@ -5,39 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/ApiClient.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Body.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/CartApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/ExperienceApiApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/InlineResponse200.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/LineItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/ProcessApiApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductCollection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductImage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/School.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/SchoolApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/StoreApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Student.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/StudentApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/SystemApiApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/Variant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/swagger/swagclient/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/createAdminStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/createAdminStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/requireLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/productRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ApiClient.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Body.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Cart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/CartApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ExperienceApiApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/InlineResponse200.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/LineItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProcessApiApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductCollection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/ProductImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/School.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/SchoolApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/StoreApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Student.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/StudentApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/SystemApiApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/Variant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/swagger/swagclient/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,14 +269,7 @@
       <workItem from="1584877039339" duration="9499000" />
       <workItem from="1585136501624" duration="445000" />
       <workItem from="1585150059871" duration="1235000" />
-      <workItem from="1585175745622" duration="2555000" />
-    </task>
-    <task id="LOCAL-00047" summary="the order creation logic for mongo is working&#10;Look for an existing order, create if not there&#10;add lineitems&#10;save&#10;&#10;What is not here is anyy checking for duplicate lineitems&#10;Not sure that is even required.">
-      <created>1559558537390</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1559558537390</updated>
+      <workItem from="1585175745622" duration="3535000" />
     </task>
     <task id="LOCAL-00048" summary="got a basic line item retrieval working - need to add more students to fully prove it works">
       <created>1559586755060</created>
@@ -621,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570301466188</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="removed requireLogin from student routes to test">
+      <created>1585215522493</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1585215522494</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +661,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added in xod model" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED REMEMBER" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED but better as now using the selection but still hardcoded" />
     <MESSAGE value="STARTED GET INDIVIDUAL STUDENT ROUTE" />
@@ -693,7 +685,8 @@
     <MESSAGE value="glrs-clean:0.3: Menus cleaned up" />
     <MESSAGE value="product grid cleaned up and working" />
     <MESSAGE value="changed colours to toby suggestions" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed colours to toby suggestions" />
+    <MESSAGE value="removed requireLogin from student routes to test" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed requireLogin from student routes to test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584542589208">
@@ -708,26 +701,30 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="241" y="399" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1680.1027@0.23.1680.1027" timestamp="1585159767401" />
-    <state width="819" height="212" key="GridCell.Tab.0.bottom" timestamp="1585043196553">
+    <state x="79" y="139" key="CommitChangelistDialog2" timestamp="1585215522239">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="79" y="139" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585215522239" />
+    <state width="1140" height="212" key="GridCell.Tab.0.bottom" timestamp="1585216489972">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
-    <state width="819" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585043196553" />
-    <state width="819" height="212" key="GridCell.Tab.0.center" timestamp="1585043196553">
+    <state width="1140" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489972" />
+    <state width="1140" height="212" key="GridCell.Tab.0.center" timestamp="1585216489971">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
-    <state width="819" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585043196553" />
-    <state width="819" height="212" key="GridCell.Tab.0.left" timestamp="1585043196553">
+    <state width="1140" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489971" />
+    <state width="1140" height="212" key="GridCell.Tab.0.left" timestamp="1585216489971">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
-    <state width="819" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585043196553" />
-    <state width="819" height="212" key="GridCell.Tab.0.right" timestamp="1585043196553">
+    <state width="1140" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489971" />
+    <state width="1140" height="212" key="GridCell.Tab.0.right" timestamp="1585216489972">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
-    <state width="819" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585043196553" />
+    <state width="1140" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585216489972" />
     <state width="1379" height="329" key="GridCell.Tab.1.bottom" timestamp="1584027883425">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

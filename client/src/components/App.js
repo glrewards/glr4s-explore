@@ -15,10 +15,6 @@ import AdminDashboard from "./admin/AdminDashBoard";
 import {HandleProgressBar} from "./ProgressBar";
 import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
-import ApiClient from "../swagger/swagclient/ApiClient";
-import ProductApi from "../swagger/swagclient/ProductApi";
-import InlineResponse200 from "../swagger/swagclient/InlineResponse200";
-
 
 /*
 const client = new ApolloClient({
@@ -31,23 +27,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     M.AutoInit();
-    const {instance} = ApiClient;
-    let defaultClient = instance;
-// Configure API key authorization: ApiKeyAuth
-    let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-    ApiKeyAuth.apiKey = "ryC5CggcgpeBB23gJJORiYK9oWIUfyew";
-
-    let apiInstance = new ProductApi();
-    let opts = {
-      'searchString': 'bookmark' // String | pass a string that is used to search the title and description
-    };
-    apiInstance.getProducts(opts, (error, data, response) => {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log('API called successfully. Returned data: ' + data);
-      }
-    });
   }
   componentDidMount() {
     //like an initialize function
