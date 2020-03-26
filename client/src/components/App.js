@@ -1,6 +1,6 @@
-import React, {Component} from "react";
-import {BrowserRouter, Route} from "react-router-dom";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import * as actions from "../actions";
 import M from "materialize-css";
 import Landing from "./Landing";
@@ -12,7 +12,7 @@ import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
 import AdminDashboard from "./admin/AdminDashBoard";
-import {HandleProgressBar} from "./ProgressBar";
+import { HandleProgressBar } from "./ProgressBar";
 import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
 
@@ -28,6 +28,7 @@ class App extends Component {
     super(props);
     M.AutoInit();
   }
+
   componentDidMount() {
     //like an initialize function
     //we imported connect above to link react components to the redux store stuff

@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/admin/AdminDashOrderDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ThemeExample.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/trash/ThemeExample.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/admin/AdminDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/AdminDashBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shop/ordergql.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/trash/ordergql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/createAdminStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/createAdminStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/requireLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,6 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript&#10;TEXT" />
@@ -74,7 +73,7 @@
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.14.0" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/reducers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -94,11 +93,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src" />
-      <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/client/src/reducers" />
       <recent name="$PROJECT_DIR$/models/xod" />
       <recent name="$PROJECT_DIR$/client/src/components/shop" />
+      <recent name="$PROJECT_DIR$/client/src/components/shop/tutorial" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -241,13 +239,6 @@
       <workItem from="1578584149581" duration="18000" />
       <workItem from="1578584181987" duration="301000" />
       <workItem from="1583854326772" duration="953000" />
-    </task>
-    <task id="LOCAL-00047" summary="the order creation logic for mongo is working&#10;Look for an existing order, create if not there&#10;add lineitems&#10;save&#10;&#10;What is not here is anyy checking for duplicate lineitems&#10;Not sure that is even required.">
-      <created>1559558537390</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1559558537390</updated>
     </task>
     <task id="LOCAL-00048" summary="got a basic line item retrieval working - need to add more students to fully prove it works">
       <created>1559586755060</created>
@@ -585,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570301466188</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a">
+      <created>1585217535145</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1585217535145</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +630,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added in xod model" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED REMEMBER" />
     <MESSAGE value="have hardcoded working version of get students for a given school - HARDCODED but better as now using the selection but still hardcoded" />
     <MESSAGE value="STARTED GET INDIVIDUAL STUDENT ROUTE" />
@@ -657,29 +654,50 @@
     <MESSAGE value="glrs-clean:0.3: Menus cleaned up" />
     <MESSAGE value="product grid cleaned up and working" />
     <MESSAGE value="changed colours to toby suggestions" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed colours to toby suggestions" />
+    <MESSAGE value="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584542589208">
+    <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1578584158806" />
-    <state width="1659" height="225" key="GridCell.Tab.0.bottom" timestamp="1583855833311">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="318" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585218975334">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="318" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975334" />
+    <state x="106" y="121" key="CommitChangelistDialog2" timestamp="1585217534842">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585217534842" />
+    <state width="1140" height="212" key="GridCell.Tab.0.bottom" timestamp="1585218975498">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
-    <state width="1659" height="225" key="GridCell.Tab.0.center" timestamp="1583855833309">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1140" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975498" />
+    <state width="1140" height="212" key="GridCell.Tab.0.center" timestamp="1585218975497">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
-    <state width="1659" height="225" key="GridCell.Tab.0.left" timestamp="1583855833308">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1140" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975497" />
+    <state width="1140" height="212" key="GridCell.Tab.0.left" timestamp="1585218975497">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
-    <state width="1659" height="225" key="GridCell.Tab.0.right" timestamp="1583855833310">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1140" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975497" />
+    <state width="1140" height="212" key="GridCell.Tab.0.right" timestamp="1585218975498">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
+    <state width="1140" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975498" />
+    <state x="100" y="123" width="961" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585219457293">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="100" y="123" width="961" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585219457293" />
+    <state x="259" y="335" key="git4idea.merge.GitPullDialog" timestamp="1585217871309">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="259" y="335" key="git4idea.merge.GitPullDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585217871309" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

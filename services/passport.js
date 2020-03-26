@@ -36,6 +36,7 @@ passport.use(
         done(null,user);
       }
 
+      //console.log(profile.id);
     }
   )
 );
