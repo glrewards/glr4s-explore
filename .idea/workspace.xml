@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/productsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/productRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,13 +232,6 @@
       <workItem from="1578584149581" duration="18000" />
       <workItem from="1578584181987" duration="301000" />
       <workItem from="1583854326772" duration="953000" />
-    </task>
-    <task id="LOCAL-00050" summary="retrieving products from shopify on node&#10;added the corresponding mongoose objects for product and variant but not using these yet.">
-      <created>1559746566994</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1559746566995</updated>
     </task>
     <task id="LOCAL-00051" summary="added config variables for the product gql">
       <created>1559747869619</created>
@@ -580,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585440470416</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="removing hardcoding around product api calls">
+      <created>1585476260324</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1585476260324</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +623,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="STARTED GET INDIVIDUAL STUDENT ROUTE" />
     <MESSAGE value="sorted out redraw issue for now" />
     <MESSAGE value="saving selected xod school for use when collecting xod student data" />
     <MESSAGE value="have round trip workingto get xod student data" />
@@ -652,7 +647,8 @@
     <MESSAGE value="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a" />
     <MESSAGE value="sorted admin store" />
     <MESSAGE value="products working with proper api - now need to configure and clean up shortcuts and hard coding" />
-    <option name="LAST_COMMIT_MESSAGE" value="products working with proper api - now need to configure and clean up shortcuts and hard coding" />
+    <MESSAGE value="removing hardcoding around product api calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing hardcoding around product api calls" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
@@ -663,10 +659,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="318" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975334" />
-    <state x="106" y="121" key="CommitChangelistDialog2" timestamp="1585440469853">
+    <state x="106" y="121" key="CommitChangelistDialog2" timestamp="1585476260195">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585440469853" />
+    <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585476260195" />
     <state width="1265" height="212" key="GridCell.Tab.0.bottom" timestamp="1585442680148">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
