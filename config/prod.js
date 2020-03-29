@@ -14,5 +14,8 @@ module.exports = {
     shopifyAPIVersion:process.env.SHOPIFY_API_VERSION,
     shopifyCollectionId: process.env.SHOPIFY_COLLECTION_ID,
     shopifyMetaNamespace: process.env.SHOPIFY_META_NAMESPACE,
-    shopifyMetaKey: process.env.SHOPIFY_META_KEY
+    shopifyMetaKey: process.env.SHOPIFY_META_KEY,
+    glrAPIGateway: process.env.GLR_API_GATEAWAY_KEY,
+    glrAPIGatewayKey: process.env.GLR_API_GATEAWAY_KEY,
+    glrAPIProduct: process.env.GLR_API_PRODUCT
 };

@@ -21,12 +21,14 @@ export default function(state = null, action) {
                 lastCursor = getProductCursor(action.payload.prods);
                 firstCursor = getProductCursor(action.payload.prods,true);
             }
+            console.log("productReducer: ", action.payload.page);
             return Object.assign({}, state, {
                 lastCursor: lastCursor,
                 firstCursor: firstCursor,
                 prods: action.payload.prods|| false,
                 page: action.payload.page || false
-            })
+            });
+
         default:
             return state;
     }

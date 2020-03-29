@@ -58,20 +58,21 @@ module.exports = app => {
    */
     let cursor = null;
     let backward = req.query.backward;
-
+    console.log("backward", backward);
+    console.log("query", req.query);
     if(req.query.cursor){
       cursor = req.query.cursor;
     }
 
     try {
-      let url = "https://glr-kong.herokuapp.com/glr/api/glr4s/store/product";
+      let url = keys.glrAPIGateway +  keys.glrAPIProduct;
       let options = {
         params: {
           cursor: cursor,
           backward: backward
         },
         headers:{
-          'X-API-KEY': 'ryC5CggcgpeBB23gJJORiYK9oWIUfyew'
+          'X-API-KEY': keys.glrAPIGatewayKey
         }
       };
       const axiosResponse = await axios.get(url,options);
