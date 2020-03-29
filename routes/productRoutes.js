@@ -1,10 +1,13 @@
 const glr4sProductQuerys = require("../graphql/gqlTemplates");
 const { GraphQLClient } = require("graphql-request");
 const keys = require("../config/keys");
+const axios = require('axios');
 
 module.exports = app => {
   //TODO: add requireLogin and requiresStudent back in
+  //TODO: clean up these calls to the proper apis and any redundant code
   app.get("/api/shop/products", async (req, res) => {
+  /*
     let cursor = null;
     let backward = req.query.backward;
 
@@ -12,6 +15,7 @@ module.exports = app => {
     if(req.query.cursor){
       cursor = req.query.cursor;
     }
+
     try {
       const endpoint =
         "https://" +
@@ -50,7 +54,39 @@ module.exports = app => {
       console.error("error getting products: ", err);
       res.status(422).send(err);
     }
+
+   */
+    let cursor = null;
+    let backward = req.query.backward;
+
+    if(req.query.cursor){
+      cursor = req.query.cursor;
+    }
+
+    try {
+      let url = "https://glr-kong.herokuapp.com/glr/api/glr4s/store/product";
+      let options = {
+        params: {
+          cursor: cursor,
+          backward: backward
+        },
+        headers:{
+          'X-API-KEY': 'ryC5CggcgpeBB23gJJORiYK9oWIUfyew'
+        }
+      };
+      const axiosResponse = await axios.get(url,options);
+
+      const data = axiosResponse.data;
+      //now we want to remove any items that might not have a metafield:{value:} field
+      res.send(data);
+    } catch (err) {
+      console.error("error getting products: ", err);
+      res.status(422).send(err);
+    }
+
   });
+
+
 
   function filterIfNoMeta(products){
     if (!products || typeof products != 'object') return;
