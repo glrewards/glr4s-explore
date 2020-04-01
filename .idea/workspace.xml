@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="10" />
+    <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/rewards/Cabinet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/rewards/Issuer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/rewards/Reward.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/rewards/RewardTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/rewards/RewardType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/rewards/Shelf.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +67,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript&#10;TEXT" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="11.14.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="11.12.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/reducers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -75,7 +83,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -154,9 +162,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev (2)" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.server" />
       </list>
     </recent_temporary>
@@ -233,6 +241,8 @@
       <workItem from="1578584149581" duration="18000" />
       <workItem from="1578584181987" duration="301000" />
       <workItem from="1583854326772" duration="953000" />
+      <workItem from="1585753150234" duration="459000" />
+      <workItem from="1585754184711" duration="3171000" />
     </task>
     <task id="LOCAL-00053" summary="fixed bug with metafield checking">
       <created>1559752932045</created>
@@ -660,30 +670,42 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="318" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975334" />
+    <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585760815684">
+      <screen x="0" y="23" width="2560" height="1346" />
+    </state>
+    <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1585760815684" />
     <state x="106" y="121" key="CommitChangelistDialog2" timestamp="1585477284227">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585477284227" />
-    <state width="1265" height="212" key="GridCell.Tab.0.bottom" timestamp="1585442680148">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1379" height="270" key="GridCell.Tab.0.bottom" timestamp="1585760027245">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
     <state width="1265" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680148" />
-    <state width="1265" height="212" key="GridCell.Tab.0.center" timestamp="1585442680147">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1379" height="270" key="GridCell.Tab.0.bottom/0.23.2560.1346@0.23.2560.1346" timestamp="1585760027245" />
+    <state width="1379" height="270" key="GridCell.Tab.0.center" timestamp="1585760027244">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
     <state width="1265" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680147" />
-    <state width="1265" height="212" key="GridCell.Tab.0.left" timestamp="1585442680146">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1379" height="270" key="GridCell.Tab.0.center/0.23.2560.1346@0.23.2560.1346" timestamp="1585760027244" />
+    <state width="1379" height="270" key="GridCell.Tab.0.left" timestamp="1585760027244">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
     <state width="1265" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680146" />
-    <state width="1265" height="212" key="GridCell.Tab.0.right" timestamp="1585442680147">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1379" height="270" key="GridCell.Tab.0.left/0.23.2560.1346@0.23.2560.1346" timestamp="1585760027244" />
+    <state width="1379" height="270" key="GridCell.Tab.0.right" timestamp="1585760027244">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
     <state width="1265" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680147" />
+    <state width="1379" height="270" key="GridCell.Tab.0.right/0.23.2560.1346@0.23.2560.1346" timestamp="1585760027244" />
+    <state x="789" y="335" key="SettingsEditor" timestamp="1585760883311">
+      <screen x="0" y="23" width="2560" height="1346" />
+    </state>
+    <state x="789" y="335" key="SettingsEditor/0.23.2560.1346@0.23.2560.1346" timestamp="1585760883311" />
     <state x="100" y="123" width="961" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585219457293">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
