@@ -35,7 +35,8 @@
     "path-parser": "^4.2.0",
     "pug": "^2.0.3",
     "sendgrid": "^5.2.3",
-    "stripe": "^6.32.0"
+    "stripe": "^6.32.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
