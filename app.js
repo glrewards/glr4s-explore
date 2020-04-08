@@ -50,6 +50,7 @@ require("./routes/billingRoutes")(app);
 require("./routes/studentRoutes")(app);
 require("./routes/orderRoutes")(app);
 require("./routes/productRoutes")(app);
+require("./routes/rewardRoutes")(app);
 
 
 

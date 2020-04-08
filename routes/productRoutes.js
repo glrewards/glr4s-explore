@@ -1,14 +1,24 @@
 const keys = require("../config/keys");
 const axios = require('axios');
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'debug',
+  format: winston.format.json(),
+  defaultMeta: { service: "productRoutes" },
+  transports: [new winston.transports.Console()],
+});
 
 module.exports = app => {
   //TODO: add requireLogin and requiresStudent back in
   //TODO: clean up these calls to the proper apis and any redundant code
   app.get("/api/shop/products", async (req, res) => {
+    logger.info('handling products route');
+    logger.debug(req.user);
     let cursor = null;
     let backward = req.query.backward;
-    console.log("backward", backward);
-    console.log("query", req.query);
+    logger.debug("backward", backward);
+    logger.debug("query", req.query);
     if(req.query.cursor){
       cursor = req.query.cursor;
     }
@@ -26,9 +36,10 @@ module.exports = app => {
       };
       const axiosResponse = await axios.get(url,options);
       const data = axiosResponse.data;
+      logger.debug(data);
       res.send(data);
     } catch (err) {
-      console.error("error getting products: ", err);
+      logger.error("error getting products: ", err);
       res.status(422).send(err);
     }
 

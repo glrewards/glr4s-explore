@@ -15,6 +15,7 @@ import AdminDashboard from "./admin/AdminDashBoard";
 import { HandleProgressBar } from "./ProgressBar";
 import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
+import CabinetContainer from "./containers-rewards/CabinetContainer";
 
 /*
 const client = new ApolloClient({
@@ -58,6 +59,7 @@ class App extends Component {
             />
             <Route path="/admin" component={AdminDashboard} />
             <Route exact path="/admin/cart" component={AdminDashOrderDetails} />
+            <Route path="/rewards" component={CabinetContainer} />
           </div>
         </BrowserRouter>
       </div>

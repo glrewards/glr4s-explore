@@ -12,5 +12,14 @@ export const FETCH_XOD_ACHIEVEMENTS  = 'FETCH_XOD_ACHIEVEMENTS';
 export const SET_PROGRESS_BAR = 'SET_PROGRESS_BAR';
 export const SET_STUDENT_PAGES = 'SET_STUDENT_PAGES';
 export const NEW_EMAIL = 'new_email';
+export const FETCH_CABINET_REQUEST = 'fetch_cabinet_request';
+export const FETCH_CABINET_FAILURE = 'fetch_cabinet_failure';
+export const FETCH_CABINET_SUCCESS = 'fetch_cabinet_success';
+export const FETCH_CABINET = 'fetch_cabinet';
+export const EDIT_CABINET = 'edit_cabinet';
+export const ADD_SHELF = 'add_shelf';
+export const EDIT_SHELF = 'edit_shelf';
+export const REMOVE_SHELF = 'remove_shelf';
+export const SET_ADD_CART_BUTTON_FILTER = 'set_add_cart_button_filter';
 
 

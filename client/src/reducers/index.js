@@ -13,6 +13,7 @@ import XODSchoolReducer from "./XODSchoolReducer";
 import XODSingleStudentReducer from "./XODSingleStudentReducer";
 import XODAchievementsReducer from "./XODAchivementReducer";
 import UIReducer from "./UIReducer";
+import cabinet from "./rewardReducer";
 
 export default combineReducers({
     auth: authReducer,
@@ -27,5 +28,6 @@ export default combineReducers({
     products: productsReducer,
     lineItems: lineItemReducer,
     cart: cartReducer,
-    ui: UIReducer
+    ui: UIReducer,
+    cabinet: cabinet
 });

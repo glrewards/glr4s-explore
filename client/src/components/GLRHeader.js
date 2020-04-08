@@ -56,6 +56,11 @@ class GLRHeader extends Component {
               GLR4S - DEV
             </Link>
           </li>,
+          <li key="rewards">
+            <Link to={'/rewards'}>
+              Reward Cabinet
+            </Link>
+          </li>,
           this.renderCartLink(),
 
           <li key={side + "2"}>

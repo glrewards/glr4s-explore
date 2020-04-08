@@ -25,4 +25,4 @@ const rewardTemplateSchema = new Schema({
     _issuer: {type: Schema.Types.ObjectId, ref: 'issuer'},
 });
 
-mongoose.model("RewardTypes", rewardTemplateSchema);
+mongoose.model("RewardTemplate", rewardTemplateSchema);
