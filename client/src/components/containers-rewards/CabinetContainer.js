@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import ShelfList from "../rewards/ShelfList";
+
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";
 import {Button} from "react-materialize";
 
-import Cabinet from "../rewards/Cabinet";
 class CabinetContainer extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ class CabinetContainer extends Component {
     dispatch(fetchCabinet(centre));
   }
   render() {
-    const { centre, cabDetails, isFetching, lastUpdated } = this.props;
+    const { centre, cabDetail, isFetching, lastUpdated } = this.props;
     return (
       <div>
         <p>
@@ -35,9 +36,20 @@ class CabinetContainer extends Component {
             </span>
           )}
           {!isFetching && (
-            <Button onClick={this.handleRefreshClick}>Refresh</Button>
+            <Button className="col s12 amber darken-4" onClick={this.handleRefreshClick} >Refresh</Button>
           )}
         </p>
+        <div>
+          {console.log("CAB: ",cabDetail)}
+            {console.log(cabDetail.shelves)}
+            {isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>Loading...</h2> }
+            {!isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>No Cabinet</h2> }
+            {(JSON.stringify(cabDetail) != JSON.stringify({})) &&(
+                <div style={{opacity: isFetching ? 0.5:1}}>
+            <ShelfList shelves={cabDetail.shelves}/>
+                </div>
+            )}
+        </div>
       </div>
     );
   }

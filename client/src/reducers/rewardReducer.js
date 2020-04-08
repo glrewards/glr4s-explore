@@ -23,7 +23,6 @@ function cabinet(
         didInvalidate: false
       })
     case RECEIVE_CABINET:
-      console.log("ACTION: ",action);
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
