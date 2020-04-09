@@ -8,8 +8,7 @@ const passport = require("passport");
 
 module.exports = app => {
 
-  app.get(
-    "/auth/google", passport.authenticate("google", {scope: ["profile", "email"]})
+  app.get("/auth/google", passport.authenticate("google", {scope: ["profile", "email"]})
   );
 
   app.get(
@@ -18,6 +17,18 @@ module.exports = app => {
     (req, res) => {
       res.redirect("/surveys");
     }
+  );
+
+  app.get("/auth/slack", passport.authenticate("Slack", {scope: ["identity.basic", "identity.email"]})
+
+  );
+
+  app.get(
+      "/auth/slack/callback",
+      passport.authenticate("Slack"),
+      (req, res) => {
+        res.redirect("/surveys");
+      }
   );
 
   app.get("/api/logout", (req, res) => {
@@ -29,4 +40,6 @@ module.exports = app => {
   app.get("/api/current_user", (req, res) => {
     res.send(req.user); //all working
   });
+
+
 };

@@ -9,34 +9,8 @@ import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers";
 
-/*
-import { ApolloClient } from "apollo-client";
-import { createHttpLink } from "apollo-link-http";
-import { setContext } from "apollo-link-context";
-import { InMemoryCache } from "apollo-cache-inmemory";
 
-
-//USE THESE DEBUG HElping lines
-//import axios from 'axios';
-//window.axios = axios;
-
-
-const httpLink = createHttpLink({ uri: process.env.REACT_APP_SHOPIFY_GQL });
-
-const middlewareLink = setContext(() => ({
-  headers: {
-    "X-Shopify-Storefront-Access-Token":
-      process.env.REACT_APP_X_SHOPIFY_STOREFRONT_ACCESS_TOKEN
-  }
-}));
-
-
-const client = new ApolloClient({
-  link: middlewareLink.concat(httpLink),
-  cache: new InMemoryCache()
-});
-*/
-
+//TODO: REMOVE this as it is a DEV DEBUG TOOL!!!!
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, {}, composeEnhancers(    applyMiddleware(reduxThunk)
 ));
@@ -50,4 +24,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-//<Provider store={store}><App/></Provider>
+

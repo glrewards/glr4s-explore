@@ -45,8 +45,8 @@ class GLRHeader extends Component {
       case false:
         //console.log(this.props);
         return (
-          <li key={side + "0"}>
-            <a href={"/auth/google"}><h6>Login with Google</h6></a>
+          <li key={side + "google"}>
+            <a href={"/auth/google"}>Login with Google</a>
           </li>
         );
       default:

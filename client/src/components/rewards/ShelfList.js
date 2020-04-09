@@ -7,41 +7,41 @@ import RewardList from "./RewardList";
 export default class ShelfList extends Component {
   render() {
     return (
-      <Collapsible accordion={false} header="Shelves">
+      <Collapsible accordion={true} header="Shelves">
         {this.props.shelves.map(shelf => (
           <CollapsibleItem
-            node="h2"
+            node="h3"
             expanded={true}
-            key={shelf._id}
+            key={shelf.name}
             header={shelf.name}
-            icon={<Icon>'place'</Icon>}
-          >
+          ><img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
             <div>
               <table className="striped responsive-table">
-                <thead>
-                  <th>Image</th>
-                  <th>Name</th>
-                  <th> In Stock </th>
-                  <th>Buy Now</th>
-                  <th>Vote For</th>
+                <thead className="deep-purple-text center-align">
+                <tr>
+                <th><h4 className="center-align">Image</h4></th>
+                  <th><h4 className="center-align">Name</h4></th>
+                  <th><h4 className="center-align">In Stock </h4></th>
+                  <th><h4 className="center-align">Buy Now</h4></th>
+                  <th><h4 className="center-align">Vote For</h4></th>
+                </tr>
                 </thead>
                 <tbody>
-                  {console.log(JSON.stringify(shelf.rewardItems))}
                   {typeof shelf.rewardItems != "undefined" &&
                     shelf.rewardItems.map(reward => {
                       return (
-                        <tr>
+                        <tr key={reward.name}>
                           <td>
                             {typeof reward._shopifyProduct != "undefined" &&
                               reward._shopifyProduct.image.src && (
-                                <img height="100"
+                                <img height="20%" width="30%"
                                   alt="temp"
                                   src={reward._shopifyProduct.image.src}
                                 />
                               )}
                           </td>
-                          <td>{reward.name}</td>
-                          <td>{reward.count}</td>
+                          <td><h5>{reward.name}</h5></td>
+                          <td><h5> className="center-align">{reward.count}</h5></td>
 
                           <td>
                             <Button className="amber darken-4" waves="purple">

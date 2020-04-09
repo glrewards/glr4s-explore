@@ -14,14 +14,14 @@ class CabinetContainer extends Component {
 
   componentDidMount() {
     const { dispatch, centre } = this.props;
-    console.log("this is the componentDidMount props: ", this.props);
+    //console.log("this is the componentDidMount props: ", this.props);
     dispatch(fetchCabinet("5e88fce21c9d4400007fc283"));
   }
 
   handleRefreshClick(e) {
     e.preventDefault();
     const {dispatch, centre } = this.props;
-    console.log("handleRefresh: ", this.props);
+    //console.log("handleRefresh: ", this.props);
     dispatch(invalidateCabinet(centre));
     dispatch(fetchCabinet(centre));
   }
@@ -40,8 +40,6 @@ class CabinetContainer extends Component {
           )}
         </p>
         <div>
-          {console.log("CAB: ",cabDetail)}
-            {console.log(cabDetail.shelves)}
             {isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>Loading...</h2> }
             {!isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>No Cabinet</h2> }
             {(JSON.stringify(cabDetail) != JSON.stringify({})) &&(
@@ -68,7 +66,7 @@ function mapStateToProps(state) {
   const { centre, isFetching, lastUpdated, cabDetail } = cabinet || {
     isFetching: true
   };
-  console.log("this is the state: ", state);
+  //console.log("this is the state: ", state);
   return {
     centre,
     cabDetail,

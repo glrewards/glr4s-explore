@@ -30,7 +30,7 @@ function requestCabinet(centre) {
 
 export const RECEIVE_CABINET = "receive_cabinet";
 function receiveCabinet(centre, json) {
-  console.log(centre,json);
+  //console.log(centre,json);
   return {
     type: RECEIVE_CABINET,
     centre,
@@ -63,7 +63,7 @@ export const fetchCabinet = (centre, summary) => async dispatch => {
   };
   dispatch(requestCabinet(centre)); //update state to say we are fetching cabinet
   const res = await axios.get(url, options);
-  console.log("response data: ", res.data);
+  //console.log("response data: ", res.data);
   dispatch(receiveCabinet(centre,res.data));
 };
 
