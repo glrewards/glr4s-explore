@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/rewardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rewardActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Landing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Student.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Student.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/Cabinet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/Shelf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +64,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript&#10;TEXT" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="11.12.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/reducers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -236,6 +223,14 @@
       <workItem from="1585753150234" duration="459000" />
       <workItem from="1585754184711" duration="3171000" />
       <workItem from="1586327252229" duration="21530000" />
+      <workItem from="1586605248291" duration="3429000" />
+    </task>
+    <task id="LOCAL-00054" summary="added a throw if no products are returned">
+      <created>1559753388298</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1559753388298</updated>
     </task>
     <task id="LOCAL-00055" summary="tried to fix again">
       <created>1559753753624</created>
@@ -573,14 +568,7 @@
       <option name="project" value="LOCAL" />
       <updated>1586364761394</updated>
     </task>
-    <task id="LOCAL-00103" summary="added images and buttons">
-      <created>1586378568459</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1586378568459</updated>
-    </task>
-    <option name="localTasksCounter" value="104" />
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,6 +614,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="have round trip workingto get xod student data" />
     <MESSAGE value="got images workng!!!!" />
     <MESSAGE value="started with side nav and improved student card" />
     <MESSAGE value="retrieving achievements correctly to state. Starting on achievement react components" />
@@ -650,8 +639,7 @@
     <MESSAGE value="removing hardcoding around product api calls" />
     <MESSAGE value="FIXED SMALL TYPO IN PROD CONFIG" />
     <MESSAGE value="basic gui for cabinet working" />
-    <MESSAGE value="added images and buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added images and buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic gui for cabinet working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
@@ -666,39 +654,35 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1585760815684" />
-    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1586378568307">
+    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1586364761244">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1585477284227" />
-    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1586378568307" />
-    <state x="107" y="124" width="1244" height="1145" key="DiffContextDialog" timestamp="1586385336599">
-      <screen x="0" y="23" width="2560" height="1346" />
-    </state>
-    <state x="107" y="124" width="1244" height="1145" key="DiffContextDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1586385336599" />
-    <state width="1259" height="270" key="GridCell.Tab.0.bottom" timestamp="1586442941775">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1586364761244" />
+    <state width="819" height="210" key="GridCell.Tab.0.bottom" timestamp="1586621389112">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
-    <state width="1265" height="212" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680148" />
-    <state width="1259" height="270" key="GridCell.Tab.0.bottom/0.23.2560.1346@0.23.2560.1346" timestamp="1586442941775" />
-    <state width="1259" height="270" key="GridCell.Tab.0.center" timestamp="1586442941775">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="819" height="210" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1586621389112" />
+    <state width="1423" height="270" key="GridCell.Tab.0.bottom/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186385" />
+    <state width="819" height="210" key="GridCell.Tab.0.center" timestamp="1586621389112">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
-    <state width="1265" height="212" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680147" />
-    <state width="1259" height="270" key="GridCell.Tab.0.center/0.23.2560.1346@0.23.2560.1346" timestamp="1586442941775" />
-    <state width="1259" height="270" key="GridCell.Tab.0.left" timestamp="1586442941770">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="819" height="210" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1586621389112" />
+    <state width="1423" height="270" key="GridCell.Tab.0.center/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186384" />
+    <state width="819" height="210" key="GridCell.Tab.0.left" timestamp="1586621389111">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
-    <state width="1265" height="212" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680146" />
-    <state width="1259" height="270" key="GridCell.Tab.0.left/0.23.2560.1346@0.23.2560.1346" timestamp="1586442941770" />
-    <state width="1259" height="270" key="GridCell.Tab.0.right" timestamp="1586442941775">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="819" height="210" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1586621389111" />
+    <state width="1423" height="270" key="GridCell.Tab.0.left/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186380" />
+    <state width="819" height="210" key="GridCell.Tab.0.right" timestamp="1586621389112">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
-    <state width="1265" height="212" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1585442680147" />
-    <state width="1259" height="270" key="GridCell.Tab.0.right/0.23.2560.1346@0.23.2560.1346" timestamp="1586442941775" />
+    <state width="819" height="210" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1586621389112" />
+    <state width="1423" height="270" key="GridCell.Tab.0.right/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186385" />
     <state width="1259" height="472" key="GridCell.Tab.1.bottom" timestamp="1586327171738">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
@@ -751,31 +735,22 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="789" y="335" key="SettingsEditor/0.23.2560.1346@0.23.2560.1346" timestamp="1585760883311" />
-    <state x="247" y="436" key="Vcs.Push.Dialog.v2" timestamp="1586378577813">
+    <state x="247" y="436" key="Vcs.Push.Dialog.v2" timestamp="1586364768967">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
-    <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1586378577813" />
-    <state x="152" y="154" width="1465" height="1084" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586385336599">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1586364768967" />
+    <state x="100" y="123" width="961" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585219457293">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="100" y="123" width="961" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585219457293" />
-    <state x="152" y="154" width="1465" height="1084" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1586385336599" />
     <state x="258" y="349" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586338603416">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="258" y="349" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.2560.1346@0.23.2560.1346" timestamp="1586338603416" />
-    <state x="483" y="56" width="1141" height="1137" key="dock-window-1" timestamp="1586439350666">
-      <screen x="0" y="23" width="2560" height="1346" />
-    </state>
-    <state x="483" y="56" width="1141" height="1137" key="dock-window-1/0.23.2560.1346@0.23.2560.1346" timestamp="1586439350666" />
     <state x="259" y="335" key="git4idea.merge.GitPullDialog" timestamp="1585217871309">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="259" y="335" key="git4idea.merge.GitPullDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585217871309" />
-    <state x="429" y="591" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1586437498575">
-      <screen x="0" y="23" width="2560" height="1346" />
-    </state>
-    <state x="429" y="591" key="git4idea.remote.GitConfigureRemotesDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1586437498575" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -783,7 +758,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/reducers/index.js</url>
           <line>14</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

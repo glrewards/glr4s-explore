@@ -15,7 +15,7 @@ class CabinetContainer extends Component {
   componentDidMount() {
     const { dispatch, centre } = this.props;
     //console.log("this is the componentDidMount props: ", this.props);
-    dispatch(fetchCabinet("5e88fce21c9d4400007fc283"));
+    dispatch(fetchCabinet("5e8e67ed1c9d440000858579"));
   }
 
   handleRefreshClick(e) {

@@ -27,21 +27,22 @@ export default class ShelfList extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                  {typeof shelf.rewardItems != "undefined" &&
+                  {typeof shelf.rewardItems != "undefined" && (shelf.rewardItems.length > 0) &&
                     shelf.rewardItems.map(reward => {
+                      console.log(reward);
                       return (
-                        <tr key={reward.name}>
+                        <tr key={reward._id}>
                           <td>
                             {typeof reward._shopifyProduct != "undefined" &&
                               reward._shopifyProduct.image.src && (
-                                <img height="20%" width="30%"
+                                <img height="150" width="150"
                                   alt="temp"
                                   src={reward._shopifyProduct.image.src}
                                 />
                               )}
                           </td>
-                          <td><h5>{reward.name}</h5></td>
-                          <td><h5> className="center-align">{reward.count}</h5></td>
+                          <td><h5>{reward._shopifyProduct.title}</h5></td>
+                          <td><h5 className="center-align">{reward.count}</h5></td>
 
                           <td>
                             <Button className="amber darken-4" waves="purple">
