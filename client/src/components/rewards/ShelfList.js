@@ -17,15 +17,6 @@ export default class ShelfList extends Component {
           ><img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
             <div>
               <table className="striped responsive-table">
-                <thead className="deep-purple-text center-align">
-                <tr>
-                <th><h4 className="center-align">Image</h4></th>
-                  <th><h4 className="center-align">Name</h4></th>
-                  <th><h4 className="center-align">In Stock </h4></th>
-                  <th><h4 className="center-align">Buy Now</h4></th>
-                  <th><h4 className="center-align">Vote For</h4></th>
-                </tr>
-                </thead>
                 <tbody>
                   {typeof shelf.rewardItems != "undefined" && (shelf.rewardItems.length > 0) &&
                     shelf.rewardItems.map(reward => {
@@ -42,17 +33,15 @@ export default class ShelfList extends Component {
                               )}
                           </td>
                           <td><h5>{reward._shopifyProduct.title}</h5></td>
-                          <td><h5 className="center-align">{reward.count}</h5></td>
+                          <td><h5 className="center-align"> In Stock: {reward.count}</h5></td>
 
                           <td>
                             <Button className="amber darken-4" waves="purple">
                               Add<Icon right>add_shopping_cart</Icon>
                             </Button>
-                          </td>
-                          <td>
                             <Button
-                              className="col s12 amber darken-4"
-                              waves="purple"
+                                className="col s12 amber darken-4"
+                                waves="purple"
                             >
                               Fav!<Icon right>favorite</Icon>
                             </Button>
