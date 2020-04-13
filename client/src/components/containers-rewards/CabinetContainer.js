@@ -40,9 +40,9 @@ class CabinetContainer extends Component {
           )}
         </p>
         <div>
-            {isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>Loading...</h2> }
-            {!isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>No Cabinet</h2> }
-            {(JSON.stringify(cabDetail) != JSON.stringify({})) &&(
+            {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading...</h2> }
+            {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
+            {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
                 <div style={{opacity: isFetching ? 0.5:1}}>
             <ShelfList shelves={cabDetail.shelves}/>
                 </div>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {START_LOGIN} from "./types";
 import { FETCH_USER } from "./types";
 import { FETCH_PRODUCTS } from "./types";
 import { FETCH_ALL_STUDENTS } from "./types";
@@ -59,6 +60,11 @@ export const submitCategory = values => async dispatch => {
   dispatch({ type: NEW_CATEGORY, payload: res.data });
 };
 
+export const submitLogin = (values) => async dispatch => {
+  console.log(values);
+  const res = await axios.post("/login", values);
+  dispatch({ type: START_LOGIN, payload: res.data });
+};
 export const submitEmail = (values,history) => async dispatch => {
   const res = await axios.post('/api/surveys',values);
   history.push('/admin');
