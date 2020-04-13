@@ -5,39 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/login/LoginForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/login/LoginFormContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/login/SignUpContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/login/formFields.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_dark_disabled_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_dark_focus_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_dark_normal_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_dark_pressed_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_light_disabled_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_light_focus_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_light_normal_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/btn_google_signin_light_pressed_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/index.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/register.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rewardRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rewardRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,14 +224,7 @@
       <workItem from="1586605248291" duration="5553000" />
       <workItem from="1586701040999" duration="16897000" />
       <workItem from="1586792070480" duration="6764000" />
-      <workItem from="1586800922167" duration="18499000" />
-    </task>
-    <task id="LOCAL-00057" summary="made changes to add page into into product data and client side changes as this complicated the products state (changed from a simple array to an object containing an array">
-      <created>1559808152321</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1559808152322</updated>
+      <workItem from="1586800922167" duration="19148000" />
     </task>
     <task id="LOCAL-00058" summary="pagination working">
       <created>1559923120868</created>
@@ -600,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586707962819</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="major authentication changes - HUGE - and working">
+      <created>1586821485556</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1586821485557</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +615,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="got images workng!!!!" />
     <MESSAGE value="started with side nav and improved student card" />
     <MESSAGE value="retrieving achievements correctly to state. Starting on achievement react components" />
     <MESSAGE value="working checkpoint on achievement table react work" />
@@ -671,7 +639,8 @@
     <MESSAGE value="FIXED SMALL TYPO IN PROD CONFIG" />
     <MESSAGE value="basic gui for cabinet working" />
     <MESSAGE value="small changes to simplify Cabinet" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes to simplify Cabinet" />
+    <MESSAGE value="major authentication changes - HUGE - and working" />
+    <option name="LAST_COMMIT_MESSAGE" value="major authentication changes - HUGE - and working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
@@ -686,10 +655,10 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1585760815684" />
-    <state x="106" y="121" key="CommitChangelistDialog2" timestamp="1586707962606">
+    <state x="106" y="121" key="CommitChangelistDialog2" timestamp="1586821485296">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586707962606" />
+    <state x="106" y="121" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586821485296" />
     <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1586364761244" />
     <state width="959" height="210" key="GridCell.Tab.0.bottom" timestamp="1586818858715">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -768,10 +737,10 @@
     </state>
     <state x="518" y="261" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1586777614531" />
     <state x="789" y="335" key="SettingsEditor/0.23.2560.1346@0.23.2560.1346" timestamp="1585760883311" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1586707992935">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1586821966985">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1586707992935" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1586821966985" />
     <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1586364768967" />
     <state x="100" y="123" width="961" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586821342769">
       <screen x="0" y="23" width="1680" height="1027" />
