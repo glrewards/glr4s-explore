@@ -1,14 +1,66 @@
 //demo hot fix
 const passport = require("passport");
-//const mongoose = require("mongoose");
+const crypto = require('crypto');
+const mongoose = require("mongoose");
+const User = mongoose.model("users");
 
-
-//const user = mongoose.model("users");
 /* handle redirect to google oauth. */
 
 module.exports = app => {
+  /* GET login page. */
+  app.get("/login", function(req, res) {
+    // Display the Login page with any flash message, if any
+    console.log("get login page");
+    res.redirect("/");
+  });
 
-  app.get("/auth/google", passport.authenticate("google", {scope: ["profile", "email"]})
+  /* Handle Login POST */
+  app.post(
+    "/login",
+    passport.authenticate("local", {
+      successRedirect: "/api/current_user"
+    }),
+    (err, req, res, next) => {
+
+      if(err){
+        res.status(404).send({error: 'You must log in'});
+      }
+
+
+    }
+  );
+
+
+
+  app.get('/register', (req, res, next) => {
+    const form = '<h1>Register Page</h1><form method="post" action="register">\
+                    Enter Username:<br><input type="text" name="username">\
+                    <br>Enter Password:<br><input type="password" name="password">\
+                    <br><br><input type="submit" value="Submit"></form>';
+    res.send(form);
+
+  });
+
+  app.post('/register', (req, res, next) => {
+    const saltHash = genPassword(req.body.password);
+    const salt = saltHash.salt;
+    const hash = saltHash.hash;
+    const newUser = new User({
+      username: req.body.username,
+      email: req.body.email,
+      hash: hash,
+      salt: salt
+    });
+    newUser.save()
+        .then((user) => {
+          console.log(user);
+        });
+    res.redirect('/login');
+  });
+
+  app.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
   );
 
   app.get(
@@ -19,27 +71,38 @@ module.exports = app => {
     }
   );
 
-  app.get("/auth/slack", passport.authenticate("Slack", {scope: ["identity.basic", "identity.email"]})
-
+  app.get(
+    "/auth/slack",
+    passport.authenticate("Slack", {
+      scope: ["identity.basic", "identity.email"]
+    })
   );
 
   app.get(
-      "/auth/slack/callback",
-      passport.authenticate("Slack"),
-      (req, res) => {
-        res.redirect("/surveys");
-      }
+    "/auth/slack/callback",
+    passport.authenticate("Slack"),
+    (req, res) => {
+      res.redirect("/surveys");
+    }
   );
 
   app.get("/api/logout", (req, res) => {
-    console.log('logout initiated');
+    console.log("logout initiated");
     req.logout();
-    res.redirect('/');
+    res.redirect("/");
   });
 
   app.get("/api/current_user", (req, res) => {
     res.send(req.user); //all working
   });
-
-
 };
+
+function genPassword(password) {
+  let salt = crypto.randomBytes(32).toString('hex');
+  let genHash = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+
+  return {
+    salt: salt,
+    hash: genHash
+  };
+}

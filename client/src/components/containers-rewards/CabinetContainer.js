@@ -15,7 +15,7 @@ class CabinetContainer extends Component {
   componentDidMount() {
     const { dispatch, centre } = this.props;
     //console.log("this is the componentDidMount props: ", this.props);
-    dispatch(fetchCabinet("5e88fce21c9d4400007fc283"));
+    dispatch(fetchCabinet("5e8e67ed1c9d440000858579"));
   }
 
   handleRefreshClick(e) {
@@ -40,9 +40,9 @@ class CabinetContainer extends Component {
           )}
         </p>
         <div>
-            {isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>Loading...</h2> }
-            {!isFetching && (JSON.stringify(cabDetail) == JSON.stringify({})) && <h2>No Cabinet</h2> }
-            {(JSON.stringify(cabDetail) != JSON.stringify({})) &&(
+            {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading...</h2> }
+            {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
+            {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
                 <div style={{opacity: isFetching ? 0.5:1}}>
             <ShelfList shelves={cabDetail.shelves}/>
                 </div>

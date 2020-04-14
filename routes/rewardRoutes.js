@@ -1,6 +1,7 @@
 const keys = require("../config/keys");
 const axios = require("axios");
 const winston = require("winston");
+const requireLogin = require("../middlewares/requireLogin");
 
 const logger = winston.createLogger({
   level: "debug",
@@ -10,7 +11,7 @@ const logger = winston.createLogger({
 });
 module.exports = app => {
   //TODO: add requireLogin middleware
-  app.get("/api/reward/cabinet", async (req, res) => {
+  app.get("/api/reward/cabinet", requireLogin, async (req, res) => {
     logger.info("rewardRoutes: /api/reward/cabinet ", req.query);
     try {
       let centre = req.query.centre;

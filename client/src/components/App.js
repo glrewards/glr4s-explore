@@ -16,6 +16,7 @@ import { HandleProgressBar } from "./ProgressBar";
 import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
 import CabinetContainer from "./containers-rewards/CabinetContainer";
+import SignUpContainer from "./login/SignUpContainer";
 
 /*
 const client = new ApolloClient({
