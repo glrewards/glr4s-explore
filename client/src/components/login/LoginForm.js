@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
+import {Button} from 'react-materialize';
 
 class LoginForm extends Component {
     renderFields() {
@@ -28,16 +29,21 @@ class LoginForm extends Component {
 
     render() {
         const { handleSubmit} = this.props;
+        const divStyle = {
+            "border-radius": '25px',
+            padding: '50px'
+
+        };
         return (
-            <div>
-                <form onSubmit={handleSubmit}>
+            <div style={divStyle} className="blue lighten-5">
+                <form  onSubmit={handleSubmit}>
                     {this.renderFields()}
-                    <button
+                    <Button
                         type="submit"
-                        className="btn waves-effect waves-light red right">
+                        className="btn col s12 amber darken-4 waves-effect waves-light right">
                         Login
                         <i className="material-icons right">send</i>
-                    </button>
+                    </Button>
                 </form>
             </div>
         );
