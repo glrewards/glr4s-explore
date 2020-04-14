@@ -5,7 +5,6 @@ import LoginFormContainer from "./login/LoginFormContainer";
 
 const Landing = () => {
   return (
-    <div>
       <div className="container">
         <div className="row">
           <div className="col s6">
@@ -31,9 +30,8 @@ const Landing = () => {
           </div>
         </div>
         <LoginFormContainer />
+          <Link to={"/signup"}>Create an account</Link>
       </div>
-      <Link to={"/signup"}>Create an account</Link>
-    </div>
   );
 };
 export default Landing;

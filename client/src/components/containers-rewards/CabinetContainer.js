@@ -9,24 +9,31 @@ import {Button} from "react-materialize";
 class CabinetContainer extends Component {
   constructor(props) {
     super(props);
+    console.log("CabinetContainer: props", props);
+    console.log("CabinetContainer: props", this.state);
     this.handleRefreshClick = this.handleRefreshClick.bind(this);
   }
 
-  componentDidMount() {
-    const { dispatch, centre } = this.props;
-    //console.log("this is the componentDidMount props: ", this.props);
-    dispatch(fetchCabinet("5e8e67ed1c9d440000858579"));
+  componentDidUpdate(prevProps, prevState, snapshot) {
+      console.log("previousProps: ", prevProps);
+    console.log("previousState: ", prevState);
+    console.log("CurrentProps: ", this.props);
+    if((this.props.user) && (this.props.user != prevProps.user)){
+      const { dispatch, user } = this.props;
+      dispatch(fetchCabinet(user._learningCentreId))
+    }
   }
 
   handleRefreshClick(e) {
     e.preventDefault();
-    const {dispatch, centre } = this.props;
-    //console.log("handleRefresh: ", this.props);
-    dispatch(invalidateCabinet(centre));
-    dispatch(fetchCabinet(centre));
+    const {dispatch, user } = this.props;
+    console.log("handleRefresh: ", this.props);
+    dispatch(invalidateCabinet(user._learningCentreId));
+    dispatch(fetchCabinet(user._learningCentreId));
   }
   render() {
-    const { centre, cabDetail, isFetching, lastUpdated } = this.props;
+    const { user, cabDetail, isFetching, lastUpdated } = this.props;
+    if(!user) return(<div></div>);
     return (
       <div>
         <p>
@@ -62,13 +69,15 @@ CabinetContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
+  console.log("this is the state in map state to props: ", state);
   const { cabinet } = state;
-  const { centre, isFetching, lastUpdated, cabDetail } = cabinet || {
+  const { isFetching, lastUpdated, cabDetail } = cabinet || {
     isFetching: true
   };
-  //console.log("this is the state: ", state);
+  let user = state.auth;
+  console.log("this is the USER in map state to props: ", user);
   return {
-    centre,
+    user,
     cabDetail,
     isFetching,
     lastUpdated

@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
                     ...state.cart,
                     {
                         _student: action.student._id,
-                        productId: action.productId,
+                        rewardId: action.rewardtId,
                         productTitle: action.productTitle,
                         variantId: action.variantId,
                         quantity: action.quantity,
@@ -37,13 +37,13 @@ export default function (state = initialState, action) {
             //TODO: replace this place holder with proper logic
             return state;
         case AMEND_LINE:
-            return state.map((amendedLine, index) => {
+            return state.map((line, index) => {
                 if (index === action.index) {
-                    return Object.assign({}, amendedLine, {
-                        //quantity: line.quantity
+                    return Object.assign({}, line, {
+                        quantity: action.quantity //quantity has been amended by the action so....
                     })
                 }
-                return amendedLine;
+                return line;
             })
         default:
             return state

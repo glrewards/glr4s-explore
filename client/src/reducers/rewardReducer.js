@@ -5,23 +5,23 @@ import {
 } from "../actions/rewardActions";
 
 function cabinet(
-    state = {
-      isFetching: false,
-      didInvalidate: false,
-      cabDetail: {}
-    },
-    action
+  state = {
+    isFetching: false,
+    didInvalidate: false,
+    cabDetail: {}
+  },
+  action
 ) {
   switch (action.type) {
     case INVALIDATE_CABINET:
       return Object.assign({}, state, {
         didInvalidate: true
-      })
+      });
     case REQUEST_CABINET:
       return Object.assign({}, state, {
         isFetching: true,
         didInvalidate: false
-      })
+      });
     case RECEIVE_CABINET:
       return Object.assign({}, state, {
         isFetching: false,
@@ -29,9 +29,9 @@ function cabinet(
         centre: action.centre,
         cabDetail: action.payload,
         lastUpdated: action.receivedAt
-      })
+      });
     default:
-      return state
+      return state;
   }
 }
 export default cabinet;

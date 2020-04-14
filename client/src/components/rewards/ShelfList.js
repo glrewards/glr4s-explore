@@ -20,7 +20,6 @@ export default class ShelfList extends Component {
                 <tbody>
                   {typeof shelf.rewardItems != "undefined" && (shelf.rewardItems.length > 0) &&
                     shelf.rewardItems.map(reward => {
-                      console.log(reward);
                       return (
                         <tr key={reward._id}>
                           <td>

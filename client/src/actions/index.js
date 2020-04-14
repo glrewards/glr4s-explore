@@ -61,7 +61,6 @@ export const submitCategory = values => async dispatch => {
 };
 
 export const submitLogin = (values) => async dispatch => {
-  console.log(values);
   const res = await axios.post("/login", values);
   dispatch({ type: START_LOGIN, payload: res.data });
 };
