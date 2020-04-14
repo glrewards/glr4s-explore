@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/MemberCart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/MemberCartLine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/explore-learning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/cartActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/cartActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/ShelfListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberCartContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/MemberCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/MemberCartList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/MemberCartLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/MemberCartLine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shop/DraftOrderList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/cartReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/rewardReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rewardReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +67,7 @@
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/reducers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -91,19 +79,18 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/reducers" />
+      <recent name="$PROJECT_DIR$/models/xod" />
+      <recent name="$PROJECT_DIR$/client/src/components/shop" />
+      <recent name="$PROJECT_DIR$/client/src/components/shop/tutorial" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/images" />
       <recent name="$PROJECT_DIR$/client/src/trash" />
       <recent name="$PROJECT_DIR$/client/src/components/errorpages/notfound" />
       <recent name="$PROJECT_DIR$/models/shop" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/images" />
-      <recent name="$PROJECT_DIR$/client/src/reducers" />
-      <recent name="$PROJECT_DIR$/models/xod" />
-      <recent name="$PROJECT_DIR$/client/src/components/shop" />
-      <recent name="$PROJECT_DIR$/client/src/components/shop/tutorial" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -676,30 +663,30 @@
     </state>
     <state x="629" y="23" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822438742" />
     <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1586364761244" />
-    <state width="1259" height="270" key="GridCell.Tab.0.bottom" timestamp="1586864354146">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="1333" height="210" key="GridCell.Tab.0.bottom" timestamp="1586822875815">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
     <state width="1333" height="210" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875815" />
-    <state width="1259" height="270" key="GridCell.Tab.0.bottom/0.23.2560.1346@0.23.2560.1346" timestamp="1586864354146" />
-    <state width="1259" height="270" key="GridCell.Tab.0.center" timestamp="1586864354145">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="1423" height="270" key="GridCell.Tab.0.bottom/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186385" />
+    <state width="1333" height="210" key="GridCell.Tab.0.center" timestamp="1586822875814">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
     <state width="1333" height="210" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875814" />
-    <state width="1259" height="270" key="GridCell.Tab.0.center/0.23.2560.1346@0.23.2560.1346" timestamp="1586864354145" />
-    <state width="1259" height="270" key="GridCell.Tab.0.left" timestamp="1586864354145">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="1423" height="270" key="GridCell.Tab.0.center/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186384" />
+    <state width="1333" height="210" key="GridCell.Tab.0.left" timestamp="1586822875814">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
     <state width="1333" height="210" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875814" />
-    <state width="1259" height="270" key="GridCell.Tab.0.left/0.23.2560.1346@0.23.2560.1346" timestamp="1586864354145" />
-    <state width="1259" height="270" key="GridCell.Tab.0.right" timestamp="1586864354146">
-      <screen x="0" y="23" width="2560" height="1346" />
+    <state width="1423" height="270" key="GridCell.Tab.0.left/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186380" />
+    <state width="1333" height="210" key="GridCell.Tab.0.right" timestamp="1586822875815">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
     <state width="1333" height="210" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875815" />
-    <state width="1259" height="270" key="GridCell.Tab.0.right/0.23.2560.1346@0.23.2560.1346" timestamp="1586864354146" />
+    <state width="1423" height="270" key="GridCell.Tab.0.right/0.23.2560.1346@0.23.2560.1346" timestamp="1586376186385" />
     <state width="1259" height="472" key="GridCell.Tab.1.bottom" timestamp="1586327171738">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
@@ -779,15 +766,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/components/Landing.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/client/src/reducers/index.js</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/createAdminStore.js</url>
-          <line>44</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/client/src/components/Landing.js</url>
+          <line>6</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Shelf from "./Shelf";
 import { Collapsible, CollapsibleItem, Icon, Button } from "react-materialize";
-import RewardList from "./RewardList";
 
 export default class ShelfList extends Component {
   render() {
