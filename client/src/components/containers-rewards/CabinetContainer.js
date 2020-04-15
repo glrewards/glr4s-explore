@@ -48,20 +48,9 @@ class CabinetContainer extends Component {
   }
   render() {
     const { user, cabDetail, isFetching, lastUpdated } = this.props;
-    console.log("in render: ", this.props);
     if(!user) return(<div>Fetching</div>);
     return (
       <div>
-        <p>
-          {lastUpdated && (
-            <span>
-              last updated at {new Date(lastUpdated).toLocaleTimeString()}.{" "}
-            </span>
-          )}
-          {!isFetching && (
-            <Button className="col s12 amber darken-4" onClick={this.handleRefreshClick} >Refresh</Button>
-          )}
-        </p>
         <div>
           {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading</h2> }
             {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
@@ -100,17 +89,6 @@ function mapStateToProps(state) {
     lastUpdated
   };
 }
-
-/*
-const mapDispatchToProps = dispatch => {
-  return {
-    onAddToCartClick: (rewardId, productTitle, variantId, quantity,glrpoints, img) => {
-      dispatch(addLine(this.props.user._student,rewardId, productTitle, variantId, quantity,glrpoints, img))
-    }
-
-  }
-}
-*/
 
 
 export default connect(mapStateToProps)(CabinetContainer);

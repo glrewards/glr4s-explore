@@ -34,7 +34,7 @@ class GLRHeader extends Component {
         this.props.auth._student.currentPoints
       );
     } else {
-      return "No GLR Points Found";
+      return "No Lizard Cards";
     }
   }
 
