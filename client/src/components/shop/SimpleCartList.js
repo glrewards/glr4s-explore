@@ -76,6 +76,7 @@ class SimpleCartList extends Component {
           className="btn red darken-3 waves-effect waves-light right-aligned"
           onClick={() => {
             this.props.clearCartOnClick();
+            this.props.history.goBack();
           }}
         >
           Clear Cart
@@ -100,6 +101,7 @@ const mapDispatchToProps = dispatch => {
     clearCartOnClick: cart => {
       console.log("clear got triggered");
       dispatch(deleteAllLines());
+
     }
   };
 };
