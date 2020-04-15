@@ -58,9 +58,6 @@ class GLRHeader extends Component {
           >
             Logout
           </NavItem>,
-          <NavItem className="hide-on-small-and-down" key={"shop"}>
-            <NavLink to={"/shop"}>Student Shop</NavLink>
-          </NavItem>,
           this.renderAdminItem(),
           <NavItem
             className="hide-on-small-and-down text-capitalize"
