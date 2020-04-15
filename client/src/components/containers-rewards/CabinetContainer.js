@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import ShelfList from "../rewards/ShelfList";
+import {addLine} from "../../actions/cartActions";
 
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";
-import {Button} from "react-materialize";
+import {Button, Toast} from "react-materialize";
 
 class CabinetContainer extends Component {
   constructor(props) {
@@ -12,9 +13,18 @@ class CabinetContainer extends Component {
     console.log("CabinetContainer: props", props);
     console.log("CabinetContainer: props", this.state);
     this.handleRefreshClick = this.handleRefreshClick.bind(this);
+    this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidMount() {
+    console.log("component did mount: ", this.props);
+    if(this.props.user){
+      this.props.dispatch(invalidateCabinet(this.props.user._learningCentreId));
+      this.props.dispatch(fetchCabinet(this.props.user._learningCentreId));
+    }
+  }
+
+ componentDidUpdate(prevProps, prevState, snapshot) {
       console.log("previousProps: ", prevProps);
     console.log("previousState: ", prevState);
     console.log("CurrentProps: ", this.props);
@@ -22,6 +32,11 @@ class CabinetContainer extends Component {
       const { dispatch, user } = this.props;
       dispatch(fetchCabinet(user._learningCentreId))
     }
+  }
+
+  handleAddToCartClick(rewardId, productTitle, variantId, quantity,glrpoints, img){
+    console.log("In handleAddToCartClick: ",rewardId,img);
+    this.props.dispatch(addLine(this.props.user._student,rewardId, productTitle, variantId, quantity,glrpoints, img))
   }
 
   handleRefreshClick(e) {
@@ -33,7 +48,8 @@ class CabinetContainer extends Component {
   }
   render() {
     const { user, cabDetail, isFetching, lastUpdated } = this.props;
-    if(!user) return(<div></div>);
+    console.log("in render: ", this.props);
+    if(!user) return(<div>Fetching</div>);
     return (
       <div>
         <p>
@@ -47,11 +63,12 @@ class CabinetContainer extends Component {
           )}
         </p>
         <div>
-            {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading...</h2> }
+          {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading</h2> }
             {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
             {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
                 <div style={{opacity: isFetching ? 0.5:1}}>
-            <ShelfList shelves={cabDetail.shelves}/>
+            <ShelfList shelves={cabDetail.shelves}
+                       onAddToCartClickShelf={this.handleAddToCartClick}/>
                 </div>
             )}
         </div>
@@ -69,13 +86,13 @@ CabinetContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("this is the state in map state to props: ", state);
+  //console.log("this is the state in map state to props: ", state);
   const { cabinet } = state;
   const { isFetching, lastUpdated, cabDetail } = cabinet || {
     isFetching: true
   };
   let user = state.auth;
-  console.log("this is the USER in map state to props: ", user);
+  //console.log("this is the USER in map state to props: ", user);
   return {
     user,
     cabDetail,
@@ -83,4 +100,17 @@ function mapStateToProps(state) {
     lastUpdated
   };
 }
+
+/*
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddToCartClick: (rewardId, productTitle, variantId, quantity,glrpoints, img) => {
+      dispatch(addLine(this.props.user._student,rewardId, productTitle, variantId, quantity,glrpoints, img))
+    }
+
+  }
+}
+*/
+
+
 export default connect(mapStateToProps)(CabinetContainer);

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { Navbar, NavItem, Icon } from "react-materialize";
 
 class GLRHeader extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
     this.renderCartLink = this.renderCartLink.bind(this);
     this.renderContentTop = this.renderContentTop.bind(this);
     this.renderAdminItem = this.renderAdminItem.bind(this);
@@ -16,9 +15,12 @@ class GLRHeader extends Component {
 
   renderCartLink() {
     if (this.props.cart.length > 0) {
+      console.log(this.props.cart);
       return (
-        <NavItem href="/shop/cart">
-          <i className="material-icons">shopping_basket</i>
+        <NavItem>
+          <NavLink to={"/shop/cart"} key={"cart"}>
+            <i className="material-icons">shopping_basket</i>
+          </NavLink>
         </NavItem>
       );
     }
@@ -26,7 +28,11 @@ class GLRHeader extends Component {
 
   renderGLRPoints() {
     if (this.props.auth._student) {
-      return this.props.auth.username + ": Lizard Cards: " + this.props.auth._student.currentPoints;
+      return (
+        this.props.auth.username +
+        ": Lizard Cards: " +
+        this.props.auth._student.currentPoints
+      );
     } else {
       return "No GLR Points Found";
     }
@@ -39,25 +45,32 @@ class GLRHeader extends Component {
         return;
       case false:
         //console.log(this.props);
-        return ( null
-        );
+        return null;
       default:
         return [
-          <NavItem href='/rewards' className="hide-on-small-and-down">
-            Reward Cabinet
+          <NavItem className="hide-on-small-and-down" key={"rewards"}>
+            <NavLink to={"/rewards"}>Reward Cabinet</NavLink>
           </NavItem>,
-          this.renderCartLink(),
-
-          <NavItem href="/api/logout" className="hide-on-small-and-down">
+          <NavItem
+            href="/api/logout"
+            className="hide-on-small-and-down"
+            key={"logout"}
+          >
             Logout
           </NavItem>,
-          <NavItem href="/shop"  className="hide-on-small-and-down">
-            Student Shop
+          <NavItem className="hide-on-small-and-down" key={"shop"}>
+            <NavLink to={"/shop"}>Student Shop</NavLink>
           </NavItem>,
           this.renderAdminItem(),
-          <NavItem  className="hide-on-small-and-down text-capitalize">
-            <div className="valign-wrapper flow-text">{this.renderGLRPoints()}</div>
-          </NavItem>
+          <NavItem
+            className="hide-on-small-and-down text-capitalize"
+            key={"points"}
+          >
+            <div className="valign-wrapper flow-text">
+              {this.renderGLRPoints()}
+            </div>
+          </NavItem>,
+          this.renderCartLink()
         ];
     }
   }
@@ -66,7 +79,7 @@ class GLRHeader extends Component {
     if (!this.props.auth.isAdmin) {
     } else {
       return (
-        <NavItem  className="hide-on-small-and-down">
+        <NavItem className="hide-on-small-and-down" key={"admin"}>
           <Link to="/admin">Admin Dashboard</Link>
         </NavItem>
       );
@@ -75,29 +88,30 @@ class GLRHeader extends Component {
 
   render() {
     let importedELImage = require("../images/explore-learning.png");
+    console.log("in render");
     return (
-
-        <Navbar style={{margin: 5}}
-          className="blue darken-2 flow-text"
-                centreChildren
-          alignLinks="right"
-                brand={<a href={"#"}>Explore Rewards</a>}
-          id="mobile-nav"
-          menuIcon={<Icon>menu</Icon>}
-          options={{
-            draggable: false,
-            edge: "left",
-            inDuration: 250,
-            onCloseEnd: null,
-            onCloseStart: null,
-            onOpenEnd: null,
-            onOpenStart: null,
-            outDuration: 200,
-            preventScrolling: true
-          }}
-        >{this.renderContentTop("t")}
-        </Navbar>
-
+      <Navbar
+        style={{ margin: 5 }}
+        className="blue darken-2 flow-text"
+        centreChildren
+        alignLinks="right"
+        brand={<a href={"#"}>Explore Rewards</a>}
+        id="mobile-nav"
+        menuIcon={<Icon>menu</Icon>}
+        options={{
+          draggable: false,
+          edge: "left",
+          inDuration: 250,
+          onCloseEnd: null,
+          onCloseStart: null,
+          onOpenEnd: null,
+          onOpenStart: null,
+          outDuration: 200,
+          preventScrolling: true
+        }}
+      >
+        {this.renderContentTop("t")}
+      </Navbar>
     );
   }
 }

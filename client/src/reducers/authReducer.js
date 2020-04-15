@@ -4,6 +4,7 @@ import {START_LOGIN} from "../actions/types";
 export default function(state = null, action) {
   switch (action.type) {
     case FETCH_USER:
+      console.log("in fetch user",action);
       return action.payload || false;
     case START_LOGIN:
       console.log("action payload: ",action.payload);

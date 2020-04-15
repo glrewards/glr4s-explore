@@ -11,7 +11,7 @@ class LineItemsList extends Component {
 
   componentDidMount() {
     if (!this.props.auth) {
-      this.props.fetchUser();
+      //this.props.fetchUser();
     }
     this.props.fetchLineItems(this.props.auth._student);
   }

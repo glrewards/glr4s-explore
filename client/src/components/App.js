@@ -18,17 +18,10 @@ import EmailNew from "./email/EmailNew";
 import CabinetContainer from "./containers-rewards/CabinetContainer";
 import SignUpContainer from "./login/SignUpContainer";
 
-/*
-const client = new ApolloClient({
-    fetchOptions: {
-        credentials: 'include'
-    }
-});
-*/
+
 class App extends Component {
   constructor(props) {
     super(props);
-    M.AutoInit();
   }
 
   componentDidMount() {
@@ -36,7 +29,8 @@ class App extends Component {
     //we imported connect above to link react components to the redux store stuff
     //the exp[ort at the bottom means the actions will not be in the props for this
     //class
-    this.props.fetchUser();
+      console.log("in App component did mount");
+      this.props.fetchUser();
   }
 
   render() {
@@ -67,6 +61,7 @@ class App extends Component {
     );
   }
 }
+
 
 export default connect(
   null,

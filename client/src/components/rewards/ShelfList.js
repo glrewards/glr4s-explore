@@ -6,6 +6,10 @@ import RewardList from "./RewardList";
 
 export default class ShelfList extends Component {
   render() {
+    if (!this.props.shelves) {
+      console.log(this.props);
+      return <div>No data</div>;
+    }
     return (
       <Collapsible accordion={true} header="Shelves">
         {this.props.shelves.map(shelf => (
@@ -14,33 +18,58 @@ export default class ShelfList extends Component {
             expanded={true}
             key={shelf.name}
             header={shelf.name}
-          ><img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
+          >
+            <img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
             <div>
               <table className="striped responsive-table">
                 <tbody>
-                  {typeof shelf.rewardItems != "undefined" && (shelf.rewardItems.length > 0) &&
+                  {typeof shelf.rewardItems != "undefined" &&
+                    shelf.rewardItems.length > 0 &&
                     shelf.rewardItems.map(reward => {
                       return (
                         <tr key={reward._id}>
                           <td>
                             {typeof reward._shopifyProduct != "undefined" &&
                               reward._shopifyProduct.image.src && (
-                                <img height="150" width="150"
+                                <img
+                                  height="150"
+                                  width="150"
                                   alt="temp"
                                   src={reward._shopifyProduct.image.src}
                                 />
                               )}
                           </td>
-                          <td><h5>{reward._shopifyProduct.title}</h5></td>
-                          <td><h5 className="center-align"> In Stock: {reward.count}</h5></td>
+                          <td>
+                            <h5>{reward._shopifyProduct.title}</h5>
+                          </td>
+                          <td>
+                            <h5 className="center-align">
+                              {" "}
+                              In Stock: {reward.count}
+                            </h5>
+                          </td>
 
                           <td>
-                            <Button className="amber darken-4" waves="purple">
+                            <Button
+                              className="amber darken-4"
+                              waves="purple"
+                                onClick={() => {
+                                  this.props.onAddToCartClickShelf(
+                                      reward._id,
+                                      reward._shopifyProduct.title,
+                                      reward._shopifyProduct.variants[0].id,  //TODO: just taking the first variant for now
+                                      1, //TODO: just hardcoding the quantity to 1 for now
+                                      reward._shopifyProduct.points,
+                                      reward._shopifyProduct.image.src
+                                  )
+                                }
+                                }
+                            >
                               Add<Icon right>add_shopping_cart</Icon>
                             </Button>
                             <Button
-                                className="col s12 amber darken-4"
-                                waves="purple"
+                              className="col s12 amber darken-4"
+                              waves="purple"
                             >
                               Fav!<Icon right>favorite</Icon>
                             </Button>
@@ -59,5 +88,6 @@ export default class ShelfList extends Component {
 }
 
 ShelfList.propTypes = {
-  shelves: PropTypes.array.isRequired
+  shelves: PropTypes.array.isRequired,
+  onAddToCartClickShelf: PropTypes.func.isRequired
 };

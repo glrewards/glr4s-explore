@@ -130,7 +130,7 @@ export const submitLineItems = (reqBody, history) => async dispatch => {
   const res = await axios.post("/api/orders", reqBody);
   dispatch({ type: DELETE_ALL_LINES }); //actually we clear the the local cart and then can populate the lineitems
   dispatch({ type: FETCH_USER, payload: res.data });
-  history.push("/shop");
+  history.push("/rewards");
 };
 
 export const setProgressBar = isOpen => ({

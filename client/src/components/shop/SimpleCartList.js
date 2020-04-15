@@ -1,74 +1,87 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { submitLineItems } from "../../actions";
-import {deleteAllLines} from "../../actions/cartActions";
-import {withRouter} from 'react-router-dom';
-
+import { deleteAllLines } from "../../actions/cartActions";
+import { Collection, CollectionItem, TextInput } from "react-materialize";
+import { withRouter } from "react-router-dom";
 
 class SimpleCartList extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
+    console.log(this.state);
     this.saveLines = this.saveLines.bind(this);
   }
-  saveLines(cart){
-        //each line has everything we need apart from the student Id so we need to use forEach to add the student id
-        //then we need to trigger the action
-      //need to add in the auth
+  saveLines(cart) {
+    //each line has everything we need apart from the student Id so we need to use forEach to add the student id
+    //then we need to trigger the action
+    //need to add in the auth
 
-      let finalReqBody = {
-          lineItems: cart,
-          user: this.props.auth}
+    let finalReqBody = {
+      lineItems: cart,
+      user: this.props.auth
+    };
 
-        this.props.submitLineItemsOnClick(finalReqBody,this.props.history);
-
-    }
+    //this.props.submitLineItemsOnClick(finalReqBody,this.props.history);
+  }
   renderListItems() {
+    console.log("renderListItems: ", this.props);
     return this.props.cart.map((line, index) => {
       return (
-          <div className="row" key={index}>
-            <div className="col s12">
-              <ul className="collection">
-                <li key={line.variantId} className="collection-item avatar">
-                  <img className="circle" src={line.img} alt="temp"/>
-                  <span className="card-title">{line.productTitle}</span>
+        <div className="row" key={index}>
+          <div className="col s12">
+            <Collection>
+              <CollectionItem key={line.variantId} className="avatar">
+                <img
+                  className="circle"
+                  src={line.img}
+                  alt={line.propductTitle}
+                />
+                <span className="card-title">{line.productTitle}</span>
                   <div>
-                    <ul>
-                      <li className="right-aligned">
-                        GLRPoints: {line.glrpoints}
-                      </li>
-                      <li className="right-align">Quantity: {line.quantity}</li>
-                    </ul>
+                    <p>
+                      Lizard Cards Needed: {line.glrpoints}
+                    </p>
+                    <TextInput
+                      label="Quantity"
+                      className="right-align active right-aligned"
+                      defaultValue={line.quantity}
+                      type="number"
+                      disabled={false}
+                      onChange={console.log("changed")}
+                    />
                   </div>
-                </li>
-              </ul>
-            </div>
+              </CollectionItem>
+            </Collection>
           </div>
+        </div>
       );
     });
   }
 
   render() {
-    return <div className="container">
+    console.log("in render(): ", this.props);
+    return (
+      <div className="container">
         {this.renderListItems()}
         <button
-            className="btn yellow darken-3 waves-effect waves-light right-aligned"
-            onClick={() => {
-                this.saveLines(this.props.cart);
-            }
-            }
+          className="btn yellow darken-3 waves-effect waves-light right-aligned"
+          onClick={() => {
+            this.saveLines(this.props.cart);
+          }}
         >
-            Save Order
+          Save Order
         </button>
         <button
-            className="btn red darken-3 waves-effect waves-light right-aligned"
-            onClick={() => {
-                this.props.clearCartOnClick();
-            }
-            }
+          className="btn red darken-3 waves-effect waves-light right-aligned"
+          onClick={() => {
+            this.props.clearCartOnClick();
+          }}
         >
-            Clear Cart
+          Clear Cart
         </button>
-    </div>;
+      </div>
+    );
   }
 }
 
@@ -79,17 +92,19 @@ function mapStateToProps(state) {
   };
 }
 
-
-
 const mapDispatchToProps = dispatch => {
-    return {
-        submitLineItemsOnClick: (lines,his) => {
-            dispatch(submitLineItems(lines,his))
-        },
-        clearCartOnClick: (cart) =>{
-            dispatch(deleteAllLines())
-        }
+  return {
+    submitLineItemsOnClick: (lines, his) => {
+      dispatch(submitLineItems(lines, his));
+    },
+    clearCartOnClick: cart => {
+      console.log("clear got triggered");
+      dispatch(deleteAllLines());
     }
-}
+  };
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(withRouter(SimpleCartList));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SimpleCartList);
