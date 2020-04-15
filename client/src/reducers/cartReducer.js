@@ -37,14 +37,16 @@ export default function (state = initialState, action) {
             //TODO: replace this place holder with proper logic
             return state;
         case AMEND_LINE:
-            return state.map((line, index) => {
+            console.log(action);
+            let cart = state.cart.map((line, index) => {
                 if (index === action.index) {
                     return Object.assign({}, line, {
                         quantity: action.quantity //quantity has been amended by the action so....
                     })
                 }
                 return line;
-            })
+            });
+            return {cart: cart}
         default:
             return state
     }

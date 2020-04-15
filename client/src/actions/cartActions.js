@@ -14,8 +14,8 @@ export function addLine(student,rewardId, productTitle, variantId, quantity,glrp
     return { type: ADD_LINE, student, rewardId, productTitle, variantId, quantity, glrpoints,img }
 }
 
-export function amendLine(rewardId, variantId, quantity, index) {
-    return { type: AMEND_LINE, rewardId, variantId, quantity, index }
+export function amendLine(index, quantity) {
+    return { type: AMEND_LINE,  index, quantity }
 }
 
 export function removeLine(index){

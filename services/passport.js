@@ -10,8 +10,6 @@ let User = mongoose.model("users"); //This is how we reference our model class a
 //const Student = mongoose.model("students");
 
 passport.serializeUser((user, done) => {
-    console.log('serializing user: ');
-    console.log(user);
   done(null, user.id);
 });
 
@@ -19,7 +17,6 @@ passport.deserializeUser((id, done) => {
   User.findById(id)
     .populate("_student")
     .then(user => {
-        console.log('deserializing user:',user);
       done(null, user);
     });
 });
@@ -28,20 +25,16 @@ passport.use(
   new LocalStrategy(
     async (username, password, done) => {
       // check in mongo if a user with username exists or not
-      console.log("in passport login");
       const existingUser = await User.findOne({ username: username }).populate(
         "_student"
       );
       if (!existingUser) {
-        console.log("User Not Found with username " + username);
         return done(null, false);
       }
       const isValid = validPassword(password, existingUser.hash,existingUser.salt);
       if (isValid) {
-        console.log("valid Password");
         return done(null, existingUser);
       }else {
-          console.log("stuf");
           return done(null, false);
       }
     }

@@ -19,7 +19,7 @@ class LoginFormContainer extends Component {
 
   renderContent() {
       if(this.props.user){
-      return <Redirect to="/surveys" />;
+      return <Redirect to="/rewards" />;
     }else {
         return (
             <div>
