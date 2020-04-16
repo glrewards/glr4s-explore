@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const rewardTemplateSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-        unique: true
-    },
     name: {
         type: String,
         required: true,
@@ -15,14 +10,14 @@ const rewardTemplateSchema = new Schema({
     description: {
         type: String
     },
-    _rewardType: {type: Schema.Types.ObjectId, ref: 'rewardType'},
+    _rewardType: {type: Schema.Types.ObjectId, ref: 'RewardType'},
     imageURL:{
         type: String
     },
     pointValue: {
         type: Number
     },
-    _issuer: {type: Schema.Types.ObjectId, ref: 'issuer'},
+    _issuer: {type: Schema.Types.ObjectId, ref: 'issuer'}
 });
 
 mongoose.model("RewardTemplate", rewardTemplateSchema);

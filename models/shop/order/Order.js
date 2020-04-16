@@ -5,13 +5,15 @@ const LineItemSchema = require('./LineItem');
 const orderSchema = new Schema({
     finStatus: {type: String, enum: ['paid', 'unpaid']},
     fulfillStatus: {type: String, enum: ['fulfilled', 'unfulfilled']},
-    _school: {type: Schema.Types.ObjectId, ref: 'schools'},
+    _learningCentreId: {type: Schema.Types.ObjectId, ref: 'learningcentres'},
+    learningCentreName: String,
     lineItems: [LineItemSchema],
     orderTotal: Number,
     taxTotal: Number,
     shopifyOrderId: String,
     shopifyDraftOrderId: String,
     dateReceived: Date,
+    dateUpdated: Date,
     dateFulfilled: Date
 });
 

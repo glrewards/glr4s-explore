@@ -3,7 +3,7 @@ const axios = require('axios');
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: 'debug',
+  level: keys.glrLogLevel,
   format: winston.format.json(),
   defaultMeta: { service: "productRoutes" },
   transports: [new winston.transports.Console()],

@@ -4,7 +4,7 @@ const winston = require("winston");
 const requireLogin = require("../middlewares/requireLogin");
 
 const logger = winston.createLogger({
-  level: "debug",
+  level: keys.glrLogLevel,
   format: winston.format.json(),
   defaultMeta: { service: "rewardRoutes" },
   transports: [new winston.transports.Console()]

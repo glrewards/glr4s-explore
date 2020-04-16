@@ -16,8 +16,11 @@ export default function (state = initialState, action) {
                 cart: [
                     ...state.cart,
                     {
+                        _learningCentreId: action.centreId,
                         _student: action.student._id,
-                        rewardId: action.rewardtId,
+                        memberFirstName: action.student.firstName,
+                        memberLastName: action.student.lastName,
+                        _rewardId: action.rewardId,
                         productTitle: action.productTitle,
                         variantId: action.variantId,
                         quantity: action.quantity,

@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const rewardTypeSchema = new Schema({
-  id: {
-    type: String,
-    required: true,
-    unique: true
-  },
   name: {
     type: String,
     required: true,
@@ -17,4 +12,4 @@ const rewardTypeSchema = new Schema({
   }
 });
 
-mongoose.model("RewardTypes", rewardTypeSchema);
+mongoose.model("RewardType", rewardTypeSchema);

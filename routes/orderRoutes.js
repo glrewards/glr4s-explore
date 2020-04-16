@@ -6,9 +6,17 @@ const findStudentSchool = require("../middlewares/findStudentSchool");
 const keys = require("../config/keys");
 const { request } = require("graphql-request");
 const { GraphQLClient } = require("graphql-request");
-
+const winston = require("winston");
 const Order = mongoose.model("orders");
 const Student = mongoose.model("students");
+const Cabinet = mongoose.model("Cabinet");
+
+const logger = winston.createLogger({
+  level: keys.glrLogLevel,
+  format: winston.format.json(),
+  defaultMeta: { service: "orderRoutes" },
+  transports: [new winston.transports.Console()]
+});
 
 /*
 const DraftOrderFragment = gql`
@@ -57,17 +65,22 @@ ${DraftOrderFragment}
 module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
-  app.get("/api/orders/:studentId",requireLogin, findStudentSchool, async (req,res) => {
-    //get all the open orders for the school
-    const orders = await Order.find({_school: req.school});
-    if (orders.length > 1 || orders.length === 0) {
-      throw "too many or zero orders  found";
-    }
+  app.get(
+    "/api/orders/:studentId",
+    requireLogin,
+    findStudentSchool,
+    async (req, res) => {
+      //get all the open orders for the school
+      const orders = await Order.find({ _school: req.school });
+      if (orders.length > 1 || orders.length === 0) {
+        throw "too many or zero orders  found";
+      }
 
-    //now search the array to find the lineitems that belong to the the student only
-    let myItems = filterByStudent(orders[0].lineItems,req.params.studentId);
-    res.send(myItems);
-  });
+      //now search the array to find the lineitems that belong to the the student only
+      let myItems = filterByStudent(orders[0].lineItems, req.params.studentId);
+      res.send(myItems);
+    }
+  );
 
   //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
   app.get("/api/orders", requireLogin, requireStudent, async (req, res) => {
@@ -113,24 +126,33 @@ module.exports = app => {
         res.send({});
     });
 */
-  //TODO: may not need this function but keeping it for now - delete if not required https://trello.com/c/VTZzHEdy
-  /*
-    app.get("/api/surveys/:surveyId/:choice", (req, res) => {
-        res.send("Thanks for Voting!");
-    });
-*/
+
   app.post("/api/orders/", requireLogin, requireStudent, async (req, res) => {
     const _school = req.body.user._student._school;
     const studentId = req.body.user._student._id;
     const lineItems = req.body.lineItems;
+    const _learningCentreId = req.body.user._learningCentreId; //with this we can find the cabinet
+    logger.debug(lineItems);
     let newOrder = null;
-
     try {
-      const orders = await findOpenOrderForSchool(_school);
+      logger.debug("calling findOpenOrderFor Centre");
+      const orders = await findOpenOrderForCentre(_learningCentreId);
+      logger.debug("called findOpenOrderFor Centre");
       if (orders.length > 1) {
         //console.log("I found an array", orders);
-        throw "too many orders found";
-      } else if (orders.length === 1) {
+        logger.error('found too many errors');
+      } else if (orders.length !== 1) {
+        logger.info("neworder for learningCentre: ", _learningCentreId)
+        //didn't find anything so create a new one
+        newOrder = new Order({
+          "finStatus": "unpaid",
+          "fulfillStatus": "unfulfilled",
+          "_learningCentreId": _learningCentreId,
+          lineItems,
+          "dateReceived": Date.now(),
+          "dateUpdated": Date.now()
+        });
+      } else {
         //console.log("I found a single order Object", orders);
         //add the lineitems to this
         //console.log(orders.lineItems);
@@ -138,18 +160,11 @@ module.exports = app => {
         let oldLineItems = newOrder.lineItems;
         oldLineItems.push.apply(oldLineItems, lineItems);
         newOrder.lineItems = oldLineItems;
-
-      } else {
-        //didn't find anything so create a new one
-        newOrder = new Order({
-          finStatus: "unpaid",
-          fulfillStatus: "unfulfilled",
-          _school,
-          lineItems,
-          dateReceived: Date.now()
-        });
+        newOrder.dateUpdated = Date.now();
       }
       // if too many orders we wont get to this because we will have thrown an error
+        updateCabinetStockLevels(_learningCentreId, lineItems);
+
       //TODO: put all this into a proper mongoose transaction
       let orderPoints = calcGLRPointsTotal(lineItems);
       let order = null;
@@ -163,13 +178,12 @@ module.exports = app => {
           student.currentPoints = student.currentPoints - orderPoints;
           student.save();
           order = await newOrder.save();
-
         }
       }
       //add the updated user info (new points total)
       let origUser = req.body.user;
       origUser._student = student;
-      let newRes = Object.assign(origUser,order.toObject());
+      let newRes = Object.assign(origUser, order.toObject());
       res.send(newRes);
     } catch (err) {
       res.status(422).send(err);
@@ -243,24 +257,63 @@ module.exports = app => {
     return totalPoints;
   }
 
-  async function findOpenOrderForSchool(schoolId) {
+  async function updateCabinetStockLevels(centreId, lineItems) {
+    try {
+      const cab = await Cabinet.findOne({_learningCentreId: centreId});
+      if (!cab) {
+        throw {code: 404, message: "cabinet not found"};
+      }
+      //let shelves = cab.shelves.id("5e9026e965896000009ca5fc");
+      let shelves = cab.shelves;
+      //for each lineitems map
+      let matches = [];
+      lineItems.forEach(line => {
+        console.log("line: ", line._rewardId);
+        shelves.forEach(shelf => {
+          logger.debug("SHELF: ", shelf);
+          shelf.rewardItems.map(reward => {
+            console.log("REWARD MATCHING:", reward._id, line._rewardId);
+            if (line._rewardId == reward._id) {
+              console.log("FOUND REWARD: changing stock levels: ", reward.count, line.quantity);
+              if (line.quantity > reward.count) {
+                throw {code: 404, message: "not enought stock"}
+              }
+              reward.count = reward.count - line.quantity;
+              return reward;
+            }
+          });
+          console.log("mathces: ", matches);
+        });
+      });
+      console.log(cab.shelves);
+      cab.markModified('shelves');
+      await cab.save();
+    }catch(err){
+      console.log("error processing cabinet data for order");
+      const err1 = err;
+      throw err1;
+    }
+  }
+
+  async function findOpenOrderForCentre(centreId) {
     //we will only use our own db for saving and amending orders and line items
     //separately we will be using BULL or similar to schedule the sync of this data with shopify
 
     //first check to see if we have an order for that school in our db
     //console.log(schoolId);
     const orders = await Order.find({
-      _school: schoolId,
+      _learningCentreId: centreId,
       finStatus: "unpaid",
       fulfillStatus: "unfulfilled"
     });
+    console.log(orders);
     return orders;
   }
 
-  function filterByStudent(arr,student){
-    if (!arr || typeof arr != 'object') return;
-    if (typeof student == 'undefined' || student == null) return arr;
-    return arr.filter((line) => {
+  function filterByStudent(arr, student) {
+    if (!arr || typeof arr != "object") return;
+    if (typeof student == "undefined" || student == null) return arr;
+    return arr.filter(line => {
       return line._student === student;
     });
   }

@@ -8,7 +8,11 @@ const keys = require("./config/keys");
 const flash = require("connect-flash");
 
 const MongoStore = require("connect-mongo")(session);
-
+require("./models/rewards/Cabinet");
+require("./models/rewards/Shelf");
+require("./models/rewards/Reward");
+require("./models/rewards/RewardTemplate");
+require("./models/rewards/RewardType");
 require("./models/Student");
 require("./models/Teacher");
 require("./models/User");
@@ -27,7 +31,7 @@ const options = {
   //bufferMaxEntries: 0,
   connectTimeoutMS: 10000, // Give up initial connection after 10 seconds
   socketTimeoutMS: 45000,
-  useUnifiedTopology: true
+  useCreateIndex:true
 };
 
 mongoose.connect(keys.mongoURI, options);
@@ -57,10 +61,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+require("./routes/orderRoutes")(app);
 require("./routes/billingRoutes")(app);
 //require("./routes/shopRoutes")(app); removed so it did not clash with product routes
 require("./routes/studentRoutes")(app);
-require("./routes/orderRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/rewardRoutes")(app);
 

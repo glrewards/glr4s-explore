@@ -3,11 +3,15 @@ const {Schema} = mongoose;
 
 
 const lineItemSchema = new Schema({
+    _rewardId: {type: Schema.Types.ObjectId, ref: 'Reward'},
     productId: String,
     productTitle: String,
     variantId: String,
     quantity: Number,
     glrpoints: Number,
+    username: String,
+    memberFirstName: String,
+    memberLastName: String,
     _student: {type: Schema.Types.ObjectId, ref: 'students'}
 });
 

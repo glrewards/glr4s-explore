@@ -21,5 +21,6 @@ module.exports = {
     glrAPIGateway: process.env.GLR_API_GATEWAY,
     glrAPIGatewayKey: process.env.GLR_API_GATEWAY_KEY,
     glrAPIProduct: process.env.GLR_API_PRODUCT,
-    glrAPICabinet: process.env.GLR_API_CABINET
+    glrAPICabinet: process.env.GLR_API_CABINET,
+    glrLogLevel: process.env.GLR_LOG_LEVEL
 };
