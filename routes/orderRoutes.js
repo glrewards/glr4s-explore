@@ -138,7 +138,7 @@ module.exports = app => {
         //console.log("I found an array", orders);
         logger.error('found too many errors');
       } else if (orders.length !== 1) {
-        logger.info("neworder for learningCentre: ", _learningCentreId)
+        logger.debug("neworder for learningCentre: ", _learningCentreId)
         //didn't find anything so create a new one
         newOrder = new Order({
           "finStatus": "unpaid",
@@ -149,9 +149,6 @@ module.exports = app => {
           "dateUpdated": Date.now()
         });
       } else {
-        //console.log("I found a single order Object", orders);
-        //add the lineitems to this
-        //console.log(orders.lineItems);
         newOrder = orders[0];
         let oldLineItems = newOrder.lineItems;
         oldLineItems.push.apply(oldLineItems, lineItems);
@@ -159,21 +156,25 @@ module.exports = app => {
         newOrder.dateUpdated = Date.now();
       }
       // if too many orders we wont get to this because we will have thrown an error
-        await updateCabinetStockLevels(_learningCentreId, lineItems);
+        updateCabinetStockLevels(_learningCentreId, lineItems);
 
       //TODO: put all this into a proper mongoose transaction
       let orderPoints = calcGLRPointsTotal(lineItems);
       let order = null;
       //assuming no errors we now amend the user points and save these.
       const student = await Student.findById(studentId);
-      //console.log("available points: " + student.currentPoints + " order points: " + orderPoints);
+      logger.debug("completed search for Student");
       if (student) {
         if (orderPoints > student.currentPoints) {
-          throw "Not enough points";
+          logger.info("not enough points");
         } else {
           student.currentPoints = student.currentPoints - orderPoints;
-          student.save();
+          logger.debug("saving student revised points total");
+          await student.save();
+          logger.debug("saved student");
+          logger.debug("saving newOrder");
           order = await newOrder.save();
+          logger.debug("saved new order");
         }
       }
       //add the updated user info (new points total)
@@ -213,16 +214,16 @@ module.exports = app => {
       //for each lineitems map
       let matches = [];
       lineItems.forEach(line => {
-        console.log("line: ", line._rewardId);
+        //console.log(line);
         shelves.forEach(shelf => {
           logger.debug("SHELF: ", shelf);
           shelf.rewardItems.map(reward => {
-            console.log("REWARD MATCHING:", reward._id, line._rewardId);
-            if (line._rewardId == reward._id) {
-              console.log("FOUND REWARD: changing stock levels: ", reward.count, line.quantity);
+            if (JSON.stringify(line._rewardId) === JSON.stringify(reward._id)) {
+              //console.log("FOUND REWARD: changing stock levels: ", reward.count, line.quantity);
               if (line.quantity > reward.count) {
-                throw {code: 404, message: "not enought stock"}
+                throw {code: 404, message: "not enough stock"}
               }
+              logger.debug("updating cabinet quantities");
               reward.count = reward.count - line.quantity;
               return reward;
             }
@@ -230,11 +231,12 @@ module.exports = app => {
           console.log("mathces: ", matches);
         });
       });
-      console.log(cab.shelves);
+      logger.debug("saving updated cabinet");
       cab.markModified('shelves');
       await cab.save();
+      logger.debug("saved updated cabinet");
     }catch(err){
-      console.log("error processing cabinet data for order");
+      logger.error("error processing cabinet data for order");
       const err1 = err;
       throw err1;
     }
@@ -251,7 +253,7 @@ module.exports = app => {
       finStatus: "unpaid",
       fulfillStatus: "unfulfilled"
     });
-    console.log(orders);
+    logger.debug("findOpenOrderForCentre: completed");
     return orders;
   }
 
