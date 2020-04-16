@@ -53,6 +53,8 @@ export function invalidateCabinet(centre) {
  */
 //TODO: implement async axios calls here
 
+
+
 export const fetchCabinet = (centre, summary) => async dispatch => {
   let url = "/api/reward/cabinet";
   let options = {

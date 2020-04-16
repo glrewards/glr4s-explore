@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireGLRPoints = require("../middlewares/requireGLRPoints");
 const requireStudent = require("../middlewares/requireStudent");
-const findStudentSchool = require("../middlewares/findStudentSchool");
 const keys = require("../config/keys");
 const { request } = require("graphql-request");
 const { GraphQLClient } = require("graphql-request");
@@ -66,28 +65,25 @@ module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
   app.get(
-    "/api/orders/:studentId",
-    requireLogin,
-    findStudentSchool,
+    "/api/orders/:centreId",
     async (req, res) => {
       //get all the open orders for the school
-      const orders = await Order.find({ _school: req.school });
+      let centre = req.params.centreId;
+      const orders = await Order.find({ _learningCentreId: centre});
       if (orders.length > 1 || orders.length === 0) {
         throw "too many or zero orders  found";
       }
 
       //now search the array to find the lineitems that belong to the the student only
-      let myItems = filterByStudent(orders[0].lineItems, req.params.studentId);
-      res.send(myItems);
+      //let myItems = filterByStudent(orders[0].lineItems, req.params.studentId);
+      res.send(orders);
     }
   );
 
   //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
-  app.get("/api/orders", requireLogin, requireStudent, async (req, res) => {
+  app.get("/api/orders", async (req, res) => {
     console.log("yup");
-    const orders = await Order.find({ _school: req.student._school }).select({
-      _lineItems: false
-    });
+    const orders = await Order.find({ _learningCentreId: req.centreId });
     res.send(orders);
   });
 
@@ -127,8 +123,7 @@ module.exports = app => {
     });
 */
 
-  app.post("/api/orders/", requireLogin, requireStudent, async (req, res) => {
-    const _school = req.body.user._student._school;
+  app.post("/api/orders/", requireLogin, async (req, res) => {
     const studentId = req.body.user._student._id;
     const lineItems = req.body.lineItems;
     const _learningCentreId = req.body.user._learningCentreId; //with this we can find the cabinet
@@ -185,57 +180,6 @@ module.exports = app => {
       origUser._student = student;
       let newRes = Object.assign(origUser, order.toObject());
       res.send(newRes);
-    } catch (err) {
-      res.status(422).send(err);
-    }
-  });
-
-  //TODO: remove this completely it is just a test to prove we can write and run a graphql route NOT USING the storefront api
-  app.get("/api/orders/test2", async (req, res) => {
-    //start with a simple gql get using the admin api
-    const query = `
-{
-  draftOrders(first: 5) {
-    edges {
-      node {
-        totalTax
-        totalPrice
-        customer {
-          id
-          totalSpentV2 {
-            amount
-            currencyCode
-          }
-          updatedAt
-        }
-        note2
-        name
-        updatedAt
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-    }
-  }
-}`;
-    try {
-      const endpoint =
-        "https://" +
-        keys.shopifyStoreName +
-        ".myshopify.com/admin/api/" +
-        keys.shopifyAPIVersion +
-        "/graphql.json";
-
-      const graphQLClient = new GraphQLClient(endpoint, {
-        headers: {
-          "X-Shopify-Access-Token": keys.shopifyAPIPassword
-        }
-      });
-
-      const data = await graphQLClient.request(query);
-      res.send(data);
     } catch (err) {
       res.status(422).send(err);
     }

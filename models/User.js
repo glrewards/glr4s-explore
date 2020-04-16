@@ -7,7 +7,7 @@ const userSchema = new Schema({
     email: String,
     hash: String,
     salt: String,
-    username: String,
+    username: {type: String, unique:true},
     credits: {type: Number, default: 0},
     _student: {type: Schema.Types.ObjectId, ref: 'students'},
     _teacher: {type: Schema.Types.ObjectId, ref: 'teachers'},

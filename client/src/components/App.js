@@ -11,7 +11,7 @@ import StudentDashboard from "./student/StudentProfileDashboard";
 import OrderDashboard from "./shop/OrderDashboard";
 import SimpleCartList from "./shop/SimpleCartList";
 import XODStudentDashboard from "./student/XODStudentDashboard";
-import AdminDashboard from "./admin/AdminDashBoard";
+import CentreDashboard from "./containers-rewards/CentreDashBoard";
 import { HandleProgressBar } from "./ProgressBar";
 import AdminDashOrderDetails from "./admin/AdminDashOrderDetails";
 import EmailNew from "./email/EmailNew";
@@ -52,7 +52,7 @@ class App extends Component {
               path="/school/:schoolId/student/:studentId"
               component={StudentDashboard}
             />
-            <Route path="/admin" component={AdminDashboard} />
+            <Route path="/admin" component={CentreDashboard} />
             <Route exact path="/admin/cart" component={AdminDashOrderDetails} />
             <Route path="/rewards" component={CabinetContainer} />
           </div>

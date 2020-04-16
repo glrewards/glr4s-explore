@@ -10,14 +10,11 @@ import {Button, Toast} from "react-materialize";
 class CabinetContainer extends Component {
   constructor(props) {
     super(props);
-    console.log("CabinetContainer: props", props);
-    console.log("CabinetContainer: props", this.state);
     this.handleRefreshClick = this.handleRefreshClick.bind(this);
     this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
   }
 
   componentDidMount() {
-    console.log("component did mount: ", this.props);
     if(this.props.user){
       this.props.dispatch(invalidateCabinet(this.props.user._learningCentreId));
       this.props.dispatch(fetchCabinet(this.props.user._learningCentreId));
@@ -25,9 +22,6 @@ class CabinetContainer extends Component {
   }
 
  componentDidUpdate(prevProps, prevState, snapshot) {
-      console.log("previousProps: ", prevProps);
-    console.log("previousState: ", prevState);
-    console.log("CurrentProps: ", this.props);
     if((this.props.user) && (this.props.user != prevProps.user)){
       const { dispatch, user } = this.props;
       dispatch(fetchCabinet(user._learningCentreId))
@@ -35,14 +29,12 @@ class CabinetContainer extends Component {
   }
 
   handleAddToCartClick(rewardId, productTitle, variantId, quantity,glrpoints, img){
-    console.log("In handleAddToCartClick: ",rewardId,img);
     this.props.dispatch(addLine(this.props.user._student,rewardId, productTitle, variantId, quantity,glrpoints, img))
   }
 
   handleRefreshClick(e) {
     e.preventDefault();
     const {dispatch, user } = this.props;
-    console.log("handleRefresh: ", this.props);
     dispatch(invalidateCabinet(user._learningCentreId));
     dispatch(fetchCabinet(user._learningCentreId));
   }
@@ -56,8 +48,10 @@ class CabinetContainer extends Component {
             {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
             {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
                 <div style={{opacity: isFetching ? 0.5:1}}>
-            <ShelfList shelves={cabDetail.shelves}
-                       onAddToCartClickShelf={this.handleAddToCartClick}/>
+            <ShelfList
+                isAdmin={this.props.user.isAdmin}
+                shelves={cabDetail.shelves}
+                onAddToCartClickShelf={this.handleAddToCartClick}/>
                 </div>
             )}
         </div>

@@ -49,23 +49,24 @@ export default class ShelfList extends Component {
 
                           <td>
                             <Button
+                              disabled={this.props.isAdmin}
                               className="amber darken-4"
                               waves="purple"
-                                onClick={() => {
-                                  this.props.onAddToCartClickShelf(
-                                      reward._id,
-                                      reward._shopifyProduct.title,
-                                      reward._shopifyProduct.variants[0].id,  //TODO: just taking the first variant for now
-                                      1, //TODO: just hardcoding the quantity to 1 for now
-                                      reward._shopifyProduct.points,
-                                      reward._shopifyProduct.image.src
-                                  )
-                                }
-                                }
+                              onClick={() => {
+                                this.props.onAddToCartClickShelf(
+                                  reward._id,
+                                  reward._shopifyProduct.title,
+                                  reward._shopifyProduct.variants[0].id, //TODO: just taking the first variant for now
+                                  1, //TODO: just hardcoding the quantity to 1 for now
+                                  reward._shopifyProduct.points,
+                                  reward._shopifyProduct.image.src
+                                );
+                              }}
                             >
                               Add<Icon right>add_shopping_cart</Icon>
                             </Button>
                             <Button
+                              disabled={this.props.isAdmin}
                               className="col s12 amber darken-4"
                               waves="purple"
                             >
@@ -86,6 +87,7 @@ export default class ShelfList extends Component {
 }
 
 ShelfList.propTypes = {
+  isAdmin: PropTypes.bool,
   shelves: PropTypes.array.isRequired,
   onAddToCartClickShelf: PropTypes.func.isRequired
 };
