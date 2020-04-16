@@ -1,15 +1,30 @@
 import React, { Component } from "react";
-import ShelfList from "../rewards/ShelfList";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import { fetchOrder, invalidateOrder } from "../../actions/orderActions";
+import PropTypes from "prop-types";
 
 class CentreDashBoard extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    if (this.props.user) {
+      this.props.dispatch(invalidateOrder(this.props.user._learningCentreId));
+      this.props.dispatch(fetchOrder(this.props.user._learningCentreId));
     }
-    render() {
-        return(<div>Centre dashboard</div>)
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.user && this.props.user !== prevProps.user) {
+      const { dispatch, user } = this.props;
+      dispatch(fetchOrder(user._learningCentreId));
     }
-        /*
+  }
+  render() {
+    return <div>Centre dashboard</div>;
+  }
+  /*
         const { user, cabDetail, isFetching, lastUpdated } = this.props;
         if(!user) return(<div>Fetching</div>);
         return (
@@ -29,4 +44,26 @@ class CentreDashBoard extends Component {
     }
          */
 }
-export default (CentreDashBoard);
+
+CentreDashBoard.propTypes = {
+  centre: PropTypes.string.isRequired,
+  orderDetail: PropTypes.object,
+  isFetching: PropTypes.bool.isRequired,
+  lastUpdated: PropTypes.number,
+  dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+  const { order } = state;
+  const { isFetching, lastUpdated, orderDetail } = order || {
+    isFetching: true
+  };
+  let user = state.auth;
+  return {
+    user,
+    orderDetail,
+    isFetching,
+    lastUpdated
+  };
+}
+export default connect(mapStateToProps)(CentreDashBoard);

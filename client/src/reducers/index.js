@@ -13,10 +13,14 @@ import XODSchoolReducer from "./XODSchoolReducer";
 import XODSingleStudentReducer from "./XODSingleStudentReducer";
 import XODAchievementsReducer from "./XODAchivementReducer";
 import UIReducer from "./UIReducer";
-import cabinet from "./rewardReducer";
+import cabinetReducer from "./rewardReducer";
+import orderReducer from "./orderReducer";
 
 export default combineReducers({
     auth: authReducer,
+    cabinet: cabinetReducer,
+    cart: cartReducer,
+    order: orderReducer,
     form: reduxForm,
     surveys: surveyReducer,
     students: studentReducer,
@@ -27,7 +31,5 @@ export default combineReducers({
     categories: categorysReducer,
     products: productsReducer,
     lineItems: lineItemReducer,
-    cart: cartReducer,
-    ui: UIReducer,
-    cabinet: cabinet
+    ui: UIReducer
 });

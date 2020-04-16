@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/rewardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rewardActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -235,14 +231,7 @@
       <workItem from="1586792070480" duration="6764000" />
       <workItem from="1586800922167" duration="23336000" />
       <workItem from="1587049648004" duration="3225000" />
-      <workItem from="1587061614897" duration="5222000" />
-    </task>
-    <task id="LOCAL-00062" summary="hqve cart icon logic in place">
-      <created>1560082738728</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1560082738730</updated>
+      <workItem from="1587061614897" duration="7118000" />
     </task>
     <task id="LOCAL-00063" summary="basic cart display linked to cart icon">
       <created>1560097556702</created>
@@ -580,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587052295162</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)">
+      <created>1587076828276</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1587076828277</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +622,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="firs cut student stats summary and cleaned up responsiveness" />
     <MESSAGE value="added first cut of charts and progress bar" />
     <MESSAGE value="added hasachievements" />
     <MESSAGE value="added limit of 100 to route for now" />
@@ -651,7 +646,8 @@
     <MESSAGE value="updated node and npm in packages" />
     <MESSAGE value="started on add to cart for rewards" />
     <MESSAGE value="loads of order processing updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="loads of order processing updates" />
+    <MESSAGE value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
+    <option name="LAST_COMMIT_MESSAGE" value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
@@ -663,15 +659,15 @@
     </state>
     <state x="318" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585218975334" />
     <state x="485" y="373" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1587063507965" />
-    <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585760815684">
+    <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587076862754">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
-    <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1585760815684" />
-    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1587052294561">
+    <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1587076862754" />
+    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1587076828059">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="629" y="23" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822438742" />
-    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587052294561" />
+    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587076828059" />
     <state width="1259" height="270" key="GridCell.Tab.0.bottom" timestamp="1587073676230">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>

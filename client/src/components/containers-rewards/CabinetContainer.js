@@ -5,7 +5,7 @@ import {addLine} from "../../actions/cartActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";
-import {Button, Toast} from "react-materialize";
+
 
 class CabinetContainer extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class CabinetContainer extends Component {
   }
 
  componentDidUpdate(prevProps, prevState, snapshot) {
-    if((this.props.user) && (this.props.user != prevProps.user)){
+    if((this.props.user) && (this.props.user !== prevProps.user)){
       const { dispatch, user } = this.props;
       dispatch(fetchCabinet(user._learningCentreId))
     }
@@ -69,13 +69,11 @@ CabinetContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-  //console.log("this is the state in map state to props: ", state);
   const { cabinet } = state;
   const { isFetching, lastUpdated, cabDetail } = cabinet || {
     isFetching: true
   };
   let user = state.auth;
-  //console.log("this is the USER in map state to props: ", user);
   return {
     user,
     cabDetail,

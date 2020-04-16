@@ -67,9 +67,10 @@ module.exports = app => {
   app.get(
     "/api/orders/:centreId",
     async (req, res) => {
+      logger.debug("Received request", req.params);
       //get all the open orders for the school
       let centre = req.params.centreId;
-      const orders = await Order.find({ _learningCentreId: centre});
+      const orders = await Order.findOne({ _learningCentreId: centre});
       if (orders.length > 1 || orders.length === 0) {
         throw "too many or zero orders  found";
       }
@@ -158,7 +159,7 @@ module.exports = app => {
         newOrder.dateUpdated = Date.now();
       }
       // if too many orders we wont get to this because we will have thrown an error
-        updateCabinetStockLevels(_learningCentreId, lineItems);
+        await updateCabinetStockLevels(_learningCentreId, lineItems);
 
       //TODO: put all this into a proper mongoose transaction
       let orderPoints = calcGLRPointsTotal(lineItems);

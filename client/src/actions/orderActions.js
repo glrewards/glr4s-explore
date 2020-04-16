@@ -30,7 +30,7 @@ export function invalidateOrder(centre) {
 export const fetchOrder = (centre) => async dispatch =>{
     let url = "api/orders/" + centre;
     dispatch(requestOrder(centre)); //update state to say we are fetching cabinet
-    const res = await axios.get(url, options);
+    const res = await axios.get(url);
     //console.log("response data: ", res.data);
     dispatch(receiveOrder(centre,res.data));
 }
