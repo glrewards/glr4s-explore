@@ -48,19 +48,17 @@ class GLRHeader extends Component {
         return null;
       default:
         return [
-          <NavItem className="hide-on-small-and-down" key={"rewards"}>
+          <NavItem key={"rewards"}>
             <NavLink to={"/rewards"}>Reward Cabinet</NavLink>
           </NavItem>,
           <NavItem
             href="/api/logout"
-            className="hide-on-small-and-down"
             key={"logout"}
           >
             Logout
           </NavItem>,
           this.renderAdminItem(),
           <NavItem
-            className="hide-on-small-and-down text-capitalize"
             key={"points"}
           >
             <div className="valign-wrapper flow-text">
@@ -76,7 +74,7 @@ class GLRHeader extends Component {
     if (!this.props.auth.isAdmin) {
     } else {
       return (
-        <NavItem className="hide-on-small-and-down" key={"admin"}>
+        <NavItem  key={"admin"}>
           <Link to="/admin">Admin Dashboard</Link>
         </NavItem>
       );

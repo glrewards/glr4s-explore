@@ -22,7 +22,7 @@ class CentreDashBoard extends Component {
     }
   }
   render() {
-    return <div>Centre dashboard</div>;
+    return <div>{JSON.stringify(this.props.orderDetail)}</div>;
   }
   /*
         const { user, cabDetail, isFetching, lastUpdated } = this.props;
