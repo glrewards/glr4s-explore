@@ -56,16 +56,12 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
         //console.log("in google strategy", accessToken, refreshToken,profile);
-     console.log("profile.id: ",profile.id);
       const existingUser = await User.findOne({
         googleId: profile.id
       }).populate("_student");
-      console.log(existingUser);
       if (existingUser) {
-        console.log(existingUser);
         done(null, existingUser);
       } else {
-        console.log("User Not Found with username " + username);
         return done(null, false, req.flash("message", "User Not found."));
       }
 
@@ -83,7 +79,6 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
       const existingUser = await User.findOne({ slackId: profile.id }).populate(
         "_student"
       );
@@ -91,7 +86,6 @@ passport.use(
         //it must exist
         done(null, existingUser);
       } else {
-        console.log("User Not Found with username " + username);
         return done(null, false, req.flash("message", "User Not found."));
       }
 

@@ -5,6 +5,7 @@ import {addLine} from "../../actions/cartActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";
+import {ProgressBar} from "react-materialize";
 
 
 class CabinetContainer extends Component {
@@ -40,11 +41,11 @@ class CabinetContainer extends Component {
   }
   render() {
     const { user, cabDetail, isFetching, lastUpdated } = this.props;
-    if(!user) return(<div>Fetching</div>);
+    if(!user) return(<ProgressBar/>);
     return (
       <div>
         <div>
-          {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading</h2> }
+          {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <ProgressBar/> }
             {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
             {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
                 <div style={{opacity: isFetching ? 0.5:1}}>
