@@ -4,14 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
-    </list>
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,14 +224,7 @@
       <workItem from="1586792070480" duration="6764000" />
       <workItem from="1586800922167" duration="23336000" />
       <workItem from="1587049648004" duration="3225000" />
-      <workItem from="1587061614897" duration="7118000" />
-    </task>
-    <task id="LOCAL-00063" summary="basic cart display linked to cart icon">
-      <created>1560097556702</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1560097556702</updated>
+      <workItem from="1587061614897" duration="7593000" />
     </task>
     <task id="LOCAL-00064" summary="completed order flow for POC - order and lineitems can be created and saved. no ability to amend cart etc. can do this later">
       <created>1560162919549</created>
@@ -576,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587076828277</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="order working">
+      <created>1587078655030</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1587078655030</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +615,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added first cut of charts and progress bar" />
     <MESSAGE value="added hasachievements" />
     <MESSAGE value="added limit of 100 to route for now" />
     <MESSAGE value="move progress bar to actions" />
@@ -647,7 +639,8 @@
     <MESSAGE value="started on add to cart for rewards" />
     <MESSAGE value="loads of order processing updates" />
     <MESSAGE value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
-    <option name="LAST_COMMIT_MESSAGE" value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
+    <MESSAGE value="order working" />
+    <option name="LAST_COMMIT_MESSAGE" value="order working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
@@ -663,11 +656,15 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1587076862754" />
-    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1587076828059">
+    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1587078654830">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="629" y="23" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822438742" />
-    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587076828059" />
+    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587078654830" />
+    <state x="174" y="123" width="1080" height="1145" key="DiffContextDialog" timestamp="1587079120151">
+      <screen x="0" y="23" width="2560" height="1346" />
+    </state>
+    <state x="174" y="123" width="1080" height="1145" key="DiffContextDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1587079120151" />
     <state width="1259" height="270" key="GridCell.Tab.0.bottom" timestamp="1587073676230">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
@@ -740,6 +737,14 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1259" height="472" key="GridCell.Tab.3.right/0.23.2560.1346@0.23.2560.1346" timestamp="1586327171740" />
+    <state x="86" y="146" key="MergeDialog" timestamp="1587079106533">
+      <screen x="0" y="23" width="2560" height="1346" />
+    </state>
+    <state x="86" y="146" key="MergeDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1587079106533" />
+    <state x="604" y="569" width="1012" height="252" key="MultipleFileMergeDialog" timestamp="1587079112549">
+      <screen x="0" y="23" width="2560" height="1346" />
+    </state>
+    <state x="604" y="569" width="1012" height="252" key="MultipleFileMergeDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1587079112549" />
     <state x="518" y="261" key="SettingsEditor" timestamp="1586777614531">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -758,6 +763,10 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="258" y="349" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.2560.1346@0.23.2560.1346" timestamp="1586338603416" />
+    <state x="505" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587078788275">
+      <screen x="0" y="23" width="2560" height="1346" />
+    </state>
+    <state x="505" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587078788275" />
     <state x="1397" y="62" width="600" height="729" key="find.popup" timestamp="1587021131679">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
