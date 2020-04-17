@@ -4,6 +4,7 @@ import { fetchOrder, invalidateOrder } from "../../actions/orderActions";
 import OrderSummary from "../rewards/OrderSummary";
 import OrderDetails from "../rewards/OrderDetails";
 import PropTypes from "prop-types";
+import { ProgressBar } from "react-materialize";
 
 class CentreDashBoard extends Component {
   constructor(props) {
@@ -13,34 +14,32 @@ class CentreDashBoard extends Component {
     this.calcTotalCards = this.calcTotalCards.bind(this);
   }
 
-
-calcTotalCards() {
-  Array.prototype.calcTotalPoints = function (prop) {
-    let total = 0
-    for ( let i = 0, _len = this.length; i < _len; i++ ) {
-      total += (this[i][prop] * this[i]['quantity'])
-    }
-    return total
-  }
+  calcTotalCards() {
+    Array.prototype.calcTotalPoints = function(prop) {
+      let total = 0;
+      for (let i = 0, _len = this.length; i < _len; i++) {
+        total += this[i][prop] * this[i]["quantity"];
+      }
+      return total;
+    };
     //loop throuh line items and sum
-  if(this.props.orderDetail) {
-    let total = this.props.orderDetail.lineItems.calcTotalPoints("glrpoints");
-    return total;
-  }else{
-    return 0;
+    if (this.props.orderDetail) {
+      let total = this.props.orderDetail.lineItems.calcTotalPoints("glrpoints");
+      return total;
+    } else {
+      return 0;
+    }
   }
-
-}
-calcTotalLines() {
-    if(this.props.orderDetail) {
-    return this.props.orderDetail.lineItems.length;
-  }else{
-    return 0;
+  calcTotalLines() {
+    if (this.props.orderDetail) {
+      return this.props.orderDetail.lineItems.length;
+    } else {
+      return 0;
+    }
   }
-}
-calcMostOrdered() {
-    return "Pin Badge"
-}
+  calcMostOrdered() {
+    return "Pin Badge";
+  }
 
   componentDidMount() {
     if (this.props.user) {
@@ -56,38 +55,29 @@ calcMostOrdered() {
     }
   }
   render() {
+    const { user, orderDetail, isFetching } = this.props;
+    if (!user) return <ProgressBar />;
     return (
-      //Top section should be an order summary including
-      //status, total count of lineitems and total lizard points
       <div>
-        <OrderSummary
-         mostPopular={this.calcMostOrdered()}
-         totalLines={this.calcTotalLines()}
-         totalLizardCards={this.calcTotalCards()}/>
-        <OrderDetails />
-        <div>{JSON.stringify(this.props.orderDetail)}</div>
+        {isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
+          <ProgressBar />
+        )}
+        {!isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
+          <h2>No Order</h2>
+        )}
+        {JSON.stringify(orderDetail) !== JSON.stringify({}) && (
+          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+            <OrderSummary
+              mostPopular={this.calcMostOrdered()}
+              totalLines={this.calcTotalLines()}
+              totalLizardCards={this.calcTotalCards()}
+            />
+            <OrderDetails lineItems={this.props.orderDetail.lineItems} />
+          </div>
+        )}
       </div>
     );
   }
-  /*
-        const { user, cabDetail, isFetching, lastUpdated } = this.props;
-        if(!user) return(<div>Fetching</div>);
-        return (
-            <div>
-                <div>
-                    {isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>Loading</h2> }
-                    {!isFetching && (JSON.stringify(cabDetail) === JSON.stringify({})) && <h2>No Cabinet</h2> }
-                    {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
-                        <div style={{opacity: isFetching ? 0.5:1}}>
-                            <ShelfList shelves={cabDetail.shelves}
-                                       onAddToCartClickShelf={this.handleAddToCartClick}/>
-                        </div>
-                    )}
-                </div>
-            </div>
-        );
-    }
-         */
 }
 
 CentreDashBoard.propTypes = {

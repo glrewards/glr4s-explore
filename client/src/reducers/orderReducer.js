@@ -6,7 +6,7 @@ function order(
     state = {
         isFetching: false,
         didInvalidate: false,
-        cabDetail: {}
+        orderDetail: {}
     },
     action
 ) {

@@ -22,7 +22,7 @@ export default class OrderSummary extends Component {
                 <Card
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title={<h2 className="flow-text">Total Cards</h2>}
+                  title="Total Cards"
                 >
                   <strong>
                     <h2 className="flow-text">{this.props.totalLizardCards}</h2>
@@ -33,7 +33,7 @@ export default class OrderSummary extends Component {
                 <Card
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title={<h2 className="flow-text">Total Lines</h2>}
+                  title="Total Lines"
                 >
                   <strong>
                     <h2 className="flow-text">{this.props.totalLines}</h2>
@@ -44,7 +44,7 @@ export default class OrderSummary extends Component {
                 <Card
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title={<h2 className="flow-text">Most Ordered</h2>}
+                  title="Most Ordered"
                 >
                   <strong>
                     <h2 className="blue-text flow-text">
