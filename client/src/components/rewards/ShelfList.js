@@ -19,7 +19,7 @@ export default class ShelfList extends Component {
           >
             <img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
             <div>
-              <table className="striped responsive-table">
+              <table className="striped">
                 <tbody>
                   {typeof shelf.rewardItems != "undefined" &&
                     shelf.rewardItems.length > 0 &&
