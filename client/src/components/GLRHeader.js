@@ -17,7 +17,7 @@ class GLRHeader extends Component {
     if (this.props.cart.length > 0) {
       console.log(this.props.cart);
       return (
-        <NavItem>
+        <NavItem className="sidenav-close">
           <NavLink to={"/shop/cart"} key={"cart"}>
             <i className="material-icons">shopping_basket</i>
           </NavLink>
