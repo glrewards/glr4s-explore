@@ -216,7 +216,6 @@ module.exports = app => {
       lineItems.forEach(line => {
         //console.log(line);
         shelves.forEach(shelf => {
-          logger.debug("SHELF: ", shelf);
           shelf.rewardItems.map(reward => {
             if (JSON.stringify(line._rewardId) === JSON.stringify(reward._id)) {
               //console.log("FOUND REWARD: changing stock levels: ", reward.count, line.quantity);
@@ -228,7 +227,6 @@ module.exports = app => {
               return reward;
             }
           });
-          console.log("mathces: ", matches);
         });
       });
       logger.debug("saving updated cabinet");

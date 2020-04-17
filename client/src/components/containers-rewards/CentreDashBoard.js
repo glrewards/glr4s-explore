@@ -8,7 +8,24 @@ import PropTypes from "prop-types";
 class CentreDashBoard extends Component {
   constructor(props) {
     super(props);
+    this.calcTotalLines = this.calcTotalLines.bind(this);
+    this.calcMostOrdered = this.calcMostOrdered.bind(this);
+    this.calcTotalCards = this.calcTotalCards.bind(this);
   }
+
+calcTotalCards() {
+    if(this.props.orderDetail) {
+      return this.props.orderDetail.lineItems.length;
+    }else{
+      return 0;
+    }
+}
+calcTotalLines() {
+    return 300
+}
+calcMostOrdered() {
+    return "Pin Badge"
+}
 
   componentDidMount() {
     if (this.props.user) {
@@ -28,7 +45,10 @@ class CentreDashBoard extends Component {
       //Top section should be an order summary including
       //status, total count of lineitems and total lizard points
       <div>
-        <OrderSummary />
+        <OrderSummary
+         mostPopular={this.calcMostOrdered()}
+         totalLines={this.calcTotalLines()}
+         totalLizardCards={this.calcTotalCards()}/>
         <OrderDetails />
         <div>{JSON.stringify(this.props.orderDetail)}</div>
       </div>
