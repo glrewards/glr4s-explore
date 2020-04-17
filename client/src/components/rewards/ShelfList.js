@@ -30,6 +30,7 @@ export default class ShelfList extends Component {
                             {typeof reward._shopifyProduct != "undefined" &&
                               reward._shopifyProduct.image.src && (
                                 <img
+                                    className="responsive-img"
                                   height="150"
                                   width="150"
                                   alt="temp"

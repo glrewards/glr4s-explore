@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchOrder, invalidateOrder } from "../../actions/orderActions";
+import OrderSummary from "../rewards/OrderSummary";
+import OrderDetails from "../rewards/OrderDetails";
 import PropTypes from "prop-types";
 
 class CentreDashBoard extends Component {
@@ -22,7 +24,15 @@ class CentreDashBoard extends Component {
     }
   }
   render() {
-    return <div>{JSON.stringify(this.props.orderDetail)}</div>;
+    return (
+      //Top section should be an order summary including
+      //status, total count of lineitems and total lizard points
+      <div>
+        <OrderSummary />
+        <OrderDetails />
+        <div>{JSON.stringify(this.props.orderDetail)}</div>
+      </div>
+    );
   }
   /*
         const { user, cabDetail, isFetching, lastUpdated } = this.props;
