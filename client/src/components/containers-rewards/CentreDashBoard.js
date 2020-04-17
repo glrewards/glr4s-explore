@@ -13,15 +13,30 @@ class CentreDashBoard extends Component {
     this.calcTotalCards = this.calcTotalCards.bind(this);
   }
 
+
 calcTotalCards() {
-    if(this.props.orderDetail) {
-      return this.props.orderDetail.lineItems.length;
-    }else{
-      return 0;
+  Array.prototype.calcTotalPoints = function (prop) {
+    let total = 0
+    for ( let i = 0, _len = this.length; i < _len; i++ ) {
+      total += (this[i][prop] * this[i]['quantity'])
     }
+    return total
+  }
+    //loop throuh line items and sum
+  if(this.props.orderDetail) {
+    let total = this.props.orderDetail.lineItems.calcTotalPoints("glrpoints");
+    return total;
+  }else{
+    return 0;
+  }
+
 }
 calcTotalLines() {
-    return 300
+    if(this.props.orderDetail) {
+    return this.props.orderDetail.lineItems.length;
+  }else{
+    return 0;
+  }
 }
 calcMostOrdered() {
     return "Pin Badge"
