@@ -17,19 +17,15 @@ export default class OrderSummary extends Component {
 
       <Row style={roundedContainerStyle} className="light-blue">
         <Col s={12}>
-          <CardPanel className="light-blue">
-            <CardTitle style={titleStyle} className="blue center-align">
-              <h2>Current Order</h2>
-            </CardTitle>
             <Row>
               <Col s={4}>
                 <Card
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title={<h2>Total Cards</h2>}
+                  title={<h2 className="flow-text">Total Cards</h2>}
                 >
                   <strong>
-                    <h2>{this.props.totalLizardCards}</h2>
+                    <h2 className="flow-text">{this.props.totalLizardCards}</h2>
                   </strong>
                 </Card>
               </Col>
@@ -37,10 +33,10 @@ export default class OrderSummary extends Component {
                 <Card
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title={<h2>Total Lines</h2>}
+                  title={<h2 className="flow-text">Total Lines</h2>}
                 >
                   <strong>
-                    <h2>{this.props.totalLines}</h2>
+                    <h2 className="flow-text">{this.props.totalLines}</h2>
                   </strong>
                 </Card>
               </Col>
@@ -48,17 +44,16 @@ export default class OrderSummary extends Component {
                 <Card
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title={<h2>Most Ordered</h2>}
+                  title={<h2 className="flow-text">Most Ordered</h2>}
                 >
                   <strong>
-                    <h2 className="blue-text">
+                    <h2 className="blue-text flow-text">
                       <a href="#">{this.props.mostPopular}</a>
                     </h2>
                   </strong>
                 </Card>
               </Col>
             </Row>
-          </CardPanel>
         </Col>
       </Row>
     );

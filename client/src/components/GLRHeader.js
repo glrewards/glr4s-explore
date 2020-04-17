@@ -48,7 +48,7 @@ class GLRHeader extends Component {
         return null;
       default:
         return [
-          <NavItem key={"rewards"}>
+          <NavItem key={"rewards"} className="sidenav-close">
             <NavLink to={"/rewards"}>Reward Cabinet</NavLink>
           </NavItem>,
           <NavItem
@@ -74,7 +74,7 @@ class GLRHeader extends Component {
     if (!this.props.auth.isAdmin) {
     } else {
       return (
-        <NavItem  key={"admin"}>
+        <NavItem  key={"admin"} className="sidenav-close">
           <Link to="/admin">Admin Dashboard</Link>
         </NavItem>
       );
