@@ -17,6 +17,15 @@ export default class OrderDetail extends Component {
                 return (
                   <tr key={line._id}>
                     <td>
+                      <img
+                          className="responsive-img"
+                          height="150"
+                          width="150"
+                          alt="temp"
+                          src={line.img}
+                      />
+                    </td>
+                    <td>
                       {line.memberFirstName + " " + line.memberLastName}
                     </td>
                     <td>
