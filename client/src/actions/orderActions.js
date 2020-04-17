@@ -1,5 +1,25 @@
 import axios from "axios";
 
+export const REQUEST_LINEITEMS = 'REQUEST_LINEITEMS'
+export const RECEIVE_LINEITEMS = 'RECEIVED_LINEITEMS'
+
+function requestLineItems(centre,studentId){
+    return{
+        type: REQUEST_LINEITEMS,
+        centre,
+        studentId
+    }
+}
+
+function receiveLineItems(centre,studentId,json){
+    return {
+        type: RECEIVE_LINEITEMS,
+        centre,
+        studentId,
+        payload: json,
+        receivedAt: Date.now()
+    };
+}
 export const REQUEST_ORDER = "request_order";
 function requestOrder(centre){
     return{
@@ -33,4 +53,11 @@ export const fetchOrder = (centre) => async dispatch =>{
     const res = await axios.get(url);
     //console.log("response data: ", res.data);
     dispatch(receiveOrder(centre,res.data));
+}
+
+export const fetchLineItems = (centre,studentId) => async dispatch =>{
+    let url = "api/orders/" + centre + "/" + studentId;
+    dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
+    const res = await axios.get(url);
+    dispatch(receiveLineItems(centre,res.data));
 }

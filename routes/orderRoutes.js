@@ -8,6 +8,7 @@ const { GraphQLClient } = require("graphql-request");
 const winston = require("winston");
 const Order = mongoose.model("orders");
 const Student = mongoose.model("students");
+
 const Cabinet = mongoose.model("Cabinet");
 
 const logger = winston.createLogger({
@@ -17,53 +18,18 @@ const logger = winston.createLogger({
   transports: [new winston.transports.Console()]
 });
 
-/*
-const DraftOrderFragment = gql`
-  fragment DraftOrderFragment on DraftOrder{
-    id
-    webUrl
-    totalTax
-    subtotalPrice
-    totalPrice
-    customer{
-      displayName
-    }
-    lineItems (first: 250) {
-      edges {
-        node {
-          id
-          title
-          variant {
-            id
-            title
-            image {
-              src
-            }
-            price
-          }
-          quantity
-        }
-      }
-    }
-  }
-`;
-
-const draftOrderMutation = gql `mutation {
-  draftOrderCreate($input: DraftOrderInput!) {
-    draftOrder {
-      ...DraftOrderFragment
-     }
-
-    }
-  }
-}
-${DraftOrderFragment}
-`;
-*/
-
 module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
+  app.get("/api/orders/:centreId/:userId", async (req,res) => {
+    //this is for retrieving a users line items
+    logger.debug("received request", req.params);
+    let centre = req.params.centreId;
+    let userId = req.params.userId;
+    const order = await Order.findOne({ _learningCentreId: centre});
+    let myLines = filterByStudent(order.lineItems,userId);
+    res.send(myLines);
+  })
   app.get(
     "/api/orders/:centreId",
     async (req, res) => {
@@ -87,6 +53,7 @@ module.exports = app => {
     const orders = await Order.find({ _learningCentreId: req.centreId });
     res.send(orders);
   });
+
 
   //TODO: rework the webhook below to trap webhooks sent by shopify
   /*
@@ -183,6 +150,7 @@ module.exports = app => {
       let newRes = Object.assign(origUser, order.toObject());
       res.send(newRes);
     } catch (err) {
+  console.log(err);
       res.status(422).send(err);
     }
   });
@@ -256,10 +224,12 @@ module.exports = app => {
   }
 
   function filterByStudent(arr, student) {
+
+    console.log(arr, student);
     if (!arr || typeof arr != "object") return;
     if (typeof student == "undefined" || student == null) return arr;
     return arr.filter(line => {
-      return line._student === student;
+      return JSON.stringify(line._student) === JSON.stringify(student);
     });
   }
 };

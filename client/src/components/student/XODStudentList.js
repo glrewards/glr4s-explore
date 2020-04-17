@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {fetchAllXODStudents, fetchXODStudentCount, setProgressBar} from "../../actions";
+import {fetchAllXODStudents, fetchXODStudentCount} from "../../actions";
 import {Link} from "react-router-dom";
 import PaginationBar from "../PaginationBar";
 
@@ -110,5 +110,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { fetchAllXODStudents, setProgressBar,fetchXODStudentCount}
+  { fetchAllXODStudents, fetchXODStudentCount}
 )(XODStudentList);

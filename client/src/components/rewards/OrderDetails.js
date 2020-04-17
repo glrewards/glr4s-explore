@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Collapsible, CollapsibleItem, Icon, Button } from "react-materialize";
 
 export default class OrderDetail extends Component {
   render() {

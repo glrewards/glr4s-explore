@@ -5,14 +5,12 @@ import authReducer from './authReducer';
 import surveyReducer from './surveysReducer';
 import studentReducer from './studentReducer';
 import categorysReducer from "./categorysReducer";
-import lineItemReducer from "./lineItemsReducer";
 import productsReducer from "./productsReducer";
 import cartReducer from "./cartReducer";
 import XODstudentReducer from "./XODStudentsReducer";
 import XODSchoolReducer from "./XODSchoolReducer";
 import XODSingleStudentReducer from "./XODSingleStudentReducer";
 import XODAchievementsReducer from "./XODAchivementReducer";
-import UIReducer from "./UIReducer";
 import cabinetReducer from "./rewardReducer";
 import orderReducer from "./orderReducer";
 
@@ -29,7 +27,5 @@ export default combineReducers({
     xodschool:XODSchoolReducer,
     xodAchievements: XODAchievementsReducer,
     categories: categorysReducer,
-    products: productsReducer,
-    lineItems: lineItemReducer,
-    ui: UIReducer
+    products: productsReducer
 });

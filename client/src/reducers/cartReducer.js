@@ -2,7 +2,7 @@ import {
     ADD_LINE,
     AMEND_LINE,
     REMOVE_LINE,
-    DELETE_ALL_LINES
+    DELETE_ALL_LINES,
 } from '../actions/cartActions'
 
 const initialState = {

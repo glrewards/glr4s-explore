@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ShelfList from "../rewards/ShelfList";
 import {addLine} from "../../actions/cartActions";
-
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";

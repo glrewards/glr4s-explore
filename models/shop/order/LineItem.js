@@ -12,6 +12,7 @@ const lineItemSchema = new Schema({
     username: String,
     memberFirstName: String,
     memberLastName: String,
+    img: String,
     _student: {type: Schema.Types.ObjectId, ref: 'students'}
 });
 

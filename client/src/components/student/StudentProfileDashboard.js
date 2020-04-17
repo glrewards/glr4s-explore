@@ -5,7 +5,6 @@ import { fetchXODStudentAchievements } from "../../actions";
 import XODStudentIdCard from "./XODStudentIdCard";
 import XODStudentActivitiesList from "./XODStudentActivitiesList";
 import XODStudentStatsCard from "./XODStudentStatsCard";
-import {setProgressBar} from "../../actions";
 import { Collapsible, CollapsibleItem } from "react-materialize";
 
 class StudentProfileDashboard extends Component {
@@ -84,5 +83,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { fetchXODStudent, fetchXODStudentAchievements, setProgressBar }
+  { fetchXODStudent, fetchXODStudentAchievements}
 )(StudentProfileDashboard);

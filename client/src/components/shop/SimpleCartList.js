@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { submitLineItems } from "../../actions";
-import { deleteAllLines,amendLine } from "../../actions/cartActions";
+import { deleteAllLines,amendLine,fetchCartItems } from "../../actions/cartActions";
 import { Collection, CollectionItem, TextInput } from "react-materialize";
 import { withRouter } from "react-router-dom";
+
 
 class SimpleCartList extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class SimpleCartList extends Component {
     this.saveLines = this.saveLines.bind(this);
     this.handleAmends = this.handleAmends.bind(this);
   }
+
 
   handleAmends(index,quantity){
    console.log("handleAmends: ",index, quantity);

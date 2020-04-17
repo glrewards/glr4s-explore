@@ -12,12 +12,12 @@ export default class ShelfList extends Component {
       <Collapsible accordion={true} header="Shelves">
         {this.props.shelves.map(shelf => (
           <CollapsibleItem
-            node="h3"
-            expanded={true}
-            key={shelf.name}
-            header={shelf.name}
+              node="h3"
+              expanded={true}
+              key={shelf.name}
+              header={shelf.name}
           >
-            <img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
+            <img alt="temp" src={shelf.imgURL} height="15%" width="15%"/>
             <div>
               <table className="striped">
                 <tbody>
@@ -58,7 +58,7 @@ export default class ShelfList extends Component {
                                   reward._id,
                                   reward._shopifyProduct.title,
                                   reward._shopifyProduct.variants[0].id, //TODO: just taking the first variant for now
-                                  1, //TODO: just hardcoding the quantity to 1 for now
+                                  1,  //setting to 1 as there is no other option for the user
                                   reward._shopifyProduct.points,
                                   reward._shopifyProduct.image.src
                                 );

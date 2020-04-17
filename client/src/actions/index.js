@@ -6,11 +6,9 @@ import { FETCH_ALL_STUDENTS } from "./types";
 import { FETCH_ALL_XOD_STUDENTS } from "./types";
 import { NEW_CATEGORY } from "./types";
 import { NEW_EMAIL} from "./types";
-import { FETCH_LINEITEMS } from "./types";
 import { DELETE_ALL_LINES } from "./cartActions";
 import { FETCH_XOD_STUDENT } from "./types";
 import { FETCH_XOD_ACHIEVEMENTS } from "./types";
-import { SET_PROGRESS_BAR } from "./types";
 import { SET_STUDENT_PAGES } from "./types";
 
 /*
@@ -26,8 +24,8 @@ import { SET_STUDENT_PAGES } from "./types";
 
      */
 export const fetchUser = () => async dispatch => {
-  const res = await axios.get("/api/current_user");
-  dispatch({ type: FETCH_USER, payload: res.data });
+  let res = await axios.get("/api/current_user");
+    dispatch({ type: FETCH_USER, payload: res.data });
 };
 
 export const handleToken = token => async dispatch => {
@@ -119,12 +117,6 @@ export const fetchXODStudentAchievements = (
 
   dispatch({ type: FETCH_XOD_ACHIEVEMENTS, payload: res.data });
 };
-/* There are the order and line items routes */
-export const fetchLineItems = student => async dispatch => {
-  const url = "/api/orders/" + student._id;
-  const res = await axios.get(url);
-  dispatch({ type: FETCH_LINEITEMS, payload: res.data });
-};
 
 export const submitLineItems = (reqBody, history) => async dispatch => {
   const res = await axios.post("/api/orders", reqBody);
@@ -132,8 +124,3 @@ export const submitLineItems = (reqBody, history) => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data });
   history.push("/rewards");
 };
-
-export const setProgressBar = isOpen => ({
-  type: SET_PROGRESS_BAR,
-  isOpen: isOpen
-});
