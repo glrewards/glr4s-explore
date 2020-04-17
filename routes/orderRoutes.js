@@ -23,17 +23,20 @@ module.exports = app => {
   //pagination
   app.get("/api/orders/:centreId/:userId", async (req,res) => {
     //this is for retrieving a users line items
-    logger.debug("received request", req.params);
+    //logger.debug("received request", req.params);
+    logger.debug("received Request");
     let centre = req.params.centreId;
     let userId = req.params.userId;
     const order = await Order.findOne({ _learningCentreId: centre});
     let myLines = filterByStudent(order.lineItems,userId);
+    console.log(myLines);
     res.send(myLines);
   })
+
   app.get(
     "/api/orders/:centreId",
     async (req, res) => {
-      logger.debug("Received request", req.params);
+      logger.debug("Received request here ", req.params);
       //get all the open orders for the school
       let centre = req.params.centreId;
       const orders = await Order.findOne({ _learningCentreId: centre});
@@ -225,7 +228,7 @@ module.exports = app => {
 
   function filterByStudent(arr, student) {
 
-    console.log(arr, student);
+    logger.debug("in filterByStudent: ", student);
     if (!arr || typeof arr != "object") return;
     if (typeof student == "undefined" || student == null) return arr;
     return arr.filter(line => {

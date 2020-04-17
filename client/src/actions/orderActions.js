@@ -56,8 +56,9 @@ export const fetchOrder = (centre) => async dispatch =>{
 }
 
 export const fetchLineItems = (centre,studentId) => async dispatch =>{
+    //console.log(centre, studentId);
     let url = "api/orders/" + centre + "/" + studentId;
     dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
     const res = await axios.get(url);
-    dispatch(receiveLineItems(centre,res.data));
+    dispatch(receiveLineItems(centre,studentId,res.data));
 }

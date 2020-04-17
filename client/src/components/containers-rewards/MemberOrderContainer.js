@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchOrder, invalidateOrder } from "../../actions/orderActions";
-import OrderSummary from "../rewards/OrderSummary";
+import { fetchLineItems, invalidateOrder } from "../../actions/orderActions";
 import OrderDetails from "../rewards/OrderDetails";
 import PropTypes from "prop-types";
 import { ProgressBar } from "react-materialize";
@@ -13,20 +12,26 @@ class MemberOrderContainer extends Component {
 
     componentDidMount() {
         if (this.props.user) {
-            this.props.dispatch(invalidateOrder(this.props.user._learningCentreId));
-            this.props.dispatch(fetchOrder(this.props.user._learningCentreId));
+            let centre = this.props.user._learningCentreId;
+            let studentId = this.props.user._student._id;
+            this.props.dispatch(invalidateOrder(centre));
+            this.props.dispatch(fetchLineItems(centre,studentId));
         }
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.user && this.props.user !== prevProps.user) {
             const { dispatch, user } = this.props;
-            dispatch(fetchOrder(user._learningCentreId));
+            let centre = user._learningCentreId;
+            let studentId = user._student._id;
+            dispatch(fetchLineItems(centre,studentId));
         }
     }
     render() {
+
         const { user, orderDetail, isFetching } = this.props;
-        if (!user) return <ProgressBar />;
+        console.log(orderDetail);
+        if (!orderDetail) return <ProgressBar />;
         return (
             <div>
                 {isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
@@ -37,12 +42,7 @@ class MemberOrderContainer extends Component {
                 )}
                 {JSON.stringify(orderDetail) !== JSON.stringify({}) && (
                     <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                        <OrderSummary
-                            mostPopular={this.calcMostOrdered()}
-                            totalLines={this.calcTotalLines()}
-                            totalLizardCards={this.calcTotalCards()}
-                        />
-                        <OrderDetails lineItems={this.props.orderDetail.lineItems} />
+                        <OrderDetails lineItems={this.props.orderDetail} />
                     </div>
                 )}
             </div>
@@ -51,7 +51,7 @@ class MemberOrderContainer extends Component {
 }
 
 MemberOrderContainer.propTypes = {
-    centre: PropTypes.string.isRequired,
+    centre: PropTypes.string,
     orderDetail: PropTypes.object,
     isFetching: PropTypes.bool.isRequired,
     lastUpdated: PropTypes.number,
@@ -71,4 +71,4 @@ function mapStateToProps(state) {
         lastUpdated
     };
 }
-export default connect(mapStateToProps)(CentreDashBoard);
+export default connect(mapStateToProps)(MemberOrderContainer);
