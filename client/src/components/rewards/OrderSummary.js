@@ -12,46 +12,46 @@ export default class OrderSummary extends Component {
     const titleStyle = {
       "borderRadius": "5px"
     };
-    console.log(this.props);
     return (
 
       <Row style={roundedContainerStyle} className="light-blue">
         <Col s={12}>
             <Row>
               <Col s={4}>
-                <Card
+                <CardPanel
                   style={roundedContainerStyle}
                   className="light-blue lighten-4 center-align"
-                  title="Total Cards"
                 >
+                  <CardTitle>Total Cards</CardTitle>
                   <strong>
                     <h2 className="flow-text">{this.props.totalLizardCards}</h2>
                   </strong>
-                </Card>
+                </CardPanel>
               </Col>
               <Col s={4}>
-                <Card
+                <CardPanel
                   style={roundedContainerStyle}
-                  className="light-blue lighten-4 center-align"
+                  className="light-blue lighten-4 center-align flow-text"
                   title="Total Lines"
                 >
+                  <CardTitle>Total Lines</CardTitle>
                   <strong>
                     <h2 className="flow-text">{this.props.totalLines}</h2>
                   </strong>
-                </Card>
+                </CardPanel>
               </Col>
               <Col s={4}>
-                <Card
+                <CardPanel
                   style={roundedContainerStyle}
-                  className="light-blue lighten-4 center-align"
-                  title="Most Ordered"
+                  className="light-blue lighten-4 center-align flow-text"
                 >
+                  <CardTitle>Most Ordered</CardTitle>
                   <strong>
                     <h2 className="blue-text flow-text">
                       <a href="#">{this.props.mostPopular}</a>
                     </h2>
                   </strong>
-                </Card>
+                </CardPanel>
               </Col>
             </Row>
         </Col>

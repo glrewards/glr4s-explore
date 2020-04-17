@@ -1,5 +1,5 @@
 node_modules
 mongo_scripts
 dev.js
-.idea
+.idea/
 workspace.xml
