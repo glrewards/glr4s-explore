@@ -93,28 +93,64 @@ module.exports = app => {
     });
 */
   app.put("/api/orders/deletelines/:centreId/:studentId", async (req, res) => {
-    logger.info("put myorder received");
-    let lines = req.body;
-    let centre = req.params.centreId;
-    let orders = await Order.find({
-      _learningCentreId: centre,
-      fulfillStatus: "unfulfilled"
-    });
-    //order has an array of line items we want to delete the ones where we have an ID
-    //provided in the req.body array of IDs
-    //only expecting one so check
-    if (orders.length > 1) {
-      throw new Error({ code: 404, message: "too many open orders found" });
+    try {
+      logger.info("put myorder received");
+      let lines = req.body;
+      let centre = req.params.centreId;
+      let orders = await Order.find({
+        _learningCentreId: centre,
+        fulfillStatus: "unfulfilled"
+      });
+      let cab = await Cabinet.findOne({ _learningCentreId: centre });
+      //order has an array of line items we want to delete the ones where we have an ID
+      //provided in the req.body array of IDs
+      //only expecting one so check
+      if (orders.length > 1) {
+        throw new Error({ code: 404, message: "too many open orders found" });
+      }
+      let order = orders[0];
+      logger.info("removing lineitem");
+
+      await lines.forEach(line => {
+        // TODO: All this needs to be in a transaction OR we refactor so that all orders
+        //  are just subdocuments of the cabinet itself. This might be the right way to
+        //  but remember a document can only get to 16MB max
+
+        //TODO: now we also need to repopulate the cabinet with the returned item
+        // a line can contain a quantity of items so we need to use this to add
+        // back onto the related rewardItem's count
+        let quantity = line.quantity;
+        //find the reward item
+        let reward = cab.shelves.map(shelf => {
+          logger.debug("in find");
+          return shelf.rewardItems.map(item => {
+            logger.debug("in some");
+            //console.log(item.count, order.lineItems.id(line).productTitle);
+            if (
+              JSON.stringify(item._id) ===
+              JSON.stringify(order.lineItems.id(line)._rewardId)
+            ) {
+              item.count = item.count + order.lineItems.id(line).quantity;
+              console.log("changed: ",item.count);
+              return item.count;
+            }
+          });
+        });
+        console.log(cab.shelves[0]);
+        //reward.count += order.lineItems.id(line).quantity;
+        cab.markModified("shelves");
+        order.lineItems.id(line).remove();
+      });
+      logger.debug("removed from array now saving document");
+
+      await order.save();
+      await cab.save();
+      logger.debug("saved document sending new order as a response");
+      res.send(lines);
+    } catch (err) {
+      logger.error(err);
+      throw err;
     }
-    let order = orders[0];
-    logger.info("removing lineitem");
-    lines.forEach(line => {
-      order.lineItems.id(line).remove();
-    });
-    logger.debug("removed from array now saving document");
-    await order.save();
-    logger.debug("saved document sending new order as a response");
-    res.send(lines);
 
     //TODO: Find
   });
