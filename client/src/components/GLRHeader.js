@@ -19,14 +19,14 @@ class GLRHeader extends Component {
       return (
         <NavItem className={"sidenav-close"}>
           <NavLink to={"/shop/cart"} key={"cart"}>
-           <span>
-            <Icon className="material-icons right">shopping_basket</Icon>
-           New Basket</span>
+            <span>
+              <Icon className="material-icons right">shopping_basket</Icon>
+              New Basket
+            </span>
           </NavLink>
         </NavItem>
       );
     }
-
   }
 
   renderGLRPoints() {
@@ -38,6 +38,15 @@ class GLRHeader extends Component {
       );
     } else {
       return "No Lizard Cards";
+    }
+  }
+  renderMyOrder() {
+    if (!this.props.auth.isAdmin){
+    return(
+            <NavItem key={"lineItems"} className="sidenav-close">
+              <NavLink to={"/lineitems"}>My Order</NavLink>
+            </NavItem>
+      );
     }
   }
 
@@ -54,26 +63,17 @@ class GLRHeader extends Component {
           <NavItem key={"rewards"} className="sidenav-close">
             <NavLink to={"/rewards"}>Reward Cabinet</NavLink>
           </NavItem>,
-          <NavItem key={"lineItems"} className="sidenav-close">
-            <NavLink to={"/lineitems"}>My Order</NavLink>
-          </NavItem>,
-
-          <NavItem
-            href="/api/logout"
-            key={"logout"}
-          >
+          this.renderMyOrder(),
+          <NavItem href="/api/logout" key={"logout"}>
             Logout
           </NavItem>,
           this.renderAdminItem(),
           this.renderCartLink(),
-          <NavItem className="hide-on-med-and-down"
-            key={"points"}
-          >
+          <NavItem className="hide-on-med-and-down" key={"points"}>
             <div className="valign-wrapper flow-text">
               {this.renderGLRPoints()}
             </div>
           </NavItem>
-
         ];
     }
   }
@@ -82,7 +82,7 @@ class GLRHeader extends Component {
     if (!this.props.auth.isAdmin) {
     } else {
       return (
-        <NavItem  key={"admin"} className="sidenav-close">
+        <NavItem key={"admin"} className="sidenav-close">
           <Link to="/admin">Admin Dashboard</Link>
         </NavItem>
       );

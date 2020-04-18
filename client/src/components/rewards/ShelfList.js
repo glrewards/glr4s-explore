@@ -50,7 +50,7 @@ export default class ShelfList extends Component {
 
                           <td>
                             <Button
-                              disabled={this.props.isAdmin}
+                              disabled={(this.props.isAdmin) || (reward.count === 0)}
                               className="amber darken-4"
                               waves="purple"
                               onClick={() => {

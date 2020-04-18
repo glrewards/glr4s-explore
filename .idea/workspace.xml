@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shop/order/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/shop/order/Order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -760,11 +759,11 @@
     </state>
     <state x="518" y="261" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1586777614531" />
     <state x="789" y="335" key="SettingsEditor/0.23.2560.1346@0.23.2560.1346" timestamp="1585760883311" />
-    <state x="247" y="436" key="Vcs.Push.Dialog.v2" timestamp="1587125418764">
+    <state x="247" y="436" key="Vcs.Push.Dialog.v2" timestamp="1587167088291">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822465435" />
-    <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587125418764" />
+    <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587167088291" />
     <state x="1049" y="102" width="1465" height="1084" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587159872992">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
@@ -774,10 +773,10 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="258" y="349" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.2560.1346@0.23.2560.1346" timestamp="1586338603416" />
-    <state x="505" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587078788275">
+    <state x="505" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587167043683">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
-    <state x="505" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587078788275" />
+    <state x="505" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587167043683" />
     <state x="1397" y="62" width="600" height="729" key="find.popup" timestamp="1587021131679">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
@@ -790,11 +789,11 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="355" y="564" key="git4idea.rebase.GitRebaseDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1586932415358" />
-    <state x="236" y="321" width="1021" height="886" key="search.everywhere.popup" timestamp="1587160583369">
+    <state x="236" y="321" width="1021" height="886" key="search.everywhere.popup" timestamp="1587211121733">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="155" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1586825660432" />
-    <state x="236" y="321" width="1021" height="886" key="search.everywhere.popup/0.23.2560.1346@0.23.2560.1346" timestamp="1587160583369" />
+    <state x="236" y="321" width="1021" height="886" key="search.everywhere.popup/0.23.2560.1346@0.23.2560.1346" timestamp="1587211121733" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

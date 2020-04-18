@@ -8,10 +8,6 @@ const orderSchema = new Schema({
     _learningCentreId: {type: Schema.Types.ObjectId, ref: 'learningcentres'},
     learningCentreName: String,
     lineItems: [LineItemSchema],
-    orderTotal: Number,
-    taxTotal: Number,
-    shopifyOrderId: String,
-    shopifyDraftOrderId: String,
     dateReceived: Date,
     dateUpdated: Date,
     dateFulfilled: Date
