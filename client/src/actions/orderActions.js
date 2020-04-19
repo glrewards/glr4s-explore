@@ -2,7 +2,25 @@ import axios from "axios";
 
 export const REQUEST_LINEITEMS = 'REQUEST_LINEITEMS'
 export const RECEIVE_LINEITEMS = 'RECEIVED_LINEITEMS'
+export const LINE_MARKED_DELETE = 'LINE_MARKED_DELETE'
+export const LINE_UNMARKED_DELETE = 'LINE_UNMARKED_DELETE'
 
+export function lineItemsDelete(checked,lineId){
+    if (checked) {
+        return {
+            type: LINE_MARKED_DELETE,
+            checked,
+            lineId
+        }
+    }else{
+        return {
+            type: LINE_UNMARKED_DELETE,
+            checked,
+            lineId
+        }
+    }
+
+}
 function requestLineItems(centre,studentId){
     return{
         type: REQUEST_LINEITEMS,
@@ -10,7 +28,6 @@ function requestLineItems(centre,studentId){
         studentId
     }
 }
-
 function receiveLineItems(centre,studentId,json){
     return {
         type: RECEIVE_LINEITEMS,
@@ -39,7 +56,6 @@ function receiveOrder(centre, json) {
     };
 }
 
-
 export const INVALIDATE_ORDER = "invalidate_order";
 export function invalidateOrder(centre) {
     return {
@@ -61,4 +77,10 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
     dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
     const res = await axios.get(url);
     dispatch(receiveLineItems(centre,studentId,res.data));
+}
+
+export const deleteLineItems = (centre,studentId,items) => async dispatch => {
+    let url = "api/orders/deletelines/" + centre + "/" + studentId;
+    const res = await axios.put(url,items);
+    //dispatch(fetchLineItems(centre,studentId));
 }

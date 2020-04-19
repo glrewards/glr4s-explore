@@ -39,7 +39,6 @@ function receiveCabinet(centre, json) {
   };
 }
 
-
 export const INVALIDATE_CABINET = "invalidate_cabinet";
 export function invalidateCabinet(centre) {
   return {

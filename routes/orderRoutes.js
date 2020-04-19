@@ -32,7 +32,6 @@ module.exports = app => {
     let userId = req.params.userId;
     const order = await Order.findOne({ _learningCentreId: centre });
     let myLines = filterByStudent(order.lineItems, userId);
-    console.log(myLines);
     res.send(myLines);
   });
 
@@ -252,7 +251,7 @@ module.exports = app => {
   }
 
   function filterByStudent(arr, student) {
-    logger.debug("in filterByStudent: ", student);
+    logger.debug("in filterByStudent: ", student._id);
     if (!arr || typeof arr != "object") return;
     if (typeof student == "undefined" || student == null) return arr;
     return arr.filter(line => {
