@@ -4,7 +4,11 @@ export const REQUEST_LINEITEMS = 'REQUEST_LINEITEMS'
 export const RECEIVE_LINEITEMS = 'RECEIVED_LINEITEMS'
 export const LINE_MARKED_DELETE = 'LINE_MARKED_DELETE'
 export const LINE_UNMARKED_DELETE = 'LINE_UNMARKED_DELETE'
+export const RESET_DELETED = 'LINES_DELETED'
 
+export function resetDeleted(){
+    return{type: RESET_DELETED}
+}
 export function lineItemsDelete(checked,lineId){
     if (checked) {
         return {
@@ -82,5 +86,6 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
 export const deleteLineItems = (centre,studentId,items) => async dispatch => {
     let url = "api/orders/deletelines/" + centre + "/" + studentId;
     const res = await axios.put(url,items);
+    dispatch(resetDeleted());
     dispatch(fetchLineItems(centre,studentId));
 }

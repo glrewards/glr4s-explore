@@ -5,7 +5,8 @@ import {
   REQUEST_LINEITEMS,
   RECEIVE_LINEITEMS,
   LINE_MARKED_DELETE,
-  LINE_UNMARKED_DELETE
+  LINE_UNMARKED_DELETE,
+    RESET_DELETED
 } from "../actions/orderActions";
 
 function order(
@@ -18,6 +19,10 @@ function order(
   action
 ) {
   switch (action.type) {
+    case RESET_DELETED:
+      return Object.assign({},state,{
+        deletes:[]
+      });
     case LINE_MARKED_DELETE:
       //just need to add it because we remove it if unchecked
       return Object.assign({}, state, {
