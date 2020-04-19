@@ -82,5 +82,5 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
 export const deleteLineItems = (centre,studentId,items) => async dispatch => {
     let url = "api/orders/deletelines/" + centre + "/" + studentId;
     const res = await axios.put(url,items);
-    //dispatch(fetchLineItems(centre,studentId));
+    dispatch(fetchLineItems(centre,studentId));
 }

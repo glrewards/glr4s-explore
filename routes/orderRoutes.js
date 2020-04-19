@@ -135,7 +135,6 @@ module.exports = app => {
             }
           });
         });
-        console.log(cab.shelves[0]);
         //reward.count += order.lineItems.id(line).quantity;
         cab.markModified("shelves");
         order.lineItems.id(line).remove();
