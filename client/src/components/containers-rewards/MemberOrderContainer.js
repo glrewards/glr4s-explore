@@ -38,9 +38,8 @@ class MemberOrderContainer extends Component {
   }
 
   handleDeleteClicked(event) {
-    console.log(event.nativeEvent.target.checked);
     this.props.dispatch(
-      lineItemsDelete(
+      lineItemsDelete(false,
         event.nativeEvent.target.checked,
         event.nativeEvent.target.value
       )
@@ -72,7 +71,7 @@ class MemberOrderContainer extends Component {
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <OrderDetailCommands deleteClick={this.handleDeletePost} />
             <OrderDetails
-              lineItems={this.props.orderDetail}
+              lineItems={this.props.orderDetail.lineItems}
               onDeleteClicked={this.handleDeleteClicked}
             />
           </div>

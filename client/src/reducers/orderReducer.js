@@ -16,32 +16,39 @@ function order(
     isFetching: false,
     didInvalidate: false,
     deletes: [],
-    adminDeletes:[],
+    adminDeletes: [],
     orderDetail: {}
   },
   action
 ) {
   switch (action.type) {
     case RESET_DELETED:
-      return Object.assign({},state,{
-        deletes:[],
-        adminDeletes:[]
+      return Object.assign({}, state, {
+        deletes: [],
+        adminDeletes: []
       });
     case ADMIN_LINE_MARKED_DELETE:
       //just need to add it because we remove it if unchecked
       return Object.assign({}, state, {
-        adminDeletes: [...state.adminDeletes, action.lineId]
+        adminDeletes: [
+          ...state.adminDeletes,
+          { lineId: action.lineId, studentId: action.studentId }
+        ]
       });
     case ADMIN_LINE_UNMARKED_DELETE:
-      let adminIndex = state.adminDeletes.indexOf(action.lineId);
-      console.log (adminIndex)
-      if (index > -1) {
+      let adminIndex = state.adminDeletes.findIndex(
+        item =>
+          item.lineId === action.lineId && item.studentId === action.studentId
+      );
+      console.log(adminIndex);
+      if (adminIndex > -1) {
         return Object.assign({}, state, {
-          adminDeletes: [...state.adminDeletes.slice(0, adminIndex),
+          adminDeletes: [
+            ...state.adminDeletes.slice(0, adminIndex),
             ...state.adminDeletes.slice(adminIndex + 1)
-          ],
+          ]
         });
-      }else{
+      } else {
         return state;
       }
     case LINE_MARKED_DELETE:
@@ -51,14 +58,15 @@ function order(
       });
     case LINE_UNMARKED_DELETE:
       let index = state.deletes.indexOf(action.lineId);
-      console.log (index)
+      console.log(index);
       if (index > -1) {
         return Object.assign({}, state, {
-          deletes: [...state.deletes.slice(0, index),
+          deletes: [
+            ...state.deletes.slice(0, index),
             ...state.deletes.slice(index + 1)
-          ],
+          ]
         });
-      }else{
+      } else {
         return state;
       }
     case REQUEST_LINEITEMS: //a member is looking at their itmes
@@ -68,11 +76,17 @@ function order(
       });
     case RECEIVE_LINEITEMS: // we received a members list of items
       console.log(action);
+      //this payload is only an array of line items
+      //previous but set order details to this array
+      //it needs to be orderDetail.lineItems
+
+      const lineItems = { lineItems: action.payload };
+
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
         centre: action.centre,
-        orderDetail: action.payload,
+        orderDetail: lineItems,
         lastUpdated: action.receivedAt
       });
     case INVALIDATE_ORDER:

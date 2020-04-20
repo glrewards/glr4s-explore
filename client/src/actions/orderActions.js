@@ -14,18 +14,20 @@ export function resetDeleted(){
 
 //checking to see if a member or admin deleted the item
 //admins can delete for any kid so we need to do something different here
-export function lineItemsDelete(student,checked,lineId){
-    console.log(student);
- if (student) {
+export function lineItemsDelete(studentId,checked,lineId){
+    console.log("lineItemsDelete student: ", studentId);
+ if (studentId) {
      if (checked) {
          return {
              type: ADMIN_LINE_MARKED_DELETE,
+             studentId,
              checked,
              lineId
          }
      } else {
          return {
              type: ADMIN_LINE_UNMARKED_DELETE,
+             studentId,
              checked,
              lineId
          }

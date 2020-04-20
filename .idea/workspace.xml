@@ -7,11 +7,9 @@
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreDashBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript&#10;TEXT" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="11.12.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/models/rewards" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -236,9 +234,13 @@
       <workItem from="1587132482058" duration="9061000" />
       <workItem from="1587146747127" duration="656000" />
       <workItem from="1587147459594" duration="7813000" />
-      <workItem from="1587331211189" duration="129000" />
-      <workItem from="1587331516609" duration="47000" />
-      <workItem from="1587331761994" duration="2002000" />
+    </task>
+    <task id="LOCAL-00077" summary="working checkpoint on achievement table react work">
+      <created>1561023014491</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1561023014491</updated>
     </task>
     <task id="LOCAL-00078" summary="student achievements list working">
       <created>1561028609669</created>
@@ -569,21 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587211946979</updated>
     </task>
-    <task id="LOCAL-00125" summary="limeitem delete working but need to add points back onto the student points">
-      <created>1587303282009</created>
+    <task id="LOCAL-00125" summary="lineItem remove route created">
+      <created>1587212718716</created>
       <option name="number" value="00125" />
       <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1587303282009</updated>
+      <updated>1587212718716</updated>
     </task>
-    <task id="LOCAL-00126" summary="fixed bug where list of delete items was not being reset once the delete was completed">
-      <created>1587305487204</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1587305487204</updated>
-    </task>
-    <option name="localTasksCounter" value="127" />
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,6 +624,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a" />
+    <MESSAGE value="sorted admin store" />
     <MESSAGE value="products working with proper api - now need to configure and clean up shortcuts and hard coding" />
     <MESSAGE value="removing hardcoding around product api calls" />
     <MESSAGE value="FIXED SMALL TYPO IN PROD CONFIG" />
@@ -652,11 +649,13 @@
     <MESSAGE value="fixed sidenav closing bug on shoppping basket click" />
     <MESSAGE value="ready to create my cart" />
     <MESSAGE value="lineItem remove route created" />
-    <MESSAGE value="limeitem delete working but need to add points back onto the student points" />
-    <MESSAGE value="fixed bug where list of delete items was not being reset once the delete was completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug where list of delete items was not being reset once the delete was completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="lineItem remove route created" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578584158806">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1578584158806" />
     <state x="485" y="373" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587145817505">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
@@ -666,38 +665,38 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1587076862754" />
-    <state x="629" y="23" key="CommitChangelistDialog2" timestamp="1587305487091">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="162" y="151" key="CommitChangelistDialog2" timestamp="1587212718580">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
-    <state x="629" y="23" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587305487091" />
-    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587211946789" />
+    <state x="629" y="23" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822438742" />
+    <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587212718580" />
     <state x="174" y="123" width="1080" height="1145" key="DiffContextDialog" timestamp="1587079120151">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="174" y="123" width="1080" height="1145" key="DiffContextDialog/0.23.2560.1346@0.23.2560.1346" timestamp="1587079120151" />
-    <state width="1366" height="210" key="GridCell.Tab.0.bottom" timestamp="1587331094861">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1131" height="270" key="GridCell.Tab.0.bottom" timestamp="1587164077333">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833311" />
-    <state width="1366" height="210" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1587331094861" />
+    <state width="1333" height="210" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875815" />
     <state width="1131" height="270" key="GridCell.Tab.0.bottom/0.23.2560.1346@0.23.2560.1346" timestamp="1587164077333" />
-    <state width="1366" height="210" key="GridCell.Tab.0.center" timestamp="1587331094848">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1131" height="270" key="GridCell.Tab.0.center" timestamp="1587164077332">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833309" />
-    <state width="1366" height="210" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1587331094848" />
+    <state width="1333" height="210" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875814" />
     <state width="1131" height="270" key="GridCell.Tab.0.center/0.23.2560.1346@0.23.2560.1346" timestamp="1587164077332" />
-    <state width="1366" height="210" key="GridCell.Tab.0.left" timestamp="1587331094846">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1131" height="270" key="GridCell.Tab.0.left" timestamp="1587164077332">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833308" />
-    <state width="1366" height="210" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1587331094846" />
+    <state width="1333" height="210" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875814" />
     <state width="1131" height="270" key="GridCell.Tab.0.left/0.23.2560.1346@0.23.2560.1346" timestamp="1587164077332" />
-    <state width="1366" height="210" key="GridCell.Tab.0.right" timestamp="1587331094849">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1131" height="270" key="GridCell.Tab.0.right" timestamp="1587164077333">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state width="1659" height="225" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583855833310" />
-    <state width="1366" height="210" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1587331094849" />
+    <state width="1333" height="210" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1586822875815" />
     <state width="1131" height="270" key="GridCell.Tab.0.right/0.23.2560.1346@0.23.2560.1346" timestamp="1587164077333" />
     <state width="1259" height="472" key="GridCell.Tab.1.bottom" timestamp="1586327171738">
       <screen x="0" y="23" width="2560" height="1346" />
@@ -760,11 +759,11 @@
     </state>
     <state x="518" y="261" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1586777614531" />
     <state x="789" y="335" key="SettingsEditor/0.23.2560.1346@0.23.2560.1346" timestamp="1585760883311" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1587305507737">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="247" y="436" key="Vcs.Push.Dialog.v2" timestamp="1587212728420">
+      <screen x="0" y="23" width="2560" height="1346" />
     </state>
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587305507737" />
-    <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587167088291" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822465435" />
+    <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587212728420" />
     <state x="1049" y="102" width="1465" height="1084" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587159872992">
       <screen x="0" y="23" width="2560" height="1346" />
     </state>

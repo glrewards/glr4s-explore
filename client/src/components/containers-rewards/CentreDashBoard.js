@@ -27,10 +27,15 @@ class CentreDashBoard extends Component {
     let lineId = event.nativeEvent.target.value;
     let checked = event.nativeEvent.target.checked;
     //need to get the student from the line
-    let studentLine = this.props.orderDetail.lineItems.filter(
+    let studentLines = this.props.orderDetail.lineItems.filter(
       item => item._id === lineId
     );
-    this.props.dispatch(lineItemsDelete(studentLine._student, checked, lineId));
+    //check we only got one line
+    if(studentLines.length > 1){
+      console.log("error: found more than one line");
+      return;
+    }
+    this.props.dispatch(lineItemsDelete(studentLines[0]._student, checked, lineId));
   }
 
   handleDeletePost() {
