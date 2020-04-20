@@ -31,22 +31,26 @@ module.exports = app => {
     let centre = req.params.centreId;
     let userId = req.params.userId;
     const order = await Order.findOne({ _learningCentreId: centre });
-    let myLines = filterByStudent(order.lineItems, userId);
-    res.send(myLines);
+    if (order) {
+      let myLines = filterByStudent(order.lineItems, userId);
+      res.send(myLines);
+    }else{
+      res.send([]);
+    }
   });
 
   app.get("/api/orders/:centreId", async (req, res) => {
     logger.debug("Received request here ", req.params);
     //get all the open orders for the school
     let centre = req.params.centreId;
-    const orders = await Order.findOne({ _learningCentreId: centre });
+    const orders = await Order.find({ _learningCentreId: centre });
     if (orders.length > 1 || orders.length === 0) {
-      throw "too many or zero orders  found";
+      logger.error( "too many or zero orders  found");
     }
 
     //now search the array to find the lineitems that belong to the the student only
     //let myItems = filterByStudent(orders[0].lineItems, req.params.studentId);
-    res.send(orders);
+    res.send(orders[0]);
   });
 
   //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
