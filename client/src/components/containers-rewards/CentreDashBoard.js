@@ -44,8 +44,8 @@ class CentreDashBoard extends Component {
 
       deleteLineItems(
         this.props.user._learningCentreId,
-        this.props.user._student._id,
-        this.props.deletes
+        false, //no student for admin deletes - these are all stored in the adminDeletes store
+        this.props.adminDeletes
       )
     );
   }

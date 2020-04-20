@@ -104,7 +104,7 @@ export const checkoutCustomerAssociate = gql`
 
 //T
 export function addVariantToCart(variantId, quantity){
-    //TODO: instead of this we need to do something very similar on the GUI but not have it run anything on shopify
+
     this.props.checkoutLineItemsAdd(
         { variables: { checkoutId: this.state.checkout.id, lineItems:  [{variantId, quantity: parseInt(quantity, 10)}] }
         }).then((res) => {

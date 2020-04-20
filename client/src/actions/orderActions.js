@@ -110,8 +110,26 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
 }
 
 export const deleteLineItems = (centre,studentId,items) => async dispatch => {
-    let url = "api/orders/deletelines/" + centre + "/" + studentId;
-    const res = await axios.put(url,items);
-    dispatch(resetDeleted());
-    dispatch(fetchLineItems(centre,studentId));
+    if(studentId) {
+        let url = "api/orders/deletelines/" + centre + "/" + studentId;
+        const res = await axios.put(url, items);
+        dispatch(resetDeleted());
+        dispatch(fetchLineItems(centre, studentId));
+    }else{
+        // this means it is an admin delete and we have to group all the deletes
+        //by student ID and then submit each set for each student
+        //TODO: this first cut is calling for each single delete meaning a lot of
+        // async colls! implement better grouping logic
+         for (const item of items) {
+            let studentId = item.studentId;
+            let items = [item.lineId];
+            let url = "api/orders/deletelines/" + centre + "/" + studentId;
+            console.log(url);
+            const res = await axios.put(url, items);
+            dispatch(resetDeleted());
+            dispatch(fetchOrder(centre));
+        }
+    }
 }
+
+

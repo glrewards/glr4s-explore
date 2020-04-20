@@ -16,7 +16,6 @@ class AdminDashOrderDetails extends Component {
         /*
         when the component loads try check to see if the user is logged in and is an admin
         if they are not then do a fetch user which may or may not work
-        TODO: need to sort out this user logic not clear!
         Next we fetch the lineitems for the order
         */
         console.log("componentDidMount: : ", this.props);
