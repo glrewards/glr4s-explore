@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchOrder, invalidateOrder } from "../../actions/orderActions";
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {deleteLineItems, fetchOrder, invalidateOrder, lineItemsDelete} from "../../actions/orderActions";
 import OrderSummary from "../rewards/OrderSummary";
 import OrderDetails from "../rewards/OrderDetails";
+import OrderDetailCommands from "../rewards/OrderDetailCommands";
 import PropTypes from "prop-types";
-import { ProgressBar } from "react-materialize";
+import {ProgressBar} from "react-materialize";
 
 class CentreDashBoard extends Component {
   constructor(props) {
@@ -12,8 +13,37 @@ class CentreDashBoard extends Component {
     this.calcTotalLines = this.calcTotalLines.bind(this);
     this.calcMostOrdered = this.calcMostOrdered.bind(this);
     this.calcTotalCards = this.calcTotalCards.bind(this);
+    this.handleDeletePost = this.handleDeletePost.bind(this);
+    this.handleDeleteClicked = this.handleDeleteClicked.bind(this);
   }
 
+  handleDeleteClicked(event) {
+    // because this is the admin dashboard we could be deleting items for any kid s0
+    //we need to record the student id and the items. this will mean we have to add
+    // more logic to the action in order to fire a call to the server for each child
+    //this keeps the route logic simple but might not be the best solution
+    //longer term.
+    if (!event.target) return;
+    let lineId = event.nativeEvent.target.value;
+    let checked = event.nativeEvent.target.checked;
+    //need to get the student from the line
+    let studentLine = this.props.orderDetail.lineItems.filter(
+      item => item._id === lineId
+    );
+    this.props.dispatch(lineItemsDelete(studentLine._student, checked, lineId));
+  }
+
+  handleDeletePost() {
+    this.props.dispatch(
+      //need tp fire delete line items for each student
+
+      deleteLineItems(
+        this.props.user._learningCentreId,
+        this.props.user._student._id,
+        this.props.deletes
+      )
+    );
+  }
   calcTotalCards() {
     Array.prototype.calcTotalPoints = function(prop) {
       let total = 0;
@@ -72,7 +102,11 @@ class CentreDashBoard extends Component {
               totalLines={this.calcTotalLines()}
               totalLizardCards={this.calcTotalCards()}
             />
-            <OrderDetails lineItems={this.props.orderDetail.lineItems} />
+            <OrderDetailCommands deleteClick={this.handleDeletePost} />
+            <OrderDetails
+              lineItems={this.props.orderDetail.lineItems}
+              onDeleteClicked={this.handleDeleteClicked}
+            />
           </div>
         )}
       </div>
@@ -90,12 +124,13 @@ CentreDashBoard.propTypes = {
 
 function mapStateToProps(state) {
   const { order } = state;
-  const { isFetching, lastUpdated, orderDetail } = order || {
+  const { isFetching, lastUpdated, orderDetail, adminDeletes } = order || {
     isFetching: true
   };
   let user = state.auth;
   return {
     user,
+    adminDeletes,
     orderDetail,
     isFetching,
     lastUpdated

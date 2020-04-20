@@ -1,12 +1,14 @@
 import {
-  REQUEST_ORDER,
+  ADMIN_LINE_MARKED_DELETE,
+  ADMIN_LINE_UNMARKED_DELETE,
   INVALIDATE_ORDER,
-  RECEIVE_ORDER,
-  REQUEST_LINEITEMS,
-  RECEIVE_LINEITEMS,
   LINE_MARKED_DELETE,
   LINE_UNMARKED_DELETE,
-    RESET_DELETED
+  RECEIVE_LINEITEMS,
+  RECEIVE_ORDER,
+  REQUEST_LINEITEMS,
+  REQUEST_ORDER,
+  RESET_DELETED
 } from "../actions/orderActions";
 
 function order(
@@ -14,6 +16,7 @@ function order(
     isFetching: false,
     didInvalidate: false,
     deletes: [],
+    adminDeletes:[],
     orderDetail: {}
   },
   action
@@ -21,15 +24,32 @@ function order(
   switch (action.type) {
     case RESET_DELETED:
       return Object.assign({},state,{
-        deletes:[]
+        deletes:[],
+        adminDeletes:[]
       });
+    case ADMIN_LINE_MARKED_DELETE:
+      //just need to add it because we remove it if unchecked
+      return Object.assign({}, state, {
+        adminDeletes: [...state.adminDeletes, action.lineId]
+      });
+    case ADMIN_LINE_UNMARKED_DELETE:
+      let adminIndex = state.adminDeletes.indexOf(action.lineId);
+      console.log (adminIndex)
+      if (index > -1) {
+        return Object.assign({}, state, {
+          adminDeletes: [...state.adminDeletes.slice(0, adminIndex),
+            ...state.adminDeletes.slice(adminIndex + 1)
+          ],
+        });
+      }else{
+        return state;
+      }
     case LINE_MARKED_DELETE:
       //just need to add it because we remove it if unchecked
       return Object.assign({}, state, {
         deletes: [...state.deletes, action.lineId]
       });
     case LINE_UNMARKED_DELETE:
-      console.log(action.lineId);
       let index = state.deletes.indexOf(action.lineId);
       console.log (index)
       if (index > -1) {
@@ -41,7 +61,6 @@ function order(
       }else{
         return state;
       }
-
     case REQUEST_LINEITEMS: //a member is looking at their itmes
       return Object.assign({}, state, {
         isFetching: true,

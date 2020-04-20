@@ -1,14 +1,6 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-import ShelfList from "./ShelfList";
-import {
-  Button,
-  CardPanel,
-  Card,
-  CardTitle,
-  Row,
-  Col
-} from "react-materialize";
+import {Button, Col, Row} from "react-materialize";
 
 export default class OrderDetailCommands extends Component {
   render() {
@@ -19,13 +11,14 @@ export default class OrderDetailCommands extends Component {
     const titleStyle = {
       borderRadius: "5px"
     };
-    const buttonClass = "col amber darken-4 right waves-effect waves-purple";
+    const buttonClass = "col amber darken-4 right waves-effect waves-purple valign-wrapper";
 
     return (
-        <Row style={roundedContainerStyle} className="light-blue lighten-3">
-          <Col style={titleStyle} s={12}>
-            <Row>
+        <Row>
+          <Col s={12}>
+            <Row style={titleStyle}>
               <Button className={buttonClass}
+                      disabled={false}
               onClick={() => {this.props.deleteClick()}}>Delete</Button>
             </Row>
           </Col>

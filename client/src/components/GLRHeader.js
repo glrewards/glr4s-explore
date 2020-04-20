@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-import { Navbar, NavItem, Icon } from "react-materialize";
+import React, {Component} from "react";
+import {Link, NavLink} from "react-router-dom";
+import {connect} from "react-redux";
+import {Icon, Navbar, NavItem} from "react-materialize";
 
 class GLRHeader extends Component {
   constructor(props) {
@@ -69,7 +69,7 @@ class GLRHeader extends Component {
           </NavItem>,
           this.renderAdminItem(),
           this.renderCartLink(),
-          <NavItem className="hide-on-med-and-down" key={"points"}>
+          <NavItem key={"points"}>
             <div className="valign-wrapper flow-text">
               {this.renderGLRPoints()}
             </div>

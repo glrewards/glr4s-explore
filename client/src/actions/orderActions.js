@@ -5,24 +5,47 @@ export const RECEIVE_LINEITEMS = 'RECEIVED_LINEITEMS'
 export const LINE_MARKED_DELETE = 'LINE_MARKED_DELETE'
 export const LINE_UNMARKED_DELETE = 'LINE_UNMARKED_DELETE'
 export const RESET_DELETED = 'LINES_DELETED'
+export const ADMIN_LINE_MARKED_DELETE = 'ADMIN_LINE_MARKED_DELETE'
+export const ADMIN_LINE_UNMARKED_DELETE = 'ADMIN_LINE_UNMARKED_DELETE'
 
 export function resetDeleted(){
     return{type: RESET_DELETED}
 }
-export function lineItemsDelete(checked,lineId){
-    if (checked) {
-        return {
-            type: LINE_MARKED_DELETE,
-            checked,
-            lineId
-        }
-    }else{
-        return {
-            type: LINE_UNMARKED_DELETE,
-            checked,
-            lineId
-        }
-    }
+
+//checking to see if a member or admin deleted the item
+//admins can delete for any kid so we need to do something different here
+export function lineItemsDelete(student,checked,lineId){
+    console.log(student);
+ if (student) {
+     if (checked) {
+         return {
+             type: ADMIN_LINE_MARKED_DELETE,
+             checked,
+             lineId
+         }
+     } else {
+         return {
+             type: ADMIN_LINE_UNMARKED_DELETE,
+             checked,
+             lineId
+         }
+     }
+ }else{
+     if (checked) {
+         return {
+             type: LINE_MARKED_DELETE,
+             checked,
+             lineId
+         }
+     } else {
+         return {
+             type: LINE_UNMARKED_DELETE,
+             checked,
+             lineId
+         }
+     }
+
+ }
 
 }
 function requestLineItems(centre,studentId){
@@ -80,6 +103,7 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
     let url = "api/orders/" + centre + "/" + studentId;
     dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
     const res = await axios.get(url);
+    console.log(res.data);
     dispatch(receiveLineItems(centre,studentId,res.data));
 }
 

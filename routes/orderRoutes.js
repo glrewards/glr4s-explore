@@ -94,6 +94,8 @@ module.exports = app => {
   app.put("/api/orders/deletelines/:centreId/:studentId", async (req, res) => {
     try {
       logger.info("put myorder received");
+      let studentTotal = 0; //used in forEAch loop
+      let studentId = req.params.studentId;
       let lines = req.body;
       let centre = req.params.centreId;
       let orders = await Order.find({
@@ -121,28 +123,33 @@ module.exports = app => {
         let quantity = line.quantity;
         //find the reward item
         let reward = cab.shelves.map(shelf => {
-          logger.debug("in find");
           return shelf.rewardItems.map(item => {
-            logger.debug("in some");
             //console.log(item.count, order.lineItems.id(line).productTitle);
             if (
               JSON.stringify(item._id) ===
               JSON.stringify(order.lineItems.id(line)._rewardId)
             ) {
               item.count = item.count + order.lineItems.id(line).quantity;
-              console.log("changed: ",item.count);
+              studentTotal += (order.lineItems.id(line).quantity * order.lineItems.id(line).glrpoints);
               return item.count;
             }
           });
         });
+
         //reward.count += order.lineItems.id(line).quantity;
         cab.markModified("shelves");
+        //for each line I need to refund the points to the student
+        // here I need to calculate a running total
         order.lineItems.id(line).remove();
       });
       logger.debug("removed from array now saving document");
-
+      logger.debug("student points to refund: ", studentTotal);
+      let student = await Student.findById(studentId);
+      student.currentPoints += studentTotal;
+      student.markModified("student.currentPoints");
       await order.save();
       await cab.save();
+      await student.save();
       logger.debug("saved document sending new order as a response");
       res.send(lines);
     } catch (err) {
