@@ -170,8 +170,6 @@ module.exports = app => {
       logger.error(err);
       throw err;
     }
-
-    //TODO: Find
   });
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
