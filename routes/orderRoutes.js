@@ -3,13 +3,10 @@ const requireLogin = require("../middlewares/requireLogin");
 const requireGLRPoints = require("../middlewares/requireGLRPoints");
 const requireStudent = require("../middlewares/requireStudent");
 const keys = require("../config/keys");
-const { request } = require("graphql-request");
-const { GraphQLClient } = require("graphql-request");
 const winston = require("winston");
 const axios = require("axios");
 const Order = mongoose.model("orders");
 const Student = mongoose.model("students");
-
 const Cabinet = mongoose.model("Cabinet");
 
 const logger = winston.createLogger({
@@ -19,9 +16,6 @@ const logger = winston.createLogger({
   transports: [new winston.transports.Console()]
 });
 
-//TODO: Where I am using findOne we should really
-// be searching for an active order not just assuming there is only one
-
 module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
@@ -29,8 +23,7 @@ module.exports = app => {
     logger.debug("Received request here ", req.params);
     let centre = req.params.centreId;
     let user = req.params.userId;
-    //TODO: this url needs to be cleaned up
-    let url = keys.glrAPIGateway + keys.glrAPIOrder + '/getMyItems';
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + "/getMyItems";
     let options = {
       params: {
         centreId: centre,
@@ -41,11 +34,11 @@ module.exports = app => {
       }
     };
     try {
-      logger.info("calling axios: " + url, centre, user)
+      logger.info("calling axios: " + url, centre, user);
       const axiosResponse = await axios.get(url, options);
       const data = axiosResponse.data;
       res.send(data);
-    }catch(err){
+    } catch (err) {
       logger.error("error getting order: ", err);
       res.status(404).send(err);
     }
@@ -56,7 +49,7 @@ module.exports = app => {
     let centre = req.params.centreId;
     let summary = req.params.summary;
     //TODO: this url needs to be cleaned up
-    let url = keys.glrAPIGateway + keys.glrAPIOrder + '/getCurrentForCentre';
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + "/getCurrentForCentre";
     let options = {
       params: {
         centreId: centre
@@ -66,21 +59,14 @@ module.exports = app => {
       }
     };
     try {
-      logger.info("calling axios: " + url, centre)
+      logger.info("calling axios: " + url, centre);
       const axiosResponse = await axios.get(url, options);
       const data = axiosResponse.data;
       res.send(data);
-    }catch(err){
+    } catch (err) {
       logger.error("error getting order: ", err);
       res.status(422).send(err);
     }
-  });
-
-  //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
-  app.get("/api/orders", async (req, res) => {
-    console.log("yup");
-    const orders = await Order.find({ _learningCentreId: req.centreId });
-    res.send(orders);
   });
 
   //TODO: rework the webhook below to trap webhooks sent by shopify
@@ -151,13 +137,14 @@ module.exports = app => {
         //find the reward item
         let reward = cab.shelves.map(shelf => {
           return shelf.rewardItems.map(item => {
-            //console.log(item.count, order.lineItems.id(line).productTitle);
             if (
               JSON.stringify(item._id) ===
               JSON.stringify(order.lineItems.id(line)._rewardId)
             ) {
               item.count = item.count + order.lineItems.id(line).quantity;
-              studentTotal += (order.lineItems.id(line).quantity * order.lineItems.id(line).glrpoints);
+              studentTotal +=
+                order.lineItems.id(line).quantity *
+                order.lineItems.id(line).glrpoints;
               return item.count;
             }
           });
@@ -188,19 +175,17 @@ module.exports = app => {
   });
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
-
     logger.debug("Received request here ", req.params);
     let userId = req.body.user._student._id;
-    logger.debug("userId: "+ userId);
+    logger.debug("userId: " + userId);
     let _learningCentreId = req.body.user._learningCentreId;
     logger.debug("learningCentre: " + _learningCentreId);
-    //TODO: this url needs to be cleaned up
     let url = keys.glrAPIGateway + keys.glrAPIOrder;
     let options = {
       headers: {
         "X-API-KEY": keys.glrAPIGatewayKey,
-        "userId": userId,
-        "centreId": _learningCentreId
+        userId: userId,
+        centreId: _learningCentreId
       }
     };
     try {
@@ -208,148 +193,10 @@ module.exports = app => {
       const axiosResponse = await axios.post(url, req.body, options);
       const data = axiosResponse.data;
       res.send(data);
-    }catch(err){
+    } catch (err) {
       logger.error("error getting order: ", err);
       res.status(400).send(err);
     }
-
-    /*const studentId = req.body.user._student._id;
-    const lineItems = req.body.lineItems;
-    const _learningCentreId = req.body.user._learningCentreId; //with this we can find the cabinet
-    logger.debug(lineItems);
-    let newOrder = null;
-    try {
-      logger.debug("calling findOpenOrderFor Centre");
-      const orders = await findOpenOrderForCentre(_learningCentreId);
-      logger.debug("called findOpenOrderFor Centre");
-      if (orders.length > 1) {
-        //console.log("I found an array", orders);
-        logger.error("found too many errors");
-      } else if (orders.length !== 1) {
-        logger.debug("neworder for learningCentre: ", _learningCentreId);
-        //didn't find anything so create a new one
-        newOrder = new Order({
-          finStatus: "unpaid",
-          fulfillStatus: "unfulfilled",
-          _learningCentreId: _learningCentreId,
-          lineItems,
-          dateReceived: Date.now(),
-          dateUpdated: Date.now()
-        });
-      } else {
-        newOrder = orders[0];
-        let oldLineItems = newOrder.lineItems;
-        oldLineItems.push.apply(oldLineItems, lineItems);
-        newOrder.lineItems = oldLineItems;
-        newOrder.dateUpdated = Date.now();
-      }
-      // if too many orders we wont get to this because we will have thrown an error
-      updateCabinetStockLevels(_learningCentreId, lineItems);
-
-      //TODO: put all this into a proper mongoose transaction
-      let orderPoints = calcGLRPointsTotal(lineItems);
-      let order = null;
-      //assuming no errors we now amend the user points and save these.
-      const student = await Student.findById(studentId);
-      logger.debug("completed search for Student");
-      if (student) {
-        if (orderPoints > student.currentPoints) {
-          logger.info("not enough points");
-        } else {
-          student.currentPoints = student.currentPoints - orderPoints;
-          logger.debug("saving student revised points total");
-          await student.save();
-          logger.debug("saved student");
-          logger.debug("saving newOrder");
-          order = await newOrder.save();
-          logger.debug("saved new order");
-        }
-      }
-      //add the updated user info (new points total)
-      let origUser = req.body.user;
-      origUser._student = student;
-      let newRes = Object.assign(origUser, order.toObject());
-      res.send(newRes);
-    } catch (err) {
-      console.log(err);
-      res.status(422).send(err);
-    }*/
   });
 
-  app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
-    res.send({}); //respond to indicate receipt
-  });
-
-  function getSum(total, num) {
-    return total + num;
-  }
-
-  function calcGLRPointsTotal(lineItems) {
-    let lineItemPoints = lineItems.map(line => {
-      return line.glrpoints * line.quantity;
-    });
-    let totalPoints = lineItemPoints.reduce(getSum, 0);
-    return totalPoints;
-  }
-
-  async function updateCabinetStockLevels(centreId, lineItems) {
-    try {
-      const cab = await Cabinet.findOne({ _learningCentreId: centreId });
-      if (!cab) {
-        throw { code: 404, message: "cabinet not found" };
-      }
-      //let shelves = cab.shelves.id("5e9026e965896000009ca5fc");
-      let shelves = cab.shelves;
-      //for each lineitems map
-      let matches = [];
-      lineItems.forEach(line => {
-        //console.log(line);
-        shelves.forEach(shelf => {
-          shelf.rewardItems.map(reward => {
-            if (JSON.stringify(line._rewardId) === JSON.stringify(reward._id)) {
-              //console.log("FOUND REWARD: changing stock levels: ", reward.count, line.quantity);
-              if (line.quantity > reward.count) {
-                throw { code: 404, message: "not enough stock" };
-              }
-              logger.debug("updating cabinet quantities");
-              reward.count = reward.count - line.quantity;
-              return reward;
-            }
-          });
-        });
-      });
-      logger.debug("saving updated cabinet");
-      cab.markModified("shelves");
-      await cab.save();
-      logger.debug("saved updated cabinet");
-    } catch (err) {
-      logger.error("error processing cabinet data for order");
-      const err1 = err;
-      throw err1;
-    }
-  }
-
-  async function findOpenOrderForCentre(centreId) {
-    //we will only use our own db for saving and amending orders and line items
-    //separately we will be using BULL or similar to schedule the sync of this data with shopify
-
-    //first check to see if we have an order for that school in our db
-    //console.log(schoolId);
-    const orders = await Order.find({
-      _learningCentreId: centreId,
-      finStatus: "unpaid",
-      fulfillStatus: "unfulfilled"
-    });
-    logger.debug("findOpenOrderForCentre: completed");
-    return orders;
-  }
-
-/*  function filterByStudent(arr, student) {
-    logger.debug("in filterByStudent: ", student._id);
-    if (!arr || typeof arr != "object") return;
-    if (typeof student == "undefined" || student == null) return arr;
-    return arr.filter(line => {
-      return JSON.stringify(line._student) === JSON.stringify(student);
-    });
-  }*/
 };
