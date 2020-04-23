@@ -51,7 +51,6 @@ class GLRHeader extends Component {
   }
 
   renderContentTop(side) {
-    let importedELImage = require("../images/explore-learning.png");
     switch (this.props.auth) {
       case null:
         return;
@@ -90,8 +89,6 @@ class GLRHeader extends Component {
   }
 
   render() {
-    let importedELImage = require("../images/explore-learning.png");
-    console.log("in render");
     return (
       <Navbar
         style={{ margin: 5 }}

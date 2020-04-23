@@ -6,6 +6,7 @@ const keys = require("../config/keys");
 const { request } = require("graphql-request");
 const { GraphQLClient } = require("graphql-request");
 const winston = require("winston");
+const axios = require("axios");
 const Order = mongoose.model("orders");
 const Student = mongoose.model("students");
 
@@ -25,32 +26,54 @@ module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
   app.get("/api/orders/:centreId/:userId", async (req, res) => {
-    //this is for retrieving a users line items
-    //logger.debug("received request", req.params);
-    logger.debug("received Request");
+    logger.debug("Received request here ", req.params);
     let centre = req.params.centreId;
-    let userId = req.params.userId;
-    const order = await Order.findOne({ _learningCentreId: centre });
-    if (order) {
-      let myLines = filterByStudent(order.lineItems, userId);
-      res.send(myLines);
-    }else{
-      res.send([]);
+    let user = req.params.userId;
+    //TODO: this url needs to be cleaned up
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + '/getMyItems';
+    let options = {
+      params: {
+        centreId: centre,
+        userId: user
+      },
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+    try {
+      logger.info("calling axios: " + url, centre, user)
+      const axiosResponse = await axios.get(url, options);
+      const data = axiosResponse.data;
+      res.send(data);
+    }catch(err){
+      logger.error("error getting order: ", err);
+      res.status(404).send(err);
     }
   });
 
   app.get("/api/orders/:centreId", async (req, res) => {
     logger.debug("Received request here ", req.params);
-    //get all the open orders for the school
     let centre = req.params.centreId;
-    const orders = await Order.find({ _learningCentreId: centre });
-    if (orders.length > 1 || orders.length === 0) {
-      logger.error( "too many or zero orders  found");
+    let summary = req.params.summary;
+    //TODO: this url needs to be cleaned up
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + '/getCurrentForCentre';
+    let options = {
+      params: {
+        centreId: centre
+      },
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+    try {
+      logger.info("calling axios: " + url, centre)
+      const axiosResponse = await axios.get(url, options);
+      const data = axiosResponse.data;
+      res.send(data);
+    }catch(err){
+      logger.error("error getting order: ", err);
+      res.status(422).send(err);
     }
-
-    //now search the array to find the lineitems that belong to the the student only
-    //let myItems = filterByStudent(orders[0].lineItems, req.params.studentId);
-    res.send(orders[0]);
   });
 
   //:TODO This should be an admin function for the school to see all orders - will need more middlewares etc
@@ -165,7 +188,31 @@ module.exports = app => {
   });
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
-    const studentId = req.body.user._student._id;
+
+    logger.debug("Received request here ", req.params);
+    let userId = req.body.user._student._id;
+    let _learningCentreId = req.body.user._learningCentreId;
+    //TODO: this url needs to be cleaned up
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + '/placeOrder';
+    let options = {
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey,
+        "userId": userId,
+        "centreId": _learningCentreId
+      }
+    };
+    try {
+      logger.info("calling axios: " + url, _learningCentreId,userId);
+      logger.debug(req.body);
+      const axiosResponse = await axios.post(url, req.body, options);
+      const data = axiosResponse.data;
+      res.send(data);
+    }catch(err){
+      logger.error("error getting order: ", err);
+      res.status(400).send(err);
+    }
+
+    /*const studentId = req.body.user._student._id;
     const lineItems = req.body.lineItems;
     const _learningCentreId = req.body.user._learningCentreId; //with this we can find the cabinet
     logger.debug(lineItems);
@@ -225,7 +272,7 @@ module.exports = app => {
     } catch (err) {
       console.log(err);
       res.status(422).send(err);
-    }
+    }*/
   });
 
   app.post("/api/draftorders/webhooks/sdfew3434", (req, res) => {
@@ -296,12 +343,12 @@ module.exports = app => {
     return orders;
   }
 
-  function filterByStudent(arr, student) {
+/*  function filterByStudent(arr, student) {
     logger.debug("in filterByStudent: ", student._id);
     if (!arr || typeof arr != "object") return;
     if (typeof student == "undefined" || student == null) return arr;
     return arr.filter(line => {
       return JSON.stringify(line._student) === JSON.stringify(student);
     });
-  }
+  }*/
 };
