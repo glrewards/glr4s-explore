@@ -191,9 +191,11 @@ module.exports = app => {
 
     logger.debug("Received request here ", req.params);
     let userId = req.body.user._student._id;
+    logger.debug("userId: "+ userId);
     let _learningCentreId = req.body.user._learningCentreId;
+    logger.debug("learningCentre: " + _learningCentreId);
     //TODO: this url needs to be cleaned up
-    let url = keys.glrAPIGateway + keys.glrAPIOrder + '/placeOrder';
+    let url = keys.glrAPIGateway + keys.glrAPIOrder;
     let options = {
       headers: {
         "X-API-KEY": keys.glrAPIGatewayKey,
@@ -202,8 +204,7 @@ module.exports = app => {
       }
     };
     try {
-      logger.info("calling axios: " + url, _learningCentreId,userId);
-      logger.debug(req.body);
+      logger.info("calling axios: " + url);
       const axiosResponse = await axios.post(url, req.body, options);
       const data = axiosResponse.data;
       res.send(data);
