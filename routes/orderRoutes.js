@@ -165,7 +165,7 @@ module.exports = app => {
       await cab.save();
       await student.save();
       logger.debug("saved document sending new order as a response");
-      res.send(lines);
+      res.send("successful operation");
     } catch (err) {
       logger.error(err);
       throw err;
