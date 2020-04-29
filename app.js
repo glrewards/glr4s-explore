@@ -48,7 +48,7 @@ app.use(bodyParser.json());
 app.use(
   session({
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: keys.secureSession,
     cookie: { secure: false, maxAge: (1000 * 60 * 60 * 24)},
     secret: keys.expressSessionSecret,
     store: sessionStore

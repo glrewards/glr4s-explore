@@ -23,5 +23,6 @@ module.exports = {
     glrAPIProduct: process.env.GLR_API_PRODUCT,
     glrAPICabinet: process.env.GLR_API_CABINET,
     glrAPIOrder: process.env.GLR_API_ORDER,
-    glrLogLevel: process.env.GLR_LOG_LEVEL
+    glrLogLevel: process.env.GLR_LOG_LEVEL,
+    secureSession: process.env.SECURE_SESSION
 };
