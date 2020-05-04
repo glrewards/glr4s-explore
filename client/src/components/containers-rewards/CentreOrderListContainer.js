@@ -7,7 +7,7 @@ import OrderDetailCommands from "../rewards/OrderDetailCommands";
 import PropTypes from "prop-types";
 import {ProgressBar} from "react-materialize";
 
-class CentreDashBoard extends Component {
+class CentreOrderListContainer extends Component {
   constructor(props) {
     super(props);
     this.calcTotalLines = this.calcTotalLines.bind(this);
@@ -119,7 +119,7 @@ class CentreDashBoard extends Component {
   }
 }
 
-CentreDashBoard.propTypes = {
+CentreOrderListContainer.propTypes = {
   centre: PropTypes.string.isRequired,
   orderDetail: PropTypes.object,
   isFetching: PropTypes.bool.isRequired,
@@ -141,4 +141,4 @@ function mapStateToProps(state) {
     lastUpdated
   };
 }
-export default connect(mapStateToProps)(CentreDashBoard);
+export default connect(mapStateToProps)(CentreOrderListContainer);

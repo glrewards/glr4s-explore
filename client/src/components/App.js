@@ -7,7 +7,7 @@ import GLRHeader from "./GLRHeader";
 import Dashboard from "./Dashboard";
 import GLRShop2 from "./shop/GLRShop2";
 import SimpleCartList from "./shop/SimpleCartList";
-import CentreDashboard from "./containers-rewards/CentreDashBoard"
+import CentreDashboard from "./containers-rewards/CentreOrderListContainer"
 import EmailNew from "./email/EmailNew";
 import CabinetContainer from "./containers-rewards/CabinetContainer";
 import M from "materialize-css"; //don't delete while I am still using the non react version somewhere
