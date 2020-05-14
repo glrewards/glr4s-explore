@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
-const userRoleSchema = require('./UserRole');
 
 
 const userSchema = new Schema({
@@ -16,7 +15,7 @@ const userSchema = new Schema({
     _teacher: {type: Schema.Types.ObjectId, ref: 'teachers'},
     _learningCentreId: {type: Schema.Types.ObjectId, ref: 'learningcentres'},
     isAdmin: Boolean,
-    roles: [userRoleSchema],
+    roles: [String],
     resetNeeded: Boolean
 });
 
