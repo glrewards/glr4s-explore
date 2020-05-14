@@ -49,7 +49,8 @@ class CabinetContainer extends Component {
             {(JSON.stringify(cabDetail) !== JSON.stringify({})) &&(
                 <div style={{opacity: isFetching ? 0.5:1}}>
             <ShelfList
-                isAdmin={this.props.user.isAdmin}
+                isAdmin={this.props.user.roles.includes("admin")}
+                isMember={this.props.user.roles.includes("member")}
                 shelves={cabDetail.shelves}
                 onAddToCartClickShelf={this.handleAddToCartClick}/>
                 </div>

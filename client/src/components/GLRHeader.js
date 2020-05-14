@@ -41,7 +41,7 @@ class GLRHeader extends Component {
     }
   }
   renderMyOrder() {
-    if (!this.props.auth.isAdmin){
+    if (this.props.auth.roles.includes("member")){
     return(
             <NavItem key={"lineItems"} className="sidenav-close">
               <NavLink to={"/lineitems"}>My Order</NavLink>
@@ -78,7 +78,7 @@ class GLRHeader extends Component {
   }
 
   renderAdminItem() {
-    if (!this.props.auth.isAdmin) {
+    if (!this.props.auth.roles.includes("admin")) {
     } else {
       return (
         <NavItem key={"admin"} className="sidenav-close">

@@ -50,7 +50,7 @@ export default class ShelfList extends Component {
 
                           <td>
                             <Button
-                              disabled={(this.props.isAdmin) || (reward.count === 0)}
+                              disabled={(!this.props.isMember) || (reward.count === 0)}
                               className="amber darken-4"
                               waves="purple"
                               onClick={() => {
@@ -67,7 +67,7 @@ export default class ShelfList extends Component {
                               Add<Icon right>add_shopping_cart</Icon>
                             </Button>
                             <Button
-                              disabled={this.props.isAdmin}
+                              disabled={!this.props.isMember}
                               className="col s12 amber darken-4"
                               waves="purple"
                             >
@@ -89,6 +89,7 @@ export default class ShelfList extends Component {
 
 ShelfList.propTypes = {
   isAdmin: PropTypes.bool,
+  isMember:PropTypes.bool,
   shelves: PropTypes.array.isRequired,
   onAddToCartClickShelf: PropTypes.func.isRequired
 };
