@@ -14,7 +14,6 @@ const userSchema = new Schema({
     _student: {type: Schema.Types.ObjectId, ref: 'students'},
     _teacher: {type: Schema.Types.ObjectId, ref: 'teachers'},
     _learningCentreId: {type: Schema.Types.ObjectId, ref: 'learningcentres'},
-    isAdmin: Boolean,
     roles: [String],
     resetNeeded: Boolean
 });
