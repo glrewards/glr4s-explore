@@ -45,7 +45,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,13 +281,11 @@
       <workItem from="1587147459594" duration="7813000" />
       <workItem from="1588186337753" duration="4979000" />
       <workItem from="1589103672390" duration="1222000" />
-    </task>
-    <task id="LOCAL-00084" summary="added limit of 100 to route for now">
-      <created>1561097136544</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1561097136544</updated>
+      <workItem from="1592900357884" duration="294000" />
+      <workItem from="1595501501819" duration="92000" />
+      <workItem from="1595501643820" duration="12000" />
+      <workItem from="1596011678032" duration="31000" />
+      <workItem from="1596355477980" duration="648000" />
     </task>
     <task id="LOCAL-00085" summary="move progress bar to actions">
       <created>1561097935504</created>
@@ -622,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588580545304</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="changed npm version">
+      <created>1589477333407</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1589477333407</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +676,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small changes to simplify Cabinet" />
     <MESSAGE value="major authentication changes - HUGE - and working" />
     <MESSAGE value="tried to change where connect-mongo was in packages file - not a dev dependency" />
     <MESSAGE value="updated node and npm in packages" />
@@ -693,7 +700,8 @@
     <MESSAGE value="cleaned up orderRoutes.js" />
     <MESSAGE value="made changes to secure the app when deployed - need to set a new production env variable" />
     <MESSAGE value="started adding new admin components to react" />
-    <option name="LAST_COMMIT_MESSAGE" value="started adding new admin components to react" />
+    <MESSAGE value="changed npm version" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed npm version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="373" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587145817505">
@@ -705,10 +713,10 @@
       <screen x="0" y="23" width="2560" height="1346" />
     </state>
     <state x="1028" y="559" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1346@0.23.2560.1346" timestamp="1587076862754" />
-    <state x="106" y="100" key="CommitChangelistDialog2" timestamp="1588580545106">
+    <state x="106" y="100" key="CommitChangelistDialog2" timestamp="1589477333290">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="106" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588580545106" />
+    <state x="106" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589477333290" />
     <state x="629" y="23" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822438742" />
     <state x="162" y="151" key="CommitChangelistDialog2/0.23.2560.1346@0.23.2560.1346" timestamp="1587377172502" />
     <state x="174" y="123" width="1080" height="1145" key="DiffContextDialog" timestamp="1587079120151">
@@ -800,10 +808,10 @@
     </state>
     <state x="518" y="261" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1586777614531" />
     <state x="789" y="335" key="SettingsEditor/0.23.2560.1346@0.23.2560.1346" timestamp="1585760883311" />
-    <state x="162" y="322" key="Vcs.Push.Dialog.v2" timestamp="1589449021126">
+    <state x="162" y="322" key="Vcs.Push.Dialog.v2" timestamp="1589477354777">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589449021126" />
+    <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589477354777" />
     <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1586822465435" />
     <state x="247" y="436" key="Vcs.Push.Dialog.v2/0.23.2560.1346@0.23.2560.1346" timestamp="1587377215714" />
     <state x="1049" y="102" width="1465" height="1084" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587159872992">
