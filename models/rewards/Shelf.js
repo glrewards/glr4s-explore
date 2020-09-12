@@ -5,11 +5,9 @@ const rewardSchema = require("./Reward");
 
 const shelfSchema = new Schema({
     name: { type: String, required: true },
-    pointsLower:  Number,
-    pointsHigher: Number,
+    pointsLower: { type: Number, required: true, default: 0 },
+    pointsHigher:{ type: Number, required: true, default: 0},
     rewardItems: [rewardSchema],
-    totalRewardPoints: Number,
-    totalRewardValue: Number,
     totalRewards: Number,
     imgURL: {type: String},
     warningLevel: Number

@@ -44,13 +44,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/Favourite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Guardian.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/address.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rewards/Reward.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/Reward.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rewards/Shelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/Shelf.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,14 +294,7 @@
       <workItem from="1599170345889" duration="230000" />
       <workItem from="1599205014793" duration="800000" />
       <workItem from="1599320383543" duration="317000" />
-      <workItem from="1599941149899" duration="1002000" />
-    </task>
-    <task id="LOCAL-00084" summary="added limit of 100 to route for now">
-      <created>1561097136544</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1561097136544</updated>
+      <workItem from="1599941149899" duration="1768000" />
     </task>
     <task id="LOCAL-00085" summary="move progress bar to actions">
       <created>1561097935504</created>
@@ -641,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588580545304</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="user and favourite changes">
+      <created>1599942271830</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1599942271831</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +685,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small changes to simplify Cabinet" />
     <MESSAGE value="major authentication changes - HUGE - and working" />
     <MESSAGE value="tried to change where connect-mongo was in packages file - not a dev dependency" />
     <MESSAGE value="updated node and npm in packages" />
@@ -712,9 +709,14 @@
     <MESSAGE value="cleaned up orderRoutes.js" />
     <MESSAGE value="made changes to secure the app when deployed - need to set a new production env variable" />
     <MESSAGE value="started adding new admin components to react" />
-    <option name="LAST_COMMIT_MESSAGE" value="started adding new admin components to react" />
+    <MESSAGE value="user and favourite changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="user and favourite changes" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="680" y="112" key="CommitChangelistDialog2" timestamp="1599942271619">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599942271619" />
     <state width="1133" height="208" key="GridCell.Tab.0.bottom" timestamp="1599942161502">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -735,10 +737,11 @@
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
     <state width="1133" height="208" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1599942161501" />
-    <state x="162" y="322" key="Vcs.Push.Dialog.v2" timestamp="1597660442882">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1599942370519">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1599942370519" />
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog" timestamp="1599170419242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

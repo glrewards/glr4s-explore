@@ -3,10 +3,12 @@ const { Schema } = mongoose;
 
 
 const rewardSchema = new Schema({
-  name: String,
+  name: { type: String, required: true },
+  _type: { type: Schema.Types.ObjectId, ref: "RewardType" },
   _shopifyProduct: { type: Schema.Types.ObjectId, ref: "shopifyproducts" },
   _issuer: { type: Schema.Types.ObjectId, ref: "issuer" },
   count: {type: Number, required: true},
+  shopifyProductId: {type: String}
 });
 
 mongoose.model("Reward", rewardSchema);
