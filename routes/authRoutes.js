@@ -42,6 +42,8 @@ module.exports = app => {
   });
 
   app.post('/register', (req, res, next) => {
+    let pwd = req.body;
+    console.log(pwd);
     const saltHash = genPassword(req.body.password);
     const salt = saltHash.salt;
     const hash = saltHash.hash;

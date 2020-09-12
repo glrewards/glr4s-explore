@@ -69,7 +69,7 @@ function order(
       } else {
         return state;
       }
-    case REQUEST_LINEITEMS: //a member is looking at their itmes
+    case REQUEST_LINEITEMS: //a member is looking at their items
       return Object.assign({}, state, {
         isFetching: true,
         didInvalidate: false
