@@ -28,6 +28,7 @@ passport.use(
       const existingUser = await User.findOne({ username: username }).populate(
         "_student"
       );
+      console.log(existingUser);
       if (!existingUser) {
         return done(null, false);
       }
@@ -62,7 +63,7 @@ passport.use(
       if (existingUser) {
         done(null, existingUser);
       } else {
-        return done(null, false, req.flash("message", "User Not found."));
+        return done(null, false, "User Not found.");
       }
 
       //console.log(profile.id);
@@ -86,7 +87,7 @@ passport.use(
         //it must exist
         done(null, existingUser);
       } else {
-        return done(null, false, req.flash("message", "User Not found."));
+        return done(null, false, "User Not found.");
       }
 
       //console.log(profile.id);

@@ -44,11 +44,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/Guardian.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/address.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/Reward.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/Reward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/Shelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/Shelf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,14 +293,8 @@
       <workItem from="1599170345889" duration="230000" />
       <workItem from="1599205014793" duration="800000" />
       <workItem from="1599320383543" duration="317000" />
-      <workItem from="1599941149899" duration="1768000" />
-    </task>
-    <task id="LOCAL-00085" summary="move progress bar to actions">
-      <created>1561097935504</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1561097935504</updated>
+      <workItem from="1599941149899" duration="3965000" />
+      <workItem from="1599986453964" duration="1175000" />
     </task>
     <task id="LOCAL-00086" summary="got pagination working well - limit is hardcoded to 25">
       <created>1561383010666</created>
@@ -639,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599942271831</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="user and favourite changes">
+      <created>1599942952261</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1599942952261</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,35 +713,35 @@
     <option name="LAST_COMMIT_MESSAGE" value="user and favourite changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="680" y="112" key="CommitChangelistDialog2" timestamp="1599942271619">
+    <state x="680" y="112" key="CommitChangelistDialog2" timestamp="1599942952094">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599942271619" />
-    <state width="1133" height="208" key="GridCell.Tab.0.bottom" timestamp="1599942161502">
+    <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599942952094" />
+    <state width="1133" height="208" key="GridCell.Tab.0.bottom" timestamp="1599987328749">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1133" height="208" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1599942161502" />
-    <state width="1133" height="208" key="GridCell.Tab.0.center" timestamp="1599942161500">
+    <state width="1133" height="208" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1599987328749" />
+    <state width="1133" height="208" key="GridCell.Tab.0.center" timestamp="1599987328748">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1133" height="208" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1599942161500" />
-    <state width="1133" height="208" key="GridCell.Tab.0.left" timestamp="1599942161499">
+    <state width="1133" height="208" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1599987328748" />
+    <state width="1133" height="208" key="GridCell.Tab.0.left" timestamp="1599987328747">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1133" height="208" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1599942161499" />
-    <state width="1133" height="208" key="GridCell.Tab.0.right" timestamp="1599942161501">
+    <state width="1133" height="208" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1599987328747" />
+    <state width="1133" height="208" key="GridCell.Tab.0.right" timestamp="1599987328748">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1133" height="208" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1599942161501" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1599942370519">
+    <state width="1133" height="208" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1599987328748" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1599942983241">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1599942370519" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1599942983241" />
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog" timestamp="1599170419242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
