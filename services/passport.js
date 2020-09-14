@@ -63,7 +63,7 @@ passport.use(
       if (existingUser) {
         done(null, existingUser);
       } else {
-        return done(null, false, "User Not found.");
+          new User ({googleId: profile.id}).save().then(user => done(null,user));
       }
 
       //console.log(profile.id);
