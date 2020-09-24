@@ -6,6 +6,8 @@ const XODAchievementSchema = require("../models/xod/XODAchievement");
 const requireLogin = require("../middlewares/requireLogin");
 const requireSchool = require("../middlewares/requireSchool");
 const requireAdmin = require("../middlewares/requireAdmin");
+const axios = require("axios");
+const keys = require("../config/keys");
 
 //const { URL } = require("url");
 
@@ -114,6 +116,27 @@ module.exports = app => {
       res.send(student);
     }
   );
+
+  app.post("/api/users/:userId/favourites",
+      async (req,res) => {
+          let uid = req.params.userId;
+          let url = keys.glrAPIGateway + keys.glrAPIUser + "/" + uid + "/favourites";
+          console.log(url);
+          let options = {
+              headers: {
+                  "X-API-KEY": keys.glrAPIGatewayKey
+              }
+          };
+          try {
+              const axiosResponse = await axios.post(url, req.body, options);
+              const data = axiosResponse.data;
+              //console.log(data);
+              res.send(data);
+          } catch (err) {
+              console.error("error adding favourite: ", err.response.status);
+              res.send({code: err.response.status, message: err.response.statusText});
+          }
+      });
 
   app.get(
     "/api/School/:schoolId/Student/:studentId/AchievementSummary",
