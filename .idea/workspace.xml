@@ -45,9 +45,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/studentRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/studentRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,6 +297,20 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
+    </task>
+    <task id="LOCAL-00088" summary="fixed small pagination bug and removed references to student cursor">
+      <created>1561387294822</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1561387294822</updated>
+    </task>
+    <task id="LOCAL-00089" summary="first graph working">
+      <created>1561475285105</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1561475285105</updated>
     </task>
     <task id="LOCAL-00090" summary="Check in before major branch">
       <created>1569664698006</created>
@@ -625,21 +641,7 @@
       <option name="project" value="LOCAL" />
       <updated>1601045508564</updated>
     </task>
-    <task id="LOCAL-00137" summary="Fav button now changes to green if it is in favourites array">
-      <created>1601056931068</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1601056931068</updated>
-    </task>
-    <task id="LOCAL-00138" summary="refactored function and action names and added teh add parameter so we can decide if we need to delete or add the item">
-      <created>1601059688626</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1601059688626</updated>
-    </task>
-    <option name="localTasksCounter" value="139" />
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,6 +687,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated node and npm in packages" />
+    <MESSAGE value="started on add to cart for rewards" />
     <MESSAGE value="loads of order processing updates" />
     <MESSAGE value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
     <MESSAGE value="order working" />
@@ -708,46 +712,44 @@
     <MESSAGE value="user and favourite changes" />
     <MESSAGE value="fixed cabinet url but oauth2 is broken" />
     <MESSAGE value="AddFav implemented&#10;Refresh User at the right times - fixed" />
-    <MESSAGE value="Fav button now changes to green if it is in favourites array" />
-    <MESSAGE value="refactored function and action names and added teh add parameter so we can decide if we need to delete or add the item" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored function and action names and added teh add parameter so we can decide if we need to delete or add the item" />
+    <option name="LAST_COMMIT_MESSAGE" value="AddFav implemented&#10;Refresh User at the right times - fixed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1036" y="146" key="CommitChangelistDialog2" timestamp="1601059687986">
+    <state x="1036" y="146" key="CommitChangelistDialog2" timestamp="1601045507164">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987679888" />
-    <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601059687986" />
-    <state width="1070" height="274" key="GridCell.Tab.0.bottom" timestamp="1601059693508">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
+    <state width="1133" height="384" key="GridCell.Tab.0.bottom" timestamp="1601070575342">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1133" height="208" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757897" />
-    <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601059693508" />
-    <state width="1070" height="274" key="GridCell.Tab.0.center" timestamp="1601059693507">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1133" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601070575342" />
+    <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
+    <state width="1133" height="384" key="GridCell.Tab.0.center" timestamp="1601070575342">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1133" height="208" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757896" />
-    <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601059693507" />
-    <state width="1070" height="274" key="GridCell.Tab.0.left" timestamp="1601059693507">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1133" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601070575342" />
+    <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
+    <state width="1133" height="384" key="GridCell.Tab.0.left" timestamp="1601070575341">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1133" height="208" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757894" />
-    <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601059693507" />
-    <state width="1070" height="274" key="GridCell.Tab.0.right" timestamp="1601059693508">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1133" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601070575341" />
+    <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
+    <state width="1133" height="384" key="GridCell.Tab.0.right" timestamp="1601070575342">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1133" height="208" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757896" />
-    <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601059693508" />
-    <state x="247" y="458" key="Vcs.Push.Dialog.v2" timestamp="1601056940084">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1133" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601070575342" />
+    <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601064800245">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987701879" />
-    <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601056940084" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601064800245" />
+    <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog" timestamp="1599170419242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

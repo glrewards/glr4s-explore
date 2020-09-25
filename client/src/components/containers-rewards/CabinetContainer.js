@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ShelfList from "../rewards/ShelfList";
 import { addLine } from "../../actions/cartActions";
 import { updateFavourite } from "../../actions";
-import {fetchUser} from "../../actions";
+import { fetchUser } from "../../actions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";
@@ -51,13 +51,13 @@ class CabinetContainer extends Component {
     );
   }
 
-  handleFavourites(add,rewardId) {
-      console.log("rewardId: ", rewardId);
-        console.log("userId: ", this.props.user._id);
-        console.log(add);
-        let favourite = this.props.user.favourites.find((item) =>{
-          return item._rewardId === rewardId;
-        })
+  handleFavourites(add, rewardId) {
+    console.log("rewardId: ", rewardId);
+    console.log("userId: ", this.props.user._id);
+    console.log(add);
+    let favourite = this.props.user.favourites.find(item => {
+      return item._rewardId === rewardId;
+    });
     //console.log(favourite);
     //if this is an add then we pass the rewardId to create a new fav
     //if this is not an add then we are deleting and we pass actual favourite Id to the action
@@ -86,6 +86,7 @@ class CabinetContainer extends Component {
           {JSON.stringify(cabDetail) !== JSON.stringify({}) && (
             <div style={{ opacity: isFetching ? 0.9 : 1 }}>
               <ShelfList
+                favOnly={false}
                 isAdmin={this.props.user.roles.includes("admin")}
                 isMember={this.props.user.roles.includes("member")}
                 favourites={this.props.user.favourites}
