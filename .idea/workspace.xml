@@ -25,8 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +40,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="ONTO" value="refs/heads/master" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -64,6 +61,12 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="glrewards" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="glr4s-explore" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -276,20 +279,6 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-    </task>
-    <task id="LOCAL-00090" summary="Check in before major branch">
-      <created>1569664698006</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1569664698007</updated>
-    </task>
-    <task id="LOCAL-00091" summary="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model">
-      <created>1570025639105</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1570025639105</updated>
     </task>
     <task id="LOCAL-00092" summary="glrs-clean:0.3: Menus cleaned up">
       <created>1570034640158</created>
@@ -620,7 +609,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601072699370</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="filter shelf by favourites logic implemented - need button to set property and trigger action">
+      <created>1601074249427</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1601074249427</updated>
+    </task>
+    <task id="LOCAL-00140" summary="set  favOnly={false}">
+      <created>1601074296583</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1601074296583</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,8 +681,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loads of order processing updates" />
-    <MESSAGE value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
     <MESSAGE value="order working" />
     <MESSAGE value="changed hide on small for nav items" />
     <MESSAGE value="removed logging in passport.js" />
@@ -703,44 +704,62 @@
     <MESSAGE value="AddFav implemented&#10;Refresh User at the right times - fixed" />
     <MESSAGE value="changed cabinet button colours and started to add favOnly to ShelfList.js" />
     <MESSAGE value="token change to new branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="token change to new branch" />
+    <MESSAGE value="filter shelf by favourites logic implemented - need button to set property and trigger action" />
+    <MESSAGE value="set  favOnly={false}" />
+    <option name="LAST_COMMIT_MESSAGE" value="set  favOnly={false}" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="677" y="112" key="CommitChangelistDialog2" timestamp="1601072699241">
+    <state x="517" y="112" key="CommitChangelistDialog2" timestamp="1601074296464">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="677" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601072699241" />
+    <state x="517" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601074296464" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
-    <state width="1133" height="384" key="GridCell.Tab.0.bottom" timestamp="1601072532952">
+    <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601074913006">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="626" y="123" width="954" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601074913006" />
+    <state x="738" y="410" key="Github.CreatePullRequestDialog" timestamp="1601074531240">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601074531240" />
+    <state width="758" height="384" key="GridCell.Tab.0.bottom" timestamp="1601076254063">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1133" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601072532952" />
+    <state width="758" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601076254063" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1133" height="384" key="GridCell.Tab.0.center" timestamp="1601072532952">
+    <state width="758" height="384" key="GridCell.Tab.0.center" timestamp="1601076254062">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1133" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601072532952" />
+    <state width="758" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601076254062" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1133" height="384" key="GridCell.Tab.0.left" timestamp="1601072532951">
+    <state width="758" height="384" key="GridCell.Tab.0.left" timestamp="1601076254062">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1133" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601072532951" />
+    <state width="758" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601076254062" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1133" height="384" key="GridCell.Tab.0.right" timestamp="1601072532952">
+    <state width="758" height="384" key="GridCell.Tab.0.right" timestamp="1601076254063">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1133" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601072532952" />
+    <state width="758" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601076254063" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601070914931">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601074938978">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601070914931" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601074938978" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
+    <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601076923309">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601076923309" />
+    <state x="910" y="438" key="git4idea.ui.GitResetDialog" timestamp="1601075004368">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="910" y="438" key="git4idea.ui.GitResetDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601075004368" />
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog" timestamp="1599170419242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
