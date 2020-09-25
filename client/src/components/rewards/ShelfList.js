@@ -12,12 +12,12 @@ export default class ShelfList extends Component {
       <Collapsible accordion={true} header="Shelves">
         {this.props.shelves.map(shelf => (
           <CollapsibleItem
-              node="h3"
-              expanded={true}
-              key={shelf.name}
-              header={shelf.name}
+            node="h3"
+            expanded={true}
+            key={shelf.name}
+            header={shelf.name}
           >
-            <img alt="temp" src={shelf.imgURL} height="15%" width="15%"/>
+            <img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
             <div>
               <table className="striped">
                 <tbody>
@@ -30,7 +30,7 @@ export default class ShelfList extends Component {
                             {typeof reward._shopifyProduct != "undefined" &&
                               reward._shopifyProduct.image.src && (
                                 <img
-                                    className="responsive-img"
+                                  className="responsive-img"
                                   height="150"
                                   width="150"
                                   alt="temp"
@@ -50,7 +50,9 @@ export default class ShelfList extends Component {
 
                           <td>
                             <Button
-                              disabled={(!this.props.isMember) || (reward.count === 0)}
+                              disabled={
+                                !this.props.isMember || reward.count === 0
+                              }
                               className="amber darken-4"
                               waves="purple"
                               onClick={() => {
@@ -58,7 +60,7 @@ export default class ShelfList extends Component {
                                   reward._id,
                                   reward._shopifyProduct.title,
                                   reward._shopifyProduct.variants[0].id, //TODO: just taking the first variant for now
-                                  1,  //setting to 1 as there is no other option for the user
+                                  1, //setting to 1 as there is no other option for the user
                                   reward._shopifyProduct.points,
                                   reward._shopifyProduct.image.src
                                 );
@@ -70,6 +72,9 @@ export default class ShelfList extends Component {
                               disabled={!this.props.isMember}
                               className="col s12 amber darken-4"
                               waves="purple"
+                              onClick={() => {
+                                this.props.onAddToFavourites(reward._id);
+                              }}
                             >
                               Fav!<Icon right>favorite</Icon>
                             </Button>
@@ -89,7 +94,8 @@ export default class ShelfList extends Component {
 
 ShelfList.propTypes = {
   isAdmin: PropTypes.bool,
-  isMember:PropTypes.bool,
+  isMember: PropTypes.bool,
   shelves: PropTypes.array.isRequired,
-  onAddToCartClickShelf: PropTypes.func.isRequired
+  onAddToCartClickShelf: PropTypes.func.isRequired,
+  onAddToFavourites: PropTypes.func.isRequired
 };

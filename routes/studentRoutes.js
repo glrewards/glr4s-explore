@@ -121,7 +121,8 @@ module.exports = app => {
       async (req,res) => {
           let uid = req.params.userId;
           let url = keys.glrAPIGateway + keys.glrAPIUser + "/" + uid + "/favourites";
-          console.log(url);
+          //console.log(url);
+          //console.log(req);
           let options = {
               headers: {
                   "X-API-KEY": keys.glrAPIGatewayKey
@@ -130,11 +131,11 @@ module.exports = app => {
           try {
               const axiosResponse = await axios.post(url, req.body, options);
               const data = axiosResponse.data;
-              //console.log(data);
               res.send(data);
           } catch (err) {
-              console.error("error adding favourite: ", err.response.status);
-              res.send({code: err.response.status, message: err.response.statusText});
+              console.error("error adding favourite: ", err);
+              res.statusCode = err.response.status;
+              res.send({code: err.response.status, message: err});
           }
       });
 

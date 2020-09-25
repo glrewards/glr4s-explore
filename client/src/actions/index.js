@@ -10,6 +10,7 @@ import { DELETE_ALL_LINES } from "./cartActions";
 import { FETCH_XOD_STUDENT } from "./types";
 import { FETCH_XOD_ACHIEVEMENTS } from "./types";
 import { SET_STUDENT_PAGES } from "./types";
+import {ADD_ITEM_TO_FAVS} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -24,7 +25,9 @@ import { SET_STUDENT_PAGES } from "./types";
 
      */
 export const fetchUser = () => async dispatch => {
+
   let res = await axios.get("/api/current_user");
+  console.log("in fetchUser",res.data);
     dispatch({ type: FETCH_USER, payload: res.data });
 };
 
@@ -58,6 +61,19 @@ export const submitCategory = values => async dispatch => {
   dispatch({ type: NEW_CATEGORY, payload: res.data });
 };
 
+export const addFav = (userId, value) => async dispatch => {
+  let url = "api/users/" + userId + "/favourites";
+  let param = {"_rewardId": value};
+  console.log(url, param);
+  try {
+    const res = await axios.post(url, param);
+    console.log(res);
+    await dispatch(fetchUser());
+    dispatch({type: ADD_ITEM_TO_FAVS, payload: res.data});
+  }catch(e){
+    console.log(e);
+  }
+};
 export const submitLogin = (values) => async dispatch => {
   const res = await axios.post("/login", values);
   dispatch({ type: START_LOGIN, payload: res.data });
@@ -120,6 +136,7 @@ export const fetchXODStudentAchievements = (
 
 export const submitLineItems = (reqBody, history) => async dispatch => {
   const res = await axios.post("/api/orders", reqBody);
+  await dispatch(fetchUser());
   dispatch({ type: DELETE_ALL_LINES }); //actually we clear the the local cart and then can populate the lineitems
   history.push("/rewards");
 };

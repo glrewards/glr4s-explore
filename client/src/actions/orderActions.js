@@ -1,4 +1,5 @@
 import axios from "axios";
+import {fetchUser} from "./index";
 
 export const REQUEST_LINEITEMS = 'REQUEST_LINEITEMS'
 export const RECEIVE_LINEITEMS = 'RECEIVED_LINEITEMS'
@@ -105,7 +106,7 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
     let url = "api/orders/" + centre + "/" + studentId;
     dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
     const res = await axios.get(url);
-    console.log(res.data);
+    //console.log(res.data);
     dispatch(receiveLineItems(centre,studentId,res.data));
 }
 
@@ -115,6 +116,7 @@ export const deleteLineItems = (centre,studentId,items) => async dispatch => {
         const res = await axios.put(url, items);
         dispatch(resetDeleted());
         dispatch(fetchLineItems(centre, studentId));
+        await dispatch(fetchUser());
     }else{
         // this means it is an admin delete and we have to group all the deletes
         //by student ID and then submit each set for each student
@@ -129,6 +131,7 @@ export const deleteLineItems = (centre,studentId,items) => async dispatch => {
             dispatch(resetDeleted());
             dispatch(fetchOrder(centre));
         }
+         await dispatch(fetchUser());
     }
 }
 

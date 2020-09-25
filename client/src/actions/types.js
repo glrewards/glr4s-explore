@@ -21,5 +21,6 @@ export const ADD_SHELF = 'add_shelf';
 export const EDIT_SHELF = 'edit_shelf';
 export const REMOVE_SHELF = 'remove_shelf';
 export const SET_ADD_CART_BUTTON_FILTER = 'set_add_cart_button_filter';
+export const ADD_ITEM_TO_FAVS = 'add_item_to_favs';
 
 

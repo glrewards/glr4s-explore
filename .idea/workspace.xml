@@ -45,7 +45,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CabinetContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/studentRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/studentRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,11 +205,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.server" />
         <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.server" />
       </list>
     </recent_temporary>
   </component>
@@ -293,9 +299,14 @@
       <workItem from="1599205014793" duration="800000" />
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
-      <workItem from="1599986453964" duration="3392000" />
-      <workItem from="1600981882283" duration="4111000" />
-      <workItem from="1600988157256" duration="1175000" />
+      <workItem from="1599986453964" duration="2514000" />
+    </task>
+    <task id="LOCAL-00087" summary="fixed small pagination bug and removed references to student cursor">
+      <created>1561385812949</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1561385812949</updated>
     </task>
     <task id="LOCAL-00088" summary="fixed small pagination bug and removed references to student cursor">
       <created>1561387294822</created>
@@ -633,14 +644,7 @@
       <option name="project" value="LOCAL" />
       <updated>1599987680237</updated>
     </task>
-    <task id="LOCAL-00136" summary="passport.js - amended google strategy to create a user if none found. not correct but proves it all still works">
-      <created>1600068910417</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1600068910418</updated>
-    </task>
-    <option name="localTasksCounter" value="137" />
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,6 +690,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="tried to change where connect-mongo was in packages file - not a dev dependency" />
     <MESSAGE value="updated node and npm in packages" />
     <MESSAGE value="started on add to cart for rewards" />
     <MESSAGE value="loads of order processing updates" />
@@ -710,43 +715,42 @@
     <MESSAGE value="started adding new admin components to react" />
     <MESSAGE value="user and favourite changes" />
     <MESSAGE value="fixed cabinet url but oauth2 is broken" />
-    <MESSAGE value="passport.js - amended google strategy to create a user if none found. not correct but proves it all still works" />
-    <option name="LAST_COMMIT_MESSAGE" value="passport.js - amended google strategy to create a user if none found. not correct but proves it all still works" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed cabinet url but oauth2 is broken" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="680" y="112" key="CommitChangelistDialog2" timestamp="1600068910216">
+    <state x="680" y="112" key="CommitChangelistDialog2" timestamp="1599987679888">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1600068910216" />
-    <state width="1133" height="384" key="GridCell.Tab.0.bottom" timestamp="1600988962749">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987679888" />
+    <state width="1071" height="274" key="GridCell.Tab.0.bottom" timestamp="1601033343717">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1133" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600988962749" />
-    <state width="1133" height="384" key="GridCell.Tab.0.center" timestamp="1600988962748">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1133" height="208" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757897" />
+    <state width="1071" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601033343717" />
+    <state width="1071" height="274" key="GridCell.Tab.0.center" timestamp="1601033343716">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1133" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600988962748" />
-    <state width="1133" height="384" key="GridCell.Tab.0.left" timestamp="1600988962748">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1133" height="208" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757896" />
+    <state width="1071" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601033343716" />
+    <state width="1071" height="274" key="GridCell.Tab.0.left" timestamp="1601033343716">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1133" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600988962748" />
-    <state width="1133" height="384" key="GridCell.Tab.0.right" timestamp="1600988962749">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1133" height="208" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757894" />
+    <state width="1071" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601033343716" />
+    <state width="1071" height="274" key="GridCell.Tab.0.right" timestamp="1601033343717">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1133" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600988962749" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1600068940032">
+    <state width="1133" height="208" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757896" />
+    <state width="1071" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601033343717" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1599987701879">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1600068940032" />
-    <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600981888583">
-      <screen x="0" y="23" width="1680" height="1027" />
-    </state>
-    <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1600981888583" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987701879" />
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog" timestamp="1599170419242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
