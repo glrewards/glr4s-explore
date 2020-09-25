@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { Collapsible, CollapsibleItem, Icon, Button } from "react-materialize";
 
 export default class ShelfList extends Component {
+
   render() {
+    console.log(this.props);
     if (!this.props.shelves) {
       console.log(this.props);
       return <div>No data</div>;
@@ -70,7 +72,9 @@ export default class ShelfList extends Component {
                             </Button>
                             <Button
                               disabled={!this.props.isMember}
-                              className="col s12 amber darken-4"
+                              className={this.props.favourites.find((item) => {
+                                return item._rewardId === reward._id;
+                              }) ? "green darken-3" : "amber darken-4"}
                               waves="purple"
                               onClick={() => {
                                 this.props.onAddToFavourites(reward._id);
@@ -95,6 +99,7 @@ export default class ShelfList extends Component {
 ShelfList.propTypes = {
   isAdmin: PropTypes.bool,
   isMember: PropTypes.bool,
+  favourites: PropTypes.array,
   shelves: PropTypes.array.isRequired,
   onAddToCartClickShelf: PropTypes.func.isRequired,
   onAddToFavourites: PropTypes.func.isRequired
