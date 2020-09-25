@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Collapsible, CollapsibleItem, Icon, Button } from "react-materialize";
 
 export default class ShelfList extends Component {
-
   render() {
     console.log(this.props);
     if (!this.props.shelves) {
@@ -72,12 +71,21 @@ export default class ShelfList extends Component {
                             </Button>
                             <Button
                               disabled={!this.props.isMember}
-                              className={this.props.favourites.find((item) => {
-                                return item._rewardId === reward._id;
-                              }) ? "green darken-3" : "amber darken-4"}
+                              className={
+                                this.props.favourites.find(item => {
+                                  return item._rewardId === reward._id;
+                                })
+                                  ? "green darken-3"
+                                  : "amber darken-4"
+                              }
                               waves="purple"
                               onClick={() => {
-                                this.props.onAddToFavourites(reward._id);
+                                this.props.onClickFavourites(
+                                  !this.props.favourites.find(item => {
+                                    return item._rewardId === reward._id;
+                                  }),
+                                  reward._id
+                                );
                               }}
                             >
                               Fav!<Icon right>favorite</Icon>
@@ -102,5 +110,5 @@ ShelfList.propTypes = {
   favourites: PropTypes.array,
   shelves: PropTypes.array.isRequired,
   onAddToCartClickShelf: PropTypes.func.isRequired,
-  onAddToFavourites: PropTypes.func.isRequired
+  onClickFavourites: PropTypes.func.isRequired
 };

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ShelfList from "../rewards/ShelfList";
 import { addLine } from "../../actions/cartActions";
-import { addFav } from "../../actions";
+import { updateFavourite } from "../../actions";
 import {fetchUser} from "../../actions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -13,7 +13,7 @@ class CabinetContainer extends Component {
     super(props);
     this.handleRefreshClick = this.handleRefreshClick.bind(this);
     this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
-    this.handleAddToFavourites = this.handleAddToFavourites.bind(this);
+    this.handleFavourites = this.handleFavourites.bind(this);
   }
 
   componentDidMount() {
@@ -51,10 +51,11 @@ class CabinetContainer extends Component {
     );
   }
 
-  handleAddToFavourites(rewardId) {
+  handleFavourites(add,rewardId) {
       console.log("rewardId: ", rewardId);
         console.log("userId: ", this.props.user._id);
-    this.props.dispatch(addFav(this.props.user._id, rewardId));
+        console.log(add);
+    this.props.dispatch(updateFavourite(this.props.user._id, rewardId, add));
   }
 
   handleRefreshClick(e) {
@@ -83,9 +84,8 @@ class CabinetContainer extends Component {
                 favourites={this.props.user.favourites}
                 shelves={cabDetail.shelves}
                 onAddToCartClickShelf={this.handleAddToCartClick}
-                onAddToFavourites={this.handleAddToFavourites}
+                onClickFavourites={this.handleFavourites}
               />
-              onAddToFavourites={this.handleAddToFavourites}
             </div>
           )}
         </div>

@@ -10,7 +10,7 @@ import { DELETE_ALL_LINES } from "./cartActions";
 import { FETCH_XOD_STUDENT } from "./types";
 import { FETCH_XOD_ACHIEVEMENTS } from "./types";
 import { SET_STUDENT_PAGES } from "./types";
-import {ADD_ITEM_TO_FAVS} from "./types";
+import {UPDATE_FAVS} from "./types";
 
 /*
     remember dispatch is a function (it is the action dispatcher
@@ -61,7 +61,7 @@ export const submitCategory = values => async dispatch => {
   dispatch({ type: NEW_CATEGORY, payload: res.data });
 };
 
-export const addFav = (userId, value) => async dispatch => {
+export const updateFavourite = (userId, value, add) => async dispatch => {
   let url = "api/users/" + userId + "/favourites";
   let param = {"_rewardId": value};
   console.log(url, param);
@@ -69,7 +69,7 @@ export const addFav = (userId, value) => async dispatch => {
     const res = await axios.post(url, param);
     console.log(res);
     await dispatch(fetchUser());
-    dispatch({type: ADD_ITEM_TO_FAVS, payload: res.data});
+    dispatch({type: UPDATE_FAVS, payload: res.data});
   }catch(e){
     console.log(e);
   }
