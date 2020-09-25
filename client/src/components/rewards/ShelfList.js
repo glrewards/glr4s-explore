@@ -10,9 +10,6 @@ export default class ShelfList extends Component {
       console.log(this.props);
       return <div>No data</div>;
     }
-    if (this.props.favOnly) {
-      return "fav only";
-    } else {
       return (
         <Collapsible accordion={true} header="Shelves">
           {this.props.shelves.map(shelf => (
@@ -28,7 +25,20 @@ export default class ShelfList extends Component {
                   <tbody>
                     {typeof shelf.rewardItems != "undefined" &&
                       shelf.rewardItems.length > 0 &&
-                      shelf.rewardItems.map(reward => {
+                      shelf.rewardItems.filter((item) => {
+                        if(!this.props.favOnly){
+                          console.log("not fav only");
+                          return true;
+                        }else {
+                          console.log("fav only");
+                          //check if it is a fav
+                          return this.props.favourites.find( (fav) => {
+                            console.log("checking: ");
+                            return fav._rewardId === item._id;
+                          })
+                        }
+                          }
+                      ).map(reward => {
                         return (
                           <tr key={reward._id}>
                             <td>
@@ -106,7 +116,6 @@ export default class ShelfList extends Component {
         </Collapsible>
       );
     }
-  }
 }
 
 ShelfList.propTypes = {

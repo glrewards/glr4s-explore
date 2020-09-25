@@ -86,7 +86,7 @@ class CabinetContainer extends Component {
           {JSON.stringify(cabDetail) !== JSON.stringify({}) && (
             <div style={{ opacity: isFetching ? 0.9 : 1 }}>
               <ShelfList
-                favOnly={false}
+                favOnly={true}
                 isAdmin={this.props.user.roles.includes("admin")}
                 isMember={this.props.user.roles.includes("member")}
                 favourites={this.props.user.favourites}
