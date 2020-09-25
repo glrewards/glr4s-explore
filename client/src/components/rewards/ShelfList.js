@@ -4,6 +4,7 @@ import { Collapsible, CollapsibleItem, Icon, Button } from "react-materialize";
 
 export default class ShelfList extends Component {
   render() {
+    console.log('temp');
     console.log(this.props);
     if (!this.props.shelves) {
       console.log(this.props);
