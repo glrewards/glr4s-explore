@@ -55,7 +55,14 @@ class CabinetContainer extends Component {
       console.log("rewardId: ", rewardId);
         console.log("userId: ", this.props.user._id);
         console.log(add);
-    this.props.dispatch(updateFavourite(this.props.user._id, rewardId, add));
+        let favourite = this.props.user.favourites.find((item) =>{
+          return item._rewardId === rewardId;
+        })
+    //console.log(favourite);
+    //if this is an add then we pass the rewardId to create a new fav
+    //if this is not an add then we are deleting and we pass actual favourite Id to the action
+    const commandId = add ? rewardId : favourite._id;
+    this.props.dispatch(updateFavourite(this.props.user._id, commandId, add));
   }
 
   handleRefreshClick(e) {

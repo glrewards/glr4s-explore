@@ -138,6 +138,25 @@ module.exports = app => {
               res.send({code: err.response.status, message: err});
           }
       });
+  app.delete("/api/users/:userId/favourites/:favouriteId", async (req,res) =>{
+      let uid = req.params.userId;
+      let fid = req.params.favouriteId;
+      let url = keys.glrAPIGateway + keys.glrAPIUser + "/" + uid + "/favourites/" + fid;
+      let options = {
+          headers: {
+              "X-API-KEY": keys.glrAPIGatewayKey
+          }
+      };
+      try {
+          const axiosResponse = await axios.delete(url, options);
+          const data = axiosResponse.data;
+          res.send(data);
+      } catch (err) {
+          console.error("error adding favourite: ", err);
+          res.statusCode = err.response.status;
+          res.send({code: err.response.status, message: err});
+      }
+  });
 
   app.get(
     "/api/School/:schoolId/Student/:studentId/AchievementSummary",
