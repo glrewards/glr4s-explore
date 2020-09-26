@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Collapsible, CollapsibleItem, Icon, Button } from "react-materialize";
+import { Collapsible, CollapsibleItem, Icon, Button, MediaBox } from "react-materialize";
 
 export default class ShelfList extends Component {
   render() {
@@ -44,6 +44,7 @@ export default class ShelfList extends Component {
                             <td>
                               {typeof reward._shopifyProduct != "undefined" &&
                                 reward._shopifyProduct.image.src && (
+                                    <MediaBox id={reward._id}>
                                   <img
                                     className="responsive-img"
                                     height="150"
@@ -51,6 +52,7 @@ export default class ShelfList extends Component {
                                     alt="temp"
                                     src={reward._shopifyProduct.image.src}
                                   />
+                                    </MediaBox>
                                 )}
                             </td>
                             <td>
