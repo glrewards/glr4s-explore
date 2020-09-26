@@ -24,14 +24,15 @@ const options = {
   //authSource: "admin",
   retryWrites: true,
   //autoIndex: false, // Don't build indexes
-  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  reconnectInterval: 500, // Reconnect every 500ms
+  //reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
+  //reconnectInterval: 500, // Reconnect every 500ms
   poolSize: 10, // Maintain up to 10 socket connections
   // If not connected, return errors immediately rather than waiting for reconnect
   //bufferMaxEntries: 0,
   connectTimeoutMS: 10000, // Give up initial connection after 10 seconds
   socketTimeoutMS: 45000,
-  useCreateIndex:true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 };
 
 mongoose.connect(keys.mongoURI, options);
@@ -41,7 +42,7 @@ db.once("open", () => console.log("connected to db"));
 db.on("error", console.error.bind(console, "Mongo connection error"));
 
 const sessionStore = new MongoStore({
-  mongooseConnection:db,
+  mongooseConnection: db,
   collection: "sessions"
 });
 app.use(bodyParser.json());
@@ -49,7 +50,7 @@ app.use(
   session({
     resave: false,
     saveUninitialized: keys.secureSession,
-    cookie: { secure: false, maxAge: (1000 * 60 * 60 * 24)},
+    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 },
     secret: keys.expressSessionSecret,
     store: sessionStore
   })

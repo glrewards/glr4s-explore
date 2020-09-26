@@ -1,11 +1,13 @@
 import {
   INVALIDATE_CABINET,
   REQUEST_CABINET,
-  RECEIVE_CABINET
+  RECEIVE_CABINET,
+  FILTER_FAV
 } from "../actions/rewardActions";
 
 function cabinet(
   state = {
+    filterSwitch: false,
     isFetching: false,
     didInvalidate: false,
     cabDetail: {}
@@ -29,6 +31,10 @@ function cabinet(
         centre: action.centre,
         cabDetail: action.payload,
         lastUpdated: action.receivedAt
+      });
+    case FILTER_FAV:
+      return Object.assign({}, state, {
+        filterSwitch: action.filterSwitch
       });
     default:
       return state;

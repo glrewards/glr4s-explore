@@ -5,8 +5,9 @@ import { updateFavourite } from "../../actions";
 import { fetchUser } from "../../actions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchCabinet, invalidateCabinet } from "../../actions/rewardActions";
+import { fetchCabinet, invalidateCabinet,filterCabinet } from "../../actions/rewardActions";
 import { ProgressBar } from "react-materialize";
+import CabinetFilters from "../rewards/CabinetFilters";
 
 class CabinetContainer extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class CabinetContainer extends Component {
     this.handleRefreshClick = this.handleRefreshClick.bind(this);
     this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
     this.handleFavourites = this.handleFavourites.bind(this);
+    this.handleFavSwitchChanged = this.handleFavSwitchChanged.bind(this);
   }
 
   componentDidMount() {
@@ -65,6 +67,12 @@ class CabinetContainer extends Component {
     this.props.dispatch(updateFavourite(this.props.user._id, commandId, add));
   }
 
+  handleFavSwitchChanged(event) {
+    const {dispatch} = this.props;
+    console.log(event.target.checked);
+    dispatch(filterCabinet(event.target.checked));
+  }
+
   handleRefreshClick(e) {
     e.preventDefault();
     const { dispatch, user } = this.props;
@@ -85,8 +93,12 @@ class CabinetContainer extends Component {
           )}
           {JSON.stringify(cabDetail) !== JSON.stringify({}) && (
             <div style={{ opacity: isFetching ? 0.9 : 1 }}>
+              <CabinetFilters
+                favourites={this.props.filterSwitch}
+                onFavSwitchChanged={this.handleFavSwitchChanged}
+              />
               <ShelfList
-                favOnly={false}
+                favOnly={this.props.filterSwitch}
                 isAdmin={this.props.user.roles.includes("admin")}
                 isMember={this.props.user.roles.includes("member")}
                 favourites={this.props.user.favourites}
@@ -105,6 +117,7 @@ class CabinetContainer extends Component {
 CabinetContainer.propTypes = {
   centre: PropTypes.string.isRequired,
   cabDetail: PropTypes.object,
+  filterSwitch: PropTypes.bool.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
@@ -112,12 +125,13 @@ CabinetContainer.propTypes = {
 
 function mapStateToProps(state) {
   const { cabinet } = state;
-  const { isFetching, lastUpdated, cabDetail } = cabinet || {
+  const { filterSwitch, isFetching, lastUpdated, cabDetail } = cabinet || {
     isFetching: true
   };
   let user = state.auth;
   return {
     user,
+    filterSwitch,
     cabDetail,
     isFetching,
     lastUpdated

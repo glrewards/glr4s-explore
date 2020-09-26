@@ -7,7 +7,8 @@ import {
   ADD_SHELF,
   EDIT_SHELF,
   FETCH_PRODUCTS,
-  SET_ADD_CART_BUTTON_FILTER
+  SET_ADD_CART_BUTTON_FILTER,
+    FA
 } from "./types";
 import axios from "axios";
 
@@ -44,6 +45,14 @@ export function invalidateCabinet(centre) {
   return {
     type: INVALIDATE_CABINET,
     centre
+  };
+}
+export const FILTER_FAV = "filter_fav";
+
+export function filterCabinet(filterSwitch) {
+  return {
+    type: FILTER_FAV,
+    filterSwitch: filterSwitch
   };
 }
 
