@@ -294,14 +294,7 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-      <workItem from="1601136506104" duration="542000" />
-    </task>
-    <task id="LOCAL-00090" summary="Check in before major branch">
-      <created>1569664698006</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1569664698007</updated>
+      <workItem from="1601136506104" duration="4385000" />
     </task>
     <task id="LOCAL-00091" summary="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model">
       <created>1570025639105</created>
@@ -639,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601059688626</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="added mediabox to zoom in on image">
+      <created>1601137135501</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1601137135502</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +685,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loads of order processing updates" />
     <MESSAGE value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
     <MESSAGE value="order working" />
     <MESSAGE value="changed hide on small for nav items" />
@@ -710,14 +709,15 @@
     <MESSAGE value="AddFav implemented&#10;Refresh User at the right times - fixed" />
     <MESSAGE value="Fav button now changes to green if it is in favourites array" />
     <MESSAGE value="refactored function and action names and added teh add parameter so we can decide if we need to delete or add the item" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored function and action names and added teh add parameter so we can decide if we need to delete or add the item" />
+    <MESSAGE value="added mediabox to zoom in on image" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mediabox to zoom in on image" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1036" y="146" key="CommitChangelistDialog2" timestamp="1601059687986">
+    <state x="1036" y="146" key="CommitChangelistDialog2" timestamp="1601137134752">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987679888" />
-    <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601059687986" />
+    <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601137134752" />
     <state width="1068" height="274" key="GridCell.Tab.0.bottom" timestamp="1601136445520">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -742,12 +742,16 @@
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
     <state width="1133" height="208" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600068757896" />
     <state width="1068" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601136445519" />
-    <state x="247" y="458" key="Vcs.Push.Dialog.v2" timestamp="1601056940084">
+    <state x="247" y="458" key="Vcs.Push.Dialog.v2" timestamp="1601137195577">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
     <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987701879" />
-    <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601056940084" />
+    <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601137195577" />
+    <state x="369" y="546" key="git4idea.ui.GitTagDialog" timestamp="1601137188669">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="369" y="546" key="git4idea.ui.GitTagDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1601137188669" />
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog" timestamp="1599170419242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
