@@ -61,7 +61,7 @@ export function filterCabinet(filterSwitch) {
  */
 
 export const fetchCabinet = (centre, summary) => async dispatch => {
-  let url = "/api/reward/cabinet";
+  let url = "/api/cabinet";
   let options = {
     params: {
       centre: centre,

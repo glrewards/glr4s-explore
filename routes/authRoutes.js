@@ -69,7 +69,7 @@ module.exports = app => {
     "/auth/google/callback",
     passport.authenticate("google"),
     (req, res) => {
-      res.redirect("/rewards");
+      res.redirect("/cabinet");
     }
   );
 
@@ -84,7 +84,7 @@ module.exports = app => {
     "/auth/slack/callback",
     passport.authenticate("Slack"),
     (req, res) => {
-      res.redirect("/rewards");
+      res.redirect("/cabinet");
     }
   );
 

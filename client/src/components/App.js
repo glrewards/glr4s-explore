@@ -10,6 +10,7 @@ import SimpleCartList from "./shop/SimpleCartList";
 import CentreDashboard from "./containers-rewards/CentreOrderListContainer"
 import EmailNew from "./email/EmailNew";
 import CabinetContainer from "./containers-rewards/CabinetContainer";
+import RewardContainer from "./containers-rewards/RewardContainer";
 import M from "materialize-css"; //don't delete while I am still using the non react version somewhere
 import SignUpContainer from "./login/SignUpContainer";
 import MemberOrderContainer from "./containers-rewards/MemberOrderContainer";
@@ -41,7 +42,7 @@ class App extends Component {
             <Route exact path="/shop/cart" component={SimpleCartList} />
             <Route path="/email/new" component={EmailNew} />
             <Route path="/admin" component={CentreDashboard} />
-            <Route path="/rewards" component={CabinetContainer} />
+            <Route exact path="/cabinet" component={CabinetContainer} />
           </div>
         </BrowserRouter>
       </div>

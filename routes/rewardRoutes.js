@@ -11,8 +11,8 @@ const logger = winston.createLogger({
 });
 module.exports = app => {
   //TODO: add requireLogin middleware
-  app.get("/api/reward/cabinet", requireLogin, async (req, res) => {
-    logger.info("rewardRoutes: /api/reward/cabinet ", req.query);
+  app.get("/api/cabinet", requireLogin, async (req, res) => {
+    logger.info("rewardRoutes: /api/cabinet ", req.query);
     try {
       let centre = req.query.centre;
       let summary = req.query.summary;

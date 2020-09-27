@@ -59,8 +59,8 @@ class GLRHeader extends Component {
         return null;
       default:
         return [
-          <NavItem key={"rewards"} className="sidenav-close">
-            <NavLink to={"/rewards"}>Reward Cabinet</NavLink>
+          <NavItem key={"cabinet"} className="sidenav-close">
+            <NavLink to={"/cabinet"}>Reward Cabinet</NavLink>
           </NavItem>,
           this.renderMyOrder(),
           <NavItem href="/api/logout" key={"logout"}>
