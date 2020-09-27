@@ -10,7 +10,7 @@ class RewardCard extends Component {
     return (
       <div>
         <h1 className="align-center center-align">{this.props.title}</h1>
-        <Card header={<CardTitle image={this.props.imageURL} />} />
+        <Card header={<CardTitle image={this.props.imageURL} height={"300"}/>} />
         <Row>
             <div dangerouslySetInnerHTML={{
             __html: this.props.bodyhtml

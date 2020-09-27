@@ -43,7 +43,7 @@ class App extends Component {
             <Route path="/email/new" component={EmailNew} />
             <Route path="/admin" component={CentreDashboard} />
             <Route path="/cabinet" component={CabinetContainer} />
-            <Route path="/reward" component={RewardContainer} />
+            <Route path="/reward/:id" component={RewardContainer} />
           </div>
         </BrowserRouter>
       </div>

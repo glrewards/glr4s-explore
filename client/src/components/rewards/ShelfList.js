@@ -55,7 +55,7 @@ export default class ShelfList extends Component {
                                 )}
                             </td>
                             <td>
-                              <h5><Link to={"/reward"}>{reward._shopifyProduct.title}</Link></h5>
+                              <h5><Link to={"/reward/" + reward._id}>{reward._shopifyProduct.title}</Link></h5>
                             </td>
                             <td>
                               <h5 className="center-align">

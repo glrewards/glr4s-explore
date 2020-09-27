@@ -17,8 +17,8 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:favfilter" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:heroku" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -27,7 +27,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
     </list>
@@ -285,13 +284,6 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-    </task>
-    <task id="LOCAL-00094" summary="product grid cleaned up and working">
-      <created>1570276385148</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1570276385148</updated>
     </task>
     <task id="LOCAL-00095" summary="changed colours to toby suggestions">
       <created>1570301466188</created>
@@ -629,7 +621,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601189895876</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="reward detail layout complete">
+      <created>1601224492558</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1601224492558</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,19 +652,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="favfilter" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -687,7 +674,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed logging in passport.js" />
     <MESSAGE value="changed shelflist to unresponsive table" />
     <MESSAGE value="made images responsive as they where being stretched" />
     <MESSAGE value="got summary plumbing working" />
@@ -712,51 +698,56 @@
     <MESSAGE value="set  favOnly={false}" />
     <MESSAGE value="minor" />
     <MESSAGE value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
+    <MESSAGE value="reward detail layout complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="reward detail layout complete" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="112" key="CommitChangelistDialog2" timestamp="1601189895678">
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601224492358">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="517" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601189895678" />
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601224492358" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
-    <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601074913006">
+    <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="626" y="123" width="954" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601074913006" />
+    <state x="626" y="123" width="954" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601225492423" />
     <state x="738" y="410" key="Github.CreatePullRequestDialog" timestamp="1601077582774">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601077582774" />
-    <state width="1645" height="384" key="GridCell.Tab.0.bottom" timestamp="1601149144172">
+    <state width="1645" height="384" key="GridCell.Tab.0.bottom" timestamp="1601235735147">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1645" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601149144172" />
+    <state width="1645" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601235735147" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1645" height="384" key="GridCell.Tab.0.center" timestamp="1601149144171">
+    <state width="1645" height="384" key="GridCell.Tab.0.center" timestamp="1601235735146">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1645" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601149144171" />
+    <state width="1645" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601235735146" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1645" height="384" key="GridCell.Tab.0.left" timestamp="1601149144171">
+    <state width="1645" height="384" key="GridCell.Tab.0.left" timestamp="1601235735145">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1645" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601149144171" />
+    <state width="1645" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601235735145" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1645" height="384" key="GridCell.Tab.0.right" timestamp="1601149144171">
+    <state width="1645" height="384" key="GridCell.Tab.0.right" timestamp="1601235735146">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1645" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601149144171" />
+    <state width="1645" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601235735146" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601137253065">
+    <state x="485" y="305" key="MultipleFileMergeDialog" timestamp="1601224836212">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601224894425">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601137253065" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601224894425" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601077594756">
       <screen x="0" y="23" width="1680" height="1027" />
