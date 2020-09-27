@@ -24,16 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/rewardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rewardActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/login/LoginFormContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/LoginFormContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/MemberList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rewardRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rewardRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,13 +285,6 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-    </task>
-    <task id="LOCAL-00093" summary="glrs-clean:0.3: Menus cleaned up">
-      <created>1570034739756</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1570034739756</updated>
     </task>
     <task id="LOCAL-00094" summary="product grid cleaned up and working">
       <created>1570276385148</created>
@@ -633,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601076966703</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details">
+      <created>1601189895876</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1601189895876</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,7 +687,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed hide on small for nav items" />
     <MESSAGE value="removed logging in passport.js" />
     <MESSAGE value="changed shelflist to unresponsive table" />
     <MESSAGE value="made images responsive as they where being stretched" />
@@ -716,13 +711,14 @@
     <MESSAGE value="filter shelf by favourites logic implemented - need button to set property and trigger action" />
     <MESSAGE value="set  favOnly={false}" />
     <MESSAGE value="minor" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor" />
+    <MESSAGE value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="112" key="CommitChangelistDialog2" timestamp="1601076966561">
+    <state x="517" y="112" key="CommitChangelistDialog2" timestamp="1601189895678">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="517" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601076966561" />
+    <state x="517" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601189895678" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601074913006">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -782,10 +778,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog/0.23.1680.1027@0.23.1680.1027" timestamp="1599170419242" />
-    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1601072637327">
+    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1601222232722">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1601072637327" />
+    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1601222232722" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

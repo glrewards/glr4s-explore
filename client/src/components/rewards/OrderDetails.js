@@ -23,15 +23,15 @@ export default class OrderDetail extends Component {
                           className="responsive-img"
                           height="150"
                           width="150"
-                          alt="temp"
+                          alt={line.productTitle}
                           src={line.img}
                         />
                       </td>
-                      <td>
+                      <td className="flow-text">
                         {line.memberFirstName + " " + line.memberLastName}
                       </td>
-                      <td>{line.productTitle}</td>
-                      <td>{line.quantity}</td>
+                      <td className="flow-text">{line.productTitle}</td>
+                      <td className="flow-text">{line.quantity}</td>
                       {
                         // have to use line._id as each label has to be linked to a unique checkbox and if I
                         // used the rewardId this is not unique given the current nature of the order

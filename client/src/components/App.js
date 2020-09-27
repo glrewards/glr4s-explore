@@ -42,7 +42,8 @@ class App extends Component {
             <Route exact path="/shop/cart" component={SimpleCartList} />
             <Route path="/email/new" component={EmailNew} />
             <Route path="/admin" component={CentreDashboard} />
-            <Route exact path="/cabinet" component={CabinetContainer} />
+            <Route path="/cabinet" component={CabinetContainer} />
+            <Route path="/reward" component={RewardContainer} />
           </div>
         </BrowserRouter>
       </div>

@@ -1,70 +1,61 @@
-import React, { Component } from "react";
+import React,{ Component } from "react";
+import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import {
-  Collapsible,
-  CollapsibleItem,
-  Icon,
-  Button,
-  MediaBox
-} from "react-materialize";
+import { Collapsible, CollapsibleItem, Icon, Button, MediaBox } from "react-materialize";
 
 export default class ShelfList extends Component {
   render() {
-    console.log("temp");
+    console.log('temp');
     console.log(this.props);
     if (!this.props.shelves) {
       console.log(this.props);
       return <div>No data</div>;
     }
-    const mediaboxStyle ={
-      margin: "0 auto",
-      position: "relative !important"
-    }
-    return (
-      <Collapsible accordion={true} header="Shelves">
-        {this.props.shelves.map(shelf => (
-          <CollapsibleItem
-            node="h3"
-            expanded={true}
-            key={shelf.name}
-            header={shelf.name}
-          >
-            <img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
-            <div>
-              <table className="striped">
-                <tbody>
-                  {typeof shelf.rewardItems != "undefined" &&
-                    shelf.rewardItems.length > 0 &&
-                    shelf.rewardItems
-                      .filter(item => {
-                        if (!this.props.favOnly) {
+      return (
+        <Collapsible accordion={true} header="Shelves">
+          {this.props.shelves.map(shelf => (
+            <CollapsibleItem
+              node="h3"
+              expanded={true}
+              key={shelf.name}
+              header={shelf.name}
+            >
+              <img alt="temp" src={shelf.imgURL} height="15%" width="15%" />
+              <div>
+                <table className="striped">
+                  <tbody>
+                    {typeof shelf.rewardItems != "undefined" &&
+                      shelf.rewardItems.length > 0 &&
+                      shelf.rewardItems.filter((item) => {
+                        if(!this.props.favOnly){
                           console.log("not fav only");
                           return true;
-                        } else {
+                        }else {
                           console.log("fav only");
                           //check if it is a fav
-                          return this.props.favourites.find(fav => {
+                          return this.props.favourites.find( (fav) => {
                             console.log("checking: ");
                             return fav._rewardId === item._id;
-                          });
+                          })
                         }
-                      })
-                      .map(reward => {
+                          }
+                      ).map(reward => {
                         return (
                           <tr key={reward._id}>
                             <td>
                               {typeof reward._shopifyProduct != "undefined" &&
                                 reward._shopifyProduct.image.src && (
                                   <img
-                                    width="150"
+                                    className="responsive-img"
                                     height="150"
+                                    width="150"
                                     alt={reward._shopifyProduct.title}
                                     src={reward._shopifyProduct.image.src}
                                   />
                                 )}
                             </td>
                             <td>
-                              <h5>{reward._shopifyProduct.title}</h5>
+                              <h5><Link to={"/reward"}>{reward._shopifyProduct.title}</Link></h5>
                             </td>
                             <td>
                               <h5 className="center-align">
@@ -118,14 +109,14 @@ export default class ShelfList extends Component {
                           </tr>
                         );
                       })}
-                </tbody>
-              </table>
-            </div>
-          </CollapsibleItem>
-        ))}
-      </Collapsible>
-    );
-  }
+                  </tbody>
+                </table>
+              </div>
+            </CollapsibleItem>
+          ))}
+        </Collapsible>
+      );
+    }
 }
 
 ShelfList.propTypes = {
