@@ -5,8 +5,8 @@ import { Collapsible, CollapsibleItem, Icon, Button, MediaBox } from "react-mate
 
 export default class ShelfList extends Component {
   render() {
-    console.log('temp');
-    console.log(this.props);
+    //console.log('temp');
+    //console.log(this.props);
     if (!this.props.shelves) {
       console.log(this.props);
       return <div>No data</div>;

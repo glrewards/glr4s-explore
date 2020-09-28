@@ -139,6 +139,7 @@ module.exports = app => {
           }
       });
   app.delete("/api/users/:userId/favourites/:favouriteId", async (req,res) =>{
+      console.log("here");
       let uid = req.params.userId;
       let fid = req.params.favouriteId;
       let url = keys.glrAPIGateway + keys.glrAPIUser + "/" + uid + "/favourites/" + fid;

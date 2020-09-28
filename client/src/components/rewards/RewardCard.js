@@ -14,10 +14,16 @@ class RewardCard extends Component {
       marginLeft: "auto",
       marginRight: "auto"
     };
+      if (!this.props.reward) {
+          console.log(this.props);
+          return <div>No data</div>;
+      }
     return (
+
       <div>
-        <h1 className="align-center center-align">{this.props.title}</h1>
+
         <Card>
+            <h1 className="align-center center-align">{this.props.title}</h1>
             <MediaBox>
           <img src={this.props.imageURL} style={cardImageStyle} />
             </MediaBox>
@@ -34,12 +40,13 @@ class RewardCard extends Component {
             <Button
               s={6}
               style={{ width: "100%" }}
+              disabled={!this.props.isMember}
               className={
                 this.props.favourite ? "blue darken-3" : "yellow darken-2"
               }
               waves={"purple"}
               onClick={() => {
-                this.props.onClickFavourites();
+                this.props.onClickFavourites(!this.props.favourite, this.props.reward._id);
               }}
             >
               A Favourite<Icon right>favorite</Icon>
@@ -49,10 +56,16 @@ class RewardCard extends Component {
             <Button
               s={6}
               style={{ width: "100%" }}
+              disabled={!this.props.isMember}
               className={"yellow darken-2"}
               waves={"purple"}
               onClick={() => {
-                this.props.onAddToCartClick();
+                this.props.onAddToCartClick(this.props.reward._id,
+                    this.props.reward._shopifyProduct.title,
+                    this.props.reward._shopifyProduct.variants[0].id, //TODO: just taking the first variant for now
+                    1, //setting to 1 as there is no other option for the user
+                    this.props.reward._shopifyProduct.points,
+                    this.props.reward._shopifyProduct.image.src);
               }}
             >
               Add To Cart<Icon right>add_shopping_cart</Icon>

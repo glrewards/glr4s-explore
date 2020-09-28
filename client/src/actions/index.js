@@ -62,17 +62,23 @@ export const submitCategory = values => async dispatch => {
 };
 
 export const updateFavourite = (userId, value, add) => async dispatch => {
-
+ //axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+ console.log(process.env.REACT_APP_API_URL);
+ console.log(axios.defaults.baseURL);
+  const instance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL
+  });
   let url = "api/users/" + userId + "/favourites";
   let param = {"_rewardId": value};
   let res = {};
   try {
     if (add){
-      res = await axios.post(url, param);
+      res = await instance.post(url, param);
       //console.log(res);
     }else{
       url = url + "/" + value;
-      res = await axios.delete(url);
+      console.log(url);
+      res = await instance.delete(url);
     }
     await dispatch(fetchUser());
     dispatch({type: UPDATE_FAVS, payload: res.data});
