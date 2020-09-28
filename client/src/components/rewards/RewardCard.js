@@ -26,6 +26,9 @@ class RewardCard extends Component {
                 this.props.favourite ? "blue darken-3" : "yellow darken-2"
               }
               waves={"purple"}
+              onClick={() => {
+                  this.props.onClickFavourites();
+              }}
             >
               A Favourite<Icon right>favorite</Icon>
             </Button>
@@ -34,10 +37,12 @@ class RewardCard extends Component {
             <Button
               s={6}
               style={{ width: "100%" }}
-              className={
-                this.props.favourite ? "blue darken-3" : "yellow darken-2"
-              }
+              className={"yellow darken-2"}
               waves={"purple"}
+              onClick={() => {
+                  this.props.onAddToCartClick();
+              }}
+
             >
               Add To Cart<Icon right>add_shopping_cart</Icon>
             </Button>

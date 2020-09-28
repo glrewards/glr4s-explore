@@ -25,10 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,13 +282,6 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-    </task>
-    <task id="LOCAL-00095" summary="changed colours to toby suggestions">
-      <created>1570301466188</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1570301466188</updated>
     </task>
     <task id="LOCAL-00096" summary="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a">
       <created>1585217535145</created>
@@ -628,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601224492558</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="basic reward detail working">
+      <created>1601237413507</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1601237413507</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +672,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed shelflist to unresponsive table" />
     <MESSAGE value="made images responsive as they where being stretched" />
     <MESSAGE value="got summary plumbing working" />
     <MESSAGE value="total cards and total lines functions working" />
@@ -699,13 +696,14 @@
     <MESSAGE value="minor" />
     <MESSAGE value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
     <MESSAGE value="reward detail layout complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="reward detail layout complete" />
+    <MESSAGE value="basic reward detail working" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic reward detail working" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601224492358">
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601237413350">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601224492358" />
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601237413350" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -743,11 +741,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601224894425">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601237454242">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601224894425" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601237454242" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601077594756">
       <screen x="0" y="23" width="1680" height="1027" />
