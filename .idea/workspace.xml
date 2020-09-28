@@ -283,13 +283,6 @@
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
     </task>
-    <task id="LOCAL-00096" summary="Revert &quot;removed requireLogin from student routes to test&quot;&#10;&#10;This reverts commit da43003a">
-      <created>1585217535145</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1585217535145</updated>
-    </task>
     <task id="LOCAL-00097" summary="sorted admin store">
       <created>1585222114639</created>
       <option name="number" value="00097" />
@@ -626,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601237413507</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="about to try nds change the RewardCard.js">
+      <created>1601276278450</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1601276278451</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made images responsive as they where being stretched" />
     <MESSAGE value="got summary plumbing working" />
     <MESSAGE value="total cards and total lines functions working" />
     <MESSAGE value="side nav is now behaving and other gui improvements" />
@@ -697,13 +696,18 @@
     <MESSAGE value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
     <MESSAGE value="reward detail layout complete" />
     <MESSAGE value="basic reward detail working" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic reward detail working" />
+    <MESSAGE value="about to try nds change the RewardCard.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="about to try nds change the RewardCard.js" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601237413350">
+    <state x="180" y="202" key="#Deployment" timestamp="1601276263599">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601237413350" />
+    <state x="180" y="202" key="#Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1601276263599" />
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601276278323">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601276278323" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -741,11 +745,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601237454242">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601276281157">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601237454242" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601276281157" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="901" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601077594756">
       <screen x="0" y="23" width="1680" height="1027" />

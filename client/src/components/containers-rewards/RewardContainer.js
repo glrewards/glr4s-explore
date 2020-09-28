@@ -13,10 +13,10 @@ class RewardContainer extends Component {
     this.handleFavourite = this.handleFavourite.bind(this);
   }
   componentDidMount() {
-    console.log(this.props.reward);
+    //console.log(this.props.reward);
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log("temp");
+    //console.log("temp");
   }
 
   handleAddToCart(rewardId, productTitle, variantId, quantity, glrpoints, img) {
@@ -97,9 +97,12 @@ function mapStateToProps(state, ownProps) {
   const reward = foundItem;
 
   //part 2 check the favourites.
-  let favourite = user.favourites.find(item => {
+  let found = user.favourites.find(item => {
     return item._rewardId === reward._id;
   });
+
+  let favourite = false;
+  if (found){ favourite = true}
 
   return {
     user,

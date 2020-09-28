@@ -1,22 +1,34 @@
-import React, { Component,Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import { Card, CardTitle, Button, Icon, Row, Col } from "react-materialize";
+import { Card, CardTitle, Button, Icon, Row, Col,MediaBox } from "react-materialize";
 
 class RewardCard extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const cardImageStyle = {
+      maxWidth: "70%",
+      height: "auto",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto"
+    };
     return (
       <div>
         <h1 className="align-center center-align">{this.props.title}</h1>
-        <Card header={<CardTitle image={this.props.imageURL} height={"300"}/>} />
-        <Row>
-            <div dangerouslySetInnerHTML={{
-            __html: this.props.bodyhtml
-        }} >
-            </div>
-        </Row>
+        <Card>
+            <MediaBox>
+          <img src={this.props.imageURL} style={cardImageStyle} />
+            </MediaBox>
+          <Row>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: this.props.bodyhtml
+              }}
+            />
+          </Row>
+        </Card>
         <Row>
           <Col s={6}>
             <Button
@@ -27,7 +39,7 @@ class RewardCard extends Component {
               }
               waves={"purple"}
               onClick={() => {
-                  this.props.onClickFavourites();
+                this.props.onClickFavourites();
               }}
             >
               A Favourite<Icon right>favorite</Icon>
@@ -40,9 +52,8 @@ class RewardCard extends Component {
               className={"yellow darken-2"}
               waves={"purple"}
               onClick={() => {
-                  this.props.onAddToCartClick();
+                this.props.onAddToCartClick();
               }}
-
             >
               Add To Cart<Icon right>add_shopping_cart</Icon>
             </Button>
