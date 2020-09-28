@@ -11,6 +11,7 @@ import reducers from "./reducers";
 
 let store = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    console.log("NOT PRODUCTION");
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   store = createStore(

@@ -73,6 +73,7 @@ if (process.env.NODE_ENV === "production") {
   //express will serve up production assets. Remember these are built into something different for prod
   //and node needs to hand off if routes are not handled here in node.js
   app.use(express.static("client/build"));
+  console.log("NODE_ENV is production");
 
   // this runs if the above does not get catch by above line or previous routes
   const path = require("path");

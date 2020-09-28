@@ -25,17 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env.production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/RewardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/RewardCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/ShelfList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/studentRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/studentRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,13 +282,6 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-    </task>
-    <task id="LOCAL-00098" summary="products working with proper api - now need to configure and clean up shortcuts and hard coding">
-      <created>1585440470416</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1585440470416</updated>
     </task>
     <task id="LOCAL-00099" summary="removing hardcoding around product api calls">
       <created>1585476260324</created>
@@ -635,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601278178105</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things.">
+      <created>1601290778393</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1601290778393</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +672,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="total cards and total lines functions working" />
     <MESSAGE value="side nav is now behaving and other gui improvements" />
     <MESSAGE value="working order details" />
     <MESSAGE value="fixed sidenav closing bug on shoppping basket click" />
@@ -706,17 +696,18 @@
     <MESSAGE value="basic reward detail working" />
     <MESSAGE value="about to try nds change the RewardCard.js" />
     <MESSAGE value="Styling of RewardCard.js complete with reactive image control and mediabox implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styling of RewardCard.js complete with reactive image control and mediabox implemented" />
+    <MESSAGE value="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things." />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things." />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="202" key="#Deployment" timestamp="1601276263599">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="180" y="202" key="#Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1601276263599" />
-    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601278177985">
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601290778185">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601278177985" />
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601290778185" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -726,39 +717,39 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601077582774" />
-    <state width="1645" height="384" key="GridCell.Tab.0.bottom" timestamp="1601290614069">
+    <state width="1645" height="384" key="GridCell.Tab.0.bottom" timestamp="1601291689757">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1645" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601290614069" />
+    <state width="1645" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689757" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1645" height="384" key="GridCell.Tab.0.center" timestamp="1601290614068">
+    <state width="1645" height="384" key="GridCell.Tab.0.center" timestamp="1601291689756">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1645" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601290614068" />
+    <state width="1645" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689756" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1645" height="384" key="GridCell.Tab.0.left" timestamp="1601290614067">
+    <state width="1645" height="384" key="GridCell.Tab.0.left" timestamp="1601291689755">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1645" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601290614067" />
+    <state width="1645" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689755" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1645" height="384" key="GridCell.Tab.0.right" timestamp="1601290614068">
+    <state width="1645" height="384" key="GridCell.Tab.0.right" timestamp="1601291689756">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1645" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601290614068" />
+    <state width="1645" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689756" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
     <state x="485" y="305" key="MultipleFileMergeDialog" timestamp="1601224836212">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601278197557">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601290805136">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601278197557" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601290805136" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="114" y="123" width="1466" height="827" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1601286435435">
       <screen x="0" y="23" width="1680" height="1027" />
