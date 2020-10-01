@@ -24,9 +24,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserDetailContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserListContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/user/UserDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/CabinetFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/CabinetFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/shop/SimpleCartList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shop/SimpleCartList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,19 +124,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
-      <recent name="$PROJECT_DIR$/client/src/images" />
-      <recent name="$PROJECT_DIR$/client/src/trash" />
-      <recent name="$PROJECT_DIR$/client/src/components/errorpages/notfound" />
-      <recent name="$PROJECT_DIR$/models/shop" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/models/rewards" />
       <recent name="$PROJECT_DIR$/client/src/images" />
       <recent name="$PROJECT_DIR$/client/src/reducers" />
       <recent name="$PROJECT_DIR$/models/xod" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/user" />
+      <recent name="$PROJECT_DIR$/client/src/components/member" />
+      <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
+      <recent name="$PROJECT_DIR$/client/src/images" />
+      <recent name="$PROJECT_DIR$/client/src/trash" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -187,8 +199,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.client" />
         <item itemvalue="npm.dev (2)" />
+        <item itemvalue="npm.client" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
@@ -282,13 +294,7 @@
       <workItem from="1599320383543" duration="317000" />
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
-    </task>
-    <task id="LOCAL-00099" summary="removing hardcoding around product api calls">
-      <created>1585476260324</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1585476260324</updated>
+      <workItem from="1601313155631" duration="7272000" />
     </task>
     <task id="LOCAL-00100" summary="FIXED SMALL TYPO IN PROD CONFIG">
       <created>1585476648283</created>
@@ -626,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601290778393</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="checking NODE_ENV is working correctly">
+      <created>1601291956562</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1601291956562</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +685,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="side nav is now behaving and other gui improvements" />
     <MESSAGE value="working order details" />
     <MESSAGE value="fixed sidenav closing bug on shoppping basket click" />
     <MESSAGE value="ready to create my cart" />
@@ -697,17 +709,18 @@
     <MESSAGE value="about to try nds change the RewardCard.js" />
     <MESSAGE value="Styling of RewardCard.js complete with reactive image control and mediabox implemented" />
     <MESSAGE value="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things." />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things." />
+    <MESSAGE value="checking NODE_ENV is working correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="checking NODE_ENV is working correctly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="202" key="#Deployment" timestamp="1601276263599">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="180" y="202" key="#Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1601276263599" />
-    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601290778185">
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601291956436">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601290778185" />
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601291956436" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -717,39 +730,39 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601077582774" />
-    <state width="1645" height="384" key="GridCell.Tab.0.bottom" timestamp="1601291689757">
+    <state width="1486" height="414" key="GridCell.Tab.0.bottom" timestamp="1601371384966">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1645" height="384" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689757" />
+    <state width="1486" height="414" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601371384966" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1645" height="384" key="GridCell.Tab.0.center" timestamp="1601291689756">
+    <state width="1486" height="414" key="GridCell.Tab.0.center" timestamp="1601371384965">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1645" height="384" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689756" />
+    <state width="1486" height="414" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601371384965" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1645" height="384" key="GridCell.Tab.0.left" timestamp="1601291689755">
+    <state width="1486" height="414" key="GridCell.Tab.0.left" timestamp="1601371384964">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1645" height="384" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689755" />
+    <state width="1486" height="414" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601371384964" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1645" height="384" key="GridCell.Tab.0.right" timestamp="1601291689756">
+    <state width="1486" height="414" key="GridCell.Tab.0.right" timestamp="1601371384965">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1645" height="384" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601291689756" />
+    <state width="1486" height="414" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601371384965" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
     <state x="485" y="305" key="MultipleFileMergeDialog" timestamp="1601224836212">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601290805136">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601291977739">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601290805136" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601291977739" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="114" y="123" width="1466" height="827" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1601286435435">
       <screen x="0" y="23" width="1680" height="1027" />

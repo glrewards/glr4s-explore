@@ -11,6 +11,7 @@ import CentreDashboard from "./containers-rewards/CentreOrderListContainer"
 import EmailNew from "./email/EmailNew";
 import CabinetContainer from "./containers-rewards/CabinetContainer";
 import RewardContainer from "./containers-rewards/RewardContainer";
+import GuardianDashboardContainer from "./containers-user/GuardianDashboardContainer";
 import M from "materialize-css"; //don't delete while I am still using the non react version somewhere
 import SignUpContainer from "./login/SignUpContainer";
 import MemberOrderContainer from "./containers-rewards/MemberOrderContainer";
@@ -43,6 +44,7 @@ class App extends Component {
             <Route path="/email/new" component={EmailNew} />
             <Route path="/admin" component={CentreDashboard} />
             <Route path="/cabinet" component={CabinetContainer} />
+            <Route path="/guardian" component={GuardianDashboardContainer} />
             <Route path="/reward/:id" component={RewardContainer} />
           </div>
         </BrowserRouter>

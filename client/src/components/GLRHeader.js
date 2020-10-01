@@ -1,7 +1,7 @@
-import React, {Component} from "react";
-import {Link, NavLink} from "react-router-dom";
-import {connect} from "react-redux";
-import {Icon, Navbar, NavItem} from "react-materialize";
+import React, { Component } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { Icon, Navbar, NavItem } from "react-materialize";
 
 class GLRHeader extends Component {
   constructor(props) {
@@ -41,11 +41,20 @@ class GLRHeader extends Component {
     }
   }
   renderMyOrder() {
-    if (this.props.auth.roles.includes("member")){
-    return(
-            <NavItem key={"lineItems"} className="sidenav-close">
-              <NavLink to={"/lineitems"}>My Order</NavLink>
-            </NavItem>
+    if (this.props.auth.roles.includes("member")) {
+      return (
+        <NavItem key={"lineItems"} className="sidenav-close">
+          <NavLink to={"/lineitems"}>My Order</NavLink>
+        </NavItem>
+      );
+    }
+  }
+  renderGuardian() {
+    if (this.props.auth.roles.includes("guardian")) {
+      return (
+        <NavItem key={"guardian"} className="sidenav-close">
+          <NavLink to={"/guardian"}>Guardian Board</NavLink>
+        </NavItem>
       );
     }
   }
@@ -66,6 +75,7 @@ class GLRHeader extends Component {
           <NavItem href="/api/logout" key={"logout"}>
             Logout
           </NavItem>,
+            this.renderGuardian(),
           this.renderAdminItem(),
           this.renderCartLink(),
           <NavItem key={"points"}>

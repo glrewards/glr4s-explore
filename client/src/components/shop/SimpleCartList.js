@@ -17,7 +17,7 @@ class SimpleCartList extends Component {
 
 
   handleAmends(index,quantity){
-   console.log("handleAmends: ",index, quantity);
+   //console.log("handleAmends: ",index, quantity);
    this.props.amendQuantityOnEdit(index,quantity);
 
   }

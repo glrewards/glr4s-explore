@@ -29,6 +29,6 @@ export default class CabinetFilters extends Component {
     }
 }
 CabinetFilters.propTypes = {
-    favourites: PropTypes.string.isRequired,
+    favourites: PropTypes.bool.isRequired,
     onFavSwitchChanged: PropTypes.func.isRequired
 };

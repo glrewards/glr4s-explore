@@ -63,10 +63,10 @@ export const submitCategory = values => async dispatch => {
 
 export const updateFavourite = (userId, value, add) => async dispatch => {
  //axios.defaults.baseURL = process.env.REACT_APP_API_URL;
- console.log(process.env.REACT_APP_API_URL);
- console.log(axios.defaults.baseURL);
+ //console.log(process.env.REACT_APP_API_URL);
+ //console.log(axios);
   const instance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
+    baseURL: "/"
   });
   let url = "api/users/" + userId + "/favourites";
   let param = {"_rewardId": value};

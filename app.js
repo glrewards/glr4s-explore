@@ -69,7 +69,7 @@ require("./routes/studentRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/rewardRoutes")(app);
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production"){
   //express will serve up production assets. Remember these are built into something different for prod
   //and node needs to hand off if routes are not handled here in node.js
   app.use(express.static("client/build"));
