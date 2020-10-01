@@ -4,7 +4,8 @@ import {
   INVALIDATE_ORDER,
   LINE_MARKED_DELETE,
   LINE_UNMARKED_DELETE,
-  RECEIVE_LINEITEMS,
+  RECEIVED_LINEITEMS,
+    RECEIVED_LINEITEMS_NONE,
   RECEIVE_ORDER,
   REQUEST_LINEITEMS,
   REQUEST_ORDER,
@@ -74,7 +75,7 @@ function order(
         isFetching: true,
         didInvalidate: false
       });
-    case RECEIVE_LINEITEMS: // we received a members list of items
+    case RECEIVED_LINEITEMS: // we received a members list of items
       console.log(action);
       //this payload is only an array of line items
       //previous but set order details to this array
@@ -84,11 +85,14 @@ function order(
 
       return Object.assign({}, state, {
         isFetching: false,
+        orderExists: true,
         didInvalidate: false,
         centre: action.centre,
         orderDetail: lineItems,
         lastUpdated: action.receivedAt
       });
+    case RECEIVED_LINEITEMS_NONE:
+      return Object.assign({},state,{orderExists:false, isFetching: false});
     case INVALIDATE_ORDER:
       return Object.assign({}, state, {
         didInvalidate: true

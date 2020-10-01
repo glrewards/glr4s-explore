@@ -2,7 +2,8 @@ import axios from "axios";
 import {fetchUser} from "./index";
 
 export const REQUEST_LINEITEMS = 'REQUEST_LINEITEMS'
-export const RECEIVE_LINEITEMS = 'RECEIVED_LINEITEMS'
+export const RECEIVED_LINEITEMS = 'RECEIVED_LINEITEMS'
+export const RECEIVED_LINEITEMS_NONE = "RECEIVED_LIEITEMS_NONE"
 export const LINE_MARKED_DELETE = 'LINE_MARKED_DELETE'
 export const LINE_UNMARKED_DELETE = 'LINE_UNMARKED_DELETE'
 export const RESET_DELETED = 'LINES_DELETED'
@@ -60,10 +61,19 @@ function requestLineItems(centre,studentId){
 }
 function receiveLineItems(centre,studentId,json){
     return {
-        type: RECEIVE_LINEITEMS,
+        type: RECEIVED_LINEITEMS,
         centre,
         studentId,
         payload: json,
+        receivedAt: Date.now()
+    };
+}
+function receiveLineItemsError(centre,studentId,code){
+    return {
+        type: RECEIVED_LINEITEMS_NONE,
+        centre,
+        studentId,
+        payload: code,
         receivedAt: Date.now()
     };
 }
@@ -105,9 +115,14 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
     //console.log(centre, studentId);
     let url = "api/orders/" + centre + "/" + studentId;
     dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
-    const res = await axios.get(url);
-    //console.log(res.data);
-    dispatch(receiveLineItems(centre,studentId,res.data));
+    try {
+        const res = await axios.get(url);
+        console.log(res.data);
+        dispatch(receiveLineItems(centre, studentId, res.data));
+    }catch(e){
+        console.log("error",e);
+        dispatch(receiveLineItemsError(centre,studentId,e.code));
+    }
 }
 
 export const deleteLineItems = (centre,studentId,items) => async dispatch => {

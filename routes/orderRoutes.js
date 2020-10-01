@@ -122,7 +122,7 @@ module.exports = app => {
       res.send(data);
     } catch (err) {
       logger.error("error getting order: ", err);
-      res.send(err);
+      res.send({statusCode:404});
     }
   });
 
