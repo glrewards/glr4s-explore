@@ -45,12 +45,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/shop/SimpleCartList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shop/SimpleCartList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,13 +295,6 @@
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
       <workItem from="1601136506104" duration="4385000" />
-    </task>
-    <task id="LOCAL-00091" summary="removed all the run time warnings. about to start trimming back the xporter data used by the mongoose model">
-      <created>1570025639105</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1570025639105</updated>
     </task>
     <task id="LOCAL-00092" summary="glrs-clean:0.3: Menus cleaned up">
       <created>1570034640158</created>
@@ -644,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601137135502</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Fixed https://trello.com/c/AjodonJD">
+      <created>1601574824859</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1601574824859</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +685,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)" />
     <MESSAGE value="order working" />
     <MESSAGE value="changed hide on small for nav items" />
     <MESSAGE value="removed logging in passport.js" />
@@ -715,14 +709,15 @@
     <MESSAGE value="Fav button now changes to green if it is in favourites array" />
     <MESSAGE value="refactored function and action names and added teh add parameter so we can decide if we need to delete or add the item" />
     <MESSAGE value="added mediabox to zoom in on image" />
-    <option name="LAST_COMMIT_MESSAGE" value="added mediabox to zoom in on image" />
+    <MESSAGE value="Fixed https://trello.com/c/AjodonJD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed https://trello.com/c/AjodonJD" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1036" y="146" key="CommitChangelistDialog2" timestamp="1601137134752">
+    <state x="1036" y="146" key="CommitChangelistDialog2" timestamp="1601574824256">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="680" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1599987679888" />
-    <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601137134752" />
+    <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601574824256" />
     <state width="1065" height="274" key="GridCell.Tab.0.bottom" timestamp="1601548474526">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
