@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ShelfList from "../rewards/ShelfList";
 import { addLine } from "../../actions/cartActions";
-import { updateFavourite } from "../../actions";
+import { updateFavourite,submitLineItems } from "../../actions";
 import { fetchUser } from "../../actions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -32,7 +32,7 @@ class CabinetContainer extends Component {
     }
   }
 
-  handleAddToCartClick(
+  async handleAddToCartClick(
     rewardId,
     productTitle,
     variantId,
@@ -40,9 +40,9 @@ class CabinetContainer extends Component {
     glrpoints,
     img
   ) {
-    this.props.dispatch(
+    await this.props.dispatch(
       addLine(
-        this.props.user._student,
+        this.props.user,
         rewardId,
         productTitle,
         variantId,
@@ -51,6 +51,12 @@ class CabinetContainer extends Component {
         img
       )
     );
+    let finalReqBody = {
+      lineItems: this.props.cart.cart,
+      user: this.props.user
+    };
+    //console.log("req body",finalReqBody);
+    this.props.dispatch(submitLineItems(finalReqBody,this.props.history));
   }
 
   handleFavourites(add, rewardId) {
@@ -115,24 +121,29 @@ class CabinetContainer extends Component {
 }
 
 CabinetContainer.propTypes = {
+  user: PropTypes.object.isRequired,
   centre: PropTypes.string.isRequired,
   cabDetail: PropTypes.object,
   filterSwitch: PropTypes.bool.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
+  cart: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   const { cabinet } = state;
-  const { filterSwitch, isFetching, lastUpdated, cabDetail } = cabinet || {
+  const { filterSwitch, isFetching, lastUpdated, cabDetail} = cabinet || {
     isFetching: true
   };
   let user = state.auth;
+  let cart = state.cart;
+  console.log(state.cart);
   return {
     user,
     filterSwitch,
     cabDetail,
+    cart,
     isFetching,
     lastUpdated
   };

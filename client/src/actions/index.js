@@ -147,8 +147,12 @@ export const fetchXODStudentAchievements = (
 };
 
 export const submitLineItems = (reqBody, history) => async dispatch => {
-  const res = await axios.post("/api/orders", reqBody);
-  await dispatch(fetchUser());
-  dispatch({ type: DELETE_ALL_LINES }); //actually we clear the the local cart and then can populate the lineitems
-  history.push("/cabinet");
+  try {
+    const res = await axios.post("/api/orders", reqBody);
+    await dispatch(fetchUser());
+    dispatch({type: DELETE_ALL_LINES}); //actually we clear the the local cart and then can populate the lineitems
+    history.push("/cabinet");
+  }catch (e) {
+    console.log(e);
+  }
 };

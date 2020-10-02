@@ -16,10 +16,10 @@ export default function (state = initialState, action) {
                 cart: [
                     ...state.cart,
                     {
-                        _learningCentreId: action.centreId,
-                        _student: action.student._id,
-                        memberFirstName: action.student.firstName,
-                        memberLastName: action.student.lastName,
+                        _learningCentreId: action.user._learningCentreId,
+                        _student: action.user._student._id,
+                        memberFirstName: action.user._student.firstName,
+                        memberLastName: action.user._student.lastName,
                         _rewardId: action.rewardId,
                         productTitle: action.productTitle,
                         variantId: action.variantId,

@@ -8,7 +8,7 @@ export default class ShelfList extends Component {
     //console.log('temp');
     //console.log(this.props);
     if (!this.props.shelves) {
-      console.log(this.props);
+      //console.log(this.props);
       return <div>No data</div>;
     }
       return (

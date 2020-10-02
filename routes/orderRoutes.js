@@ -106,13 +106,13 @@ module.exports = app => {
 */
   app.put("/api/orders/deletelines/:centreId/:studentId", async (req, res) => {
     logger.debug("Received request here ", req.params);
-        //TODO: this url needs to be cleaned up
+    //TODO: this url needs to be cleaned up
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/deleteItems";
     let options = {
       headers: {
         "X-API-KEY": keys.glrAPIGatewayKey,
-        "centreid": req.params.centreId,
-        "userid": req.params.studentId
+        centreid: req.params.centreId,
+        userid: req.params.studentId
       }
     };
     try {
@@ -122,25 +122,27 @@ module.exports = app => {
       res.send(data);
     } catch (err) {
       logger.error("error getting order: ", err);
-      res.send({statusCode:404});
+      res.send({ statusCode: 404 });
     }
   });
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
     logger.debug("Received request here ", req.params);
-    let userId = req.body.user._student._id;
-    logger.debug("userId: " + userId);
-    let _learningCentreId = req.body.user._learningCentreId;
-    logger.debug("learningCentre: " + _learningCentreId);
-    let url = keys.glrAPIGateway + keys.glrAPIOrder;
-    let options = {
-      headers: {
-        "X-API-KEY": keys.glrAPIGatewayKey,
-        userId: userId,
-        centreId: _learningCentreId
-      }
-    };
+    logger.debug(req.body);
     try {
+      let userId = req.body.user._student._id;
+      logger.debug("userId: " + userId);
+      let _learningCentreId = req.body.user._learningCentreId;
+      logger.debug("learningCentre: " + _learningCentreId);
+      let url = keys.glrAPIGateway + keys.glrAPIOrder;
+      let options = {
+        headers: {
+          "X-API-KEY": keys.glrAPIGatewayKey,
+          userId: userId,
+          centreId: _learningCentreId
+        }
+      };
+
       logger.info("calling axios: " + url);
       const axiosResponse = await axios.post(url, req.body, options);
       const data = axiosResponse.data;
@@ -150,5 +152,4 @@ module.exports = app => {
       res.status(400).send(err);
     }
   });
-
 };

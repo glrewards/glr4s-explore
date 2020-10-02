@@ -11,8 +11,8 @@ export const DELETE_ALL_LINES = 'DELETE_ALL_LINES'
  */
 
 
-export function addLine(student,rewardId, productTitle, variantId, quantity,glrpoints, img) {
-    return { type: ADD_LINE, student, rewardId, productTitle, variantId, quantity, glrpoints,img }
+export function addLine(user,rewardId, productTitle, variantId, quantity,glrpoints, img) {
+    return { type: ADD_LINE, user, rewardId, productTitle, variantId, quantity, glrpoints,img }
 }
 
 export function amendLine(index, quantity) {
