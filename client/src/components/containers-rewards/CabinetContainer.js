@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import ShelfList from "../rewards/ShelfList";
 import { addLine } from "../../actions/cartActions";
-import { updateFavourite,submitLineItems } from "../../actions";
+import { submitLineItems } from "../../actions/orderActions";
+import { updateFavourite } from "../../actions";
 import { fetchUser } from "../../actions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchCabinet, invalidateCabinet,filterCabinet } from "../../actions/rewardActions";
+import {
+  fetchCabinet,
+  invalidateCabinet,
+  filterCabinet
+} from "../../actions/rewardActions";
 import { ProgressBar } from "react-materialize";
 import CabinetFilters from "../rewards/CabinetFilters";
 
@@ -56,13 +61,13 @@ class CabinetContainer extends Component {
       user: this.props.user
     };
     //console.log("req body",finalReqBody);
-    this.props.dispatch(submitLineItems(finalReqBody,this.props.history));
+    this.props.dispatch(submitLineItems(finalReqBody, this.props.history));
   }
 
   handleFavourites(add, rewardId) {
-    console.log("rewardId: ", rewardId);
-    console.log("userId: ", this.props.user._id);
-    console.log(add);
+    //console.log("rewardId: ", rewardId);
+    //console.log("userId: ", this.props.user._id);
+    //console.log(add);
     let favourite = this.props.user.favourites.find(item => {
       return item._rewardId === rewardId;
     });
@@ -74,8 +79,8 @@ class CabinetContainer extends Component {
   }
 
   handleFavSwitchChanged(event) {
-    const {dispatch} = this.props;
-    console.log(event.target.checked);
+    const { dispatch } = this.props;
+    //console.log(event.target.checked);
     dispatch(filterCabinet(event.target.checked));
   }
 
@@ -98,12 +103,13 @@ class CabinetContainer extends Component {
             <h2>No Cabinet</h2>
           )}
           {JSON.stringify(cabDetail) !== JSON.stringify({}) && (
-            <div style={{ opacity: isFetching ? 0.9 : 1 }}>
+            <div style={{ opacity: isFetching ? 0.5 : 1 }}>
               <CabinetFilters
                 favourites={this.props.filterSwitch}
                 onFavSwitchChanged={this.handleFavSwitchChanged}
               />
               <ShelfList
+                isFetching={this.props.isFetching}
                 favOnly={this.props.filterSwitch}
                 isAdmin={this.props.user.roles.includes("admin")}
                 isMember={this.props.user.roles.includes("member")}
@@ -133,12 +139,12 @@ CabinetContainer.propTypes = {
 
 function mapStateToProps(state) {
   const { cabinet } = state;
-  const { filterSwitch, isFetching, lastUpdated, cabDetail} = cabinet || {
+  const { filterSwitch, isFetching, lastUpdated, cabDetail } = cabinet || {
     isFetching: true
   };
   let user = state.auth;
   let cart = state.cart;
-  console.log(state.cart);
+  //console.log(state.cart);
   return {
     user,
     filterSwitch,

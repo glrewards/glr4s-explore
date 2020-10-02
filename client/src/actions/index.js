@@ -146,13 +146,4 @@ export const fetchXODStudentAchievements = (
   dispatch({ type: FETCH_XOD_ACHIEVEMENTS, payload: res.data });
 };
 
-export const submitLineItems = (reqBody, history) => async dispatch => {
-  try {
-    const res = await axios.post("/api/orders", reqBody);
-    await dispatch(fetchUser());
-    dispatch({type: DELETE_ALL_LINES}); //actually we clear the the local cart and then can populate the lineitems
-    history.push("/cabinet");
-  }catch (e) {
-    console.log(e);
-  }
-};
+

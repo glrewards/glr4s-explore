@@ -71,7 +71,7 @@ export default class ShelfList extends Component {
                                 }
                                 className="yellow darken-2"
                                 waves="purple"
-                                onClick={() => {
+                                onClick={(e) => {   console.log(e.target.className);
                                   this.props.onAddToCartClickShelf(
                                     reward._id,
                                     reward._shopifyProduct.title,
@@ -94,7 +94,8 @@ export default class ShelfList extends Component {
                                     : "yellow darken-2"
                                 }
                                 waves="purple"
-                                onClick={() => {
+                                onClick={(e) => {
+
                                   this.props.onClickFavourites(
                                     !this.props.favourites.find(item => {
                                       return item._rewardId === reward._id;
@@ -120,6 +121,7 @@ export default class ShelfList extends Component {
 }
 
 ShelfList.propTypes = {
+  isFetching: PropTypes.bool.isRequired,
   favOnly: PropTypes.bool.isRequired,
   isAdmin: PropTypes.bool,
   isMember: PropTypes.bool,

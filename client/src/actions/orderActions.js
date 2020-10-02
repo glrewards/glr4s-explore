@@ -1,5 +1,6 @@
 import axios from "axios";
 import {fetchUser} from "./index";
+import {DELETE_ALL_LINES} from "./cartActions";
 
 export const REQUEST_LINEITEMS = 'REQUEST_LINEITEMS'
 export const RECEIVED_LINEITEMS = 'RECEIVED_LINEITEMS'
@@ -149,5 +150,16 @@ export const deleteLineItems = (centre,studentId,items) => async dispatch => {
          await dispatch(fetchUser());
     }
 }
+
+export const submitLineItems = (reqBody, history) => async dispatch => {
+    try {
+        const res = await axios.post("/api/orders", reqBody);
+        await dispatch(fetchUser());
+        dispatch({type: DELETE_ALL_LINES}); //actually we clear the the local cart and then can populate the lineitems
+        history.push("/cabinet");
+    }catch (e) {
+        console.log(e);
+    }
+};
 
 

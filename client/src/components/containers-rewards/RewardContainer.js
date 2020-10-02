@@ -9,6 +9,7 @@ import {
   invalidateCabinet,
   filterCabinet
 } from "../../actions/rewardActions";
+import {submitLineItems} from "../../actions/orderActions";
 
 
 class RewardContainer extends Component {
@@ -31,10 +32,10 @@ class RewardContainer extends Component {
     }
   }
 
-  handleAddToCart(rewardId, productTitle, variantId, quantity, glrpoints, img) {
-    this.props.dispatch(
+  async handleAddToCart(rewardId, productTitle, variantId, quantity, glrpoints, img) {
+    await this.props.dispatch(
       addLine(
-        this.props.user._student,
+        this.props.user,
         rewardId,
         productTitle,
         variantId,
@@ -43,6 +44,12 @@ class RewardContainer extends Component {
         img
       )
     );
+    let finalReqBody = {
+      lineItems: this.props.cart.cart,
+      user: this.props.user
+    };
+    //console.log("req body",finalReqBody);
+    this.props.dispatch(submitLineItems(finalReqBody, this.props.history));
   }
 
   handleFavourite(add, rewardId) {
@@ -89,6 +96,7 @@ function mapStateToProps(state, ownProps) {
   const { cabinet } = state;
   const { cabDetail } = cabinet;
   let user = state.auth;
+  let cart = state.cart;
   let rewards = [];
 
   //First We need to find the actual reward and map it into props
@@ -123,6 +131,7 @@ function mapStateToProps(state, ownProps) {
       favourite = true;
     }
     return {
+      cart,
       user,
       reward,
       favourite
