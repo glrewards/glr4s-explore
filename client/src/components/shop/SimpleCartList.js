@@ -9,8 +9,8 @@ import { withRouter } from "react-router-dom";
 class SimpleCartList extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    console.log(this.state);
+    //console.log(props);
+    //console.log(this.state);
     this.saveLines = this.saveLines.bind(this);
     this.handleAmends = this.handleAmends.bind(this);
   }
@@ -34,7 +34,7 @@ class SimpleCartList extends Component {
     this.props.submitLineItemsOnClick(finalReqBody,this.props.history);
   }
   renderListItems() {
-    console.log("renderListItems: ", this.props);
+    //console.log("renderListItems: ", this.props);
     return this.props.cart.map((line, index) => {
       return (
         <div className="row" key={index}>
@@ -44,7 +44,7 @@ class SimpleCartList extends Component {
                 <img
                   className="circle"
                   src={line.img}
-                  alt={line.propductTitle}
+                  alt={line.productTitle}
                 />
                 <span className="card-title">{line.productTitle}</span>
                   <div>

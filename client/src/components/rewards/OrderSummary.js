@@ -61,8 +61,10 @@ export default class OrderSummary extends Component {
 }
 
 OrderSummary.propTypes = {
+
   id: PropTypes.string,
   finStatus: PropTypes.string,
+  orderExists: PropTypes.bool,
   fulfillStatus: PropTypes.string,
   totalLizardCards: PropTypes.number.isRequired,
   totalLines: PropTypes.number.isRequired,

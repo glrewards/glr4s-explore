@@ -57,16 +57,14 @@ class MemberOrderContainer extends Component {
   }
 
   render() {
-    const { user, orderDetail, isFetching } = this.props;
-    if (!orderDetail) return <ProgressBar />;
+    const { user, orderDetail, isFetching,orderExists } = this.props;
+    if (!orderDetail && this.props.orderExists) return <ProgressBar />;
     return (
       <div>
         {isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
           <ProgressBar />
         )}
-        {!isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
-          <ProgressBar />
-        )}
+        {!isFetching && !orderExists && (<div>No Order Exists for this centre. Add items to create a new order</div>)}
         {JSON.stringify(orderDetail) !== JSON.stringify({}) && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <OrderDetailCommands deleteClick={this.handleDeletePost} />
@@ -83,6 +81,7 @@ class MemberOrderContainer extends Component {
 
 MemberOrderContainer.propTypes = {
   centre: PropTypes.string,
+  orderExists: PropTypes.bool,
   orderDetail: PropTypes.object,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
@@ -91,7 +90,7 @@ MemberOrderContainer.propTypes = {
 
 function mapStateToProps(state) {
   const { order } = state;
-  const { isFetching, lastUpdated, orderDetail, deletes } = order || {
+  const { isFetching, lastUpdated, orderDetail, deletes, orderExists } = order || {
     isFetching: true
   };
   let user = state.auth;
@@ -100,7 +99,8 @@ function mapStateToProps(state) {
     deletes,
     orderDetail,
     isFetching,
-    lastUpdated
+    lastUpdated,
+    orderExists
   };
 }
 export default connect(mapStateToProps)(MemberOrderContainer);
