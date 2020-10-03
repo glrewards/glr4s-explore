@@ -69,7 +69,7 @@ export default class ShelfList extends Component {
                                 disabled={
                                   !this.props.isMember || reward.count === 0
                                 }
-                                className="yellow darken-2"
+                                className={"yellow darken-2"}
                                 waves="purple"
                                 onClick={(e) => {   console.log(e.target.className);
                                   this.props.onAddToCartClickShelf(

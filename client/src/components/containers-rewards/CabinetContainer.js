@@ -61,7 +61,7 @@ class CabinetContainer extends Component {
       user: this.props.user
     };
     //console.log("req body",finalReqBody);
-    this.props.dispatch(submitLineItems(finalReqBody, this.props.history));
+    await this.props.dispatch(submitLineItems(finalReqBody, this.props.history));
   }
 
   handleFavourites(add, rewardId) {
@@ -114,6 +114,7 @@ class CabinetContainer extends Component {
                 isAdmin={this.props.user.roles.includes("admin")}
                 isMember={this.props.user.roles.includes("member")}
                 favourites={this.props.user.favourites}
+                lineItems={this.props.lineItems}
                 shelves={cabDetail.shelves}
                 onAddToCartClickShelf={this.handleAddToCartClick}
                 onClickFavourites={this.handleFavourites}

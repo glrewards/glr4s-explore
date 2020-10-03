@@ -105,7 +105,7 @@ module.exports = app => {
     });
 */
   app.put("/api/orders/deletelines/:centreId/:studentId", async (req, res) => {
-    logger.debug("Received request here ", req.params);
+    //logger.debug("Received request here ", req.params);
     //TODO: this url needs to be cleaned up
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/deleteItems";
     let options = {
@@ -120,6 +120,7 @@ module.exports = app => {
       const axiosResponse = await axios.put(url, req.body, options);
       const data = axiosResponse.data;
       res.send(data);
+      console.log("put order",data);
     } catch (err) {
       logger.error("error getting order: ", err);
       res.send({ statusCode: 404 });
@@ -128,7 +129,7 @@ module.exports = app => {
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
     logger.debug("Received request here ", req.params);
-    logger.debug(req.body);
+    //logger.debug(req.body);
     try {
       let userId = req.body.user._student._id;
       logger.debug("userId: " + userId);
@@ -147,6 +148,7 @@ module.exports = app => {
       const axiosResponse = await axios.post(url, req.body, options);
       const data = axiosResponse.data;
       res.send(data);
+      //console.log("post order", data);
     } catch (err) {
       logger.error("error getting order: ", err);
       res.status(400).send(err);
