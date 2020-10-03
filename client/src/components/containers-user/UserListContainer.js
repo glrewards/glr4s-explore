@@ -7,13 +7,24 @@ import React, { Component } from "react";
 //import {Row, Col, CardTitle, ProgressBar} from "react-materialize";
 import { connect } from "react-redux";
 import UserList from "../user/UserList";
+import {fetchCabinet, invalidateCabinet} from "../../actions/rewardActions";
 
 class UserListContainer extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        if (this.props.user) {
+            // we need to retrieve the user details for each related use
 
+        }
+    }
     render() {
+        if (!this.props.user){
+            return (
+                <div> no user data</div>
+            )
+        }
         return(
             <UserList
                 id={"ererwr243545432"}
@@ -22,12 +33,14 @@ class UserListContainer extends Component {
                 userName={"jdoe"}
                 email={"jdoe@exxample.com"}
                 address={"120 acacia avenue"}
-                relatedUsers={[]}
+                relatedUsers={{}}
             />
         )
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
+    let user = state.auth;
+    return user;
 }
 export default connect(mapStateToProps)(UserListContainer);

@@ -1,12 +1,14 @@
 const mongoose = require("mongoose"); //note how we are not requiring in our Model classes here - just mongoose
 const passport = require("passport");
 const crypto = require('crypto');
+
 let GoogleStrategy = require("passport-google-oauth20").Strategy;
 let SlackStrategy = require("passport-slack-oauth2").Strategy;
 let LocalStrategy = require("passport-local").Strategy;
 const keys = require("../config/keys");
 
 let User = mongoose.model("users"); //This is how we reference our model class as user - Not using require
+//let RelatedModel = mongoose.model("related");
 //const Student = mongoose.model("students");
 
 passport.serializeUser((user, done) => {
@@ -14,8 +16,9 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
+    let opts = [{path: '_student'},{path: '_relatedUserIds', model: 'users'}];
   User.findById(id)
-    .populate("_student")
+    .populate(opts)
     .then(user => {
       done(null, user);
     });
@@ -25,10 +28,11 @@ passport.use(
   new LocalStrategy(
     async (username, password, done) => {
       // check in mongo if a user with username exists or not
-      const existingUser = await User.findOne({ username: username }).populate(
-        "_student"
-      );
-      console.log(existingUser);
+        let opts = [{path: '_student'},{path: '_relatedUserIds', model: 'users'}]
+      let existingUser = await User.findOne({ username: username }).populate(opts);
+        //console.log(JSON.stringify(existingUser));
+        //await existingUser.populate('_relatedUserIds').execPopulate();
+      console.log(JSON.stringify(existingUser));
       if (!existingUser) {
         return done(null, false);
       }

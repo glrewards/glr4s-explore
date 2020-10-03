@@ -18,6 +18,7 @@ class GuardianDashboard extends Component {
     super(props);
   }
   render() {
+      console.log("GuardianDashBoard Props", this.props);
     return (
       <div>
           <Card className={"blue lighten-3"}>
@@ -28,20 +29,20 @@ class GuardianDashboard extends Component {
           </Col>
           </Row>
         <Row>
-            <Col s ={6}>
-                <UserDetailContainer />
+            <Col s ={12}>
+                <UserDetailContainer user={this.props.user}/>
             </Col>
 
-            <Col s={6}><UserListContainer /></Col>
+            <Col s={12}><UserListContainer /></Col>
         </Row>
           </Card>
       </div>
     );
   }
 }
+
 GuardianDashboard.propTypes = {
-  firstName: PropTypes.string,
-  lastName: PropTypes.string
+  user: PropTypes.object.isRequired
 };
 
 export default GuardianDashboard;

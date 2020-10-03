@@ -6,6 +6,7 @@ class UserDetailCard extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <div>
@@ -16,7 +17,7 @@ class UserDetailCard extends Component {
           textClassName="white-text"
           title={this.props.firstName + " " + this.props.lastName}
         >
-            <Row><Col>email: {this.props.email}</Col>
+            <Row><Col s={12} className={"flow-text left-align"}>email: {this.props.email}</Col>
                 <Col><strong>Address:</strong> {this.props.address}</Col></Row>
         </Card>
       </div>

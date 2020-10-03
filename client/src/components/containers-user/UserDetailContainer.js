@@ -2,28 +2,51 @@ import React, { Component } from "react";
 //import {Row, Col, CardTitle, ProgressBar} from "react-materialize";
 import { connect } from "react-redux";
 import UserDetailCard from "../user/UserDetailCard";
+import {fetchCabinet, invalidateCabinet} from "../../actions/rewardActions";
+import PropTypes from "prop-types";
+import GuardianDashboard from "../user/GuardianDashboard";
 
 
 class UserDetailContainer extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        console.log(this.props);
+        if (this.props.user) {
+            //this.props.dispatch(invalidateCabinet(this.props.user._learningCentreId));
+            //this.props.dispatch(fetchCabinet(this.props.user._learningCentreId));
+        }
+    }
 
     render() {
+        if (!this.props.user){
+            return (
+                <div> no user data</div>
+            )
+        }
         return(
             <UserDetailCard
-                id={"ererwr243545432"}
-                firstName={"john"}
-                lastName={"doe"}
-                userName={"jdoe"}
-                email={"jdoe@exxample.com"}
-                address={"120 acacia avenue"}
-                relatedUsers={[]}
+
+                id={this.props.user._id}
+                firstName={this.props.user.firstName}
+                lastName={this.props.user.lastName}
+                userName={this.props.user.userName}
+                email={this.props.user.email}
+                address={this.props.user.address}
+                relatedUsers={this.props.user._relatedUserIds}
             />
         )
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
+    //the current user
+    let user = state.auth;
+    return user;
 }
+
+UserDetailContainer.propTypes = {
+    user: PropTypes.object.isRequired
+};
 export default connect(mapStateToProps)(UserDetailContainer);

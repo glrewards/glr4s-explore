@@ -27,7 +27,7 @@ import {UPDATE_FAVS} from "./types";
 export const fetchUser = () => async dispatch => {
 
   let res = await axios.get("/api/current_user");
-  console.log("in fetchUser",res.data);
+  //console.log("in fetchUser",res.data);
     dispatch({ type: FETCH_USER, payload: res.data });
 };
 

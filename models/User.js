@@ -24,5 +24,7 @@ const userSchema = new Schema({
     "resetNeeded": Boolean
 });
 
+
 mongoose.model('users',userSchema);
+mongoose.model('related', userSchema, 'related');
 
