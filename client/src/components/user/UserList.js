@@ -14,30 +14,35 @@ class UserList extends Component {
     super(props);
   }
   render() {
+    //create the rows
+    let items = [];
+    for (let i = 0; i < this.props.userList.length; i++) {
+      items.push(
+        <CollectionItem href="#">
+          {this.props.userList[i].firstName +
+            " " +
+            this.props.userList[i].lastName}{" "}
+        </CollectionItem>
+      );
+    }
+
     return (
-        <div>
-            <h2 className={"center-align"}> Related Members</h2>
+      <div>
+        <h2 className={"center-align"}> Related Members</h2>
         <Row s={12}>
           <Col s={12}>
             <Collection className={"blue lighten-3 center-align"}>
-              <CollectionItem href="#">user one</CollectionItem>
-                <CollectionItem  href="#">user two</CollectionItem>
+              {items}
             </Collection>
           </Col>
         </Row>
-        </div>
+      </div>
     );
   }
 }
 
 UserList.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  userName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
-  relatedUsers: PropTypes.array.isRequired
+  userList: PropTypes.array.isRequired
 };
 
 export default UserList;

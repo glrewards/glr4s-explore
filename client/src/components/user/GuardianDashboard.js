@@ -33,7 +33,7 @@ class GuardianDashboard extends Component {
                 <UserDetailContainer user={this.props.user}/>
             </Col>
 
-            <Col s={12}><UserListContainer /></Col>
+            <Col s={12}><UserListContainer user={this.props.user} /></Col>
         </Row>
           </Card>
       </div>

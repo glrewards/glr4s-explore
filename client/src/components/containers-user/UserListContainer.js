@@ -4,6 +4,7 @@ for example a list of users in a given centre or a list of users related to a gi
  */
 
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 //import {Row, Col, CardTitle, ProgressBar} from "react-materialize";
 import { connect } from "react-redux";
 import UserList from "../user/UserList";
@@ -14,33 +15,30 @@ class UserListContainer extends Component {
         super(props);
     }
     componentDidMount() {
-        if (this.props.user) {
-            // we need to retrieve the user details for each related use
-
-        }
+        console.log(this.props.userList);
     }
     render() {
-        if (!this.props.user){
+        if (!this.props.userList){
             return (
                 <div> no user data</div>
             )
         }
-        return(
-            <UserList
-                id={"ererwr243545432"}
-                firstName={"john"}
-                lastName={"doe"}
-                userName={"jdoe"}
-                email={"jdoe@exxample.com"}
-                address={"120 acacia avenue"}
-                relatedUsers={{}}
-            />
-        )
+          return(
+                <UserList
+                    userList = {this.props.userList}
+                />
+          )
+
     }
 }
 
 function mapStateToProps(state) {
-    let user = state.auth;
-    return user;
+    let userList = state.auth._relatedUserIds;
+    return {userList};
+}
+
+UserListContainer.propTypes = {
+    userList: PropTypes.array.isRequired
+
 }
 export default connect(mapStateToProps)(UserListContainer);

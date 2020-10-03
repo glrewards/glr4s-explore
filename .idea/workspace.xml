@@ -25,14 +25,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/UserDetailContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserDetailContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/UserListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserListContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,14 +283,7 @@
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
       <workItem from="1601313155631" duration="7272000" />
-      <workItem from="1601629111369" duration="31154000" />
-    </task>
-    <task id="LOCAL-00104" summary="small changes to simplify Cabinet">
-      <created>1586622949692</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1586622949692</updated>
+      <workItem from="1601629111369" duration="34120000" />
     </task>
     <task id="LOCAL-00105" summary="small changes to simplify Cabinet">
       <created>1586707962818</created>
@@ -633,7 +621,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601738029590</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch">
+      <created>1601761875895</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1601761875895</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +674,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basic redux storage for admin deletes working - now need to fix the delete button functions" />
     <MESSAGE value="delete seems to be working - promote" />
     <MESSAGE value="working with post order now calling api layer" />
     <MESSAGE value="cleaned up orderRoutes.js" />
@@ -704,17 +698,18 @@
     <MESSAGE value="wont add duplicate items to order https://trello.com/c/Cs8dW43T" />
     <MESSAGE value="finished order processing clean up for now. Moving on to Guardian." />
     <MESSAGE value="basic container and component structure created for Guardian view" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic container and component structure created for Guardian view" />
+    <MESSAGE value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
+    <option name="LAST_COMMIT_MESSAGE" value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="202" key="#Deployment" timestamp="1601276263599">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="180" y="202" key="#Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1601276263599" />
-    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601738029406">
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601761875774">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601738029406" />
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601761875774" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -724,39 +719,39 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601077582774" />
-    <state width="1659" height="246" key="GridCell.Tab.0.bottom" timestamp="1601749099082">
+    <state width="1659" height="246" key="GridCell.Tab.0.bottom" timestamp="1601764143721">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1659" height="246" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601749099082" />
+    <state width="1659" height="246" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143721" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1659" height="246" key="GridCell.Tab.0.center" timestamp="1601749099081">
+    <state width="1659" height="246" key="GridCell.Tab.0.center" timestamp="1601764143720">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1659" height="246" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601749099081" />
+    <state width="1659" height="246" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143720" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1659" height="246" key="GridCell.Tab.0.left" timestamp="1601749099080">
+    <state width="1659" height="246" key="GridCell.Tab.0.left" timestamp="1601764143719">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1659" height="246" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601749099080" />
+    <state width="1659" height="246" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143719" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1659" height="246" key="GridCell.Tab.0.right" timestamp="1601749099082">
+    <state width="1659" height="246" key="GridCell.Tab.0.right" timestamp="1601764143720">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1659" height="246" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601749099082" />
+    <state width="1659" height="246" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143720" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
     <state x="485" y="305" key="MultipleFileMergeDialog" timestamp="1601224836212">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601738036270">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601761883296">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601738036270" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601761883296" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="114" y="123" width="1466" height="827" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1601286435435">
       <screen x="0" y="23" width="1680" height="1027" />
