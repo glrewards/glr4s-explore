@@ -17,8 +17,8 @@ class UserDetailCard extends Component {
           textClassName="white-text"
           title={this.props.firstName + " " + this.props.lastName}
         >
-            <Row><Col s={12} className={"flow-text left-align"}>email: {this.props.email}</Col>
-                <Col><strong>Address:</strong> {this.props.address}</Col></Row>
+            <Row><Col s={6} className={"flow-text left-align"}>email: {this.props.email}</Col>
+                <Col s={6} className={"flow-text"}>Address: {this.props.address}</Col></Row>
         </Card>
       </div>
     );

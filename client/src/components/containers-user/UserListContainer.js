@@ -13,9 +13,13 @@ import {fetchCabinet, invalidateCabinet} from "../../actions/rewardActions";
 class UserListContainer extends Component {
     constructor(props) {
         super(props);
+        this.handleRelatedSelected = this.handleRelatedSelected.bind(this);
     }
     componentDidMount() {
         console.log(this.props.userList);
+    }
+    handleRelatedSelected(event){
+        console.log(event.target);
     }
     render() {
         if (!this.props.userList){
@@ -24,7 +28,7 @@ class UserListContainer extends Component {
             )
         }
           return(
-                <UserList
+                <UserList onUserSelected={this.handleRelatedSelected}
                     userList = {this.props.userList}
                 />
           )
@@ -33,8 +37,12 @@ class UserListContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    let userList = state.auth._relatedUserIds;
-    return {userList};
+    let user = state.auth;
+    let userList = null;
+    if (user){
+        userList = state.auth._relatedUserIds;
+    }
+    return {user,userList};
 }
 
 UserListContainer.propTypes = {

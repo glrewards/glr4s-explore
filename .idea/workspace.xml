@@ -24,10 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/GuardianMemberOrderContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserSelectContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/user/UserSelect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/UserListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserListContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +107,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components/containers-rewards" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -112,19 +120,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$/models/rewards" />
-      <recent name="$PROJECT_DIR$/client/src/images" />
-      <recent name="$PROJECT_DIR$/client/src/reducers" />
-      <recent name="$PROJECT_DIR$/models/xod" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/components/user" />
       <recent name="$PROJECT_DIR$/client/src/components/member" />
       <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
       <recent name="$PROJECT_DIR$/client/src/images" />
       <recent name="$PROJECT_DIR$/client/src/trash" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/models/rewards" />
+      <recent name="$PROJECT_DIR$/client/src/images" />
+      <recent name="$PROJECT_DIR$/client/src/reducers" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -283,14 +291,10 @@
       <workItem from="1599941149899" duration="3965000" />
       <workItem from="1599986453964" duration="2514000" />
       <workItem from="1601313155631" duration="7272000" />
-      <workItem from="1601629111369" duration="34120000" />
-    </task>
-    <task id="LOCAL-00105" summary="small changes to simplify Cabinet">
-      <created>1586707962818</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1586707962819</updated>
+      <workItem from="1601629111369" duration="36289000" />
+      <workItem from="1602527757703" duration="43000" />
+      <workItem from="1602527939042" duration="9262000" />
+      <workItem from="1602659378251" duration="10744000" />
     </task>
     <task id="LOCAL-00106" summary="major authentication changes - HUGE - and working">
       <created>1586821485556</created>
@@ -628,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601761875895</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="basic plumbing working">
+      <created>1601764915126</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1601764915126</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +685,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete seems to be working - promote" />
     <MESSAGE value="working with post order now calling api layer" />
     <MESSAGE value="cleaned up orderRoutes.js" />
     <MESSAGE value="made changes to secure the app when deployed - need to set a new production env variable" />
@@ -699,17 +709,18 @@
     <MESSAGE value="finished order processing clean up for now. Moving on to Guardian." />
     <MESSAGE value="basic container and component structure created for Guardian view" />
     <MESSAGE value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
-    <option name="LAST_COMMIT_MESSAGE" value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
+    <MESSAGE value="basic plumbing working" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic plumbing working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="202" key="#Deployment" timestamp="1601276263599">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="180" y="202" key="#Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1601276263599" />
-    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601761875774">
+    <state x="157" y="112" key="CommitChangelistDialog2" timestamp="1601764914983">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601761875774" />
+    <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601764914983" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -719,39 +730,39 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601077582774" />
-    <state width="1659" height="246" key="GridCell.Tab.0.bottom" timestamp="1601764143721">
+    <state width="1659" height="246" key="GridCell.Tab.0.bottom" timestamp="1602657540356">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1659" height="246" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143721" />
+    <state width="1659" height="246" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540356" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1659" height="246" key="GridCell.Tab.0.center" timestamp="1601764143720">
+    <state width="1659" height="246" key="GridCell.Tab.0.center" timestamp="1602657540355">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1659" height="246" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143720" />
+    <state width="1659" height="246" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540355" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1659" height="246" key="GridCell.Tab.0.left" timestamp="1601764143719">
+    <state width="1659" height="246" key="GridCell.Tab.0.left" timestamp="1602657540355">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1659" height="246" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143719" />
+    <state width="1659" height="246" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540355" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1659" height="246" key="GridCell.Tab.0.right" timestamp="1601764143720">
+    <state width="1659" height="246" key="GridCell.Tab.0.right" timestamp="1602657540356">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1659" height="246" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601764143720" />
+    <state width="1659" height="246" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540356" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
     <state x="485" y="305" key="MultipleFileMergeDialog" timestamp="1601224836212">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601761883296">
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2" timestamp="1601764981586">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601761883296" />
+    <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601764981586" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />
     <state x="114" y="123" width="1466" height="827" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1601286435435">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -777,10 +788,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="145" y="352" key="jetbrains.nodejs.interpreters-dialog/0.23.1680.1027@0.23.1680.1027" timestamp="1599170419242" />
-    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1601742975608">
+    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1602575233800">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1601742975608" />
+    <state x="768" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1602575233800" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

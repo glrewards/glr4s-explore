@@ -18,20 +18,27 @@ class UserList extends Component {
     let items = [];
     for (let i = 0; i < this.props.userList.length; i++) {
       items.push(
-        <CollectionItem href="#">
+        <CollectionItem key={this.props.userList[i].userId} className={"blue-text lighten-3 "}>
           {this.props.userList[i].firstName +
             " " +
             this.props.userList[i].lastName}{" "}
+          <a
+              className="secondary-content"
+              href="javascript:void(0)"
+          >
+            <Icon>
+              send
+            </Icon>
+          </a>
         </CollectionItem>
       );
     }
 
     return (
       <div>
-        <h2 className={"center-align"}> Related Members</h2>
-        <Row s={12}>
+        <Row>
           <Col s={12}>
-            <Collection className={"blue lighten-3 center-align"}>
+            <Collection className={"blue-text lighten-3 center-align"} style={{"listStyleType": "none"}}>
               {items}
             </Collection>
           </Col>
@@ -42,7 +49,8 @@ class UserList extends Component {
 }
 
 UserList.propTypes = {
-  userList: PropTypes.array.isRequired
+  userList: PropTypes.array.isRequired,
+  onUserSelected: PropTypes.func.isRequired
 };
 
 export default UserList;

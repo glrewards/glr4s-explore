@@ -1,5 +1,6 @@
 import {SET_PROGRESS_BAR} from "../actions/types";
 import {SET_STUDENT_PAGES} from "../actions/types";
+import {RELATED_USER_SELECTED} from "../actions/UIActions";
 
 export const ui = (state = {}, action) => {
     switch (action.type) {
@@ -7,6 +8,8 @@ export const ui = (state = {}, action) => {
             return Object.assign({}, state, { progressBarStatus: action.isOpen });
         case SET_STUDENT_PAGES:
             return Object.assign({},state, action.payload);
+        case RELATED_USER_SELECTED:
+            return Object.assign({},state,action. payload);
         default:
             return state;
     }
