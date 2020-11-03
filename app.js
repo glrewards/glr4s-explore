@@ -65,6 +65,7 @@ require("./routes/authRoutes")(app);
 require("./routes/orderRoutes")(app);
 require("./routes/billingRoutes")(app);
 //require("./routes/shopRoutes")(app); removed so it did not clash with product routes
+require("./routes/memberRoutes")(app);
 require("./routes/studentRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/rewardRoutes")(app);

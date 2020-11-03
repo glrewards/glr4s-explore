@@ -31,8 +31,7 @@ UserDetailCard.propTypes = {
   lastName: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
-  relatedUsers: PropTypes.array.isRequired
+  address: PropTypes.string.isRequired
 };
 
 export default UserDetailCard;

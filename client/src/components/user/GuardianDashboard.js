@@ -9,8 +9,8 @@ import {
     Select
 } from "react-materialize";
 import UserDetailContainer from "../containers-user/UserDetailContainer";
-import UserListContainer from "../containers-user/UserListContainer";
 import UserSelectContainer from "../containers-user/UserSelectContainer";
+import MemberCardContainer from "../containers-rewards/MemberCardContainer";
 import GuardianMemberOrderContainer from "../containers-rewards/GuardianMemberOrderContainer";
 
 class GuardianDashboard extends Component {
@@ -29,7 +29,7 @@ class GuardianDashboard extends Component {
           </Row>
           <Row>
             <Col s={4}>
-              <UserSelectContainer user={this.props.user} />
+              <UserSelectContainer user={this.props.user} related={this.props.related} />
             </Col>
             <Col s={8}>
               <Tabs className="tabs-transparent blue">
@@ -43,7 +43,7 @@ class GuardianDashboard extends Component {
                   }}
                   title="User Details"
                 >
-                  Member Details Card Here
+                  <MemberCardContainer />
                 </Tab>
                 <Tab
                   className="white-text"
@@ -77,7 +77,8 @@ class GuardianDashboard extends Component {
 }
 
 GuardianDashboard.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+    related: PropTypes.array
 };
 
 export default GuardianDashboard;

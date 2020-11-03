@@ -9,7 +9,11 @@ export const ui = (state = {}, action) => {
         case SET_STUDENT_PAGES:
             return Object.assign({},state, action.payload);
         case RELATED_USER_SELECTED:
-            return Object.assign({},state,action. payload);
+            console.log(action);
+            return {
+                ...state,
+            selectedmember: action.userId
+            };
         default:
             return state;
     }

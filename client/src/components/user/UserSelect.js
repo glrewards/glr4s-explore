@@ -16,7 +16,7 @@ class UserSelect extends Component {
             for (let i = 0; i < this.props.userList.length; i++) {
                 //console.log(this.props.userList[i]);
                 items.push(
-                    <option value={this.props.userList[i]._id}>
+                    <option value={this.props.userList[i]._id} key={this.props.userList[i]._id}>
                         {this.props.userList[i].firstName + " " + this.props.userList[i].lastName}
                     </option>
                 );
@@ -28,7 +28,8 @@ class UserSelect extends Component {
                             <Select className={"green"}
                                 id="SelectRelated"
                                 multiple={false}
-                                onChange={this.props.onUserSelected()}
+                                onChange={(e) => {
+                                    this.props.selectUser(e.target.value)}}
                                 options={{
                                     classes: '',
                                     dropdownOptions: {
@@ -47,7 +48,7 @@ class UserSelect extends Component {
                                     }
                                 }}
                             >
-                                <option disabled value="">
+                                <option disabled value="" selected={true}>
                                     Related Members
                                 </option>
                                 {items}
@@ -62,7 +63,8 @@ class UserSelect extends Component {
 
 UserSelect.propTypes = {
     userList: PropTypes.array.isRequired,
-    onUserSelected: PropTypes.func.isRequired
+    selected: PropTypes.string.isRequired,
+    selectUser: PropTypes.func.isRequired
 };
 
 export default UserSelect;

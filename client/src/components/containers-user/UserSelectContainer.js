@@ -1,46 +1,56 @@
-
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import UserSelect from "../user/UserSelect";
-import {fetchCabinet, invalidateCabinet} from "../../actions/rewardActions";
+import * as UIActions from "../../actions/UIActions";
+import { bindActionCreators } from "redux";
 
 class UserSelectContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.handleRelatedSelected = this.handleRelatedSelected.bind(this);
-    }
-    componentDidMount() {
-        //console.log(this.props.userList);
-    }
-    handleRelatedSelected(){
-        console.log("ere");
-    }
-    render() {
-        if (!this.props.userList){
-            return (
-                <div> no user data</div>
-            )
-        }
-        return(
-            <UserSelect userList = {this.props.userList} onUserSelected={this.handleRelatedSelected}
-            />
-        )
+  constructor(props) {
+    super(props);
+    this.handleRelatedSelected = this.handleRelatedSelected.bind(this);
+  }
+  componentDidMount() {
+    console.log(this.props);
+  }
 
+  handleRelatedSelected(e) {
+    console.log(e.target.value);
+  }
+
+  render() {
+    console.log(this.props);
+    if (!this.props.related) {
+      return <div> no user data</div>;
     }
+    return (
+      <UserSelect
+        userList={this.props.related}
+        selected={this.props.selected}
+        selectUser={this.props.actions.selectUser}
+      />
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    let user = state.auth;
-    let userList = null;
-    if (user){
-        userList = state.auth._relatedUserIds;
-    }
-    return {user,userList};
+  let user = state.auth;
+  let related = state.members;
+  let selected = state.ui.selectedmember;
+  return { user, related, selected };
 }
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(Object.assign({}, UIActions), dispatch)
+});
 
 UserSelectContainer.propTypes = {
-    userList: PropTypes.array.isRequired
-
-}
-export default connect(mapStateToProps)(UserSelectContainer);
+  user: PropTypes.object.isRequired,
+  related: PropTypes.array,
+  selected: PropTypes.string.isRequired,
+  actions: PropTypes.object.isRequired
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserSelectContainer);

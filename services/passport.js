@@ -16,7 +16,12 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    let opts = [{path: '_student'},{path: '_relatedUserIds', model: 'users'}];
+    //TODO: this needs to be replaced with calls to the User API
+    //we originally were populating the relatedIds but this short cut was causing issues as user also
+    //has student inside it. Rather than do this we have separated the logic to get the related Ids into a different
+    //controlling process
+    //let opts = [{path: '_student'},{path: '_relatedUserIds', model: 'users'}];
+    let opts = [{path: '_student'}];
   User.findById(id)
     .populate(opts)
     .then(user => {
@@ -27,8 +32,13 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new LocalStrategy(
     async (username, password, done) => {
+        //TODO: we need to replace all this will calls to the user apis
       // check in mongo if a user with username exists or not
-        let opts = [{path: '_student'},{path: '_relatedUserIds', model: 'users'}]
+        //we originally were populating the relatedIds but this short cut was causing issues as user also
+        //has student inside it. Rather than do this we have separated the logic to get the related Ids into a different
+        //controlling process
+        // let opts = [{path: '_student'},{path: '_relatedUserIds', model: 'users'}]
+        let opts = [{path: '_student'}]
       let existingUser = await User.findOne({ username: username }).populate(opts);
         //console.log(JSON.stringify(existingUser));
         //await existingUser.populate('_relatedUserIds').execPopulate();

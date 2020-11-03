@@ -118,10 +118,10 @@ export const fetchLineItems = (centre,studentId) => async dispatch =>{
     dispatch(requestLineItems(centre,studentId)); //update state to say we are fetching cabinet
     try {
         const res = await axios.get(url);
-        console.log(res.data);
+        //console.log(res.data);
         dispatch(receiveLineItems(centre, studentId, res.data));
     }catch(e){
-        console.log("error",e);
+        //console.log("error",e);
         dispatch(receiveLineItemsError(centre,studentId,e.code));
     }
 }
@@ -142,7 +142,7 @@ export const deleteLineItems = (centre,studentId,items) => async dispatch => {
             let studentId = item.studentId;
             let items = [item.lineId];
             let url = "api/orders/deletelines/" + centre + "/" + studentId;
-            console.log(url);
+            //console.log(url);
             const res = await axios.put(url, items);
             dispatch(resetDeleted());
             dispatch(fetchOrder(centre));

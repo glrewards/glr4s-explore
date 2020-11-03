@@ -2,6 +2,7 @@
 import {combineReducers} from 'redux';
 import {reducer as reduxForm} from 'redux-form';
 import authReducer from './authReducer';
+import membersReducer from "./membersReducer";
 import surveyReducer from './surveysReducer';
 import studentReducer from './studentReducer';
 import categorysReducer from "./categorysReducer";
@@ -17,6 +18,7 @@ import UIReducer from "./UIReducer";
 
 export default combineReducers({
     auth: authReducer,
+    members: membersReducer,
     cabinet: cabinetReducer,
     cart: cartReducer,
     order: orderReducer,
