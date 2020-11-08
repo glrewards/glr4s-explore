@@ -1,6 +1,7 @@
 import axios from "axios";
 import {START_LOGIN} from "./types";
 import { FETCH_USER } from "./types";
+import {SET_ORDER_USER} from "./types";
 import { FETCH_PRODUCTS } from "./types";
 import { FETCH_ALL_STUDENTS } from "./types";
 import { FETCH_ALL_XOD_STUDENTS } from "./types";
@@ -25,10 +26,10 @@ import {UPDATE_FAVS} from "./types";
 
      */
 export const fetchUser = () => async dispatch => {
-
   let res = await axios.get("/api/current_user");
   //console.log("in fetchUser",res.data);
     dispatch({ type: FETCH_USER, payload: res.data });
+    dispatch({type: SET_ORDER_USER, payload: res.data});
 };
 
 export const handleToken = token => async dispatch => {
