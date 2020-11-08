@@ -25,11 +25,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/authReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,14 +287,7 @@
       <workItem from="1602527757703" duration="43000" />
       <workItem from="1602527939042" duration="9262000" />
       <workItem from="1602659378251" duration="10744000" />
-      <workItem from="1603698826675" duration="38205000" />
-    </task>
-    <task id="LOCAL-00107" summary="tried to change where connect-mongo was in packages file - not a dev dependency">
-      <created>1586822044048</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1586822044048</updated>
+      <workItem from="1603698826675" duration="39684000" />
     </task>
     <task id="LOCAL-00108" summary="updated node and npm in packages">
       <created>1586822438922</created>
@@ -634,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604441110851</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember">
+      <created>1604836240920</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1604836240927</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +678,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cleaned up orderRoutes.js" />
     <MESSAGE value="made changes to secure the app when deployed - need to set a new production env variable" />
     <MESSAGE value="started adding new admin components to react" />
     <MESSAGE value="user and favourite changes" />
@@ -705,17 +702,18 @@
     <MESSAGE value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
     <MESSAGE value="basic plumbing working" />
     <MESSAGE value="getting master detail structure working for the guardian dashboard. have the user details tab working and reusing the the UserDetail Card." />
-    <option name="LAST_COMMIT_MESSAGE" value="getting master detail structure working for the guardian dashboard. have the user details tab working and reusing the the UserDetail Card." />
+    <MESSAGE value="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember" />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="202" key="#Deployment" timestamp="1601276263599">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="180" y="202" key="#Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1601276263599" />
-    <state x="179" y="94" key="CommitChangelistDialog2" timestamp="1604441110508">
+    <state x="179" y="94" key="CommitChangelistDialog2" timestamp="1604836240668">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="179" y="94" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604441110508" />
+    <state x="179" y="94" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604836240668" />
     <state x="157" y="112" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601764914983" />
     <state x="1036" y="146" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045507164" />
     <state x="626" y="123" width="954" height="827" key="DiffContextDialog" timestamp="1601225492423">
@@ -726,35 +724,35 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="738" y="410" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601077582774" />
-    <state width="1899" height="258" key="GridCell.Tab.0.bottom" timestamp="1604831999680">
+    <state width="1899" height="258" key="GridCell.Tab.0.bottom" timestamp="1604836975853">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431831" />
-    <state width="1899" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604315502989" />
+    <state width="1899" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604836975853" />
     <state width="1899" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.23.1920.1057@0.0.1920.1080" timestamp="1604831999680" />
     <state width="1659" height="246" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540356" />
     <state width="1070" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860412" />
-    <state width="1899" height="258" key="GridCell.Tab.0.center" timestamp="1604831999675">
+    <state width="1899" height="258" key="GridCell.Tab.0.center" timestamp="1604836975851">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431829" />
-    <state width="1899" height="267" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604315502988" />
+    <state width="1899" height="258" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604836975851" />
     <state width="1899" height="258" key="GridCell.Tab.0.center/0.0.1920.1080/1920.23.1920.1057@0.0.1920.1080" timestamp="1604831999675" />
     <state width="1659" height="246" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540355" />
     <state width="1070" height="274" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
-    <state width="1899" height="258" key="GridCell.Tab.0.left" timestamp="1604831999654">
+    <state width="1899" height="258" key="GridCell.Tab.0.left" timestamp="1604836975848">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431828" />
-    <state width="1899" height="267" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604315502987" />
+    <state width="1899" height="258" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604836975848" />
     <state width="1899" height="258" key="GridCell.Tab.0.left/0.0.1920.1080/1920.23.1920.1057@0.0.1920.1080" timestamp="1604831999654" />
     <state width="1659" height="246" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540355" />
     <state width="1070" height="274" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860366" />
-    <state width="1899" height="258" key="GridCell.Tab.0.right" timestamp="1604831999678">
+    <state width="1899" height="258" key="GridCell.Tab.0.right" timestamp="1604836975852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1659" height="220" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597660431830" />
-    <state width="1899" height="267" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604315502988" />
+    <state width="1899" height="258" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604836975852" />
     <state width="1899" height="258" key="GridCell.Tab.0.right/0.0.1920.1080/1920.23.1920.1057@0.0.1920.1080" timestamp="1604831999678" />
     <state width="1659" height="246" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1602657540356" />
     <state width="1070" height="274" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1601056860384" />
@@ -762,11 +760,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="485" y="305" key="MultipleFileMergeDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1601224836212" />
-    <state x="185" y="331" key="Vcs.Push.Dialog.v2" timestamp="1604441171158">
+    <state x="185" y="331" key="Vcs.Push.Dialog.v2" timestamp="1604836249993">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="162" y="322" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1597660442882" />
-    <state x="185" y="331" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604441123330" />
+    <state x="185" y="331" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1604836249993" />
     <state x="185" y="331" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.23.1920.1057@0.0.1920.1080" timestamp="1604441171158" />
     <state x="162" y="338" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1601764981586" />
     <state x="247" y="458" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1601045519509" />

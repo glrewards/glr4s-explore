@@ -93,7 +93,7 @@ function mapStateToProps(state) {
   const { isFetching, lastUpdated, orderDetail, deletes, orderExists } = order || {
     isFetching: true
   };
-  let user = state.auth;
+  let user = state.ui.orderuser;
   return {
     user,
     deletes,

@@ -90,6 +90,7 @@ export const updateFavourite = (userId, value, add) => async dispatch => {
 export const submitLogin = (values) => async dispatch => {
   const res = await axios.post("/login", values);
   dispatch({ type: START_LOGIN, payload: res.data });
+  dispatch({type: SET_ORDER_USER, payload: res.data});
 };
 export const submitEmail = (values,history) => async dispatch => {
   const res = await axios.post('/api/surveys',values);
