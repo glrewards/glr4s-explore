@@ -11,7 +11,7 @@ import {
 import UserDetailContainer from "../containers-user/UserDetailContainer";
 import UserSelectContainer from "../containers-user/UserSelectContainer";
 import MemberCardContainer from "../containers-rewards/MemberCardContainer";
-import GuardianMemberOrderContainer from "../containers-rewards/GuardianMemberOrderContainer";
+import MemberOrderContainer from "../containers-rewards/MemberOrderContainer";
 
 class GuardianDashboard extends Component {
   constructor(props) {
@@ -55,9 +55,9 @@ class GuardianDashboard extends Component {
                   }}
                   title="Order"
                 >
-                  <GuardianMemberOrderContainer>
+                  <MemberOrderContainer >
                     here
-                  </GuardianMemberOrderContainer>
+                  </MemberOrderContainer>
                 </Tab>
                 <Tab className="white-text"
                      options={{

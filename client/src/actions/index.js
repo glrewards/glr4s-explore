@@ -29,7 +29,15 @@ export const fetchUser = () => async dispatch => {
   let res = await axios.get("/api/current_user");
   //console.log("in fetchUser",res.data);
     dispatch({ type: FETCH_USER, payload: res.data });
-    dispatch({type: SET_ORDER_USER, payload: res.data});
+  // i dont want to reset the selected user if this is  guardian as the guardian does not have a student
+  // section and so the populating the member order section will fail
+  // this happens when a guardian deletes an item from the kids order and then the whole refresh kicks in
+  // to refresh the lizard points etc.
+  if(res && res.data) {
+    if (!res.data.roles.includes("guardian")) {
+      dispatch({type: SET_ORDER_USER, payload: res.data});
+    }
+  }
 };
 
 export const handleToken = token => async dispatch => {

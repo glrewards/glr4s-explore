@@ -15,7 +15,6 @@ import GuardianDashboardContainer from "./containers-user/GuardianDashboardConta
 import M from "materialize-css"; //don't delete while I am still using the non react version somewhere
 import SignUpContainer from "./login/SignUpContainer";
 import MemberOrderContainer from "./containers-rewards/MemberOrderContainer";
-import GuardianMemberOrderContainer from "./containers-rewards/GuardianMemberOrderContainer";
 
 
 class App extends Component {
@@ -46,7 +45,6 @@ class App extends Component {
             <Route path="/admin" component={CentreDashboard} />
             <Route path="/cabinet" component={CabinetContainer} />
             <Route path="/guardian" component={GuardianDashboardContainer} />
-            <Route path="/guardian/related" component={GuardianMemberOrderContainer}/>
             <Route path="/reward/:id" component={RewardContainer} />
           </div>
         </BrowserRouter>

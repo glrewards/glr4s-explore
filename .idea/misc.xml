@@ -4,6 +4,6 @@
     <option name="languageLevel" value="JSX" />
   </component>
   <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/client/src/components/shop/OrderDashboard.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/containers-rewards/GuardianMemberOrderContainer.js" />
   </component>
 </project>
