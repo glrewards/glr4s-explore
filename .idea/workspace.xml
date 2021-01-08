@@ -23,7 +23,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="" />
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -286,14 +289,8 @@
       <workItem from="1604838189247" duration="168000" />
       <workItem from="1604838609660" duration="3656000" />
       <workItem from="1606813193416" duration="15000" />
-      <workItem from="1609972382599" duration="418000" />
-    </task>
-    <task id="LOCAL-00111" summary="started on order refactor AND admin functions. Includes disabling cabinet buttons for an admin (not a member)">
-      <created>1587076828276</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1587076828277</updated>
+      <workItem from="1609972382599" duration="1270000" />
+      <workItem from="1610026632125" duration="1107000" />
     </task>
     <task id="LOCAL-00112" summary="order working">
       <created>1587078655030</created>
@@ -631,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609972592784</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="updated axios version to remove vulnerability">
+      <created>1609972921965</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1609972921965</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
