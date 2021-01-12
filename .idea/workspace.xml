@@ -24,8 +24,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/middlewares/requireSecret.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/shopRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,14 +297,8 @@
       <workItem from="1604838609660" duration="3656000" />
       <workItem from="1606813193416" duration="15000" />
       <workItem from="1609972382599" duration="1270000" />
-      <workItem from="1610026632125" duration="1858000" />
-    </task>
-    <task id="LOCAL-00113" summary="order working">
-      <created>1587079215502</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1587079215502</updated>
+      <workItem from="1610026632125" duration="2341000" />
+      <workItem from="1610442138641" duration="5138000" />
     </task>
     <task id="LOCAL-00114" summary="changed hide on small for nav items">
       <created>1587079685487</created>
@@ -635,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610106754713</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="reverted changes">
+      <created>1610108948035</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1610108948035</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +689,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AddFav implemented&#10;Refresh User at the right times - fixed" />
     <MESSAGE value="changed cabinet button colours and started to add favOnly to ShelfList.js" />
     <MESSAGE value="token change to new branch" />
     <MESSAGE value="filter shelf by favourites logic implemented - need button to set property and trigger action" />
@@ -706,7 +713,8 @@
     <MESSAGE value="Had to add some conditional logic to the fetchUser Action to deal with the refresh that happens when a guardian deletes an item from a child's order (the original logic assumes we want a refresh of the user data to update the lizard points) we want to suppress this from updating the orderuser redux store" />
     <MESSAGE value="updated axios version to remove vulnerability" />
     <MESSAGE value="playing with heroku-postbuild" />
-    <option name="LAST_COMMIT_MESSAGE" value="playing with heroku-postbuild" />
+    <MESSAGE value="reverted changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="reverted changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

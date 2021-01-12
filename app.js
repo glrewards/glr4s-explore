@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 let passport = require("passport");
 const bodyParser = require("body-parser");
-var cookieParser = require("cookie-parser");
+let cookieParser = require("cookie-parser");
 const keys = require("./config/keys");
-const flash = require("connect-flash");
+//const flash = require("connect-flash");
 
 const MongoStore = require("connect-mongo")(session);
 require("./models/rewards/Cabinet");
@@ -45,7 +45,19 @@ const sessionStore = new MongoStore({
   mongooseConnection: db,
   collection: "sessions"
 });
-app.use(bodyParser.json());
+
+//added the object to this call so that we could then reference rawbody in requireSecret. This is to check the secret
+//provided by shopify
+
+app.use(bodyParser.json({
+    type:'*/*',
+    limit: '50mb',
+    verify: function(req, res, buf) {
+        if (req.url.startsWith('/api/stock')){
+            req.rawbody = buf;
+        }
+    }
+}));
 app.use(
   session({
     resave: false,
@@ -57,7 +69,7 @@ app.use(
 );
 
 app.use(cookieParser());
-app.use(flash());
+//app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -69,6 +81,7 @@ require("./routes/memberRoutes")(app);
 require("./routes/studentRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/rewardRoutes")(app);
+require("./routes/shopifyWebHookRoutes")(app);
 
 if (process.env.NODE_ENV === "production"){
   //express will serve up production assets. Remember these are built into something different for prod
