@@ -8,6 +8,14 @@ const Centre = mongoose.model("LearningCentre");
 const Cab = mongoose.model("Cabinet");
 const Shelf = mongoose.model("Shelf");
 
+//using direct connections to mongo rather than mongoose to store a record of the received orders for audit
+const MongoClient = require("mongodb").MongoClient;
+const uri = keys.mongoURI;
+const mclient = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
 const logger = winston.createLogger({
   level: keys.glrLogLevel,
   format: winston.format.json(),
@@ -15,6 +23,86 @@ const logger = winston.createLogger({
   transports: [new winston.transports.Console()]
 });
 
+async function createRewardObject(line) {
+  /* a line item contains some but not all the data we need. It does not contain the metafields and these
+    meant to be the means by which we allocate a product to a shelf. Also rewards only contain objectid references to
+    the relevant shopify product. so we need to use the shopifyId to find the product in shopify product and get its
+    _id and the metafield. we can then create a valid reward object containing a points attribute and an object ref.
+     */
+  //TODO: at the moment we are ignoring the variant information on the lineitem. We might need to reconsider this
+  //going to use the mongo client to get the info from shopify products. No value in using mongoose for this, it is
+  // private internal logic
+  try {
+    let products = mclient.db().collection("shopifyproducts");
+    const query = { id: line.product_id };
+    //console.log(query);
+    const options = {
+      projection: {
+        _id: 1,
+        id: 1,
+        title: 1,
+        metafields: { $elemMatch: { namespace: "glr", key: "points" } }
+      }
+    };
+    const product = await products.findOne(query, options);
+    logger.log({level: 'debug', message: "shopify product found",state: product});
+
+    //all items via this route will always be glr issued. So we need to look up the object Id for glr issuer
+    const issuers = mclient.db().collection("issuer");
+    const us = await issuers.findOne({ name: "Great Little Rewards" });
+
+    const reward = {
+      _issuer: us._id,
+      _shopifyProduct: product._id,
+      count: line.quantity,
+      points: parseInt(product.metafields[0].value) //we know this is right because of the elemMatch in the query projection
+    };
+    return reward;
+  } catch (e) {
+    logger.error(e.message);
+  }
+}
+
+async function processLineItems(cabinet, lines){
+  try{
+    for (const item of lines) {
+      let reward = await createRewardObject(item);
+      logger.log({level: 'debug', message: 'this is the created reward', state: reward});
+      //use a case statement to add the reward the to the correct shelf
+      switch (reward.points) {
+        case 25:
+          logger.log({level: 'info', message: "switch case 25"});
+          delete reward.points;
+          cabinet.shelves[0].rewardItems.push(reward);
+          break;
+        case 50:
+          logger.log({level: 'info', message: "switch case 50"});
+          delete reward.points;
+          cabinet.shelves[1].rewardItems.push(reward);
+          break;
+        case 75:
+          logger.log({level: 'info', message: "switch case 75"});
+          delete reward.points;
+          cabinet.shelves[2].rewardItems.push(reward);
+          break;
+        case 100:
+          logger.log({level: 'info', message: "switch case 100"});
+          delete reward.points;
+          cabinet.shelves[3].rewardItems.push(reward);
+          break;
+        case 200:
+          logger.log({level: 'info', message: "switch case 200"});
+          delete reward.points;
+          cabinet.shelves[4].rewardItems.push(reward);
+          break;
+        default:
+          logger.log({level: 'debug', message: "did not match in the switch statement as expected", state: reward});
+      }
+    }
+  }catch (e){
+
+  }
+}
 function createSkeletonCabinetSimple(centreId, centreName) {
   const shelves = [
     {
@@ -71,6 +159,14 @@ function createSkeletonCabinetSimple(centreId, centreName) {
   return newCab;
 }
 
+async function storeHook(payload) {
+  try {
+    await mclient.connect();
+    let collection = mclient.db().collection("glrorders");
+    await collection.insertOne(payload);
+  } finally {
+  }
+}
 module.exports = app => {
   app.post(
     "/api/webhook/shopifyOrder",
@@ -79,10 +175,9 @@ module.exports = app => {
     async (req, res) => {
       // if we get here we know we have an order for a valid learning centre and that we can use the order note to
       // find the centre by name to get the the ID
-      // all of this should really be via the APIs and not using mongoose in this
       try {
-        //logger.log(req.centreId);
-        //let centre = await Centre.find({"name": payload.note});
+        //record the received data in glrorders only having passed the middleware checks
+        await storeHook(req.body);
         let url = keys.glrAPIGateway + keys.glrAPICabinet;
         logger.log({ level: "debug", message: req.centreId });
         logger.log({ level: "debug", message: req.body });
@@ -120,23 +215,28 @@ module.exports = app => {
             req.centreId,
             req.centreName
           );
-            url = keys.glrAPIGateway + keys.glrAPICabinet;
-            options = {
-                //tells axios not to throw an error for codes less than 404
-                validateStatus: function(status) {
-                    return status < 500;
-                },
-                headers: {
-                    "X-API-KEY": keys.glrAPIGatewayKey
-                }
-            };
-            logger.log({ level: "debug", message: "calling axios: " + url });
-            // call addCabinet API and pass over the simple newCabinet object in the body
-            // this pushes all mongo work over to the API layer!
-            const createCabResponse = await axios.post(url, newCabinet, options);
-            logger.log({ level: "debug", message: createCabResponse.data });
 
-/*
+           await processLineItems(newCabinet,req.body.line_items);
+          console.log(newCabinet);
+
+          //now need to populate
+          url = keys.glrAPIGateway + keys.glrAPICabinet;
+          options = {
+            //tells axios not to throw an error for codes less than 404
+            validateStatus: function(status) {
+              return status < 500;
+            },
+            headers: {
+              "X-API-KEY": keys.glrAPIGatewayKey
+            }
+          };
+          logger.log({ level: "debug", message: "calling axios: " + url });
+          // call addCabinet API and pass over the simple newCabinet object in the body
+          // this pushes all mongo work over to the API layer!
+          const createCabResponse = await axios.post(url, newCabinet, options);
+          logger.log({ level: "debug", message: createCabResponse.data });
+
+          /*
           build a reward object for each line item. To do this we need to lookup from shopifyproducts
           by id and we should take the title and metafield glr.points.
 
@@ -151,7 +251,7 @@ module.exports = app => {
           level: "debug",
           message: "still landing in catch block"
         });
-        logger.error(e.toJSON());
+        logger.error(e.message);
         res.send({ code: 401 });
       }
     }
