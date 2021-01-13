@@ -24,7 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/rewards/LearningCentre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/requireSecret.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireSecret.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,14 +295,9 @@
       <workItem from="1606813193416" duration="15000" />
       <workItem from="1609972382599" duration="1270000" />
       <workItem from="1610026632125" duration="2341000" />
-      <workItem from="1610442138641" duration="5555000" />
-    </task>
-    <task id="LOCAL-00115" summary="removed logging in passport.js">
-      <created>1587081407055</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1587081407055</updated>
+      <workItem from="1610442138641" duration="12253000" />
+      <workItem from="1610467906309" duration="1629000" />
+      <workItem from="1610476942953" duration="17875000" />
     </task>
     <task id="LOCAL-00116" summary="changed shelflist to unresponsive table">
       <created>1587082035425</created>
@@ -635,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610448068358</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="changed the webhook router url to api/webhooks">
+      <created>1610448475945</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1610448475945</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +688,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="token change to new branch" />
     <MESSAGE value="filter shelf by favourites logic implemented - need button to set property and trigger action" />
     <MESSAGE value="set  favOnly={false}" />
     <MESSAGE value="minor" />
@@ -706,7 +712,8 @@
     <MESSAGE value="playing with heroku-postbuild" />
     <MESSAGE value="reverted changes" />
     <MESSAGE value="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify." />
-    <option name="LAST_COMMIT_MESSAGE" value="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify." />
+    <MESSAGE value="changed the webhook router url to api/webhooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the webhook router url to api/webhooks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

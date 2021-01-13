@@ -13,8 +13,8 @@ async function verifyShopifyHook(req) {
         .createHmac("SHA256", keys.webhookSecret)
         .update(Buffer.from(req.rawbody))
         .digest("base64");
-    console.log(generatedHash);
-    console.log(hmac);
+    //console.log(generatedHash);
+    //console.log(hmac);
     return generatedHash === hmac;
   }catch (e){
     console.log(e.message);
@@ -28,7 +28,7 @@ module.exports = async (req, res, next) => {
     return res.status(401).send({ error: "invalid secret" });
   } else {
     console.log("webhook verified");
-    console.log(req.body);
+    //console.log(req.body);
   }
   next();
 };
