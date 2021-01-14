@@ -5,7 +5,7 @@ const crypto = require("crypto");
 async function verifyShopifyHook(req) {
   const hmac = req.get("X-Shopify-Hmac-Sha256");
   const topic = req.get("X-Shopify-Topic");
-  console.log(topic);
+  //console.log(topic);
   try {
     //const rawBody = await getRawBody(req);
     //console.log(rawBody);

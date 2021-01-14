@@ -67,7 +67,7 @@ async function processLineItems(cabinet, lines){
   try{
     for (const item of lines) {
       let reward = await createRewardObject(item);
-      logger.log({level: 'debug', message: 'this is the created reward', state: reward});
+      logger.log({level: 'info', message: 'this is the created reward', state: reward});
       //use a case statement to add the reward the to the correct shelf
       switch (reward.points) {
         case 25:
@@ -217,7 +217,7 @@ module.exports = app => {
           );
 
            await processLineItems(newCabinet,req.body.line_items);
-          console.log(newCabinet);
+          //console.log(newCabinet);
 
           //now need to populate
           url = keys.glrAPIGateway + keys.glrAPICabinet;

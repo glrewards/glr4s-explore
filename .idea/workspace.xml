@@ -25,8 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/requireSecret.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireSecret.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,14 +295,8 @@
       <workItem from="1610026632125" duration="2341000" />
       <workItem from="1610442138641" duration="12253000" />
       <workItem from="1610467906309" duration="1629000" />
-      <workItem from="1610476942953" duration="29768000" />
-    </task>
-    <task id="LOCAL-00117" summary="made images responsive as they where being stretched">
-      <created>1587083913465</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1587083913465</updated>
+      <workItem from="1610476942953" duration="30250000" />
+      <workItem from="1610615444477" duration="3098000" />
     </task>
     <task id="LOCAL-00118" summary="got summary plumbing working">
       <created>1587116573802</created>
@@ -640,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610540479691</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js">
+      <created>1610580500791</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1610580500791</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +687,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="set  favOnly={false}" />
     <MESSAGE value="minor" />
     <MESSAGE value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
     <MESSAGE value="reward detail layout complete" />
@@ -711,7 +711,8 @@
     <MESSAGE value="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify." />
     <MESSAGE value="changed the webhook router url to api/webhooks" />
     <MESSAGE value="first working version of webhook to process shopify order into a cabinet. starting with the case that no cabinet exists. Build a skeleton cabinet object with empty shelves and call the cabinet API to add it. No processing of rewards yet and no handing of situation where we need to amend not create a cabinet." />
-    <option name="LAST_COMMIT_MESSAGE" value="first working version of webhook to process shopify order into a cabinet. starting with the case that no cabinet exists. Build a skeleton cabinet object with empty shelves and call the cabinet API to add it. No processing of rewards yet and no handing of situation where we need to amend not create a cabinet." />
+    <MESSAGE value="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
