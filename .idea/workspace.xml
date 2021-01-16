@@ -295,14 +295,8 @@
       <workItem from="1610467906309" duration="1629000" />
       <workItem from="1610476942953" duration="30250000" />
       <workItem from="1610615444477" duration="3820000" />
-      <workItem from="1610706130904" duration="10791000" />
-    </task>
-    <task id="LOCAL-00119" summary="total cards and total lines functions working">
-      <created>1587117484457</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1587117484457</updated>
+      <workItem from="1610706130904" duration="12579000" />
+      <workItem from="1610828582783" duration="5486000" />
     </task>
     <task id="LOCAL-00120" summary="side nav is now behaving and other gui improvements">
       <created>1587119866143</created>
@@ -640,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610634455546</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="webhook is updating existing quantities now">
+      <created>1610813313836</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1610813313836</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +687,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed react routing and some redirects from /rewards to /cabinet. This is so we can now think about react routing for the reward details" />
     <MESSAGE value="reward detail layout complete" />
     <MESSAGE value="basic reward detail working" />
     <MESSAGE value="about to try nds change the RewardCard.js" />
@@ -711,7 +711,8 @@
     <MESSAGE value="first working version of webhook to process shopify order into a cabinet. starting with the case that no cabinet exists. Build a skeleton cabinet object with empty shelves and call the cabinet API to add it. No processing of rewards yet and no handing of situation where we need to amend not create a cabinet." />
     <MESSAGE value="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js" />
     <MESSAGE value="added glrAPIAdmin: 'glr/api/glr4s/admin', to config ready to start referencing the ADMIN API routes via kong. All of this is part of creating an API call to let me retrieve rewards based on the shopifyid I don't want to make this publicly available on the same security as the other AP. THAT SAID THIS IS NOT BEING IMPLEMENTED NOW. just the config." />
-    <option name="LAST_COMMIT_MESSAGE" value="added glrAPIAdmin: 'glr/api/glr4s/admin', to config ready to start referencing the ADMIN API routes via kong. All of this is part of creating an API call to let me retrieve rewards based on the shopifyid I don't want to make this publicly available on the same security as the other AP. THAT SAID THIS IS NOT BEING IMPLEMENTED NOW. just the config." />
+    <MESSAGE value="webhook is updating existing quantities now" />
+    <option name="LAST_COMMIT_MESSAGE" value="webhook is updating existing quantities now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

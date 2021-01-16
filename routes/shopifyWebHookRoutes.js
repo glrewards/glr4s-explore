@@ -88,51 +88,56 @@ async function createRewardObject(line) {
   }
 }
 
-async function processLineItems(cabinet, lines) {
-  try {
-    for (const item of lines) {
-      let reward = await createRewardObject(item);
+async function processLineItem(cabinet, item){
+  logger.log({level: 'info', message: 'processing line item'});
+  logger.log({level: 'debug', message: 'next line', state: item});
+  let reward = await createRewardObject(item);
+  logger.log({
+    level: "info",
+    message: "this is the created reward",
+    state: reward
+  });
+  //use a case statement to add the reward the to the correct shelf
+  switch (reward.points) {
+    case 25:
+      logger.log({ level: "info", message: "switch case 25" });
+      delete reward.points;
+      cabinet.shelves[0].rewardItems.push(reward);
+      break;
+    case 50:
+      logger.log({ level: "info", message: "switch case 50" });
+      delete reward.points;
+      cabinet.shelves[1].rewardItems.push(reward);
+      break;
+    case 75:
+      logger.log({ level: "info", message: "switch case 75" });
+      delete reward.points;
+      cabinet.shelves[2].rewardItems.push(reward);
+      break;
+    case 100:
+      logger.log({ level: "info", message: "switch case 100" });
+      delete reward.points;
+      cabinet.shelves[3].rewardItems.push(reward);
+      break;
+    case 200:
+      logger.log({ level: "info", message: "switch case 200" });
+      delete reward.points;
+      cabinet.shelves[4].rewardItems.push(reward);
+      break;
+    default:
       logger.log({
-        level: "info",
-        message: "this is the created reward",
+        level: "debug",
+        message: "did not match in the switch statement as expected",
         state: reward
       });
-      //use a case statement to add the reward the to the correct shelf
-      switch (reward.points) {
-        case 25:
-          logger.log({ level: "info", message: "switch case 25" });
-          delete reward.points;
-          cabinet.shelves[0].rewardItems.push(reward);
-          break;
-        case 50:
-          logger.log({ level: "info", message: "switch case 50" });
-          delete reward.points;
-          cabinet.shelves[1].rewardItems.push(reward);
-          break;
-        case 75:
-          logger.log({ level: "info", message: "switch case 75" });
-          delete reward.points;
-          cabinet.shelves[2].rewardItems.push(reward);
-          break;
-        case 100:
-          logger.log({ level: "info", message: "switch case 100" });
-          delete reward.points;
-          cabinet.shelves[3].rewardItems.push(reward);
-          break;
-        case 200:
-          logger.log({ level: "info", message: "switch case 200" });
-          delete reward.points;
-          cabinet.shelves[4].rewardItems.push(reward);
-          break;
-        default:
-          logger.log({
-            level: "debug",
-            message: "did not match in the switch statement as expected",
-            state: reward
-          });
-      }
+  }
+
+}
+async function processLineItems(cabinet, lines) {
+  logger.log({level: 'info', message: 'processing lineItems'})
+    for (const item of lines) {
+      await processLineItem(cabinet, item);
     }
-  } catch (e) {}
 }
 function createSkeletonCabinetSimple(centreId, centreName) {
   const shelves = [
@@ -190,7 +195,7 @@ function createSkeletonCabinetSimple(centreId, centreName) {
   return newCab;
 }
 
-function updateExistingCabinet(cabinet, lineItems) {
+async function updateExistingCabinet(cabinet, lineItems) {
   try {
     logger.log({
       level: "info",
@@ -211,15 +216,15 @@ function updateExistingCabinet(cabinet, lineItems) {
       message: "starting to loop through the line items"
     });
     // if I find the item then increment the count by the quantity on the line item
-
-    cabinet.shelves.forEach(shelf => {
-      shelf.rewardItems.forEach(reward => {
+    let updatedItems = [];
+    cabinet.shelves.forEach((shelf) => {
+      shelf.rewardItems.forEach( (reward) => {
         //see if the item is in the list of line items
         logger.log({
           level: "debug",
           message: "reward product Id: " + reward._shopifyProduct.id
         });
-        let found = lineItems.find(line => {
+        let found = lineItems.find((line) => {
           logger.log({
             level: "debug",
             message: "comparing product Ids: ",
@@ -239,20 +244,31 @@ function updateExistingCabinet(cabinet, lineItems) {
                   "reward:" + reward._shopifyProduct.title + " count was " + reward.count
             });
             reward.count += line.quantity;
+            // once added we need to remove the line so we know what we have left to deal with
+
             logger.log({
               level: "debug",
               message:
                   "incremented reward:" + reward._shopifyProduct.title + " to " + reward.count
             });
+            updatedItems.push(line);
           }
 
         });
-
         //if the item matches increment the count by the lineitem quantity
       });
     });
+    // need remove the processed items from the line items
+    updatedItems.forEach(processedItem => {
+      //find the index of it in lineItems and remove it
+      console.log(lineItems.indexOf(processedItem));
+      lineItems.splice(lineItems.indexOf(processedItem),1);
+      console.log("lineItems length: " + lineItems.length);
+    });
     //at this stage existing rewards have been incremented so we can do update the cabinet
-
+    logger.log({level: 'info', message: 'new items will be processed'});
+    logger.log({level: 'debug', message: "new items", state: lineItems});
+    await processLineItems(cabinet,lineItems);
   } finally {
   }
 }
@@ -345,7 +361,7 @@ module.exports = app => {
              */
         } else {
           const existingCabinet = axiosResponse.data;
-          updateExistingCabinet(existingCabinet, req.body.line_items);
+          await updateExistingCabinet(existingCabinet, req.body.line_items);
           await updateCabinet(existingCabinet);
         }
         res.send({ code: 200 }); // return 200 whatever happens to  shopify
