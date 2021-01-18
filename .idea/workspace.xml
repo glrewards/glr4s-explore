@@ -25,6 +25,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rewards/Reward.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/Reward.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,14 +297,10 @@
       <workItem from="1610476942953" duration="30250000" />
       <workItem from="1610615444477" duration="3820000" />
       <workItem from="1610706130904" duration="12579000" />
-      <workItem from="1610828582783" duration="5486000" />
-    </task>
-    <task id="LOCAL-00120" summary="side nav is now behaving and other gui improvements">
-      <created>1587119866143</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1587119866143</updated>
+      <workItem from="1610828582783" duration="6050000" />
+      <workItem from="1610837964679" duration="9000" />
+      <workItem from="1610907224272" duration="980000" />
+      <workItem from="1610964587432" duration="11165000" />
     </task>
     <task id="LOCAL-00121" summary="working order details">
       <created>1587123046658</created>
@@ -641,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610813313836</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="webhook working but needs more robust testimg">
+      <created>1610834360834</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1610834360837</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +691,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reward detail layout complete" />
     <MESSAGE value="basic reward detail working" />
     <MESSAGE value="about to try nds change the RewardCard.js" />
     <MESSAGE value="Styling of RewardCard.js complete with reactive image control and mediabox implemented" />
@@ -712,7 +715,8 @@
     <MESSAGE value="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js" />
     <MESSAGE value="added glrAPIAdmin: 'glr/api/glr4s/admin', to config ready to start referencing the ADMIN API routes via kong. All of this is part of creating an API call to let me retrieve rewards based on the shopifyid I don't want to make this publicly available on the same security as the other AP. THAT SAID THIS IS NOT BEING IMPLEMENTED NOW. just the config." />
     <MESSAGE value="webhook is updating existing quantities now" />
-    <option name="LAST_COMMIT_MESSAGE" value="webhook is updating existing quantities now" />
+    <MESSAGE value="webhook working but needs more robust testimg" />
+    <option name="LAST_COMMIT_MESSAGE" value="webhook working but needs more robust testimg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

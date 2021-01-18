@@ -23,8 +23,26 @@ const logger = winston.createLogger({
   transports: [new winston.transports.Console()]
 });
 
-async function updateCabinet(cabinet){
-  logger.log({level: 'info', message: 'trying to update cabonet via api'});
+async function executePost(url, body) {
+  let fullURL = keys.glrAPIGateway + url;
+  const options = {
+    //tells axios not to throw an error for codes less than 404
+    validateStatus: function(status) {
+      return status < 500;
+    },
+    headers: {
+      "X-API-KEY": keys.glrAPIGatewayKey
+    }
+  };
+  logger.log({ level: "debug", message: "calling axios: " + url });
+  // call addCabinet API and pass over the simple newCabinet object in the body
+  // this pushes all mongo work over to the API layer!
+  const response = await axios.post(fullURL, body, options);
+  //console.log(response);
+  return response;
+}
+async function updateCabinet(cabinet) {
+  logger.log({ level: "info", message: "trying to update cabonet via api" });
   let url = keys.glrAPIGateway + keys.glrAPICabinet;
   let options = {
     //tells axios not to throw an error for codes less than 404
@@ -39,10 +57,14 @@ async function updateCabinet(cabinet){
     }
   };
   logger.log({ level: "debug", message: "calling axios: " + url });
-    const axiosResponse = await axios.put(url, cabinet,options);
-    logger.log({level: 'info', message: 'finished call to PUT api'});
-    logger.log({level: 'debug',message: 'response was: ', state: axiosResponse});
-    return axiosResponse;
+  const axiosResponse = await axios.put(url, cabinet, options);
+  logger.log({ level: "info", message: "finished call to PUT api" });
+  logger.log({
+    level: "debug",
+    message: "response was: ",
+    state: axiosResponse
+  });
+  return axiosResponse;
 }
 async function createRewardObject(line) {
   /* a line item contains some but not all the data we need. It does not contain the metafields and these
@@ -80,7 +102,8 @@ async function createRewardObject(line) {
       _issuer: us._id,
       _shopifyProduct: product._id,
       count: line.quantity,
-      points: parseInt(product.metafields[0].value) //we know this is right because of the elemMatch in the query projection
+      points: parseInt(product.metafields[0].value), //we know this is right because of the elemMatch in the query projection
+      shopifyProductId: line.product_id
     };
     return reward;
   } catch (e) {
@@ -88,9 +111,9 @@ async function createRewardObject(line) {
   }
 }
 
-async function processLineItem(cabinet, item){
-  logger.log({level: 'info', message: 'processing line item'});
-  logger.log({level: 'debug', message: 'next line', state: item});
+async function processLineItem(cabinet, item) {
+  logger.log({ level: "info", message: "processing line item" });
+  logger.log({ level: "debug", message: "next line", state: item });
   let reward = await createRewardObject(item);
   logger.log({
     level: "info",
@@ -131,13 +154,12 @@ async function processLineItem(cabinet, item){
         state: reward
       });
   }
-
 }
 async function processLineItems(cabinet, lines) {
-  logger.log({level: 'info', message: 'processing lineItems'})
-    for (const item of lines) {
-      await processLineItem(cabinet, item);
-    }
+  logger.log({ level: "info", message: "processing lineItems" });
+  for (const item of lines) {
+    await processLineItem(cabinet, item);
+  }
 }
 function createSkeletonCabinetSimple(centreId, centreName) {
   const shelves = [
@@ -216,59 +238,59 @@ async function updateExistingCabinet(cabinet, lineItems) {
       message: "starting to loop through the line items"
     });
     // if I find the item then increment the count by the quantity on the line item
-    let updatedItems = [];
-    cabinet.shelves.forEach((shelf) => {
-      shelf.rewardItems.forEach( (reward) => {
-        //see if the item is in the list of line items
+    for (const item of lineItems) {
+      let onShelf = false;
+
+      //need to find he reward in the cabinet and get the shelf Id
+      logger.log({
+        level: "debug",
+        message: "looking at line item: " + item.id
+      });
+      let foundReward = null;
+      const foundShelf = cabinet.shelves.find(shelf => {
         logger.log({
           level: "debug",
-          message: "reward product Id: " + reward._shopifyProduct.id
+          message: "looking at shelf: " + shelf._id
         });
-        let found = lineItems.find((line) => {
-          logger.log({
-            level: "debug",
-            message: "comparing product Ids: ",
-            state: {
-              rewardId: reward._shopifyProduct.id,
-              lineId: line.product_id
-            }
-          });
-          if (reward._shopifyProduct.id === line.product_id.toString()){
-            logger.log({
-              level: "info",
-              message: "found a match between lineItems and cabinet rewards"
-            });
-            logger.log({
-              level: "debug",
-              message:
-                  "reward:" + reward._shopifyProduct.title + " count was " + reward.count
-            });
-            reward.count += line.quantity;
-            // once added we need to remove the line so we know what we have left to deal with
 
-            logger.log({
-              level: "debug",
-              message:
-                  "incremented reward:" + reward._shopifyProduct.title + " to " + reward.count
-            });
-            updatedItems.push(line);
+        onShelf = shelf.rewardItems.some(reward => {
+          console.log(item.product_id + " : " + reward.shopifyProductId);
+          if (item.product_id === reward.shopifyProductId) {
+            foundReward = reward;
+            console.log("found reward");
+            return true;
+          } else {
+            foundReward = null;
+            return false;
           }
-
         });
-        //if the item matches increment the count by the lineitem quantity
+        logger.log({
+          level: "debug",
+          message: "does the item in the line exist on shelf: " + shelf._id,
+          state: onShelf
+        });
+        if (onShelf) return shelf;
       });
-    });
-    // need remove the processed items from the line items
-    updatedItems.forEach(processedItem => {
-      //find the index of it in lineItems and remove it
-      console.log(lineItems.indexOf(processedItem));
-      lineItems.splice(lineItems.indexOf(processedItem),1);
-      console.log("lineItems length: " + lineItems.length);
-    });
-    //at this stage existing rewards have been incremented so we can do update the cabinet
-    logger.log({level: 'info', message: 'new items will be processed'});
-    logger.log({level: 'debug', message: "new items", state: lineItems});
-    await processLineItems(cabinet,lineItems);
+
+      if (onShelf) {
+        logger.log({
+          level: "debug",
+          message: "shelf id was: " + foundShelf._id
+        });
+        logger.log({ level: "debug", message: "calling executePost" });
+        console.log(foundReward);
+        const url =
+          keys.glrAPICabinet +
+          "/" +
+          cabinet._id +
+          "/shelf/" +
+          foundShelf._id +
+          "/reward/" +
+          foundReward._id;
+        const newCount = (foundReward.count += item.quantity);
+        await executePost(url, { count: newCount });
+      }
+    }
   } finally {
   }
 }
@@ -362,7 +384,7 @@ module.exports = app => {
         } else {
           const existingCabinet = axiosResponse.data;
           await updateExistingCabinet(existingCabinet, req.body.line_items);
-          await updateCabinet(existingCabinet);
+          //await updateCabinet(existingCabinet);
         }
         res.send({ code: 200 }); // return 200 whatever happens to  shopify
       } catch (e) {
@@ -370,7 +392,7 @@ module.exports = app => {
           level: "debug",
           message: "still landing in catch block"
         });
-        logger.log({level: 'error', message: e.message, state: e});
+        logger.log({ level: "error", message: e.message, state: e });
         res.send({ code: 401 });
       }
     }
