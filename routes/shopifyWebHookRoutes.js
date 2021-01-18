@@ -240,7 +240,6 @@ async function updateExistingCabinet(cabinet, lineItems) {
     // if I find the item then increment the count by the quantity on the line item
     for (const item of lineItems) {
       let onShelf = false;
-
       //need to find he reward in the cabinet and get the shelf Id
       logger.log({
         level: "debug",
@@ -254,10 +253,10 @@ async function updateExistingCabinet(cabinet, lineItems) {
         });
 
         onShelf = shelf.rewardItems.some(reward => {
-          console.log(item.product_id + " : " + reward.shopifyProductId);
+          //console.log(item.product_id + " : " + reward.shopifyProductId);
           if (item.product_id === reward.shopifyProductId) {
             foundReward = reward;
-            console.log("found reward");
+            //console.log("found reward");
             return true;
           } else {
             foundReward = null;
@@ -269,16 +268,17 @@ async function updateExistingCabinet(cabinet, lineItems) {
           message: "does the item in the line exist on shelf: " + shelf._id,
           state: onShelf
         });
-        if (onShelf) return shelf;
+        if (onShelf) {
+          return shelf;
+        };
       });
-
       if (onShelf) {
         logger.log({
           level: "debug",
           message: "shelf id was: " + foundShelf._id
         });
         logger.log({ level: "debug", message: "calling executePost" });
-        console.log(foundReward);
+        //console.log(foundReward);
         const url =
           keys.glrAPICabinet +
           "/" +
@@ -289,9 +289,46 @@ async function updateExistingCabinet(cabinet, lineItems) {
           foundReward._id;
         const newCount = (foundReward.count += item.quantity);
         await executePost(url, { count: newCount });
+      }else{
+        const newReward = await createRewardObject(item);
+        let shelfId = null;
+        //use a case statement to add the reward the to the correct shelf
+        switch (newReward.points) {
+          case 25:
+            logger.log({ level: "info", message: "switch case 25" });
+            shelfId = cabinet.shelves[0]._id;
+            break;
+          case 50:
+            logger.log({ level: "info", message: "switch case 50" });
+            shelfId = cabinet.shelves[1]._id;
+            break;
+          case 75:
+            logger.log({ level: "info", message: "switch case 75" });
+            shelfId = cabinet.shelves[2]._id;
+            break;
+          case 100:
+            logger.log({ level: "info", message: "switch case 100" });
+            shelfId = cabinet.shelves[3]._id;
+            break;
+          case 200:
+            logger.log({ level: "info", message: "switch case 200" });
+            shelfId = cabinet.shelves[4]._id;
+            break;
+          default:
+            logger.log({
+              level: "debug",
+              message: "did not match in the switch statement as expected",
+              state: reward
+            });
+        }
+        const url = keys.glrAPICabinet + "/" + cabinet._id + "/shelf/" + shelfId + "/reward/add";
+        await executePost(url,[newReward]);
+
+
       }
     }
   } finally {
+    logger.log({level: 'info', message: 'Completed updating Cabinet'});
   }
 }
 

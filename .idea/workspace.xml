@@ -25,7 +25,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/Reward.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/Reward.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -300,14 +299,7 @@
       <workItem from="1610828582783" duration="6050000" />
       <workItem from="1610837964679" duration="9000" />
       <workItem from="1610907224272" duration="980000" />
-      <workItem from="1610964587432" duration="11165000" />
-    </task>
-    <task id="LOCAL-00121" summary="working order details">
-      <created>1587123046658</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1587123046658</updated>
+      <workItem from="1610964587432" duration="14947000" />
     </task>
     <task id="LOCAL-00122" summary="fixed sidenav closing bug on shoppping basket click">
       <created>1587125414150</created>
@@ -645,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610834360837</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="cabinet amend of count for existing rewards implemented">
+      <created>1610987015790</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1610987015790</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,7 +690,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basic reward detail working" />
     <MESSAGE value="about to try nds change the RewardCard.js" />
     <MESSAGE value="Styling of RewardCard.js complete with reactive image control and mediabox implemented" />
     <MESSAGE value="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things." />
@@ -716,7 +714,8 @@
     <MESSAGE value="added glrAPIAdmin: 'glr/api/glr4s/admin', to config ready to start referencing the ADMIN API routes via kong. All of this is part of creating an API call to let me retrieve rewards based on the shopifyid I don't want to make this publicly available on the same security as the other AP. THAT SAID THIS IS NOT BEING IMPLEMENTED NOW. just the config." />
     <MESSAGE value="webhook is updating existing quantities now" />
     <MESSAGE value="webhook working but needs more robust testimg" />
-    <option name="LAST_COMMIT_MESSAGE" value="webhook working but needs more robust testimg" />
+    <MESSAGE value="cabinet amend of count for existing rewards implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="cabinet amend of count for existing rewards implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
