@@ -93,7 +93,7 @@ async function createRewardObject(line) {
       message: "shopify product found",
       state: product
     });
-    console.log(product);
+    //console.log(product);
     //all items via this route will always be glr issued. So we need to look up the object Id for glr issuer
     const issuers = mclient.db().collection("issuer");
     const us = await issuers.findOne({ name: "Great Little Rewards" });
