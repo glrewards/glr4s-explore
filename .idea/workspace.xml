@@ -298,14 +298,7 @@
       <workItem from="1610828582783" duration="6050000" />
       <workItem from="1610837964679" duration="9000" />
       <workItem from="1610907224272" duration="980000" />
-      <workItem from="1610964587432" duration="18762000" />
-    </task>
-    <task id="LOCAL-00124" summary="lineItem remove route created">
-      <created>1587211946979</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1587211946979</updated>
+      <workItem from="1610964587432" duration="22813000" />
     </task>
     <task id="LOCAL-00125" summary="lineItem remove route created">
       <created>1587212718716</created>
@@ -643,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611010010168</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="removed a console.log">
+      <created>1611048692262</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1611048692263</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,7 +689,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things." />
     <MESSAGE value="checking NODE_ENV is working correctly" />
     <MESSAGE value="simplified order process no longer using the cart &#10;https://trello.com/c/0Zinx0ZC" />
     <MESSAGE value="wont add duplicate items to order https://trello.com/c/Cs8dW43T" />
@@ -714,7 +713,8 @@
     <MESSAGE value="cabinet amend of count for existing rewards implemented" />
     <MESSAGE value="finished the order to cabinet webhook" />
     <MESSAGE value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
+    <MESSAGE value="removed a console.log" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed a console.log" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
