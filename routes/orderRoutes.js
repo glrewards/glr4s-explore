@@ -20,7 +20,7 @@ module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
   app.get("/api/orders/:centreId/:userId", async (req, res) => {
-    logger.debug("Received request here ", req.params);
+    logger.log({level: 'info', message: "Received request here: " + req.params});
     let centre = req.params.centreId;
     let user = req.params.userId;
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/getMyItems";
@@ -128,13 +128,14 @@ module.exports = app => {
   });
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
-    logger.debug("Received request here ", req.params);
+    logger.info("Received request here ", req.params);
     //logger.debug(req.body);
     try {
       let userId = req.body.user._student._id;
-      logger.debug("userId: " + userId);
+      logger.log({level: 'debug', message: "userId: " + userId});
       let _learningCentreId = req.body.user._learningCentreId;
-      logger.debug("learningCentre: " + _learningCentreId);
+      logger.log({level: 'debug', message: "learningCentre: " + _learningCentreId});
+      logger.log({level: 'debug', message: "body: ", state: req.body});
       let url = keys.glrAPIGateway + keys.glrAPIOrder;
       let options = {
         headers: {
@@ -143,9 +144,10 @@ module.exports = app => {
           centreId: _learningCentreId
         }
       };
-
+      // the UI is sending the user data in the body - cannot remember why - just pass the lineitems onward
+      let order = req.body.lineItems;
       logger.info("calling axios: " + url);
-      const axiosResponse = await axios.post(url, req.body, options);
+      const axiosResponse = await axios.post(url, order, options);
       const data = axiosResponse.data;
       res.send(data);
       //console.log("post order", data);

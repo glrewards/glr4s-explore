@@ -23,8 +23,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="trying to audit client packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,13 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
     </option>
   </component>
   <component name="Git.Rebase.Settings">
@@ -58,10 +67,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="favfilter" />
+        <entry key="$PROJECT_DIR$" value="220172c00ffac9d2eb21ae69af561fc395369aaf" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GithubProjectSettings">
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
@@ -176,19 +186,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="npm.client" />
       <item itemvalue="npm.dev (2)" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.start (1)" />
       <item itemvalue="npm.start" />
-      <item itemvalue="npm.client" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.client" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -298,14 +308,11 @@
       <workItem from="1610828582783" duration="6050000" />
       <workItem from="1610837964679" duration="9000" />
       <workItem from="1610907224272" duration="980000" />
-      <workItem from="1610964587432" duration="22813000" />
-    </task>
-    <task id="LOCAL-00125" summary="lineItem remove route created">
-      <created>1587212718716</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1587212718716</updated>
+      <workItem from="1610964587432" duration="26228000" />
+      <workItem from="1611756956995" duration="73000" />
+      <workItem from="1611757071630" duration="1480000" />
+      <workItem from="1611793026312" duration="2431000" />
+      <workItem from="1611918251273" duration="4976000" />
     </task>
     <task id="LOCAL-00126" summary="basic redux storage for admin deletes working - now need to fix the delete button functions">
       <created>1587375264363</created>
@@ -643,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611048692263</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="updated packages as recommended">
+      <created>1611097549422</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1611097549422</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,8 +703,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checking NODE_ENV is working correctly" />
-    <MESSAGE value="simplified order process no longer using the cart &#10;https://trello.com/c/0Zinx0ZC" />
     <MESSAGE value="wont add duplicate items to order https://trello.com/c/Cs8dW43T" />
     <MESSAGE value="finished order processing clean up for now. Moving on to Guardian." />
     <MESSAGE value="basic container and component structure created for Guardian view" />
@@ -714,7 +726,9 @@
     <MESSAGE value="finished the order to cabinet webhook" />
     <MESSAGE value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
     <MESSAGE value="removed a console.log" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed a console.log" />
+    <MESSAGE value="updated packages as recommended" />
+    <MESSAGE value="trying to audit client packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to audit client packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
