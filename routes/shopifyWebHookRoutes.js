@@ -431,7 +431,7 @@ module.exports = app => {
         });
         logger.log({ level: "error", message: e.message, state: e });
         //return 200 to stop spotify retrying
-        res.send({ code: 200 });
+        res.send({ code: 401 });
       }
     }
   );
