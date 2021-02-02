@@ -430,7 +430,8 @@ module.exports = app => {
           message: "still landing in catch block"
         });
         logger.log({ level: "error", message: e.message, state: e });
-        res.send({ code: 401 });
+        //return 200 to stop spotify retrying
+        res.send({ code: 200 });
       }
     }
   );

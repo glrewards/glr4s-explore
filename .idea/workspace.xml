@@ -23,10 +23,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="trying to audit client packages">
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,14 +311,8 @@
       <workItem from="1611756956995" duration="73000" />
       <workItem from="1611757071630" duration="1480000" />
       <workItem from="1611793026312" duration="2431000" />
-      <workItem from="1611918251273" duration="4976000" />
-    </task>
-    <task id="LOCAL-00126" summary="basic redux storage for admin deletes working - now need to fix the delete button functions">
-      <created>1587375264363</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1587375264363</updated>
+      <workItem from="1611918251273" duration="11288000" />
+      <workItem from="1612177958267" duration="1784000" />
     </task>
     <task id="LOCAL-00127" summary="delete seems to be working - promote">
       <created>1587377172655</created>
@@ -657,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611097549422</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body.">
+      <created>1612009501069</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1612009501070</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +703,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wont add duplicate items to order https://trello.com/c/Cs8dW43T" />
     <MESSAGE value="finished order processing clean up for now. Moving on to Guardian." />
     <MESSAGE value="basic container and component structure created for Guardian view" />
     <MESSAGE value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
@@ -728,7 +727,8 @@
     <MESSAGE value="removed a console.log" />
     <MESSAGE value="updated packages as recommended" />
     <MESSAGE value="trying to audit client packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to audit client packages" />
+    <MESSAGE value="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
