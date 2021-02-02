@@ -350,7 +350,7 @@ module.exports = app => {
       // find the centre by name to get the the ID
       try {
         //record the received data in glrorders only having passed the middleware checks
-        await storeHook(req.body);
+        await storeHook({body: req.body, headers: req.headers});
         let url = keys.glrAPIGateway + keys.glrAPICabinet;
         logger.log({ level: "debug", message: req.centreId });
         logger.log({ level: "debug", message: req.body });
