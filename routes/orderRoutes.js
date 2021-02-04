@@ -145,9 +145,12 @@ module.exports = app => {
         }
       };
       // the UI is sending the user data in the body - cannot remember why - just pass the lineitems onward
-      let order = req.body.lineItems;
+      // the data passed from the UI is not valid. We need to create a valid order object
+      let tempOrder = {finStatus: "unpaid",
+        fulfillStatus: "unfulfilled",lineItems: req.body.lineItems};
+      logger.debug(tempOrder);
       logger.info("calling axios: " + url);
-      const axiosResponse = await axios.post(url, order, options);
+      const axiosResponse = await axios.post(url, tempOrder, options);
       const data = axiosResponse.data;
       res.send(data);
       //console.log("post order", data);

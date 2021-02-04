@@ -24,12 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logging.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/requireSecret.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireSecret.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/cartReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,14 +316,7 @@
       <workItem from="1612177958267" duration="1957000" />
       <workItem from="1612280102946" duration="6910000" />
       <workItem from="1612360844086" duration="680000" />
-      <workItem from="1612431295827" duration="3492000" />
-    </task>
-    <task id="LOCAL-00130" summary="cleaned up orderRoutes.js">
-      <created>1587672864736</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1587672864736</updated>
+      <workItem from="1612431295827" duration="8351000" />
     </task>
     <task id="LOCAL-00131" summary="made changes to secure the app when deployed - need to set a new production env variable">
       <created>1588187301031</created>
@@ -664,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612308764220</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects">
+      <created>1612451147439</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1612451147439</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,7 +707,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basic plumbing working" />
     <MESSAGE value="getting master detail structure working for the guardian dashboard. have the user details tab working and reusing the the UserDetail Card." />
     <MESSAGE value="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember" />
     <MESSAGE value="MemberOrderContainer.js now using the new state structure. Also needed to change the submitLogin Action in index.js so that it dispatched the set_order_user action on login. This is also dispatched from fetchUser action but I realised it needed to be added here as well." />
@@ -735,7 +731,8 @@
     <MESSAGE value="changed shopifyOrder webhook to return 200 even on an error to stop shopify retrying" />
     <MESSAGE value="reversed last change  made in error" />
     <MESSAGE value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
+    <MESSAGE value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
