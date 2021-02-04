@@ -24,7 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logging.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/requireSecret.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireSecret.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,10 +197,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.client" />
       </list>
     </recent_temporary>
@@ -312,14 +317,9 @@
       <workItem from="1611793026312" duration="2431000" />
       <workItem from="1611918251273" duration="11288000" />
       <workItem from="1612177958267" duration="1957000" />
-      <workItem from="1612280102946" duration="5965000" />
-    </task>
-    <task id="LOCAL-00129" summary="cleaned up orderRoutes.js">
-      <created>1587672718175</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1587672718176</updated>
+      <workItem from="1612280102946" duration="6910000" />
+      <workItem from="1612360844086" duration="680000" />
+      <workItem from="1612431295827" duration="3492000" />
     </task>
     <task id="LOCAL-00130" summary="cleaned up orderRoutes.js">
       <created>1587672864736</created>
@@ -657,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612263460092</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required">
+      <created>1612308764220</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1612308764220</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +710,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch" />
     <MESSAGE value="basic plumbing working" />
     <MESSAGE value="getting master detail structure working for the guardian dashboard. have the user details tab working and reusing the the UserDetail Card." />
     <MESSAGE value="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember" />
@@ -728,7 +734,8 @@
     <MESSAGE value="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body." />
     <MESSAGE value="changed shopifyOrder webhook to return 200 even on an error to stop shopify retrying" />
     <MESSAGE value="reversed last change  made in error" />
-    <option name="LAST_COMMIT_MESSAGE" value="reversed last change  made in error" />
+    <MESSAGE value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

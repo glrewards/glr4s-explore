@@ -7,21 +7,8 @@ const axios = require("axios");
 const Centre = mongoose.model("LearningCentre");
 const Cab = mongoose.model("Cabinet");
 const Shelf = mongoose.model("Shelf");
+const logger = require("../logging");
 
-//using direct connections to mongo rather than mongoose to store a record of the received orders for audit
-const MongoClient = require("mongodb").MongoClient;
-const uri = keys.mongoURI;
-const mclient = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-const logger = winston.createLogger({
-  level: keys.glrLogLevel,
-  format: winston.format.json(),
-  defaultMeta: { service: "webhookRoutes" },
-  transports: [new winston.transports.Console()]
-});
 
 async function executePost(url, body) {
   let fullURL = keys.glrAPIGateway + url;
@@ -34,6 +21,7 @@ async function executePost(url, body) {
       "X-API-KEY": keys.glrAPIGatewayKey
     }
   };
+
   logger.log({ level: "debug", message: "calling axios: " + url });
   // call addCabinet API and pass over the simple newCabinet object in the body
   // this pushes all mongo work over to the API layer!
@@ -334,8 +322,7 @@ async function updateExistingCabinet(cabinet, lineItems) {
 
 async function storeHook(payload) {
   try {
-    await mclient.connect();
-    let collection = mclient.db().collection("glrorders");
+    const collection = mongoose.connection.collection("glrorders");
     await collection.insertOne(payload);
   } finally {
   }
@@ -425,7 +412,7 @@ module.exports = app => {
         }
         res.send({ code: 200 }); // return 200 whatever happens to  shopify
       } catch (e) {
-        logger.debug({
+        logger.log({
           level: "debug",
           message: "still landing in catch block"
         });

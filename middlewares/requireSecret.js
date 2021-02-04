@@ -14,7 +14,8 @@ async function verifyShopifyHook(req) {
         .update(Buffer.from(req.rawbody))
         .digest("base64");
     //console.log(generatedHash);
-    //console.log(hmac);
+    console.log("hmac: " + hmac);
+    console.log("generated: " + generatedHash);
     return generatedHash === hmac;
   }catch (e){
     console.log(e.message);

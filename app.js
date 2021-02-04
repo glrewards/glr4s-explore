@@ -5,8 +5,7 @@ let passport = require("passport");
 const bodyParser = require("body-parser");
 let cookieParser = require("cookie-parser");
 const keys = require("./config/keys");
-//const flash = require("connect-flash");
-
+const db = require("./globalservices");
 const MongoStore = require("connect-mongo")(session);
 require("./models/rewards/Cabinet");
 require("./models/rewards/Shelf");
@@ -20,25 +19,7 @@ require("./models/shop/order/Order");
 require("./models/rewards/LearningCentre");
 require("./services/passport");
 
-const options = {
-  useNewUrlParser: true,
-  //authSource: "admin",
-  retryWrites: true,
-  //autoIndex: false, // Don't build indexes
-  //reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  //reconnectInterval: 500, // Reconnect every 500ms
-  poolSize: 10, // Maintain up to 10 socket connections
-  // If not connected, return errors immediately rather than waiting for reconnect
-  //bufferMaxEntries: 0,
-  connectTimeoutMS: 10000, // Give up initial connection after 10 seconds
-  socketTimeoutMS: 45000,
-  useUnifiedTopology: true,
-  useCreateIndex: true
-};
-
-mongoose.connect(keys.mongoURI, options);
 const app = express();
-let db = mongoose.connection;
 db.once("open", () => console.log("connected to db"));
 db.on("error", console.error.bind(console, "Mongo connection error"));
 
@@ -99,3 +80,5 @@ if (process.env.NODE_ENV === "production"){
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT);
+
+
