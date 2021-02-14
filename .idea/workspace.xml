@@ -25,13 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,14 +322,7 @@
       <workItem from="1613031841175" duration="5910000" />
       <workItem from="1613117111115" duration="1275000" />
       <workItem from="1613209916115" duration="217000" />
-      <workItem from="1613220214656" duration="2630000" />
-    </task>
-    <task id="LOCAL-00132" summary="started adding new admin components to react">
-      <created>1588580545303</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1588580545304</updated>
+      <workItem from="1613220214656" duration="4915000" />
     </task>
     <task id="LOCAL-00133" summary="user and favourite changes">
       <created>1599942271830</created>
@@ -672,7 +660,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612465656100</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="order view has basic grouping by order working">
+      <created>1613306876677</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1613306876677</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,7 +713,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember" />
     <MESSAGE value="MemberOrderContainer.js now using the new state structure. Also needed to change the submitLogin Action in index.js so that it dispatched the set_order_user action on login. This is also dispatched from fetchUser action but I realised it needed to be added here as well." />
     <MESSAGE value="Had to add some conditional logic to the fetchUser Action to deal with the refresh that happens when a guardian deletes an item from a child's order (the original logic assumes we want a refresh of the user data to update the lizard points) we want to suppress this from updating the orderuser redux store" />
     <MESSAGE value="updated axios version to remove vulnerability" />
@@ -743,7 +737,8 @@
     <MESSAGE value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
     <MESSAGE value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
     <MESSAGE value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
-    <option name="LAST_COMMIT_MESSAGE" value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
+    <MESSAGE value="order view has basic grouping by order working" />
+    <option name="LAST_COMMIT_MESSAGE" value="order view has basic grouping by order working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

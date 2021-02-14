@@ -80,14 +80,23 @@ class MemberOrderContainer extends Component {
             <OrderDetailCommands deleteClick={this.handleDeletePost} />
             {console.log("in here")}
             {orders.map((order) => {
-              return (<div> <h2> {order._id + " : " + order.fulfillStatus + " : " + order.dateFulfilled} </h2>
+              let fulfilledDate = "";
+              if (order.dateFulfilled){
+                fulfilledDate = new Date(order.dateFulfilled).toDateString();
+              }
+              return (
+                  <div> <h2> {
+                order.fulfillStatus + " : " + fulfilledDate}
+
+              </h2>
               <OrderDetails
                   lineItems={order.lineItems}
                   onDeleteClicked={this.handleDeleteClicked}
               />
               </div>
-              )//end return
-            })}
+              );//end return
+            })
+            }
           </div>
         )}
       </div>
