@@ -17,10 +17,47 @@ const logger = winston.createLogger({
 });
 
 module.exports = app => {
+  /*
+  return an array of basic info about the orders for the centre
+   */
+  app.get("/api/orders/count", async (req,res) => {
+
+    let centre = req.query.centreId;
+    let user = req.query.userId;
+    let fulfillStatus = req.query.fulfillStatus;
+    logger.debug("parameters", req.query);
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + "/count";
+    let options = {
+      params: {
+        centreId: centre,
+        userId: user,
+        fulfillStatus
+      },
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+    try {
+      logger.info("calling axios: " + url, centre, user);
+      const axiosResponse = await axios.get(url, options);
+      const data = axiosResponse.data;
+      res.send(data);
+    } catch (err) {
+      logger.error("error getting order count: ", err);
+      res.status(404).send('exception occurred');
+    }
+
+  });
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
-  app.get("/api/orders/:centreId/:userId", async (req, res) => {
+  app.get("/api/orders/:centreId/:userId", requireLogin, async (req, res) => {
     logger.log({level: 'info', message: "Received request here: " + req.params});
+
+    /*
+    is there a valid open order? we can check this by doing a count and passing the unfilledStaus value if count < 1
+    nothing to return here
+     */
+
     let centre = req.params.centreId;
     let user = req.params.userId;
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/getMyItems";
@@ -44,7 +81,7 @@ module.exports = app => {
     }
   });
 
-  app.get("/api/orders/:centreId", async (req, res) => {
+  app.get("/api/orders/:centreId", requireLogin, async (req, res) => {
     logger.debug("Received request here ", req.params);
     let centre = req.params.centreId;
     let summary = req.params.summary;
@@ -104,7 +141,7 @@ module.exports = app => {
         res.send({});
     });
 */
-  app.put("/api/orders/deletelines/:centreId/:studentId", async (req, res) => {
+  app.put("/api/orders/deletelines/:centreId/:studentId", requireLogin, async (req, res) => {
     //logger.debug("Received request here ", req.params);
     //TODO: this url needs to be cleaned up
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/deleteItems";

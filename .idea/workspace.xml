@@ -25,7 +25,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/cartReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -316,14 +321,13 @@
       <workItem from="1612177958267" duration="1957000" />
       <workItem from="1612280102946" duration="6910000" />
       <workItem from="1612360844086" duration="680000" />
-      <workItem from="1612431295827" duration="8351000" />
-    </task>
-    <task id="LOCAL-00131" summary="made changes to secure the app when deployed - need to set a new production env variable">
-      <created>1588187301031</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1588187301032</updated>
+      <workItem from="1612431295827" duration="10905000" />
+      <workItem from="1612892531952" duration="533000" />
+      <workItem from="1612969284688" duration="1769000" />
+      <workItem from="1613031841175" duration="5910000" />
+      <workItem from="1613117111115" duration="1275000" />
+      <workItem from="1613209916115" duration="217000" />
+      <workItem from="1613220214656" duration="2630000" />
     </task>
     <task id="LOCAL-00132" summary="started adding new admin components to react">
       <created>1588580545303</created>
@@ -661,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612451147439</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string.">
+      <created>1612465656100</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1612465656100</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +718,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting master detail structure working for the guardian dashboard. have the user details tab working and reusing the the UserDetail Card." />
     <MESSAGE value="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember" />
     <MESSAGE value="MemberOrderContainer.js now using the new state structure. Also needed to change the submitLogin Action in index.js so that it dispatched the set_order_user action on login. This is also dispatched from fetchUser action but I realised it needed to be added here as well." />
     <MESSAGE value="Had to add some conditional logic to the fetchUser Action to deal with the refresh that happens when a guardian deletes an item from a child's order (the original logic assumes we want a refresh of the user data to update the lizard points) we want to suppress this from updating the orderuser redux store" />
@@ -732,7 +742,8 @@
     <MESSAGE value="reversed last change  made in error" />
     <MESSAGE value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
     <MESSAGE value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
+    <MESSAGE value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
+    <option name="LAST_COMMIT_MESSAGE" value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

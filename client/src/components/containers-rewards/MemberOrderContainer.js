@@ -60,13 +60,14 @@ class MemberOrderContainer extends Component {
   }
 
   render() {
-    console.log("render");
-    const { user, orderDetail, isFetching, orderExists } = this.props;
+    //console.log("render");
 
-    if (!orderDetail && this.props.orderExists) return <ProgressBar />;
+    const { user, orders, isFetching, orderExists } = this.props;
+    console.log(orders);
+    if (!orders && this.props.orderExists) return <ProgressBar />;
     return (
       <div>
-        {isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
+        {isFetching && JSON.stringify(orders) === JSON.stringify({}) && (
           <ProgressBar />
         )}
         {!isFetching && !orderExists && (
@@ -74,13 +75,19 @@ class MemberOrderContainer extends Component {
             No Order Exists for this centre. Add items to create a new order
           </div>
         )}
-        {JSON.stringify(orderDetail) !== JSON.stringify({}) && (
+        {JSON.stringify(orders) !== undefined && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <OrderDetailCommands deleteClick={this.handleDeletePost} />
-            <OrderDetails
-              lineItems={this.props.orderDetail.lineItems}
-              onDeleteClicked={this.handleDeleteClicked}
-            />
+            {console.log("in here")}
+            {orders.map((order) => {
+              return (<div> <h2> {order._id + " : " + order.fulfillStatus + " : " + order.dateFulfilled} </h2>
+              <OrderDetails
+                  lineItems={order.lineItems}
+                  onDeleteClicked={this.handleDeleteClicked}
+              />
+              </div>
+              )//end return
+            })}
           </div>
         )}
       </div>
@@ -91,7 +98,7 @@ class MemberOrderContainer extends Component {
 MemberOrderContainer.propTypes = {
   centre: PropTypes.string,
   orderExists: PropTypes.bool,
-  orderDetail: PropTypes.object,
+  order: PropTypes.object,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
@@ -102,7 +109,7 @@ function mapStateToProps(state) {
   const {
     isFetching,
     lastUpdated,
-    orderDetail,
+    orders,
     deletes,
     orderExists
   } = order || {
@@ -112,7 +119,7 @@ function mapStateToProps(state) {
   return {
     user,
     deletes,
-    orderDetail,
+    orders,
     isFetching,
     lastUpdated,
     orderExists

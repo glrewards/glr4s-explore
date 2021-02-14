@@ -81,14 +81,14 @@ function order(
       //previous but set order details to this array
       //it needs to be orderDetail.lineItems
 
-      const lineItems = { lineItems: action.payload };
+      const orders = action.payload;
 
       return Object.assign({}, state, {
         isFetching: false,
         orderExists: true,
         didInvalidate: false,
         centre: action.centre,
-        orderDetail: lineItems,
+        orders: orders,
         lastUpdated: action.receivedAt
       });
     case RECEIVED_LINEITEMS_NONE:

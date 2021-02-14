@@ -44,7 +44,7 @@ class GLRHeader extends Component {
     if (this.props.auth.roles.includes("member")) {
       return (
         <NavItem key={"lineItems"} className="sidenav-close">
-          <NavLink to={"/lineitems"}>My Order</NavLink>
+          <NavLink to={"/lineitems"}>Orders</NavLink>
         </NavItem>
       );
     }

@@ -40,6 +40,7 @@ export default class OrderDetail extends Component {
                       <td>
                         <label id={line._id}>
                           <Checkbox
+                              disabled = {this.props.isClosedOrder}
                               label={""}
                               type="checkbox"
                               value={line._id}
@@ -59,6 +60,7 @@ export default class OrderDetail extends Component {
 }
 
 OrderDetail.propTypes = {
+  isClosedOrder: PropTypes.bool,
   isAdmin: PropTypes.bool,
   lineItems: PropTypes.array.isRequired,
   onDeleteClicked: PropTypes.func.isRequired
