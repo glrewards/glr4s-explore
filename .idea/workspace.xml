@@ -24,9 +24,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-admin/AdminOrderDashboardContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-order/OrderCountContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-order/OrderList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderCount.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetailCommands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

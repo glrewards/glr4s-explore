@@ -8,7 +8,7 @@ import {
 } from "../../actions/orderActions";
 import OrderDetails from "../rewards/OrderDetails";
 import PropTypes from "prop-types";
-import { ProgressBar } from "react-materialize";
+import { ProgressBar,Row } from "react-materialize";
 import OrderDetailCommands from "../rewards/OrderDetailCommands";
 
 class MemberOrderContainer extends Component {
@@ -85,16 +85,17 @@ class MemberOrderContainer extends Component {
                 fulfilledDate = new Date(order.dateFulfilled).toDateString();
               }
               return (
-                  <div> <h2> {
+                  <Row className="grey accent-1 text-accent-2 center-align"> <h2> {
                 order.fulfillStatus + " : " + fulfilledDate}
 
               </h2>
               <OrderDetails
+                  isOpenOrder={order.dateFulfilled}
                   lineItems={order.lineItems}
                   onDeleteClicked={this.handleDeleteClicked}
               />
-              </div>
-              );//end return
+              </Row>
+              )//end return
             })
             }
           </div>
