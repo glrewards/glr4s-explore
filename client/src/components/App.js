@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import Landing from "./Landing";
 import GLRHeader from "./GLRHeader";
-import Dashboard from "./Dashboard";
 import GLRShop2 from "./shop/GLRShop2";
 import SimpleCartList from "./shop/SimpleCartList";
 import CentreDashboard from "./containers-rewards/CentreOrderListContainer"
@@ -15,6 +14,7 @@ import GuardianDashboardContainer from "./containers-user/GuardianDashboardConta
 import M from "materialize-css"; //don't delete while I am still using the non react version somewhere
 import SignUpContainer from "./login/SignUpContainer";
 import MemberOrderContainer from "./containers-rewards/MemberOrderContainer";
+import SuperAdminDashboardContainer from "./containers-admin/SuperAdminDashboardContainer";
 
 
 
@@ -45,7 +45,7 @@ class App extends Component {
             <Route exact path="/shop/cart" component={SimpleCartList} />
             <Route path="/email/new" component={EmailNew} />
             <Route path="/admin" component={CentreDashboard} />
-            <Route path="/glradmin" component={Dashboard} />
+            <Route path="/glradmin" component={SuperAdminDashboardContainer} />
             <Route path="/cabinet" component={CabinetContainer} />
             <Route path="/guardian" component={GuardianDashboardContainer} />
             <Route path="/reward/:id" component={RewardContainer} />
