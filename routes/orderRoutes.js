@@ -5,9 +5,11 @@ const requireStudent = require("../middlewares/requireStudent");
 const keys = require("../config/keys");
 const winston = require("winston");
 const axios = require("axios");
-const Order = mongoose.model("orders");
-const Student = mongoose.model("students");
-const Cabinet = mongoose.model("Cabinet");
+const tableGenerator = require('../services/reportTemplates/pickingListTemplate');
+
+//const Order = mongoose.model("orders");
+//const Student = mongoose.model("students");
+//const Cabinet = mongoose.model("Cabinet");
 
 const logger = winston.createLogger({
   level: keys.glrLogLevel,
@@ -74,6 +76,8 @@ module.exports = app => {
       logger.info("calling axios: " + url, centre, user);
       const axiosResponse = await axios.get(url, options);
       const data = axiosResponse.data;
+      //const html = tableGenerator.populateTable(data[1].lineItems);
+      //console.log(html);
       res.send(data);
     } catch (err) {
       logger.error("error getting order: ", err);
@@ -86,7 +90,7 @@ module.exports = app => {
     let centre = req.params.centreId;
     let summary = req.params.summary;
     //TODO: this url needs to be cleaned up
-    let url = keys.glrAPIGateway + keys.glrAPIOrder + "/getCurrentForCentre";
+    let url = keys.glrAPIGateway + keys.glrAPIOrder;
     let options = {
       params: {
         centreId: centre
@@ -98,7 +102,9 @@ module.exports = app => {
     try {
       logger.info("calling axios: " + url, centre);
       const axiosResponse = await axios.get(url, options);
+      logger.debug("axiosResponse Data: ", axiosResponse.data);
       const data = axiosResponse.data;
+
       res.send(data);
     } catch (err) {
       logger.error("error getting order: ", err);

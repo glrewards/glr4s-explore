@@ -24,13 +24,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/containers-admin/AdminOrderDashboardContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/containers-order/OrderCountContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/containers-order/OrderList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderCount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/reportTemplates/buildPaths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreOrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreOrderListContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/login/LoginFormContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/LoginFormContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.jade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout.jade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.jade" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +88,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubProjectSettings">
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
@@ -327,13 +347,7 @@
       <workItem from="1613117111115" duration="1275000" />
       <workItem from="1613209916115" duration="217000" />
       <workItem from="1613220214656" duration="4915000" />
-    </task>
-    <task id="LOCAL-00133" summary="user and favourite changes">
-      <created>1599942271830</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1599942271831</updated>
+      <workItem from="1613514695112" duration="14844000" />
     </task>
     <task id="LOCAL-00134" summary="user and favourite changes">
       <created>1599942952261</created>
@@ -671,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613306876677</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="completed the member view of orders but without paginiation">
+      <created>1613487394326</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1613487394327</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -717,7 +738,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MemberOrderContainer.js now using the new state structure. Also needed to change the submitLogin Action in index.js so that it dispatched the set_order_user action on login. This is also dispatched from fetchUser action but I realised it needed to be added here as well." />
     <MESSAGE value="Had to add some conditional logic to the fetchUser Action to deal with the refresh that happens when a guardian deletes an item from a child's order (the original logic assumes we want a refresh of the user data to update the lizard points) we want to suppress this from updating the orderuser redux store" />
     <MESSAGE value="updated axios version to remove vulnerability" />
     <MESSAGE value="playing with heroku-postbuild" />
@@ -742,23 +762,8 @@
     <MESSAGE value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
     <MESSAGE value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
     <MESSAGE value="order view has basic grouping by order working" />
-    <option name="LAST_COMMIT_MESSAGE" value="order view has basic grouping by order working" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/components/Landing.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/createAdminStore.js</url>
-          <line>44</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="completed the member view of orders but without paginiation" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed the member view of orders but without paginiation" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

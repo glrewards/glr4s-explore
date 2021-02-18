@@ -17,10 +17,17 @@ class LoginFormContainer extends Component {
     //this.props.fetchUser();
   };
 
+    /**
+     * This is an important function this redirects to the right page for the roles
+     * @returns {JSX.Element}
+     */
   renderContent() {
-      if(this.props.user){
+      if((this.props.user)&&(!this.props.user.roles.includes("glradmin"))){
       return <Redirect to="/cabinet" />;
-    }else {
+    }else if((this.props.user)&&(this.props.user.roles.includes("glradmin"))){
+          console.log("redirect to admin");
+          return <Redirect to="/glradmin" />;
+      } else {
         return (
             <div>
                 <LoginForm onSubmit={this.handleSubmit}/>

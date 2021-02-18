@@ -2,15 +2,23 @@
 const passport = require("passport");
 const crypto = require('crypto');
 const mongoose = require("mongoose");
+const winston = require("winston");
+const keys = require("../config/keys");
 const User = mongoose.model("users");
 
+const logger = winston.createLogger({
+  level: keys.glrLogLevel,
+  format: winston.format.json(),
+  defaultMeta: { service: "authRoutes" },
+  transports: [new winston.transports.Console()]
+});
 /* handle redirect to google oauth. */
 
 module.exports = app => {
   /* GET login page. */
   app.get("/login", function(req, res) {
-    // Display the Login page with any flash message, if any
-    console.log("get login page");
+    // Display the Login page
+    logger.debug("get login page");
     res.redirect("/");
   });
 
@@ -23,9 +31,9 @@ module.exports = app => {
     (err, req, res, next) => {
 
       if(err){
+        console.error("login error", err.message);
         res.status(404).send({error: 'You must log in'});
       }
-
 
     }
   );
@@ -41,7 +49,7 @@ module.exports = app => {
 
   });
 
-  app.post('/register', (req, res, next) => {
+  app.post('/register', async (req, res, next) => {
     let pwd = req.body;
     console.log(pwd);
     const saltHash = genPassword(req.body.password);
@@ -53,10 +61,8 @@ module.exports = app => {
       hash: hash,
       salt: salt
     });
-    newUser.save()
-        .then((user) => {
-          console.log(user);
-        });
+     const user = await newUser.save();
+     console.debug("user", user);
     res.redirect('/login');
   });
 
@@ -89,12 +95,13 @@ module.exports = app => {
   );
 
   app.get("/api/logout", (req, res) => {
-    console.log("logout initiated");
+    logger.debug("logout initiated");
     req.logout();
     res.redirect("/");
   });
 
   app.get("/api/current_user", (req, res) => {
+    logger.debug('api/current_user',req.user);
     res.send(req.user); //all working
   });
 };

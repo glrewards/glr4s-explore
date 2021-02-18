@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {deleteLineItems, fetchOrder, invalidateOrder, lineItemsDelete} from "../../actions/orderActions";
-import OrderSummary from "../rewards/OrderSummary";
+//import OrderSummary from "../rewards/OrderSummary";
 import OrderDetails from "../rewards/OrderDetails";
 import OrderDetailCommands from "../rewards/OrderDetailCommands";
 import PropTypes from "prop-types";
-import {ProgressBar} from "react-materialize";
+import {ProgressBar, Row} from "react-materialize";
 
 class CentreOrderListContainer extends Component {
   constructor(props) {
@@ -24,13 +24,24 @@ class CentreOrderListContainer extends Component {
     //this keeps the route logic simple but might not be the best solution
     //longer term.
     if (!event.target) return;
+    console.log(event.target);
     let lineId = event.nativeEvent.target.value;
     let checked = event.nativeEvent.target.checked;
     //need to get the student from the line
+    let orders = this.props.orders;
+    let studentLines = orders.reduce( (lines,order) =>{
+        order.lineItems.forEach( (line) => {
+          lines.push(line);
+        })
+      return lines;
+    },[]).filter( item => item._id === lineId);
+    /*
     let studentLines = this.props.orderDetail.lineItems.filter(
       item => item._id === lineId
     );
+     */
     //check we only got one line
+    console.log(studentLines);
     if(studentLines.length > 1){
       console.log("error: found more than one line");
       return;
@@ -90,28 +101,39 @@ class CentreOrderListContainer extends Component {
     }
   }
   render() {
-    const { user, orderDetail, isFetching } = this.props;
+    const { user, orders, isFetching } = this.props;
     if (!user) return <ProgressBar />;
     return (
       <div>
-        {isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
+        {isFetching && JSON.stringify(orders) === JSON.stringify({}) && (
           <ProgressBar />
         )}
-        {!isFetching && JSON.stringify(orderDetail) === JSON.stringify({}) && (
+        {!isFetching && JSON.stringify(orders) === JSON.stringify({}) && (
           <h2>No Order</h2>
         )}
-        {JSON.stringify(orderDetail) !== JSON.stringify({}) && (
+        { console.log(orders)}
+        {JSON.stringify(orders) !== undefined && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <OrderSummary
-              mostPopular={this.calcMostOrdered()}
-              totalLines={this.calcTotalLines()}
-              totalLizardCards={this.calcTotalCards()}
-            />
             <OrderDetailCommands deleteClick={this.handleDeletePost} />
-            <OrderDetails
-              lineItems={this.props.orderDetail.lineItems}
-              onDeleteClicked={this.handleDeleteClicked}
-            />
+            {orders.map((order) => {
+              let fulfilledDate = "";
+              if (order.dateFulfilled){
+                fulfilledDate = new Date(order.dateFulfilled).toDateString();
+              }
+              return (
+                  <Row className="grey accent-1 text-accent-2 center-align"> <h2> {
+                    order.fulfillStatus + " : " + fulfilledDate}
+
+                  </h2>
+                    <OrderDetails
+                        isOpenOrder={order.dateFulfilled}
+                        lineItems={order.lineItems}
+                        onDeleteClicked={this.handleDeleteClicked}
+                    />
+                  </Row>
+              )//end return
+            })
+            }
           </div>
         )}
       </div>
@@ -121,7 +143,7 @@ class CentreOrderListContainer extends Component {
 
 CentreOrderListContainer.propTypes = {
   centre: PropTypes.string.isRequired,
-  orderDetail: PropTypes.object,
+  orders: PropTypes.array,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
@@ -129,14 +151,14 @@ CentreOrderListContainer.propTypes = {
 
 function mapStateToProps(state) {
   const { order } = state;
-  const { isFetching, lastUpdated, orderDetail, adminDeletes } = order || {
+  const { isFetching, lastUpdated, orders, adminDeletes } = order || {
     isFetching: true
   };
   let user = state.auth;
   return {
     user,
     adminDeletes,
-    orderDetail,
+    orders,
     isFetching,
     lastUpdated
   };

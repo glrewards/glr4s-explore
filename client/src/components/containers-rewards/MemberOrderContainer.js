@@ -63,7 +63,7 @@ class MemberOrderContainer extends Component {
     //console.log("render");
 
     const { user, orders, isFetching, orderExists } = this.props;
-    console.log(orders);
+    //console.log(orders);
     if (!orders && this.props.orderExists) return <ProgressBar />;
     return (
       <div>
@@ -78,7 +78,6 @@ class MemberOrderContainer extends Component {
         {JSON.stringify(orders) !== undefined && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <OrderDetailCommands deleteClick={this.handleDeletePost} />
-            {console.log("in here")}
             {orders.map((order) => {
               let fulfilledDate = "";
               if (order.dateFulfilled){

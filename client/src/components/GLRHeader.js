@@ -10,6 +10,8 @@ class GLRHeader extends Component {
     this.renderContentTop = this.renderContentTop.bind(this);
     this.renderAdminItem = this.renderAdminItem.bind(this);
     this.renderGLRPoints = this.renderGLRPoints.bind(this);
+    this.renderSuperAdmin = this.renderSuperAdmin.bind(this);
+    this.renderRewardCabinet = this.renderRewardCabinet.bind(this);
   }
   componentDidMount() {}
 
@@ -58,25 +60,44 @@ class GLRHeader extends Component {
       );
     }
   }
-
+  renderSuperAdmin() {
+    if (this.props.auth.roles.includes("glradmin")) {
+      return (
+        <NavItem key={"glradmin"} className="sidenav-close">
+          <NavLink to={"/glradmin"}>Admin Dashboard</NavLink>
+        </NavItem>
+      );
+    }
+  }
+  renderRewardCabinet() {
+    if (
+      this.props.auth.roles.some(role => {
+        return ["admin", "member", "guardian"].includes(role);
+      })
+    ) {
+      return (
+        <NavItem key={"cabinet"} className="sidenav-close">
+          <NavLink to={"/cabinet"}>Reward Cabinet</NavLink>
+        </NavItem>
+      );
+    }
+  }
   renderContentTop(side) {
     switch (this.props.auth) {
       case null:
         return;
       case false:
-        //console.log(this.props);
         return null;
       default:
         return [
-          <NavItem key={"cabinet"} className="sidenav-close">
-            <NavLink to={"/cabinet"}>Reward Cabinet</NavLink>
-          </NavItem>,
+          this.renderRewardCabinet(),
           this.renderMyOrder(),
           <NavItem href="/api/logout" key={"logout"}>
             Logout
           </NavItem>,
-            this.renderGuardian(),
+          this.renderGuardian(),
           this.renderAdminItem(),
+          this.renderSuperAdmin(),
           this.renderCartLink(),
           <NavItem key={"points"}>
             <div className="valign-wrapper flow-text">
@@ -92,7 +113,7 @@ class GLRHeader extends Component {
     } else {
       return (
         <NavItem key={"admin"} className="sidenav-close">
-          <Link to="/admin">Admin Dashboard</Link>
+          <Link to="/admin">Centre Dashboard</Link>
         </NavItem>
       );
     }

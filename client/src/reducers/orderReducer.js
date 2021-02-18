@@ -5,7 +5,7 @@ import {
   LINE_MARKED_DELETE,
   LINE_UNMARKED_DELETE,
   RECEIVED_LINEITEMS,
-    RECEIVED_LINEITEMS_NONE,
+  RECEIVED_LINEITEMS_NONE,
   RECEIVE_ORDER,
   REQUEST_LINEITEMS,
   REQUEST_ORDER,
@@ -76,7 +76,7 @@ function order(
         didInvalidate: false
       });
     case RECEIVED_LINEITEMS: // we received a members list of items
-      console.log(action);
+      //console.log(action);
       //this payload is only an array of line items
       //previous but set order details to this array
       //it needs to be orderDetail.lineItems
@@ -107,7 +107,7 @@ function order(
         isFetching: false,
         didInvalidate: false,
         centre: action.centre,
-        orderDetail: action.payload,
+        orders: action.payload,
         lastUpdated: action.receivedAt
       });
     default:

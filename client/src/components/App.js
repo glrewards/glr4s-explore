@@ -17,6 +17,7 @@ import SignUpContainer from "./login/SignUpContainer";
 import MemberOrderContainer from "./containers-rewards/MemberOrderContainer";
 
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +32,7 @@ class App extends Component {
       this.props.fetchUser();
   }
 
+
   render() {
     return (
       <div>
@@ -43,6 +45,7 @@ class App extends Component {
             <Route exact path="/shop/cart" component={SimpleCartList} />
             <Route path="/email/new" component={EmailNew} />
             <Route path="/admin" component={CentreDashboard} />
+            <Route path="/glradmin" component={Dashboard} />
             <Route path="/cabinet" component={CabinetContainer} />
             <Route path="/guardian" component={GuardianDashboardContainer} />
             <Route path="/reward/:id" component={RewardContainer} />
