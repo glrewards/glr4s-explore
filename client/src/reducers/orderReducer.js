@@ -9,7 +9,9 @@ import {
   RECEIVE_ORDER,
   REQUEST_LINEITEMS,
   REQUEST_ORDER,
-  RESET_DELETED
+  RESET_DELETED,
+  GLR_RECEIVED_ORDER_LIST,
+  GLR_REQUEST_ORDER_LIST
 } from "../actions/orderActions";
 
 function order(
@@ -92,7 +94,10 @@ function order(
         lastUpdated: action.receivedAt
       });
     case RECEIVED_LINEITEMS_NONE:
-      return Object.assign({},state,{orderExists:false, isFetching: false});
+      return Object.assign({}, state, {
+        orderExists: false,
+        isFetching: false
+      });
     case INVALIDATE_ORDER:
       return Object.assign({}, state, {
         didInvalidate: true
@@ -109,6 +114,10 @@ function order(
         centre: action.centre,
         orders: action.payload,
         lastUpdated: action.receivedAt
+      });
+    case GLR_RECEIVED_ORDER_LIST:
+      return Object.assign({},state,{
+        GLROrderList:action.payload
       });
     default:
       return state;

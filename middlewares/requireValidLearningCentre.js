@@ -5,6 +5,7 @@ module.exports = async (req,res, next) => {
 
     //if no note then we cannot even do the check => reject
     const order = req.body;
+    //console.log(order);
     if (order.note !== null ){
         const results = await CentreSchema.findOne({"name": order.note});
         if (results){
@@ -12,6 +13,7 @@ module.exports = async (req,res, next) => {
             //console.log(results.toString());
             req.centreId = results._id.toString();
             req.centreName = results.name;
+            console.log(results);
         }else{
             return res.status(401).send({error: 'Centre Not Found'});
         }

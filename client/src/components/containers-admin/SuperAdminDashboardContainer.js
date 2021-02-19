@@ -15,7 +15,7 @@ class SuperAdminDashboardContainer extends Component {
     }
 }
 function mapStateToProps(state) {
-
+ return {}
 }
 
 export default connect(mapStateToProps)(SuperAdminDashboardContainer);

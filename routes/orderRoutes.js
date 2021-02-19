@@ -33,7 +33,7 @@ module.exports = app => {
       params: {
         centreId: centre,
         userId: user,
-        fulfillStatus
+        fulfillStatus: fulfillStatus
       },
       headers: {
         "X-API-KEY": keys.glrAPIGatewayKey
@@ -49,6 +49,42 @@ module.exports = app => {
       res.status(404).send('exception occurred');
     }
 
+  });
+  /**
+   * this is the 'open' call to using any number of parameters to get an array of orders
+   */
+  app.get("/api/orders", requireLogin, async (req, res) => {
+    logger.log({level: 'info', message: "/api/orders: " + req.params});
+    let centre = req.query.centreId;
+    let user = req.query.userId;
+    let fulfillStatus = req.query.fulfillStatus;
+    /*
+    is there a valid open order? we can check this by doing a count and passing the unfilledStaus value if count < 1
+    nothing to return here
+     */
+    let url = keys.glrAPIGateway + keys.glrAPIOrder;
+    let options = {
+      params: {
+        centreId: centre,
+        userId: user,
+        fulfillStatus: fulfillStatus
+      },
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+    try {
+      logger.info("calling axios: " + url, centre, user);
+      const axiosResponse = await axios.get(url, options);
+      const data = axiosResponse.data;
+      logger.debug(data);
+      //const html = tableGenerator.populateTable(data[1].lineItems);
+      //console.log(html);
+      res.send(data);
+    } catch (err) {
+      logger.error("error getting order: ", err);
+      res.status(404).send(err);
+    }
   });
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination

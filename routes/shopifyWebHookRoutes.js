@@ -64,7 +64,7 @@ async function createRewardObject(line) {
   //going to use the mongo client to get the info from shopify products. No value in using mongoose for this, it is
   // private internal logic
   try {
-    let products = mclient.db().collection("shopifyproducts");
+    let products = mongoose.connection.collection("shopifyproducts");
     const query = { id: line.product_id };
     //console.log(query);
     const options = {
@@ -83,7 +83,7 @@ async function createRewardObject(line) {
     });
     //console.log(product);
     //all items via this route will always be glr issued. So we need to look up the object Id for glr issuer
-    const issuers = mclient.db().collection("issuer");
+    const issuers = mongoose.connection.collection("issuer");
     const us = await issuers.findOne({ name: "Great Little Rewards" });
 
     const reward = {

@@ -10,6 +10,8 @@ export const LINE_UNMARKED_DELETE = 'LINE_UNMARKED_DELETE'
 export const RESET_DELETED = 'LINES_DELETED'
 export const ADMIN_LINE_MARKED_DELETE = 'ADMIN_LINE_MARKED_DELETE'
 export const ADMIN_LINE_UNMARKED_DELETE = 'ADMIN_LINE_UNMARKED_DELETE'
+export const GLR_REQUEST_ORDER_LIST = 'GLR_REQUEST_ORDER_LIST'
+export const GLR_RECEIVED_ORDER_LIST = 'GLR_RECEIVED_ORDER_LIST'
 
 export function resetDeleted(){
     return{type: RESET_DELETED}
@@ -17,6 +19,13 @@ export function resetDeleted(){
 
 //checking to see if a member or admin deleted the item
 //admins can delete for any kid so we need to do something different here
+
+function receiveGLROrderList(json){
+    return{
+        type: GLR_RECEIVED_ORDER_LIST,
+        payload: json
+    }
+}
 export function lineItemsDelete(studentId,checked,lineId){
     console.log("lineItemsDelete student: ", studentId);
  if (studentId) {
@@ -110,6 +119,23 @@ export const fetchOrder = (centre) => async dispatch =>{
     const res = await axios.get(url);
     //console.log("response data: ", res.data);
     dispatch(receiveOrder(centre,res.data));
+}
+
+export const fetchOrdersByParams = (fulfillStatus) => async dispatch => {
+    console.log("fetchOrderByParams");
+    let url = "api/orders";
+    let options = {
+        params: {
+            fulfillStatus: fulfillStatus
+        }
+    }
+    try {
+        const res = await axios.get(url, options);
+        console.log(res.data);
+        dispatch(receiveGLROrderList(res.data));
+    }catch (e){
+        console.log(e.message);
+    }
 }
 
 export const fetchLineItems = (centre,studentId) => async dispatch =>{

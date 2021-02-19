@@ -3,6 +3,9 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -24,13 +27,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,14 +343,7 @@
       <workItem from="1613209916115" duration="217000" />
       <workItem from="1613220214656" duration="4915000" />
       <workItem from="1613514695112" duration="20673000" />
-      <workItem from="1613686640597" duration="779000" />
-    </task>
-    <task id="LOCAL-00135" summary="fixed cabinet url but oauth2 is broken">
-      <created>1599987680236</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1599987680237</updated>
+      <workItem from="1613686640597" duration="11136000" />
     </task>
     <task id="LOCAL-00136" summary="AddFav implemented&#10;Refresh User at the right times - fixed">
       <created>1601045508519</created>
@@ -682,7 +681,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613670365053</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list">
+      <created>1613687526761</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1613687526761</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +734,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated axios version to remove vulnerability" />
     <MESSAGE value="playing with heroku-postbuild" />
     <MESSAGE value="reverted changes" />
     <MESSAGE value="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify." />
@@ -753,7 +758,8 @@
     <MESSAGE value="order view has basic grouping by order working" />
     <MESSAGE value="completed the member view of orders but without paginiation" />
     <MESSAGE value="Introduced the new role of glradmin&#10;this has required:&#10; a change to the redirecting logic on the login container&#10; changes and clean up in the GLRHeader nav link creation logic - this was an early component and might need sorting out &#10; more logging was added but more clean ups are needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduced the new role of glradmin&#10;this has required:&#10; a change to the redirecting logic on the login container&#10; changes and clean up in the GLRHeader nav link creation logic - this was an early component and might need sorting out &#10; more logging was added but more clean ups are needed" />
+    <MESSAGE value="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

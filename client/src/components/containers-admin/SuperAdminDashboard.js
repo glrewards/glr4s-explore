@@ -1,13 +1,18 @@
 import OrderListContainer from "../containers-rewards/OrderListContainer";
 import {connect} from "react-redux";
 import React, {Component} from "react";
-export default class SuperAdminDashboard extends Component {
+class SuperAdminDashboard extends Component {
     render() {
         return (
             <div>
-                <OrderListContainer />
+               <OrderListContainer orderStatus={'unfulfilled'}/>
             </div>
         )
     }
 }
 
+function mapStateToProps(state) {
+ return {}
+}
+
+export default connect(mapStateToProps)(SuperAdminDashboard);
