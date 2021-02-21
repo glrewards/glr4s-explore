@@ -33,7 +33,7 @@ function mapStateToProps(state) {
 }
 
 GuardianDashboardContainer.propTypes = {
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object,
     dispatch: PropTypes.func
 
 };

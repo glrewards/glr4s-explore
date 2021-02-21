@@ -7,7 +7,7 @@ import {act} from "react-dom/test-utils";
 export const ui = (state = {}, action) => {
     switch (action.type) {
         case SET_ORDER_USER:
-            console.log("here now" + action.payload);
+            console.log("SET_ORDER_USER: reducer: " + action.payload);
             return{
                 ...state,
                 orderuser: action.payload

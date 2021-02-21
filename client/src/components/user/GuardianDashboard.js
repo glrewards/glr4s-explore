@@ -19,6 +19,7 @@ class GuardianDashboard extends Component {
   }
   render() {
     //console.log("GuardianDashBoard Props", this.props);
+      console.log("GuardianDashboard: render()");
     return (
       <div>
         <Card className={"blue lighten-3"}>
@@ -56,7 +57,7 @@ class GuardianDashboard extends Component {
                   title="Order"
                 >
                   <MemberOrderContainer >
-                    here
+                    Order Line Items
                   </MemberOrderContainer>
                 </Tab>
                 <Tab className="white-text"

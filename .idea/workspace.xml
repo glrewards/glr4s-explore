@@ -28,14 +28,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/AdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/AdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-order/OrderList.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/UserSelectContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserSelectContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requireValidLearningCentre.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,19 +143,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/components/user" />
-      <recent name="$PROJECT_DIR$/client/src/components/member" />
-      <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
-      <recent name="$PROJECT_DIR$/client/src/images" />
-      <recent name="$PROJECT_DIR$/client/src/trash" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/models/rewards" />
       <recent name="$PROJECT_DIR$/client/src/images" />
       <recent name="$PROJECT_DIR$/client/src/reducers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/admin" />
+      <recent name="$PROJECT_DIR$/client/src/components/user" />
+      <recent name="$PROJECT_DIR$/client/src/components/member" />
+      <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
+      <recent name="$PROJECT_DIR$/client/src/images" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -343,14 +348,7 @@
       <workItem from="1613209916115" duration="217000" />
       <workItem from="1613220214656" duration="4915000" />
       <workItem from="1613514695112" duration="20673000" />
-      <workItem from="1613686640597" duration="11136000" />
-    </task>
-    <task id="LOCAL-00136" summary="AddFav implemented&#10;Refresh User at the right times - fixed">
-      <created>1601045508519</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1601045508564</updated>
+      <workItem from="1613686640597" duration="25762000" />
     </task>
     <task id="LOCAL-00137" summary="changed cabinet button colours and started to add favOnly to ShelfList.js">
       <created>1601070891713</created>
@@ -688,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613687526761</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)">
+      <created>1613698689678</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1613698689678</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,7 +739,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="playing with heroku-postbuild" />
     <MESSAGE value="reverted changes" />
     <MESSAGE value="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify." />
     <MESSAGE value="changed the webhook router url to api/webhooks" />
@@ -759,7 +763,8 @@
     <MESSAGE value="completed the member view of orders but without paginiation" />
     <MESSAGE value="Introduced the new role of glradmin&#10;this has required:&#10; a change to the redirecting logic on the login container&#10; changes and clean up in the GLRHeader nav link creation logic - this was an early component and might need sorting out &#10; more logging was added but more clean ups are needed" />
     <MESSAGE value="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list" />
+    <MESSAGE value="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

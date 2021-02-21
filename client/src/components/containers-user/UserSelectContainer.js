@@ -11,15 +11,15 @@ class UserSelectContainer extends Component {
     this.handleRelatedSelected = this.handleRelatedSelected.bind(this);
   }
   componentDidMount() {
-    console.log(this.props);
+    console.log("UserSelectContainer: componentDidMount()");
   }
 
   handleRelatedSelected(e) {
-    console.log(e.target.value);
+    console.log("userSelectedContainer: handleRelatedSelected" + e.target.value);
   }
 
   render() {
-    console.log(this.props);
+    console.log("userSelectContainer: render() " + this.props);
     if (!this.props.related) {
       return <div> no user data</div>;
     }

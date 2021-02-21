@@ -63,7 +63,7 @@ class UserSelect extends Component {
 
 UserSelect.propTypes = {
     userList: PropTypes.array.isRequired,
-    selected: PropTypes.string.isRequired,
+    selected: PropTypes.string,
     selectUser: PropTypes.func.isRequired
 };
 

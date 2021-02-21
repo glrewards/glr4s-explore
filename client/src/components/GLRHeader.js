@@ -19,14 +19,14 @@ class GLRHeader extends Component {
     if (this.props.cart.length > 0) {
       console.log(this.props.cart);
       return (
-        <NavItem className={"sidenav-close"}>
+        //<NavItem className={"sidenav-close"}>
           <NavLink to={"/shop/cart"} key={"cart"}>
             <span>
               <Icon className="material-icons right">shopping_basket</Icon>
               New Basket
             </span>
           </NavLink>
-        </NavItem>
+        //</NavItem>
       );
     }
   }
@@ -45,27 +45,32 @@ class GLRHeader extends Component {
   renderMyOrder() {
     if (this.props.auth.roles.includes("member")) {
       return (
-        <NavItem key={"lineItems"} className="sidenav-close">
+        //<NavItem key={"lineItems"} className="sidenav-close">
           <NavLink to={"/lineitems"}>Orders</NavLink>
-        </NavItem>
+        //</NavItem>
       );
     }
   }
   renderGuardian() {
     if (this.props.auth.roles.includes("guardian")) {
       return (
-        <NavItem key={"guardian"} className="sidenav-close">
+
+        //<NavItem key={"guardian"} className="sidenav-close">
           <NavLink to={"/guardian"}>Guardian Board</NavLink>
-        </NavItem>
+       // </NavItem>
+
+          //<NavItem key={"guardian"} href="/guardian" className="sidenav-close">Guardian Board </NavItem>
       );
     }
   }
   renderSuperAdmin() {
     if (this.props.auth.roles.includes("glradmin")) {
       return (
-        <NavItem key={"glradmin"} className="sidenav-close">
+        //<NavItem key={"glradmin"} className="sidenav-close">
           <NavLink to={"/glradmin"}>Admin Dashboard</NavLink>
-        </NavItem>
+       // </NavItem>
+
+          //<NavItem key={"glradmin"} href="glradmin" className="sidenav-close">Admin Dashboard </NavItem>
       );
     }
   }
@@ -76,9 +81,10 @@ class GLRHeader extends Component {
       })
     ) {
       return (
-        <NavItem key={"cabinet"} className="sidenav-close">
+        //<NavItem key={"cabinet"} className="sidenav-close">
           <NavLink to={"/cabinet"}>Reward Cabinet</NavLink>
-        </NavItem>
+        //</NavItem>
+          //<NavItem key={"cabinet"} href="cabinet" className="sidenav-close">Reward Cabinet </NavItem>
       );
     }
   }
@@ -112,9 +118,9 @@ class GLRHeader extends Component {
     if (!this.props.auth.roles.includes("admin")) {
     } else {
       return (
-        <NavItem key={"admin"} className="sidenav-close">
-          <Link to="/admin">Centre Dashboard</Link>
-        </NavItem>
+        //<NavItem key={"admin"} className="sidenav-close">
+          <NavLink to="/admin">Centre Dashboard</NavLink>
+        //</NavItem>
       );
     }
   }
@@ -126,7 +132,7 @@ class GLRHeader extends Component {
         className="blue darken-2 flow-text"
         centreChildren
         alignLinks="right"
-        brand={<a href={"#"}>Explore Rewards</a>}
+        brand={<a href={"/"}>Explore Rewards</a>}
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
         options={{

@@ -2,15 +2,19 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {ProgressBar, Row} from "react-materialize";
-import SuperAdminDashboard from "./SuperAdminDashboard";
+import SuperAdminDashboard from "../admin/SuperAdminDashboard";
 
 class SuperAdminDashboardContainer extends Component {
     constructor(props) {
         super(props);
+        this.handleOrderLineClicked = this.handleOrderLineClicked.bind(this);
+    }
+    handleOrderLineClicked(event){
+        console.log("magic");
     }
     render(){
         return(
-            <SuperAdminDashboard />
+            <SuperAdminDashboard onOrderLineClicked={this.handleOrderLineClicked}/>
         )
     }
 }
