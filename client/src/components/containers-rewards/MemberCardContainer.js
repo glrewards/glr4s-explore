@@ -28,7 +28,7 @@ class MemberCardContainer extends Component {
                 id={this.props.user._id}
                 firstName={this.props.user.firstName}
                 lastName={this.props.user.lastName}
-                userName={this.props.user.userName}
+                username={this.props.user.username}
                 email={this.props.user.email}
                 address={this.props.user.address}
             />
@@ -48,7 +48,7 @@ function mapStateToProps(state) {
 }
 
 MemberCardContainer.propTypes = {
-    user: PropTypes.object.isRequired
+    user: PropTypes.object
 
 };
 export default connect(mapStateToProps)(MemberCardContainer);

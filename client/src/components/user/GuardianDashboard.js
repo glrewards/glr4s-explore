@@ -20,6 +20,7 @@ class GuardianDashboard extends Component {
   render() {
     //console.log("GuardianDashBoard Props", this.props);
       console.log("GuardianDashboard: render()");
+      console.log(this.props);
     return (
       <div>
         <Card className={"blue lighten-3"}>

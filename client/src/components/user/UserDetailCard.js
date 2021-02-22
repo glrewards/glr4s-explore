@@ -12,8 +12,6 @@ class UserDetailCard extends Component {
       <div>
         <Card
           className={"blue darken-3 center-align"}
-          closeIcon={<Icon>close</Icon>}
-          revealIcon={<Icon>more_vert</Icon>}
           textClassName="white-text"
           title={this.props.firstName + " " + this.props.lastName}
         >
@@ -29,7 +27,7 @@ UserDetailCard.propTypes = {
     id: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  userName: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired
 };

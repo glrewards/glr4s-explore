@@ -118,9 +118,9 @@ class GLRHeader extends Component {
     if (!this.props.auth.roles.includes("admin")) {
     } else {
       return (
-        //<NavItem key={"admin"} className="sidenav-close">
+        <NavItem key={"admin"} className="sidenav-close">
           <NavLink to="/admin">Centre Dashboard</NavLink>
-        //</NavItem>
+        </NavItem>
       );
     }
   }

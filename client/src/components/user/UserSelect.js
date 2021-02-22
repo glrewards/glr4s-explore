@@ -1,8 +1,6 @@
-import {Col, Collection, CollectionItem, Icon, Row, Select} from "react-materialize";
+import {Col, Row, Select} from "react-materialize";
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import UserList from "./UserList";
-import {blue} from "@material-ui/core/colors";
 
 class UserSelect extends Component {
     constructor(props) {
@@ -47,8 +45,9 @@ class UserSelect extends Component {
                                         outDuration: 250
                                     }
                                 }}
+                                    value=""
                             >
-                                <option disabled value="" selected={true}>
+                                <option value="" disabled>
                                     Related Members
                                 </option>
                                 {items}

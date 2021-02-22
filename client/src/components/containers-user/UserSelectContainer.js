@@ -19,7 +19,8 @@ class UserSelectContainer extends Component {
   }
 
   render() {
-    console.log("userSelectContainer: render() " + this.props);
+    console.log("userSelectContainer: render() ");
+    console.log(this.props);
     if (!this.props.related) {
       return <div> no user data</div>;
     }
@@ -47,7 +48,7 @@ const mapDispatchToProps = dispatch => ({
 UserSelectContainer.propTypes = {
   user: PropTypes.object.isRequired,
   related: PropTypes.array,
-  selected: PropTypes.string.isRequired,
+  selected: PropTypes.string,
   actions: PropTypes.object.isRequired
 };
 export default connect(

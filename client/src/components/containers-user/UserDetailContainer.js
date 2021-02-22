@@ -28,7 +28,7 @@ class UserDetailContainer extends Component {
                 id={this.props.user._id}
                 firstName={this.props.user.firstName}
                 lastName={this.props.user.lastName}
-                userName={this.props.user.userName}
+                username={this.props.user.username} //note all lowercase
                 email={this.props.user.email}
                 address={this.props.user.address}
             />
