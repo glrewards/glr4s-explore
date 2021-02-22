@@ -3,9 +3,8 @@
  **/
 
 import React, { Component } from "react";
-import { Table } from "react-materialize";
+import { Table, Row,Button } from "react-materialize";
 import PropTypes from "prop-types";
-import OrderDetail from "./OrderDetails";
 
 const getColor = status => {
   if (status === "fulfilled") return "grey-text";
@@ -23,8 +22,8 @@ export default class OrderList extends Component {
     if (!this.props.orderList) return <div />;
     const orderList = this.props.orderList;
     return (
-      <div style={{ height: "300px", "overflowY": "scroll" }}>
-        <Table hoverable={true}>
+      <Row style={{ height: "300px", "overflowY": "scroll" }}>
+        <Table hoverable={true} className="flow-text">
           <thead>
           <tr>
             <th data-field="name">Name</th>
@@ -44,14 +43,15 @@ export default class OrderList extends Component {
                 >
                   <td id={order._id}>{order._learningCentreId.name}</td>
                   <td id={order._id}>{order.fulfillStatus}</td>
-                  <td> {order.dateReceived}</td>
-                  <td> {order.lineItems.length}</td>
+                  <td id={order._id}> {order.dateReceived}</td>
+                  <td id={order._id}> {order.lineItems.length}</td>
+                  <td><Button waves={"light"} >Test</Button></td>
                 </tr>
               );
             })}
           </tbody>
         </Table>
-      </div>
+      </Row>
     );
   }
 }

@@ -3,7 +3,8 @@ import OrderList from "../rewards/OrderList";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { fetchOrdersByParams } from "../../actions/orderActions";
-import {fetchCabinet} from "../../actions/rewardActions";
+import {selectOrder} from "../../actions/UIActions";
+//import {fetchCabinet} from "../../actions/rewardActions";
 
 class OrderListContainer extends Component {
   constructor(props) {
@@ -22,8 +23,10 @@ class OrderListContainer extends Component {
     return (<OrderList orderList={this.props.orderList} onLineClicked={this.handleLineClicked} />);
   }
   handleLineClicked(event) {
-    console.log(event.nativeEvent.target.id);
+    console.log(event.nativeEvent.target);
+    this.props.dispatch(selectOrder(event.nativeEvent.target.id));
     //this event needs to be thrown upward
+
     this.props.onLineClicked(event);
   }
 }

@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import React, {Component} from "react";
 import {Container, Row, Col,Section} from "react-materialize";
 import PropTypes from "prop-types";
+import LineItemTableContainer from "../containers-rewards/LineItemTableContainer";
 class SuperAdminDashboard extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +14,7 @@ class SuperAdminDashboard extends Component {
     }
     render() {
         return (
-            <Container>
+            <div>
                 <Row>
                     <Col s={12}>
                <OrderListContainer orderStatus={'unfulfilled'} orderList={[]} onLineClicked={this.props.onOrderLineClicked}/>
@@ -21,10 +22,10 @@ class SuperAdminDashboard extends Component {
                 </Row>
                 <Row>
                     <Col s={12}>
-                    <div> stuff goes here</div>
+                        <LineItemTableContainer>Line Item Table</LineItemTableContainer>
                     </Col>
                 </Row>
-            </Container>
+            </div>
         )
     }
 }

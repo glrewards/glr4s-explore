@@ -27,15 +27,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/rewards/LineItemsTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberCardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberCardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/GuardianDashboardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/UserDetailContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserDetailContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/LineItemTableContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-user/UserSelectContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-user/UserSelectContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/GuardianDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,14 +343,7 @@
       <workItem from="1613220214656" duration="4915000" />
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
-      <workItem from="1613928275174" duration="4955000" />
-    </task>
-    <task id="LOCAL-00138" summary="token change to new branch">
-      <created>1601072699370</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1601072699370</updated>
+      <workItem from="1613928275174" duration="17941000" />
     </task>
     <task id="LOCAL-00139" summary="filter shelf by favourites logic implemented - need button to set property and trigger action">
       <created>1601074249427</created>
@@ -688,7 +681,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613927609453</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="A lot of cleanup around the guardian components. Now handles a user refresh of the page. Got rid of a lot of warnings NOT ALL. Ready to try and replicate the master detail nature of the dashboard for the GLR ADMIN Dashboard">
+      <created>1613988287230</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1613988287230</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,7 +734,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify." />
     <MESSAGE value="changed the webhook router url to api/webhooks" />
     <MESSAGE value="first working version of webhook to process shopify order into a cabinet. starting with the case that no cabinet exists. Build a skeleton cabinet object with empty shelves and call the cabinet API to add it. No processing of rewards yet and no handing of situation where we need to amend not create a cabinet." />
     <MESSAGE value="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js" />
@@ -759,7 +758,20 @@
     <MESSAGE value="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list" />
     <MESSAGE value="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)" />
     <MESSAGE value="Cleaned up GLRHeader.js. Removed NavItem and simplified to just use NavLink. This commit also includes unfinished changes to handle GLRAdmin Master Detail order view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up GLRHeader.js. Removed NavItem and simplified to just use NavLink. This commit also includes unfinished changes to handle GLRAdmin Master Detail order view" />
+    <MESSAGE value="A lot of cleanup around the guardian components. Now handles a user refresh of the page. Got rid of a lot of warnings NOT ALL. Ready to try and replicate the master detail nature of the dashboard for the GLR ADMIN Dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="A lot of cleanup around the guardian components. Now handles a user refresh of the page. Got rid of a lot of warnings NOT ALL. Ready to try and replicate the master detail nature of the dashboard for the GLR ADMIN Dashboard" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/rewards/OrderList.js</url>
+          <line>37</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

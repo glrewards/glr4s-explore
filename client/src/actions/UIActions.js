@@ -16,10 +16,15 @@ export function selectUser(userId) {
     }
 }
 
-export function selectOrder(OrderId) {
+export function selectOrder(orderId) {
     console.log("action: selectOrder()");
     return (dispatch, getState) => {
-        const {members} = getState();
+        const orders = getState().order.GLROrderList;
+        const orderIndex = orders.findIndex((order) => {
+            return order._id === orderId;
+        });
+
+
         /*
         const member = members.find( (item) => {
             return item._id === userId;
@@ -27,7 +32,7 @@ export function selectOrder(OrderId) {
         const payload = {member, userId};
 
          */
-        const payload = {};
+        const payload = {masterOrderIndex: orderIndex, masterOrderId: orderId};
         dispatch({type: MASTER_ORDER_SELECTED, payload});
     }
 }

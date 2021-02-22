@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import UserSelect from "../user/UserSelect";
 import * as UIActions from "../../actions/UIActions";
 import { bindActionCreators } from "redux";
+import {ProgressBar} from "react-materialize";
 
 class UserSelectContainer extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class UserSelectContainer extends Component {
     console.log("userSelectContainer: render() ");
     console.log(this.props);
     if (!this.props.related) {
-      return <div> no user data</div>;
+      return <ProgressBar> no user data</ProgressBar>;
     }
     return (
       <UserSelect
