@@ -14,21 +14,6 @@ const createRow = (line) =>`
 
 const createTable = (rows) => `
 <table>
-    <tr>
-        <th>Title</th>
-        <th>quantity</th>
-        <th>Points</th>
-        <th>Image</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-    </tr>
-    ${rows}
- </table>
-`
-
-const createHTML = (table) => `
-<html>
-<head>
 <style>
         table {
           width: 100%;
@@ -53,6 +38,21 @@ const createHTML = (table) => `
         width:50px; height:auto;
         }
       </style>
+    <tr>
+        <th>Title</th>
+        <th>quantity</th>
+        <th>Points</th>
+        <th>Image</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    ${rows}
+ </table>
+`
+
+const createHTML = (table) => `
+<html>
+<head>
 </head>
 <body>
 ${table}
@@ -69,15 +69,8 @@ const doesFileExist = (filePath) => {
 };
 
 function populateTable(data) {
-    if (doesFileExist(buildPathHtml)) {
-        console.log('Deleting old build file');
-        /* If the file exists delete the file from system */
-        fs.unlinkSync(buildPathHtml);
-    }
     const rows = data.map(createRow).join('');
     const table = createTable(rows);
-    const html = createHTML(table);
-    fs.writeFileSync(buildPathHtml, html);
-    return html;
+    return table;
 }
 module.exports = {populateTable}

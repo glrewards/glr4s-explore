@@ -10,7 +10,7 @@ class SuperAdminDashboardContainer extends Component {
         this.handleOrderLineClicked = this.handleOrderLineClicked.bind(this);
     }
     handleOrderLineClicked(event){
-        console.log("magic");
+       //doing nothing
     }
     render(){
         return(

@@ -3,7 +3,7 @@
  **/
 
 import React, { Component } from "react";
-import { Table, Row,Button } from "react-materialize";
+import { Table, Row, Button } from "react-materialize";
 import PropTypes from "prop-types";
 
 const getColor = status => {
@@ -22,21 +22,21 @@ export default class OrderList extends Component {
     if (!this.props.orderList) return <div />;
     const orderList = this.props.orderList;
     return (
-      <Row style={{ height: "300px", "overflowY": "scroll" }}>
+      <Row style={{ height: "300px", overflowY: "scroll" }}>
         <Table hoverable={true} className="flow-text">
           <thead>
-          <tr>
-            <th data-field="name">Name</th>
-            <th data-field="fulfillStatus">Status</th>
-            <th data-field="createdDate">Date Opened</th>
-            <th data-field="lineCount"> Line Count</th>
-          </tr>
+            <tr>
+              <th data-field="name">Name</th>
+              <th data-field="fulfillStatus">Status</th>
+              <th data-field="createdDate">Date Opened</th>
+              <th data-field="lineCount"> Line Count</th>
+            </tr>
           </thead>
           <tbody>
             {orderList.map(order => {
               return (
                 <tr
-                    key={order._id}
+                  key={order._id}
                   id={order._id}
                   className={getColor(order.fulfillStatus)}
                   onClick={event => this.props.onLineClicked(event)}
@@ -45,7 +45,20 @@ export default class OrderList extends Component {
                   <td id={order._id}>{order.fulfillStatus}</td>
                   <td id={order._id}> {order.dateReceived}</td>
                   <td id={order._id}> {order.lineItems.length}</td>
-                  <td><Button waves={"light"} >Test</Button></td>
+                  <td>
+                    <Button className="amber"
+                      waves={"light"}
+                      href={"http://localhost:5001/reports/pickinglist/" + order._id}
+                      node="a"
+                      onClick={event => {
+                        console.log("button stops event propagation");
+                        event.stopPropagation();
+                        return false;
+                      }}
+                    >
+                      Pick List
+                    </Button>
+                  </td>
                 </tr>
               );
             })}

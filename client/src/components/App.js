@@ -15,6 +15,7 @@ import M from "materialize-css"; //don't delete while I am still using the non r
 import SignUpContainer from "./login/SignUpContainer";
 import MemberOrderContainer from "./containers-rewards/MemberOrderContainer";
 import SuperAdminDashboardContainer from "./containers-admin/SuperAdminDashboardContainer";
+import PDFContainer from "./containers-reports/PDFContainer";
 
 
 
@@ -49,6 +50,7 @@ class App extends Component {
             <Route path="/cabinet" component={CabinetContainer} />
             <Route path="/guardian" component={GuardianDashboardContainer} />
             <Route path="/reward/:id" component={RewardContainer} />
+            <Route path="/reports" component={PDFContainer} />
           </div>
         </BrowserRouter>
       </div>

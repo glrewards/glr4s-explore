@@ -238,4 +238,20 @@ module.exports = app => {
       res.status(400).send(err);
     }
   });
+  app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) =>{
+    const orderId = req.params.orderId;
+    let url = keys.glrAPIGateway + keys.glrAPIOrder + "/" + orderId;
+    let options = {
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+    try {
+      let response = await axios.get(url, options);
+      const html = tableGenerator.populateTable(response.data.lineItems);
+      res.send(html);
+    }catch(e){
+      res.status(400).send("error creating picking list");
+    }
+  } );
 };
