@@ -20,7 +20,7 @@ class GuardianDashboardContainer extends Component {
                this.props.dispatch(fetchUser());
            }else {
                console.log("GuardianDashboardContainer: componentDidMount: user exists getting related users");
-               //this.props.dispatch(fetchRelatedMembers(this.props.user._id));
+               this.props.dispatch(fetchRelatedMembers(this.props.user._id));
            }
        }
 

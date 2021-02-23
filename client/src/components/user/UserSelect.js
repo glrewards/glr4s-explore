@@ -23,7 +23,7 @@ class UserSelect extends Component {
                 <div>
                     <Row>
                         <Col s={12}>
-                            <Select className={"green"}
+                            <Select className={"amber"}
                                 id="SelectRelated"
                                 multiple={false}
                                 onChange={(e) => {
