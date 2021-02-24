@@ -22,10 +22,8 @@ const userSchema = new Schema({
     "_relatedUserIds": [{"type": Schema.Types.ObjectId, "ref": 'related'}],
     "favourites":[favouriteSchema],
     "resetNeeded": Boolean,
-    schema_version: {type: String, default: 'v2'}
+    "schema_version": {type: String, default: 'v2'}
 });
 
-
 mongoose.model('users',userSchema);
-mongoose.model('related', userSchema, 'related');
 

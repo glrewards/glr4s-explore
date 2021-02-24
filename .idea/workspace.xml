@@ -28,8 +28,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Student.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Student.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Activity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Guardian.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/School.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SchoolClass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Teacher.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/UserRole.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserRole.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/address.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rewards/LearningCentre.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/LearningCentre.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,9 +141,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models/rewards" />
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/client/build" />
       <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
-      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/client/src/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -338,14 +346,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="5645000" />
-    </task>
-    <task id="LOCAL-00145" summary="about to try nds change the RewardCard.js">
-      <created>1601276278450</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1601276278451</updated>
+      <workItem from="1614104328296" duration="6410000" />
     </task>
     <task id="LOCAL-00146" summary="Styling of RewardCard.js complete with reactive image control and mediabox implemented">
       <created>1601278178105</created>
@@ -683,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614153442285</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="starting to implement schema versioning in model definitions">
+      <created>1614160804978</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1614160804978</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +737,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="webhook working but needs more robust testimg" />
     <MESSAGE value="cabinet amend of count for existing rewards implemented" />
     <MESSAGE value="finished the order to cabinet webhook" />
     <MESSAGE value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
@@ -754,7 +761,8 @@
     <MESSAGE value="tweak to GuardianDashboardContainer.js" />
     <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
     <MESSAGE value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
-    <option name="LAST_COMMIT_MESSAGE" value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
+    <MESSAGE value="starting to implement schema versioning in model definitions" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting to implement schema versioning in model definitions" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

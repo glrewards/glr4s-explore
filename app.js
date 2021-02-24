@@ -13,7 +13,7 @@ require("./models/rewards/Reward");
 require("./models/rewards/RewardTemplate");
 require("./models/rewards/RewardType");
 require("./models/Student");
-require("./models/Teacher");
+//require("./models/Teacher");
 require("./models/User");
 require("./models/shop/order/Order");
 require("./models/rewards/LearningCentre");
