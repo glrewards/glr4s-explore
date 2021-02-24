@@ -15,7 +15,7 @@ require("./models/rewards/RewardType");
 require("./models/Student");
 //require("./models/Teacher");
 require("./models/User");
-require("./models/shop/order/Order");
+//require("./models/shop/order/Order");
 require("./models/rewards/LearningCentre");
 require("./services/passport");
 

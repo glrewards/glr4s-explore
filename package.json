@@ -40,6 +40,7 @@
     "passport-slack-oauth2": "^1.0.2",
     "path-parser": "^4.2.0",
     "pug": "^2.0.3",
+    "puppeteer": "^7.1.0",
     "raw-body": "^2.4.1",
     "sendgrid": "^5.2.3",
     "stripe": "^6.32.0",

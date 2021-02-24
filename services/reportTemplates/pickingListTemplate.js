@@ -69,8 +69,15 @@ const doesFileExist = (filePath) => {
 };
 
 function populateTable(data) {
+    if (doesFileExist(buildPathHtml)) {
+        console.log('Deleting old build file');
+        /* If the file exists delete the file from system */
+        fs.unlinkSync(buildPathHtml);
+    }
     const rows = data.map(createRow).join('');
     const table = createTable(rows);
+    const html = createHTML(table);
+    fs.writeFileSync(buildPathHtml,html);
     return table;
 }
 module.exports = {populateTable}

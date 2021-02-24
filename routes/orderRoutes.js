@@ -6,7 +6,8 @@ const keys = require("../config/keys");
 const winston = require("winston");
 const axios = require("axios");
 const tableGenerator = require('../services/reportTemplates/pickingListTemplate');
-
+const PDFGenerator = require('../services/reportTemplates/createPicklistPDF');
+const puppeteer = require('puppeteer');
 //const Order = mongoose.model("orders");
 //const Student = mongoose.model("students");
 //const Cabinet = mongoose.model("Cabinet");
@@ -239,6 +240,7 @@ module.exports = app => {
     }
   });
   app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) =>{
+    const type = req.query.type;
     const orderId = req.params.orderId;
     console.log("/reports/pickinglist/:orderId");
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/" + orderId;
@@ -250,7 +252,14 @@ module.exports = app => {
     try {
       let response = await axios.get(url, options);
       const html = tableGenerator.populateTable(response.data.lineItems);
-      res.send(html);
+      if (type !== "pdf") {
+        res.send(html);
+      }else if (type === "pdf"){
+        logger.info("creating picklist pdf");
+        const pdf = await PDFGenerator.getPDF();
+        res.status(200).send(pdf);
+
+      }
     }catch(e){
       res.status(400).send("error creating picking list");
     }

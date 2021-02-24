@@ -27,17 +27,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Activity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Guardian.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/School.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/SchoolClass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Teacher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/UserRole.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserRole.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/address.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/LearningCentre.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/LearningCentre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shop/order/LineItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shop/order/Order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shop/product/Product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shop/product/ProductImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shop/product/Variant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,14 +347,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="6410000" />
-    </task>
-    <task id="LOCAL-00146" summary="Styling of RewardCard.js complete with reactive image control and mediabox implemented">
-      <created>1601278178105</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1601278178105</updated>
+      <workItem from="1614104328296" duration="10456000" />
     </task>
     <task id="LOCAL-00147" summary="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things.">
       <created>1601290778393</created>
@@ -691,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614160804978</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="more schema and model cleanup">
+      <created>1614161366532</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1614161366532</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,7 +738,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cabinet amend of count for existing rewards implemented" />
     <MESSAGE value="finished the order to cabinet webhook" />
     <MESSAGE value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
     <MESSAGE value="removed a console.log" />
@@ -762,7 +762,8 @@
     <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
     <MESSAGE value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
     <MESSAGE value="starting to implement schema versioning in model definitions" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting to implement schema versioning in model definitions" />
+    <MESSAGE value="more schema and model cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="more schema and model cleanup" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
