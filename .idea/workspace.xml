@@ -26,10 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
-    </list>
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -337,14 +334,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="11351000" />
-    </task>
-    <task id="LOCAL-00148" summary="checking NODE_ENV is working correctly">
-      <created>1601291956562</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1601291956562</updated>
+      <workItem from="1614104328296" duration="12056000" />
     </task>
     <task id="LOCAL-00149" summary="simplified order process no longer using the cart &#10;https://trello.com/c/0Zinx0ZC">
       <created>1601636890308</created>
@@ -682,7 +672,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614178669201</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="added some logs to reporting services">
+      <created>1614189795770</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1614189795770</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +725,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
     <MESSAGE value="removed a console.log" />
     <MESSAGE value="updated packages as recommended" />
     <MESSAGE value="trying to audit client packages" />
@@ -753,7 +749,8 @@
     <MESSAGE value="starting to implement schema versioning in model definitions" />
     <MESSAGE value="more schema and model cleanup" />
     <MESSAGE value="pdf working" />
-    <option name="LAST_COMMIT_MESSAGE" value="pdf working" />
+    <MESSAGE value="added some logs to reporting services" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some logs to reporting services" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

@@ -75,12 +75,17 @@ function populateTable(data) {
         fs.unlinkSync(buildPathHtml);
     }
     const rows = data.map(createRow).join('');
+    console.log(rows);
     const table = createTable(rows);
     const html = createHTML(table);
     console.log("created table");
     console.log(html);
     console.log(buildPathHtml);
-    fs.writeFileSync(buildPathHtml,html);
+    try{
+        fs.writeFileSync(buildPathHtml,html);
+    }catch (e){
+        console.log(e.message);
+    }
     return table;
 }
 module.exports = {populateTable}
