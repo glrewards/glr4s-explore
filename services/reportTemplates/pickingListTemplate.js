@@ -77,6 +77,9 @@ function populateTable(data) {
     const rows = data.map(createRow).join('');
     const table = createTable(rows);
     const html = createHTML(table);
+    console.log("created table");
+    console.log(html);
+    console.log(buildPathHtml);
     fs.writeFileSync(buildPathHtml,html);
     return table;
 }

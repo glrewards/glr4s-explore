@@ -27,17 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shop/order/LineItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shop/order/Order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shop/product/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shop/product/ProductImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shop/product/Variant.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -347,14 +337,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="10456000" />
-    </task>
-    <task id="LOCAL-00147" summary="IMPORTANT MIGHT NEED TO ROLL THIS BACK&#10;Changed the proxy routing logic and have introduced an new react variable that might break things.">
-      <created>1601290778393</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1601290778393</updated>
+      <workItem from="1614104328296" duration="11351000" />
     </task>
     <task id="LOCAL-00148" summary="checking NODE_ENV is working correctly">
       <created>1601291956562</created>
@@ -692,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614161366532</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="pdf working">
+      <created>1614178669201</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1614178669201</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,7 +728,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished the order to cabinet webhook" />
     <MESSAGE value="fixed bug creating a rewward. was not storing the correct reference to shopifyproducts" />
     <MESSAGE value="removed a console.log" />
     <MESSAGE value="updated packages as recommended" />
@@ -763,7 +752,8 @@
     <MESSAGE value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
     <MESSAGE value="starting to implement schema versioning in model definitions" />
     <MESSAGE value="more schema and model cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="more schema and model cleanup" />
+    <MESSAGE value="pdf working" />
+    <option name="LAST_COMMIT_MESSAGE" value="pdf working" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
