@@ -9,7 +9,8 @@ const rewardTypeSchema = new Schema({
   },
   description: {
     type: String
-  }
+  },
+  schema_version: {type: String, default: 'v2'}
 });
 
 mongoose.model("RewardType", rewardTypeSchema);

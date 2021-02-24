@@ -28,11 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Student.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Student.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +118,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/models/rewards" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -135,10 +132,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/rewards" />
       <recent name="$PROJECT_DIR$/client/build" />
       <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
       <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$/models/rewards" />
       <recent name="$PROJECT_DIR$/client/src/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -341,14 +338,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="3963000" />
-    </task>
-    <task id="LOCAL-00144" summary="basic reward detail working">
-      <created>1601237413507</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1601237413507</updated>
+      <workItem from="1614104328296" duration="5645000" />
     </task>
     <task id="LOCAL-00145" summary="about to try nds change the RewardCard.js">
       <created>1601276278450</created>
@@ -686,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614104414882</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <task id="LOCAL-00193" summary="added setupProxy.js config to make /reports/ work from glr.ngrok.io">
+      <created>1614153442285</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1614153442285</updated>
+    </task>
+    <option name="localTasksCounter" value="194" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,7 +729,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="webhook is updating existing quantities now" />
     <MESSAGE value="webhook working but needs more robust testimg" />
     <MESSAGE value="cabinet amend of count for existing rewards implemented" />
     <MESSAGE value="finished the order to cabinet webhook" />
@@ -757,7 +753,8 @@
     <MESSAGE value="added audit fix to the heroku post build" />
     <MESSAGE value="tweak to GuardianDashboardContainer.js" />
     <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic picklist in html form working. need to convert to pdf" />
+    <MESSAGE value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
+    <option name="LAST_COMMIT_MESSAGE" value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

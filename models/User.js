@@ -21,7 +21,8 @@ const userSchema = new Schema({
     "address": {"type": String},
     "_relatedUserIds": [{"type": Schema.Types.ObjectId, "ref": 'related'}],
     "favourites":[favouriteSchema],
-    "resetNeeded": Boolean
+    "resetNeeded": Boolean,
+    schema_version: {type: String, default: 'v2'}
 });
 
 

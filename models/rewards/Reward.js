@@ -8,7 +8,8 @@ const rewardSchema = new Schema({
   _shopifyProduct: { type: Schema.Types.ObjectId, ref: "shopifyproducts" },
   _issuer: { type: Schema.Types.ObjectId, ref: "issuer" },
   count: {type: Number, required: true},
-  shopifyProductId: {type: Number}
+  shopifyProductId: {type: Number},
+  schema_version: {type: String, default: 'v2'}
 });
 
 mongoose.model("Reward", rewardSchema);

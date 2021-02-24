@@ -10,7 +10,8 @@ const shelfSchema = new Schema({
     rewardItems: [rewardSchema],
     totalRewards: Number,
     imgURL: {type: String},
-    warningLevel: Number
+    warningLevel: Number,
+    schema_version: {type: String, default: 'v2'}
 });
 
 mongoose.model("Shelf", shelfSchema);

@@ -17,7 +17,8 @@ const rewardTemplateSchema = new Schema({
     pointValue: {
         type: Number
     },
-    _issuer: {type: Schema.Types.ObjectId, ref: 'issuer'}
+    _issuer: {type: Schema.Types.ObjectId, ref: 'issuer'},
+    schema_version: {type: String, default: 'v2'}
 });
 
 mongoose.model("RewardTemplate", rewardTemplateSchema);
