@@ -35,6 +35,7 @@ class App extends Component {
 
 
   render() {
+    //<Route path="/reports" component={PDFContainer} />
     return (
       <div>
         <BrowserRouter>
@@ -50,7 +51,7 @@ class App extends Component {
             <Route path="/cabinet" component={CabinetContainer} />
             <Route path="/guardian" component={GuardianDashboardContainer} />
             <Route path="/reward/:id" component={RewardContainer} />
-            <Route path="/reports" component={PDFContainer} />
+
           </div>
         </BrowserRouter>
       </div>

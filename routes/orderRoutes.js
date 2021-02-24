@@ -240,6 +240,7 @@ module.exports = app => {
   });
   app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) =>{
     const orderId = req.params.orderId;
+    console.log("/reports/pickinglist/:orderId");
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/" + orderId;
     let options = {
       headers: {

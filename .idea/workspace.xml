@@ -27,13 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/containers-reports/PDFContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,13 +341,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-    </task>
-    <task id="LOCAL-00143" summary="reward detail layout complete">
-      <created>1601224492558</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1601224492558</updated>
+      <workItem from="1614104328296" duration="3963000" />
     </task>
     <task id="LOCAL-00144" summary="basic reward detail working">
       <created>1601237413507</created>
@@ -686,7 +679,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614064275902</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="basic picklist in html form working. need to convert to pdf">
+      <created>1614104414881</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1614104414882</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,7 +732,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added glrAPIAdmin: 'glr/api/glr4s/admin', to config ready to start referencing the ADMIN API routes via kong. All of this is part of creating an API call to let me retrieve rewards based on the shopifyid I don't want to make this publicly available on the same security as the other AP. THAT SAID THIS IS NOT BEING IMPLEMENTED NOW. just the config." />
     <MESSAGE value="webhook is updating existing quantities now" />
     <MESSAGE value="webhook working but needs more robust testimg" />
     <MESSAGE value="cabinet amend of count for existing rewards implemented" />
@@ -757,19 +756,8 @@
     <MESSAGE value="working glr admin dashboard with basic master detail. Just need o decide on best way to print the picking list now." />
     <MESSAGE value="added audit fix to the heroku post build" />
     <MESSAGE value="tweak to GuardianDashboardContainer.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="tweak to GuardianDashboardContainer.js" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/components/rewards/OrderList.js</url>
-          <line>37</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic picklist in html form working. need to convert to pdf" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

@@ -46,10 +46,12 @@ export default class OrderList extends Component {
                   <td id={order._id}> {order.dateReceived}</td>
                   <td id={order._id}> {order.lineItems.length}</td>
                   <td>
-                    <Button className="amber"
+                    <Button
+                      className="amber"
                       waves={"light"}
-                      href={"http://localhost:5001/reports/pickinglist/" + order._id}
+                      href={"/reports/pickinglist/" + order._id}
                       node="a"
+                      target="_blank"
                       onClick={event => {
                         console.log("button stops event propagation");
                         event.stopPropagation();
