@@ -28,7 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,14 +337,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="14514000" />
-    </task>
-    <task id="LOCAL-00150" summary="wont add duplicate items to order https://trello.com/c/Cs8dW43T">
-      <created>1601662485134</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1601662485134</updated>
+      <workItem from="1614104328296" duration="15460000" />
     </task>
     <task id="LOCAL-00151" summary="finished order processing clean up for now. Moving on to Guardian.">
       <created>1601724635282</created>
@@ -683,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614191584583</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="added back the creation of the html file to test on heroku">
+      <created>1614331784700</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1614331784700</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +728,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed a console.log" />
     <MESSAGE value="updated packages as recommended" />
     <MESSAGE value="trying to audit client packages" />
     <MESSAGE value="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body." />
@@ -754,7 +752,8 @@
     <MESSAGE value="more schema and model cleanup" />
     <MESSAGE value="pdf working" />
     <MESSAGE value="added some logs to reporting services" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some logs to reporting services" />
+    <MESSAGE value="added back the creation of the html file to test on heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="added back the creation of the html file to test on heroku" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
