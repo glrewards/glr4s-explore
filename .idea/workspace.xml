@@ -26,7 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="" />
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -334,14 +338,7 @@
       <workItem from="1613514695112" duration="20673000" />
       <workItem from="1613686640597" duration="26585000" />
       <workItem from="1613928275174" duration="27738000" />
-      <workItem from="1614104328296" duration="12056000" />
-    </task>
-    <task id="LOCAL-00149" summary="simplified order process no longer using the cart &#10;https://trello.com/c/0Zinx0ZC">
-      <created>1601636890308</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1601636890308</updated>
+      <workItem from="1614104328296" duration="14514000" />
     </task>
     <task id="LOCAL-00150" summary="wont add duplicate items to order https://trello.com/c/Cs8dW43T">
       <created>1601662485134</created>
@@ -679,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614189795770</updated>
     </task>
-    <option name="localTasksCounter" value="198" />
+    <task id="LOCAL-00198" summary="added some logs to reporting services">
+      <created>1614191584583</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1614191584583</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

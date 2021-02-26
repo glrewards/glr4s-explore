@@ -264,4 +264,5 @@ module.exports = app => {
       res.status(400).send("error creating picking list");
     }
   } );
+
 };

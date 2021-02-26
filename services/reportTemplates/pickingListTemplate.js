@@ -64,16 +64,13 @@ const doesFileExist = (filePath) => {
         fs.statSync(filePath); // get information of the specified file path.
         return true;
     } catch (error) {
+        console.log(error.message);
         return false;
     }
 };
 
 function populateTable(data) {
-    if (doesFileExist(buildPathHtml)) {
-        console.log('Deleting old build file');
-        /* If the file exists delete the file from system */
-        fs.unlinkSync(buildPathHtml);
-    }
+
     const rows = data.map(createRow).join('');
     console.log(rows);
     const table = createTable(rows);
@@ -81,11 +78,12 @@ function populateTable(data) {
     console.log("created table");
     console.log(html);
     console.log(buildPathHtml);
-    try{
-        fs.writeFileSync(buildPathHtml,html);
-    }catch (e){
-        console.log(e.message);
+    if (doesFileExist(buildPathHtml)) {
+        console.log('Deleting old build file');
+        /* If the file exists delete the file from system */
+        fs.unlinkSync(buildPathHtml);
     }
+    fs.writeFileSync(buildPathHtml, html);
     return table;
 }
 module.exports = {populateTable}
