@@ -13,7 +13,6 @@
     "heroku-postbuild": "npm install --prefix client --prefix client && npm run build --prefix client"
   },
   "dependencies": {
-    "@shopify/koa-shopify-graphql-proxy": "^3.1.1",
     "axios": "^0.21.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
@@ -32,14 +31,12 @@
     "lodash": "^4.17.19",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.12",
-    "morgan": "~1.9.0",
     "nodemon": "^2.0.4",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-slack-oauth2": "^1.0.2",
     "path-parser": "^4.2.0",
-    "pug": "^3.0.1",
     "puppeteer": "^7.1.0",
     "raw-body": "^2.4.1",
     "sendgrid": "^5.2.3",
