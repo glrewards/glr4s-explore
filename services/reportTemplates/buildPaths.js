@@ -8,8 +8,8 @@ const path = require('path');
  * absolute path.
  */
 const buildPaths = {
-    buildPathHtml: path.resolve('./generated/reports/pickinglist.html'),
-    buildPathPdf: path.resolve('./generated/reports/pickinglist.pdf')
+    buildPathHtml: path.resolve('pickinglist.html'),
+    buildPathPdf: path.resolve('pickinglist.pdf')
 };
 
 module.exports = buildPaths;

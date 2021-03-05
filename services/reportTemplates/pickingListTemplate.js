@@ -78,15 +78,18 @@ function populateTable(data) {
     console.log("created table");
     console.log(html);
     console.log(buildPathHtml);
-    if (doesFileExist(buildPathHtml)) {
-        console.log('Deleting old build file');
-        //f the file exists delete the file from system
-        fs.unlinkSync(buildPathHtml);
+    try {
+        if (doesFileExist(buildPathHtml)) {
+            console.log('Deleting old build file');
+            //f the file exists delete the file from system
+            fs.unlinkSync(buildPathHtml);
+        }
+        console.log("creating file");
+        fs.writeFileSync(buildPathHtml, html);
+        console.log("created file");
+    }catch(e){
+        console.log(e.message);
     }
-    console.log("creating file");
-    fs.writeFileSync(buildPathHtml, html);
-    console.log("created file");
-
 
     return table;
 }
