@@ -265,8 +265,4 @@ module.exports = app => {
     }
   } );
 
-  app.get("/reports/test", async (req,res) => {
-    res.send ("<p>test</p>");
-  });
-
 };
