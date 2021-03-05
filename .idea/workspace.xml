@@ -27,6 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,14 +339,7 @@
       <workItem from="1613928275174" duration="27738000" />
       <workItem from="1614104328296" duration="19292000" />
       <workItem from="1614697635213" duration="1677000" />
-      <workItem from="1614938908832" duration="2354000" />
-    </task>
-    <task id="LOCAL-00156" summary="implemented correct action and reducer logic to store ordermember data in store.ui.ordermember. Now need to alter the MemberOrderContainer to use this source for all user data and remove all use of the store.auth section. This SHOULD permit me to reuse the whole thing as-is for the guardian dashboard as the view is now no longer linked directly the current user but can be linked to any user that we populate into ui.ordermember">
-      <created>1604836240920</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1604836240927</updated>
+      <workItem from="1614938908832" duration="3321000" />
     </task>
     <task id="LOCAL-00157" summary="MemberOrderContainer.js now using the new state structure. Also needed to change the submitLogin Action in index.js so that it dispatched the set_order_user action on login. This is also dispatched from fetchUser action but I realised it needed to be added here as well.">
       <created>1604838222886</created>
@@ -683,7 +677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614941030915</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <task id="LOCAL-00205" summary="try catch for puppeteer call and some logging">
+      <created>1614941346554</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1614941346554</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +730,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
     <MESSAGE value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
     <MESSAGE value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
     <MESSAGE value="order view has basic grouping by order working" />
@@ -754,7 +754,8 @@
     <MESSAGE value="added some logging to the file creation" />
     <MESSAGE value="deleted old generated files" />
     <MESSAGE value="removed the test get route" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the test get route" />
+    <MESSAGE value="try catch for puppeteer call and some logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="try catch for puppeteer call and some logging" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

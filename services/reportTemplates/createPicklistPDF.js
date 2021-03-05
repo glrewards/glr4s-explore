@@ -13,7 +13,7 @@ const printPdf = async () => {
     console.log(buildPathHtml);
     try {
         console.log("trying to open html file: " + buildPathHtml);
-        await page.goto(buildPathHtml, {waitUntil: 'networkidle0'});
+        await page.goto("file:///" + buildPathHtml, {waitUntil: 'networkidle0'});
         console.log("opened OK");
         /* 3- Take a snapshot of the PDF */
         const pdf = await page.pdf({
