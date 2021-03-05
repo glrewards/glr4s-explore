@@ -5,7 +5,7 @@ const { buildPathHtml, buildPathPdf } = require('./buildPaths');
 
 const printPdf = async () => {
     console.log('Starting: Generating PDF Process, Kindly wait ..');
-    /** Launch a headleass browser */
+    /** Launch a headless browser */
     const browser = await puppeteer.launch();
     /* 1- Create a newPage() object. It is created in default browser context. */
     const page = await browser.newPage();

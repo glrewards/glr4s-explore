@@ -28,6 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -339,14 +340,7 @@
       <workItem from="1613928275174" duration="27738000" />
       <workItem from="1614104328296" duration="19292000" />
       <workItem from="1614697635213" duration="1677000" />
-      <workItem from="1614938908832" duration="3321000" />
-    </task>
-    <task id="LOCAL-00157" summary="MemberOrderContainer.js now using the new state structure. Also needed to change the submitLogin Action in index.js so that it dispatched the set_order_user action on login. This is also dispatched from fetchUser action but I realised it needed to be added here as well.">
-      <created>1604838222886</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1604838222886</updated>
+      <workItem from="1614938908832" duration="4017000" />
     </task>
     <task id="LOCAL-00158" summary="Had to add some conditional logic to the fetchUser Action to deal with the refresh that happens when a guardian deletes an item from a child's order (the original logic assumes we want a refresh of the user data to update the lizard points) we want to suppress this from updating the orderuser redux store">
       <created>1604910390388</created>
@@ -684,7 +678,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614941346554</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally">
+      <created>1614946453909</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1614946453910</updated>
+    </task>
+    <option name="localTasksCounter" value="207" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +731,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects" />
     <MESSAGE value="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string." />
     <MESSAGE value="order view has basic grouping by order working" />
     <MESSAGE value="completed the member view of orders but without paginiation" />
@@ -755,7 +755,8 @@
     <MESSAGE value="deleted old generated files" />
     <MESSAGE value="removed the test get route" />
     <MESSAGE value="try catch for puppeteer call and some logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="try catch for puppeteer call and some logging" />
+    <MESSAGE value="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally" />
+    <option name="LAST_COMMIT_MESSAGE" value="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
