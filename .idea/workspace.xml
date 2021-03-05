@@ -28,7 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/reportTemplates/buildPaths.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/buildPaths.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,14 +338,7 @@
       <workItem from="1613928275174" duration="27738000" />
       <workItem from="1614104328296" duration="19292000" />
       <workItem from="1614697635213" duration="1677000" />
-      <workItem from="1614938908832" duration="999000" />
-    </task>
-    <task id="LOCAL-00153" summary="added relatedUserId population to the route and started wiring in the containers and components to the state.&#10;&#10;Now the guardian user should have populated related users. No need to fetch">
-      <created>1601761875895</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1601761875895</updated>
+      <workItem from="1614938908832" duration="1973000" />
     </task>
     <task id="LOCAL-00154" summary="basic plumbing working">
       <created>1601764915126</created>
@@ -684,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614939009796</updated>
     </task>
-    <option name="localTasksCounter" value="202" />
+    <task id="LOCAL-00202" summary="added some logging to the file creation">
+      <created>1614940196999</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1614940196999</updated>
+    </task>
+    <option name="localTasksCounter" value="203" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +729,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body." />
     <MESSAGE value="changed shopifyOrder webhook to return 200 even on an error to stop shopify retrying" />
     <MESSAGE value="reversed last change  made in error" />
     <MESSAGE value="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required" />
@@ -755,7 +753,8 @@
     <MESSAGE value="added back the creation of the html file to test on heroku" />
     <MESSAGE value="removed the creation of the html file to test on heroku. Will need to think about S3 if I want to implement this using puppeteer" />
     <MESSAGE value="reverted create html template so that it genrates a file again - want to work out how this can be made to function on heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="reverted create html template so that it genrates a file again - want to work out how this can be made to function on heroku" />
+    <MESSAGE value="added some logging to the file creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some logging to the file creation" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
