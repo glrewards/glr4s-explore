@@ -49,7 +49,7 @@ export default class OrderList extends Component {
                     <Button
                       className="amber"
                       waves={"light"}
-                      href={"/reports/pickinglist/" + order._id}
+                      href={"/reports/pickinglist/" + order._id + "/?type=pdf"}
                       node="a"
                       target="_blank"
                       onClick={event => {
