@@ -11,7 +11,7 @@ const printPdf = async () => {
     const page = await browser.newPage();
     /* 2- Will open our generated `.html` file in the new Page instance. */
     console.log(buildPathHtml);
-    await page.goto("file:///" + buildPathHtml, { waitUntil: 'networkidle0' });
+    await page.goto( "/reports/test", { waitUntil: 'networkidle0' });
     /* 3- Take a snapshot of the PDF */
     const pdf = await page.pdf({
         format: 'A4',
