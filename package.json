@@ -44,7 +44,7 @@
     "raw-body": "^2.4.1",
     "sendgrid": "^5.2.3",
     "stripe": "^6.32.0",
-    "winston": "^3.2.1"
+    "winston": "^3.x"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
