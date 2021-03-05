@@ -27,7 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,21 +340,7 @@
       <workItem from="1613928275174" duration="27738000" />
       <workItem from="1614104328296" duration="19292000" />
       <workItem from="1614697635213" duration="1677000" />
-      <workItem from="1614938908832" duration="6004000" />
-    </task>
-    <task id="LOCAL-00161" summary="playing with heroku-postbuild">
-      <created>1610106754711</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1610106754713</updated>
-    </task>
-    <task id="LOCAL-00162" summary="reverted changes">
-      <created>1610108948035</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1610108948035</updated>
+      <workItem from="1614938908832" duration="6841000" />
     </task>
     <task id="LOCAL-00163" summary="added requireSecret.js to validate the webhook call from shopify for order/create events in shopify.">
       <created>1610448068358</created>
@@ -683,7 +671,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614949026131</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="removed some unused packages from client/package.json">
+      <created>1614949093143</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1614949093143</updated>
+    </task>
+    <task id="LOCAL-00211" summary="removed some unused packages from client/package.json">
+      <created>1614949123651</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1614949123651</updated>
+    </task>
+    <option name="localTasksCounter" value="212" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +731,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Introduced the new role of glradmin&#10;this has required:&#10; a change to the redirecting logic on the login container&#10; changes and clean up in the GLRHeader nav link creation logic - this was an early component and might need sorting out &#10; more logging was added but more clean ups are needed" />
     <MESSAGE value="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list" />
     <MESSAGE value="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)" />
     <MESSAGE value="Cleaned up GLRHeader.js. Removed NavItem and simplified to just use NavLink. This commit also includes unfinished changes to handle GLRAdmin Master Detail order view" />
@@ -754,7 +755,8 @@
     <MESSAGE value="updated node.js version to 14.x - to try out the .x AND to see if I can fix a bug with puppeteer" />
     <MESSAGE value="added this puppeteer.launch({ args: ['--no-sandbox'] } as advised here https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-is-downloaded-but-fails-to-launch-on-nodejs-14&#10;Also added the puppeteer buildpack" />
     <MESSAGE value="removed some unused packages from package.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some unused packages from package.json" />
+    <MESSAGE value="removed some unused packages from client/package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed some unused packages from client/package.json" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
