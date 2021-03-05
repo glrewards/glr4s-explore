@@ -11,21 +11,28 @@ const printPdf = async () => {
     const page = await browser.newPage();
     /* 2- Will open our generated `.html` file in the new Page instance. */
     console.log(buildPathHtml);
-    await page.goto( "/reports/test", { waitUntil: 'networkidle0' });
-    /* 3- Take a snapshot of the PDF */
-    const pdf = await page.pdf({
-        format: 'A4',
-        margin: {
-            top: '20px',
-            right: '20px',
-            bottom: '20px',
-            left: '20px'
-        }
-    });
-    /* 4- Cleanup: close browser. */
-    await browser.close();
-    console.log('Ending: Generating PDF Process');
-    return pdf;
+    try {
+        console.log("trying to open html file: " + buildPathHtml);
+        await page.goto(buildPathHtml, {waitUntil: 'networkidle0'});
+        console.log("opened OK");
+        /* 3- Take a snapshot of the PDF */
+        const pdf = await page.pdf({
+            format: 'A4',
+            margin: {
+                top: '20px',
+                right: '20px',
+                bottom: '20px',
+                left: '20px'
+            }
+        });
+        /* 4- Cleanup: close browser. */
+        await browser.close();
+        console.log('Ending: Generating PDF Process');
+        return pdf;
+    }catch (e){
+        console.log(e.message);
+        return null;
+    }
 };
 
 async function getPDF() {
