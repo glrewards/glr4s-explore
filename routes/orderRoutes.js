@@ -257,6 +257,7 @@ module.exports = app => {
       }else if (type === "pdf"){
         logger.info("creating picklist pdf");
         const pdf = await PDFGenerator.getPDF();
+        res.type("application/pdf");
         res.status(200).send(pdf);
 
       }
