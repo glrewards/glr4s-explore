@@ -121,13 +121,11 @@ export const fetchOrder = (centre) => async dispatch =>{
     dispatch(receiveOrder(centre,res.data));
 }
 
-export const fetchOrdersByParams = (fulfillStatus) => async dispatch => {
+export const fetchOrdersByParams = (params) => async dispatch => {
     console.log("fetchOrderByParams");
     let url = "api/orders";
     let options = {
-        params: {
-            fulfillStatus: fulfillStatus
-        }
+        params: params
     }
     try {
         const res = await axios.get(url, options);

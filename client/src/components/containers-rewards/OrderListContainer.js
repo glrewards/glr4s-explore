@@ -13,10 +13,8 @@ class OrderListContainer extends Component {
   }
 
   componentDidMount() {
-    // this.props.dispatch(invalidateCabinet(this.props.user._learningCentreId));
-    //this.props.dispatch(fetchCabinet(this.props.user._learningCentreId));
-          console.log("getting orders");
-          this.props.dispatch(fetchOrdersByParams());
+          console.log("Order List Container componentdidmount");
+          //this.props.dispatch(fetchOrdersByParams());
   }
 
   render() {
@@ -43,7 +41,7 @@ function mapStateToProps(state) {
  */
 OrderListContainer.propTypes = {
   orderStatus: PropTypes.string.isRequired,
-  orderList: PropTypes.array.isRequired,
+  orderList: PropTypes.array,
   onLineClicked: PropTypes.func.isRequired
 };
 export default connect(mapStateToProps)(OrderListContainer);

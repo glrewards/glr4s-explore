@@ -27,8 +27,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/admin/AdminSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +75,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="220172c00ffac9d2eb21ae69af561fc395369aaf" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -339,14 +345,7 @@
       <workItem from="1613928275174" duration="27738000" />
       <workItem from="1614104328296" duration="19292000" />
       <workItem from="1614697635213" duration="1677000" />
-      <workItem from="1614938908832" duration="9738000" />
-    </task>
-    <task id="LOCAL-00165" summary="first working version of webhook to process shopify order into a cabinet. starting with the case that no cabinet exists. Build a skeleton cabinet object with empty shelves and call the cabinet API to add it. No processing of rewards yet and no handing of situation where we need to amend not create a cabinet.">
-      <created>1610540479691</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1610540479691</updated>
+      <workItem from="1614938908832" duration="33295000" />
     </task>
     <task id="LOCAL-00166" summary="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js">
       <created>1610580500791</created>
@@ -684,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614965595483</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="create pdf picking list by default">
+      <created>1614966927386</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1614966927386</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +736,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cleaned up GLRHeader.js. Removed NavItem and simplified to just use NavLink. This commit also includes unfinished changes to handle GLRAdmin Master Detail order view" />
     <MESSAGE value="A lot of cleanup around the guardian components. Now handles a user refresh of the page. Got rid of a lot of warnings NOT ALL. Ready to try and replicate the master detail nature of the dashboard for the GLR ADMIN Dashboard" />
     <MESSAGE value="working glr admin dashboard with basic master detail. Just need o decide on best way to print the picking list now." />
     <MESSAGE value="added audit fix to the heroku post build" />
@@ -755,7 +760,8 @@
     <MESSAGE value="removed some unused packages from client/package.json" />
     <MESSAGE value="cleaned a few more items from package.json files and added npm audit fix to the client script" />
     <MESSAGE value="changed content type when returning pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed content type when returning pdf" />
+    <MESSAGE value="create pdf picking list by default" />
+    <option name="LAST_COMMIT_MESSAGE" value="create pdf picking list by default" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
