@@ -12,7 +12,16 @@ class SuperAdminDashboardContainer extends Component {
     this.handleOrderLineClicked = this.handleOrderLineClicked.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.appendLeadingZeroes = this.appendLeadingZeroes.bind(this);
   }
+
+  appendLeadingZeroes(n) {
+    if (n <= 9) {
+      return "0" + n;
+    }
+    return n;
+  }
+
   handleOrderLineClicked(event) {
     //doing nothing
   }
@@ -23,10 +32,15 @@ class SuperAdminDashboardContainer extends Component {
   }
   handleSearch(event) {
     console.log(event);
-    if (Object.prototype.toString.call(event) ==='[object Date]') {
+    if (Object.prototype.toString.call(event) === "[object Date]") {
       //there is some odd bug in the api router that does not recognise there default date format so build here
       const month = event.getMonth() + 1; //starts at 0
-      let parsedDate = event.getFullYear() + "-" + month + "-" + event.getDate();
+      let parsedDate =
+        event.getFullYear() +
+        "-" +
+        this.appendLeadingZeroes(month) +
+        "-" +
+        this.appendLeadingZeroes(event.getDate());
 
       this.props.dispatch(searchOrders("fromDate", parsedDate));
     } else {
