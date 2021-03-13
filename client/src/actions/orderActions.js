@@ -127,6 +127,7 @@ export const fetchOrdersByParams = (params) => async dispatch => {
     let options = {
         params: params
     }
+    console.log(options);
     try {
         const res = await axios.get(url, options);
         console.log(res.data);

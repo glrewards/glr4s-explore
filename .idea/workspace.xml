@@ -27,14 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/admin/AdminSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/OrderListContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +122,12 @@
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/models/rewards" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -346,6 +349,8 @@
       <workItem from="1614104328296" duration="19292000" />
       <workItem from="1614697635213" duration="1677000" />
       <workItem from="1614938908832" duration="33295000" />
+      <workItem from="1615595116300" duration="2937000" />
+      <workItem from="1615626466935" duration="5734000" />
     </task>
     <task id="LOCAL-00166" summary="added logic to create and and a reward to the appropriate shelf in shopifyWebHookRoutes.js">
       <created>1610580500791</created>
@@ -762,6 +767,13 @@
     <MESSAGE value="changed content type when returning pdf" />
     <MESSAGE value="create pdf picking list by default" />
     <option name="LAST_COMMIT_MESSAGE" value="create pdf picking list by default" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/client/src/components/admin/SuperAdminDashboard.js" line="21">
+        <watch expression="console" />
+      </inline-watch>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">

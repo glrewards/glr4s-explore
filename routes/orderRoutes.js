@@ -59,6 +59,8 @@ module.exports = app => {
     let centre = req.query.centreId;
     let user = req.query.userId;
     let fulfillStatus = req.query.fulfillStatus;
+    let fromDate = req.query.fromDate;
+
     /*
     is there a valid open order? we can check this by doing a count and passing the unfilledStaus value if count < 1
     nothing to return here
@@ -68,12 +70,14 @@ module.exports = app => {
       params: {
         centreId: centre,
         userId: user,
-        fulfillStatus: fulfillStatus
+        fulfillStatus: fulfillStatus,
+        fromDate: fromDate
       },
       headers: {
         "X-API-KEY": keys.glrAPIGatewayKey
       }
     };
+    logger.log({level: 'debug',message: "request options",state: options});
     try {
       logger.info("calling axios: " + url, centre, user);
       const axiosResponse = await axios.get(url, options);
