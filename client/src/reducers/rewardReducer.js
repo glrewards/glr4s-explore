@@ -2,7 +2,7 @@ import {
   INVALIDATE_CABINET,
   REQUEST_CABINET,
   RECEIVE_CABINET,
-  FILTER_FAV
+  FILTER_FAV, RECEIVE_CABINET_EMPTY
 } from "../actions/rewardActions";
 
 function cabinet(
@@ -25,6 +25,7 @@ function cabinet(
         didInvalidate: false
       });
     case RECEIVE_CABINET:
+      //need to check if there was an error and if so we need set the cabdetail to null
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
@@ -32,6 +33,14 @@ function cabinet(
         cabDetail: action.payload,
         lastUpdated: action.receivedAt
       });
+    case RECEIVE_CABINET_EMPTY:
+      return Object.assign({},state,{
+        isFetching: false,
+        didInvalidate: false,
+        centre: action.centre,
+        cabDetail: {},
+        lastUpdated: action.receivedAt
+      })
     case FILTER_FAV:
       return Object.assign({}, state, {
         filterSwitch: action.filterSwitch

@@ -40,6 +40,16 @@ function receiveCabinet(centre, json) {
   };
 }
 
+export const RECEIVE_CABINET_EMPTY = "receive_cabinet_empty";
+function receiveCabinetEmpty(centre,json){
+  return {
+    type:RECEIVE_CABINET_EMPTY,
+    centre,
+    payload:json,
+    receivedAt: Date.now()
+  }
+}
+
 export const INVALIDATE_CABINET = "invalidate_cabinet";
 export function invalidateCabinet(centre) {
   return {
@@ -69,8 +79,13 @@ export const fetchCabinet = (centre, summary) => async dispatch => {
     }
   };
   dispatch(requestCabinet(centre)); //update state to say we are fetching cabinet
-  const res = await axios.get(url, options);
-  //console.log("response data: ", res.data);
-  dispatch(receiveCabinet(centre,res.data));
+  try {
+    const res = await axios.get(url, options);
+    console.log("response data: ", res.data);
+    dispatch(receiveCabinet(centre, res.data));
+  } catch (e){
+    console.log('exception caught: ' + e.message);
+    dispatch(receiveCabinetEmpty(centre, {} ));
+  }
 };
 

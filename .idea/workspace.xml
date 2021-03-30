@@ -28,7 +28,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/rewardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rewardActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/rewardReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rewardReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,14 +351,10 @@
       <workItem from="1614938908832" duration="33295000" />
       <workItem from="1615595116300" duration="2937000" />
       <workItem from="1615626466935" duration="7377000" />
-      <workItem from="1615646793225" duration="797000" />
-    </task>
-    <task id="LOCAL-00167" summary="added glrAPIAdmin: 'glr/api/glr4s/admin', to config ready to start referencing the ADMIN API routes via kong. All of this is part of creating an API call to let me retrieve rewards based on the shopifyid I don't want to make this publicly available on the same security as the other AP. THAT SAID THIS IS NOT BEING IMPLEMENTED NOW. just the config.">
-      <created>1610634455545</created>
-      <option name="number" value="00167" />
-      <option name="presentableId" value="LOCAL-00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1610634455546</updated>
+      <workItem from="1615646793225" duration="2074000" />
+      <workItem from="1615810285441" duration="599000" />
+      <workItem from="1616770666386" duration="77000" />
+      <workItem from="1616770792048" duration="6394000" />
     </task>
     <task id="LOCAL-00168" summary="webhook is updating existing quantities now">
       <created>1610813313836</created>
@@ -693,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615642641557</updated>
     </task>
-    <option name="localTasksCounter" value="216" />
+    <task id="LOCAL-00216" summary="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js">
+      <created>1615648254793</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1615648254793</updated>
+    </task>
+    <option name="localTasksCounter" value="217" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -739,7 +745,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working glr admin dashboard with basic master detail. Just need o decide on best way to print the picking list now." />
     <MESSAGE value="added audit fix to the heroku post build" />
     <MESSAGE value="tweak to GuardianDashboardContainer.js" />
     <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
@@ -764,7 +769,8 @@
     <MESSAGE value="changed content type when returning pdf" />
     <MESSAGE value="create pdf picking list by default" />
     <MESSAGE value="date picker for admin search is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="date picker for admin search is working" />
+    <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
