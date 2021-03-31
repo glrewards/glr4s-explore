@@ -28,10 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/rewardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rewardActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/rewardReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rewardReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,14 +350,7 @@
       <workItem from="1615646793225" duration="2074000" />
       <workItem from="1615810285441" duration="599000" />
       <workItem from="1616770666386" duration="77000" />
-      <workItem from="1616770792048" duration="6394000" />
-    </task>
-    <task id="LOCAL-00168" summary="webhook is updating existing quantities now">
-      <created>1610813313836</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1610813313836</updated>
+      <workItem from="1616770792048" duration="8558000" />
     </task>
     <task id="LOCAL-00169" summary="webhook working but needs more robust testimg">
       <created>1610834360834</created>
@@ -699,7 +688,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615648254793</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there">
+      <created>1617093769369</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1617093769369</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -745,7 +741,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added audit fix to the heroku post build" />
     <MESSAGE value="tweak to GuardianDashboardContainer.js" />
     <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
     <MESSAGE value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
@@ -770,7 +765,8 @@
     <MESSAGE value="create pdf picking list by default" />
     <MESSAGE value="date picker for admin search is working" />
     <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
+    <MESSAGE value="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there" />
+    <option name="LAST_COMMIT_MESSAGE" value="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
