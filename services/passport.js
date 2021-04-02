@@ -42,7 +42,7 @@ passport.use(
       let existingUser = await User.findOne({ username: username }).populate(opts);
         //console.log(JSON.stringify(existingUser));
         //await existingUser.populate('_relatedUserIds').execPopulate();
-      console.log(JSON.stringify(existingUser));
+      console.log("pasport: " + JSON.stringify(existingUser));
       if (!existingUser) {
         return done(null, false);
       }

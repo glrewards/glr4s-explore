@@ -2,6 +2,22 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 const favouriteSchema = require('./Favourite');
 
+/*
+I have created the location as subdocument here because I want to have mandatory fields on location but
+the location itself has to remain optional. If I include it as a nested object then location becomes
+mandatory because the sub items are mandatory which makes sense if you stop thinking in Object Oriented terms
+
+This will result in the location getting an _id field but I could supress this if it was an issue
+ */
+const locationSchema = new mongoose.Schema({type:{
+        type: String,
+        enum: ['Point'],
+        required:true
+    },
+    coordinates:{
+        type: [Number],
+        required:true
+    }});
 
 const userSchema = new Schema({
     "googleId": String,
@@ -18,11 +34,13 @@ const userSchema = new Schema({
     "roles": [String],
     "firstName": {"type": String},
     "lastName": {"type": String},
-    "address": {"type": String},
+    "address": {PostCode: String, Address1: String, Address2: String, City: String, County: String, Country: String
+    },
+    "location": locationSchema,
     "_relatedUserIds": [{"type": Schema.Types.ObjectId, "ref": 'related'}],
     "favourites":[favouriteSchema],
     "resetNeeded": Boolean,
-    "schema_version": {type: String, default: 'v2'}
+    "schema_version": {type: String, default: 'v3'}
 });
 
 mongoose.model('users',userSchema);
