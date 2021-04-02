@@ -5,6 +5,16 @@ import { Card,Icon,Row,Col } from "react-materialize";
 class UserDetailCard extends Component {
   constructor(props) {
     super(props);
+    this.renderAddress = this.renderAddress.bind(this);
+  }
+
+renderAddress(address){
+  if(typeof(address) === 'string'){
+      return address;
+  }else{
+      let addressString = JSON.stringify(address);
+      return addressString;
+  }
   }
 
   render() {
@@ -16,7 +26,7 @@ class UserDetailCard extends Component {
           title={this.props.firstName + " " + this.props.lastName}
         >
             <Row><Col s={6} className={"flow-text left-align"}>email: {this.props.email}</Col>
-                <Col s={6} className={"flow-text"}>Address: {this.props.address}</Col></Row>
+                <Col s={6} className={"flow-text"}>Address: {this.renderAddress(this.props.address)}</Col></Row>
         </Card>
       </div>
     );

@@ -28,9 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rewards/LearningCentre.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rewards/LearningCentre.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserDetailCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,14 +351,7 @@
       <workItem from="1615646793225" duration="2074000" />
       <workItem from="1615810285441" duration="599000" />
       <workItem from="1616770666386" duration="77000" />
-      <workItem from="1616770792048" duration="9785000" />
-    </task>
-    <task id="LOCAL-00170" summary="cabinet amend of count for existing rewards implemented">
-      <created>1610987015790</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1610987015790</updated>
+      <workItem from="1616770792048" duration="11067000" />
     </task>
     <task id="LOCAL-00171" summary="finished the order to cabinet webhook">
       <created>1610999499620</created>
@@ -698,7 +689,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617176566844</updated>
     </task>
-    <option name="localTasksCounter" value="219" />
+    <task id="LOCAL-00219" summary="changed LearningCentre.js and User.js to contain and address nested object AND a nested schema for location. This was because location contains required attributes but I wanted location itself to be optional.">
+      <created>1617353786415</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1617353786416</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -744,7 +742,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basic picklist in html form working. need to convert to pdf" />
     <MESSAGE value="added setupProxy.js config to make /reports/ work from glr.ngrok.io" />
     <MESSAGE value="starting to implement schema versioning in model definitions" />
     <MESSAGE value="more schema and model cleanup" />
@@ -769,7 +766,8 @@
     <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
     <MESSAGE value="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there" />
     <MESSAGE value="added address and geolocation to LearningCentre.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="added address and geolocation to LearningCentre.js" />
+    <MESSAGE value="changed LearningCentre.js and User.js to contain and address nested object AND a nested schema for location. This was because location contains required attributes but I wanted location itself to be optional." />
+    <option name="LAST_COMMIT_MESSAGE" value="changed LearningCentre.js and User.js to contain and address nested object AND a nested schema for location. This was because location contains required attributes but I wanted location itself to be optional." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
