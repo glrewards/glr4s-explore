@@ -5,9 +5,12 @@ const axios = require("axios");
 
 const logger = winston.createLogger({
   level: keys.glrLogLevel,
-  format: winston.format.json(),
   defaultMeta: { service: "memberRoutes" },
-  transports: [new winston.transports.Console()]
+  transports: [new (winston.transports.Console)({'timestamp':true, format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.colorize(),
+        winston.format.simple()
+    )})]
 });
 
 module.exports = app => {

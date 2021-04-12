@@ -5,26 +5,32 @@ const requireStudent = require("../middlewares/requireStudent");
 const keys = require("../config/keys");
 const winston = require("winston");
 const axios = require("axios");
-const tableGenerator = require('../services/reportTemplates/pickingListTemplate');
-const PDFGenerator = require('../services/reportTemplates/createPicklistPDF');
-const puppeteer = require('puppeteer');
+const tableGenerator = require("../services/reportTemplates/pickingListTemplate");
+const PDFGenerator = require("../services/reportTemplates/createPicklistPDF");
+const puppeteer = require("puppeteer");
 //const Order = mongoose.model("orders");
 //const Student = mongoose.model("students");
 //const Cabinet = mongoose.model("Cabinet");
 
 const logger = winston.createLogger({
   level: keys.glrLogLevel,
-  format: winston.format.json(),
   defaultMeta: { service: "orderRoutes" },
-  transports: [new winston.transports.Console()]
+  transports: [
+    new winston.transports.Console({
+      format: winston.format.combine(
+          winston.format.timestamp(),
+        winston.format.colorize(),
+        winston.format.simple()
+      )
+    })
+  ]
 });
 
 module.exports = app => {
   /*
   return an array of basic info about the orders for the centre
    */
-  app.get("/api/orders/count", async (req,res) => {
-
+  app.get("/api/orders/count", async (req, res) => {
     let centre = req.query.centreId;
     let user = req.query.userId;
     let fulfillStatus = req.query.fulfillStatus;
@@ -47,15 +53,14 @@ module.exports = app => {
       res.send(data);
     } catch (err) {
       logger.error("error getting order count: ", err);
-      res.status(404).send('exception occurred');
+      res.status(404).send("exception occurred");
     }
-
   });
   /**
    * this is the 'open' call to using any number of parameters to get an array of orders
    */
   app.get("/api/orders", requireLogin, async (req, res) => {
-    logger.log({level: 'info', message: "/api/orders: " + req.params});
+    logger.log({ level: "info", message: "/api/orders: " + req.params });
     let centre = req.query.centreId;
     let user = req.query.userId;
     let fulfillStatus = req.query.fulfillStatus;
@@ -77,7 +82,7 @@ module.exports = app => {
         "X-API-KEY": keys.glrAPIGatewayKey
       }
     };
-    logger.log({level: 'debug',message: "request options",state: options});
+    logger.log({ level: "debug", message: "request options", state: options });
     try {
       logger.info("calling axios: " + url, centre, user);
       const axiosResponse = await axios.get(url, options);
@@ -94,7 +99,10 @@ module.exports = app => {
   // for a given student retrieve their orderitems if any exist. I am assuming there could be a lot and starting to add
   //pagination
   app.get("/api/orders/:centreId/:userId", requireLogin, async (req, res) => {
-    logger.log({level: 'info', message: "Received request here: " + req.params});
+    logger.log({
+      level: "info",
+      message: "Received request here: " + req.params
+    });
 
     /*
     is there a valid open order? we can check this by doing a count and passing the unfilledStaus value if count < 1
@@ -188,38 +196,45 @@ module.exports = app => {
         res.send({});
     });
 */
-  app.put("/api/orders/deletelines/:centreId/:studentId", requireLogin, async (req, res) => {
-    //logger.debug("Received request here ", req.params);
-    //TODO: this url needs to be cleaned up
-    let url = keys.glrAPIGateway + keys.glrAPIOrder + "/deleteItems";
-    let options = {
-      headers: {
-        "X-API-KEY": keys.glrAPIGatewayKey,
-        centreid: req.params.centreId,
-        userid: req.params.studentId
+  app.put(
+    "/api/orders/deletelines/:centreId/:studentId",
+    requireLogin,
+    async (req, res) => {
+      //logger.debug("Received request here ", req.params);
+      //TODO: this url needs to be cleaned up
+      let url = keys.glrAPIGateway + keys.glrAPIOrder + "/deleteItems";
+      let options = {
+        headers: {
+          "X-API-KEY": keys.glrAPIGatewayKey,
+          centreid: req.params.centreId,
+          userid: req.params.studentId
+        }
+      };
+      try {
+        logger.info("calling axios: " + url);
+        const axiosResponse = await axios.put(url, req.body, options);
+        const data = axiosResponse.data;
+        res.send(data);
+        console.log("put order", data);
+      } catch (err) {
+        logger.error("error getting order: ", err);
+        res.send({ statusCode: 404 });
       }
-    };
-    try {
-      logger.info("calling axios: " + url);
-      const axiosResponse = await axios.put(url, req.body, options);
-      const data = axiosResponse.data;
-      res.send(data);
-      console.log("put order",data);
-    } catch (err) {
-      logger.error("error getting order: ", err);
-      res.send({ statusCode: 404 });
     }
-  });
+  );
 
   app.post("/api/orders/", requireLogin, async (req, res) => {
     logger.info("Received request here ", req.params);
     //logger.debug(req.body);
     try {
       let userId = req.body.user._student._id;
-      logger.log({level: 'debug', message: "userId: " + userId});
+      logger.log({ level: "debug", message: "userId: " + userId });
       let _learningCentreId = req.body.user._learningCentreId;
-      logger.log({level: 'debug', message: "learningCentre: " + _learningCentreId});
-      logger.log({level: 'debug', message: "body: ", state: req.body});
+      logger.log({
+        level: "debug",
+        message: "learningCentre: " + _learningCentreId
+      });
+      logger.log({ level: "debug", message: "body: ", state: req.body });
       let url = keys.glrAPIGateway + keys.glrAPIOrder;
       let options = {
         headers: {
@@ -230,8 +245,11 @@ module.exports = app => {
       };
       // the UI is sending the user data in the body - cannot remember why - just pass the lineitems onward
       // the data passed from the UI is not valid. We need to create a valid order object
-      let tempOrder = {finStatus: "unpaid",
-        fulfillStatus: "unfulfilled",lineItems: req.body.lineItems};
+      let tempOrder = {
+        finStatus: "unpaid",
+        fulfillStatus: "unfulfilled",
+        lineItems: req.body.lineItems
+      };
       logger.debug(tempOrder);
       logger.info("calling axios: " + url);
       const axiosResponse = await axios.post(url, tempOrder, options);
@@ -243,7 +261,7 @@ module.exports = app => {
       res.status(400).send(err);
     }
   });
-  app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) =>{
+  app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) => {
     const type = req.query.type;
     const orderId = req.params.orderId;
     console.log("/reports/pickinglist/:orderId");
@@ -258,16 +276,14 @@ module.exports = app => {
       const html = tableGenerator.populateTable(response.data.lineItems);
       if (type !== "pdf") {
         res.send(html);
-      }else if (type === "pdf"){
+      } else if (type === "pdf") {
         logger.info("creating picklist pdf");
         const pdf = await PDFGenerator.getPDF();
         res.type("application/pdf");
         res.status(200).send(pdf);
-
       }
-    }catch(e){
+    } catch (e) {
       res.status(400).send("error creating picking list");
     }
-  } );
-
+  });
 };

@@ -8,9 +8,13 @@ const User = mongoose.model("users");
 
 const logger = winston.createLogger({
   level: keys.glrLogLevel,
-  format: winston.format.json(),
   defaultMeta: { service: "authRoutes" },
-  transports: [new winston.transports.Console()]
+  format: winston.format.timestamp(),
+  transports: [new (winston.transports.Console)({'timestamp':true, format: winston.format.combine(
+      winston.format.timestamp(),
+        winston.format.colorize(),
+        winston.format.simple()
+    )})]
 });
 /* handle redirect to google oauth. */
 

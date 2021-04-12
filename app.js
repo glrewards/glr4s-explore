@@ -20,7 +20,7 @@ require("./models/rewards/LearningCentre");
 require("./services/passport");
 
 const app = express();
-db.once("open", () => console.log("connected to db"));
+db.once("open", () => console.log("connected to mongodb"));
 db.on("error", console.error.bind(console, "Mongo connection error"));
 
 const sessionStore = new MongoStore({
