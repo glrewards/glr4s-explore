@@ -1,41 +1,49 @@
+
 let Queue = require('bull');
 const winston = require("winston");
+const keys = require("../config/keys");
+const requireLogin = require("../middlewares/requireLogin");
 let REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379';
 
 // Create / Connect to a named work queue
-let workQueue = new Queue('work', REDIS_URL);
+const workQueue = new Queue('work', REDIS_URL);
 
 const logger = winston.createLogger({
     level: keys.glrLogLevel,
-    format: winston.format.json(),
     defaultMeta: { service: "reportWorkerRoutes" },
-    transports: [new (winston.transports.Console)({'timestamp':true})]
+    transports: [new (winston.transports.Console)({format: winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.colorize(),
+            winston.format.simple()
+        )})]
 });
 
+logger.debug("work Queue", workQueue);
 module.exports = app => {
     //TODO: add requireLogin middleware
-    app.get("/api/cabinet", requireLogin, async (req, res) => {
-        logger.info("rewardRoutes: /api/cabinet ", req.query);
-        try {
-            let centre = req.query.centre;
-            let summary = req.query.summary;
-            let url = keys.glrAPIGateway + keys.glrAPICabinet;
-            let options = {
-                params: {
-                    centre: centre,
-                    summary: summary
-                },
-                headers: {
-                    "X-API-KEY": keys.glrAPIGatewayKey
-                }
-            };
-            const axiosResponse = await axios.get(url, options);
-            const data = axiosResponse.data;
-            //now we want to remove any items that might not have a metafield:{value:} field
-            res.send(data);
-        } catch (err) {
-            console.error("error getting cabinet: ", err);
-            res.status(422).send(err);
+    app.get("/api/job/:id", async (req, res) => {
+
+        const id = req.params.id;
+        logger.info(`reportWorkerRoutes: GET /api/job ${id}`);
+        let job = await workQueue.getJobFromId(id);
+        console.log(job);
+        if(job === null) {
+            res.status(404).end();
         }
+        else{
+            let state = await job.getState();
+            let progress = job._progress;
+            let reason = job.failedReason;
+            res.json({id, state, progress, reason});
+        }
+    });
+    // Kick off a new job by adding it to the work queue
+    app.post('/api/job', async (req, res) => {
+        logger.info("reportWorkerRoutes: POST /api/job ");
+        // This would be where you could pass arguments to the job
+        // Ex: workQueue.add({ url: 'https://www.heroku.com' })
+        // Docs: https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queueadd
+        let job = await workQueue.add();
+        res.json({ id: job.id });
     });
 };

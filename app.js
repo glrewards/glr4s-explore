@@ -55,6 +55,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
+require("./routes/reportWorkerRoutes")(app);
 require("./routes/authRoutes")(app);
 require("./routes/orderRoutes")(app);
 require("./routes/billingRoutes")(app);
@@ -64,6 +65,7 @@ require("./routes/studentRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/rewardRoutes")(app);
 require("./routes/shopifyWebHookRoutes")(app);
+
 
 if (process.env.NODE_ENV === "production"){
   //express will serve up production assets. Remember these are built into something different for prod

@@ -8,9 +8,11 @@
   "scripts": {
     "start": "node ./app.js",
     "server": "nodemon ./app.js",
+    "worker": "node ./worker.js",
+    "devworker": "nodemon ./worker.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \" npm run client\"",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client && npm audit fix --prefix client"
+    "dev": "concurrently \"npm run server\" \" npm run client\" \"npm run devworker\"",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "axios": "^0.21.1",

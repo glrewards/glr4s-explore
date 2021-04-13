@@ -6,7 +6,7 @@ let REDIS_URL = process.env.REDIS_URL || "redis://127.0.0.1:6379";
 
 // Spin up multiple processes to handle jobs to take advantage of more CPU cores
 // See: https://devcenter.heroku.com/articles/node-concurrency for more info
-let workers = process.env.WEB_CONCURRENCY || 2;
+let workers = process.env.WEB_CONCURRENCY || 5;
 
 // The maximum number of jobs each worker should process at once. This will need
 // to be tuned for your application. If each job is mostly waiting on network
@@ -19,6 +19,7 @@ function sleep(ms) {
 }
 
 async function start() {
+    console.log("worker started");
     // Connect to the named work queue
     let workQueue = new Queue('work', REDIS_URL);
 
@@ -27,13 +28,13 @@ async function start() {
         // while doing no work. Replace this with your own job logic.
         let progress = 0;
 
-        // throw an error 5% of the time
-        if (Math.random() < 0.05) {
+        // throw an error 15% of the time
+        if (Math.random() < 0.15) {
             throw new Error("This job failed!")
         }
 
         while (progress < 100) {
-            await sleep(50);
+            await sleep(500);
             progress += 1;
             job.progress(progress)
         }
