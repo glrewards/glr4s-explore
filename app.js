@@ -5,7 +5,7 @@ let passport = require("passport");
 const bodyParser = require("body-parser");
 let cookieParser = require("cookie-parser");
 const keys = require("./config/keys");
-const db = require("./globalservices");
+const {db} = require("./globalservices");
 const MongoStore = require("connect-mongo")(session);
 require("./models/rewards/Cabinet");
 require("./models/rewards/Shelf");

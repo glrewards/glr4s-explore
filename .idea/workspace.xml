@@ -28,6 +28,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/globalservices.js" beforeDir="false" afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -347,14 +351,8 @@
       <workItem from="1616770792048" duration="12063000" />
       <workItem from="1618215109263" duration="1005000" />
       <workItem from="1618246546614" duration="7993000" />
-      <workItem from="1618324327741" duration="5224000" />
-    </task>
-    <task id="LOCAL-00175" summary="Fixed adding to order not working.&#10;This was caused by the update to the OAS3TOOLS. This in turn forces a tighter adherence to the the api definition. The client IS STILL passing user data in the body along with the lines. The server now extracts the lines and just passes this onward as the body to the api.&#10;&#10;Subsequent changes should include removing the user data from the body.">
-      <created>1612009501069</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1612009501070</updated>
+      <workItem from="1618324327741" duration="10749000" />
+      <workItem from="1618562898660" duration="1882000" />
     </task>
     <task id="LOCAL-00176" summary="changed shopifyOrder webhook to return 200 even on an error to stop shopify retrying">
       <created>1612263326375</created>
@@ -692,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618330656705</updated>
     </task>
-    <option name="localTasksCounter" value="224" />
+    <task id="LOCAL-00224" summary="minor">
+      <created>1618499374487</created>
+      <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1618499374487</updated>
+    </task>
+    <option name="localTasksCounter" value="225" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,7 +743,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added some logs to reporting services" />
     <MESSAGE value="added back the creation of the html file to test on heroku" />
     <MESSAGE value="removed the creation of the html file to test on heroku. Will need to think about S3 if I want to implement this using puppeteer" />
     <MESSAGE value="reverted create html template so that it genrates a file again - want to work out how this can be made to function on heroku" />
@@ -763,7 +767,8 @@
     <MESSAGE value="adding workder processes for heroku AND user of REDIS and BULL and THRONG" />
     <MESSAGE value="improved formatting of winston logging" />
     <MESSAGE value="basic worker functions implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic worker functions implemented" />
+    <MESSAGE value="minor" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

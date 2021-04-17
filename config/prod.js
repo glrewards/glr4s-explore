@@ -27,5 +27,6 @@ module.exports = {
     glrAPIAdmin: process.env.GLR_API_ADMIN,
     glrLogLevel: process.env.GLR_LOG_LEVEL,
     secureSession: process.env.SECURE_SESSION,
-    webhookSecret: process.env.WEBHOOK_SECRET
+    webhookSecret: process.env.WEBHOOK_SECRET,
+    redisURL: process.env.REDIS_URL
 };

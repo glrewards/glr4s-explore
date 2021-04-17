@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
-const keys = require("./config/keys");
+const Queue = require('bull');
+const keys = require('./config/keys');
+
+// Connect to a local redis intance locally, and the Heroku-provided URL in production
+const REDIS_URL = keys.redisURL;
+const workQueue = new Queue('work', REDIS_URL);
 
 const options = {
     useNewUrlParser: true,
@@ -19,4 +24,7 @@ const options = {
 
 mongoose.connect(keys.mongoURI, options);
 const db = mongoose.connection;
-module.exports = db;
+
+
+
+module.exports = {db,workQueue};

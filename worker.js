@@ -23,7 +23,8 @@ async function start() {
     // Connect to the named work queue
     let workQueue = new Queue('work', REDIS_URL);
 
-    workQueue.process(maxJobsPerWorker, async (job) => {
+
+    workQueue.process('pickingListPDF',maxJobsPerWorker, async (job) => {
         // This is an example job that just slowly reports on progress
         // while doing no work. Replace this with your own job logic.
         let progress = 0;
@@ -34,9 +35,10 @@ async function start() {
         }
 
         while (progress < 100) {
+            console.log(`worker working: ${progress}`);
             await sleep(500);
             progress += 1;
-            job.progress(progress)
+            job.progress(progress);
         }
 
         // A job can return values that will be stored in Redis as JSON

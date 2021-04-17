@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireGLRPoints = require("../middlewares/requireGLRPoints");
 const requireStudent = require("../middlewares/requireStudent");
@@ -8,6 +7,7 @@ const axios = require("axios");
 const tableGenerator = require("../services/reportTemplates/pickingListTemplate");
 const PDFGenerator = require("../services/reportTemplates/createPicklistPDF");
 const puppeteer = require("puppeteer");
+const {workQueue} = require('../globalservices');
 //const Order = mongoose.model("orders");
 //const Student = mongoose.model("students");
 //const Cabinet = mongoose.model("Cabinet");
@@ -264,7 +264,7 @@ module.exports = app => {
   app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) => {
     const type = req.query.type;
     const orderId = req.params.orderId;
-    console.log("/reports/pickinglist/:orderId");
+    logger.info("/reports/pickinglist/:orderId");
     let url = keys.glrAPIGateway + keys.glrAPIOrder + "/" + orderId;
     let options = {
       headers: {
@@ -273,16 +273,40 @@ module.exports = app => {
     };
     try {
       let response = await axios.get(url, options);
+
+      logger.info("calling populate Table");
       const html = tableGenerator.populateTable(response.data.lineItems);
+
       if (type !== "pdf") {
         res.send(html);
       } else if (type === "pdf") {
         logger.info("creating picklist pdf");
+        let task = await workQueue.add("pickingListPDF",{example: "data"});
+        logger.debug(JSON.stringify(task));
         const pdf = await PDFGenerator.getPDF();
+        let done = false;
+        while (!done){
+          let job = await workQueue.getJobFromId(task.id);
+          if (job === null) {
+            logger.error("job  is null. was expecting something else");
+            done = true;
+          } else {
+            let state = await job.getState();
+            let progress = job._progress;
+            let reason = job.failedReason;
+            logger.debug(`job data: {id: ${job.id},state: ${state}, progress: ${progress}, reason: ${reason} }`);
+            if ((state === 'active') || (state === 'waiting') || (state === 'paused') || (state === 'delayed')){
+              done = false;
+            }else{
+              done = true;
+            }
+          }
+        }
         res.type("application/pdf");
         res.status(200).send(pdf);
       }
     } catch (e) {
+      logger.error(e.message);
       res.status(400).send("error creating picking list");
     }
   });
