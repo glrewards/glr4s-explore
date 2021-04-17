@@ -5,7 +5,6 @@ const keys = require('./config/keys');
 // Connect to a local redis intance locally, and the Heroku-provided URL in production
 const REDIS_URL = keys.redisURL;
 const workQueue = new Queue('work', REDIS_URL);
-
 const options = {
     useNewUrlParser: true,
     //authSource: "admin",

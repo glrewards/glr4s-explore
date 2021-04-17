@@ -28,6 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/globalservices.js" beforeDir="false" afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -348,14 +349,7 @@
       <workItem from="1618215109263" duration="1005000" />
       <workItem from="1618246546614" duration="7993000" />
       <workItem from="1618324327741" duration="10749000" />
-      <workItem from="1618562898660" duration="3637000" />
-    </task>
-    <task id="LOCAL-00177" summary="reversed last change  made in error">
-      <created>1612263460092</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1612263460092</updated>
+      <workItem from="1618562898660" duration="4503000" />
     </task>
     <task id="LOCAL-00178" summary="changed the storehook method to record the body AND NOW the header attributes also. This will record the encoded secret to support replay if required">
       <created>1612308764220</created>
@@ -693,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618646832214</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="trying to sort out ssl issues with redis on heroku">
+      <created>1618648652960</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1618648652960</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -739,7 +740,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed the creation of the html file to test on heroku. Will need to think about S3 if I want to implement this using puppeteer" />
     <MESSAGE value="reverted create html template so that it genrates a file again - want to work out how this can be made to function on heroku" />
     <MESSAGE value="added some logging to the file creation" />
     <MESSAGE value="deleted old generated files" />
@@ -764,7 +764,8 @@
     <MESSAGE value="basic worker functions implemented" />
     <MESSAGE value="minor" />
     <MESSAGE value="continuing to introduce the worker. promote to heroku to ensure config etc all correct and that it works from there" />
-    <option name="LAST_COMMIT_MESSAGE" value="continuing to introduce the worker. promote to heroku to ensure config etc all correct and that it works from there" />
+    <MESSAGE value="trying to sort out ssl issues with redis on heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to sort out ssl issues with redis on heroku" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
