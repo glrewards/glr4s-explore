@@ -284,6 +284,7 @@ module.exports = app => {
         let task = await workQueue.add("pickingListPDF",{example: "data"});
         logger.debug(JSON.stringify(task));
         const pdf = await PDFGenerator.getPDF();
+
         let done = false;
         while (!done){
           let job = await workQueue.getJobFromId(task.id);
@@ -294,7 +295,7 @@ module.exports = app => {
             let state = await job.getState();
             let progress = job._progress;
             let reason = job.failedReason;
-            logger.debug(`job data: {id: ${job.id},state: ${state}, progress: ${progress}, reason: ${reason} }`);
+            //logger.debug(`job data: {id: ${job.id},state: ${state}, progress: ${progress}, reason: ${reason} }`);
             if ((state === 'active') || (state === 'waiting') || (state === 'paused') || (state === 'delayed')){
               done = false;
             }else{
