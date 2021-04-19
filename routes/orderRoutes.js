@@ -302,12 +302,14 @@ module.exports = app => {
               console.log(JSON.stringify(await job.getState()));
               console.log(JSON.stringify(job.returnvalue));
               file = fs.readFileSync(job.returnvalue.file);
+              fs.unlinkSync(job.returnvalue.file);
               done = true;
             }
           }
         }
         res.type("application/pdf");
         res.status(200).send(file);
+        res.end();
       }
     } catch (e) {
       logger.error(e.message);
