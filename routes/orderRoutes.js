@@ -7,6 +7,7 @@ const axios = require("axios");
 const tableGenerator = require("../services/reportTemplates/pickingListTemplate");
 const PDFGenerator = require("../services/reportTemplates/createPicklistPDF");
 const puppeteer = require("puppeteer");
+const fs = require("fs");
 const {workQueue} = require('../globalservices');
 //const Order = mongoose.model("orders");
 //const Student = mongoose.model("students");
@@ -274,22 +275,20 @@ module.exports = app => {
     try {
       let response = await axios.get(url, options);
 
-      logger.info("calling populate Table");
-      const html = tableGenerator.populateTable(response.data.lineItems);
-
       if (type !== "pdf") {
+        logger.info("calling populate Table");
+        const html = tableGenerator.populateTable(response.data.lineItems);
         res.send(html);
       } else if (type === "pdf") {
+        let file = "";
         logger.info("creating picklist pdf");
-        let task = await workQueue.add("pickingListPDF",{example: "data"});
-        logger.debug(JSON.stringify(task));
-        const pdf = await PDFGenerator.getPDF();
-
+        let task = await workQueue.add("pickingListPDF",response.data.lineItems);
+        logger.debug(JSON.stringify(`job created. Id: ${task.id}`));
         let done = false;
         while (!done){
           let job = await workQueue.getJobFromId(task.id);
           if (job === null) {
-            logger.error("job  is null. was expecting something else");
+            logger.error("job is null. was expecting something else");
             done = true;
           } else {
             let state = await job.getState();
@@ -298,13 +297,17 @@ module.exports = app => {
             //logger.debug(`job data: {id: ${job.id},state: ${state}, progress: ${progress}, reason: ${reason} }`);
             if ((state === 'active') || (state === 'waiting') || (state === 'paused') || (state === 'delayed')){
               done = false;
-            }else{
+            }else if (state ==='completed'){
+              //we can get the file
+              console.log(JSON.stringify(await job.getState()));
+              console.log(JSON.stringify(job.returnvalue));
+              file = fs.readFileSync(job.returnvalue.file);
               done = true;
             }
           }
         }
         res.type("application/pdf");
-        res.status(200).send(pdf);
+        res.status(200).send(file);
       }
     } catch (e) {
       logger.error(e.message);

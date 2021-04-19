@@ -28,7 +28,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/globalservices.js" beforeDir="false" afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/reportTemplates/buildPaths.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/buildPaths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/pickingListTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,15 +149,34 @@
       <recent name="$PROJECT_DIR$/client/src/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$APPLICATION_CONFIG_DIR$/scratches/Redis_and_bull" />
       <recent name="$PROJECT_DIR$/client/src/components/admin" />
       <recent name="$PROJECT_DIR$/client/src/components/user" />
       <recent name="$PROJECT_DIR$/client/src/components/member" />
       <recent name="$PROJECT_DIR$/client/src/components/containers-rewards" />
-      <recent name="$PROJECT_DIR$/client/src/images" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.worker.js">
-    <configuration name="worker.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/worker.js" working-dir="$PROJECT_DIR$">
+    <configuration name="worker.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="worker.js" working-dir="$PROJECT_DIR$">
+      <envs>
+        <env name="NODE_DEBUG" value="bull" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="SwaggerCodegen">
+      <option name="activeConfigurationType" value="FILE" />
+      <option name="configurationPath" value="" />
+      <option name="customJreEnabled" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="enableDebugLogging" value="false" />
+      <option name="generateToPath" value="$PROJECT_DIR$/gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorPath" value="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar" />
+      <option name="jdkPath" value="" />
+      <option name="language" value="java" />
+      <option name="specificationPath" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.yml" />
       <method v="2" />
     </configuration>
     <configuration name="dev (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -205,8 +229,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev (2)" />
-        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.worker.js" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.dev" />
       </list>
@@ -349,14 +373,7 @@
       <workItem from="1618246546614" duration="7993000" />
       <workItem from="1618324327741" duration="10749000" />
       <workItem from="1618562898660" duration="5172000" />
-      <workItem from="1618652014245" duration="464000" />
-    </task>
-    <task id="LOCAL-00179" summary="cleaned up mongo connections in storeOrderWebhook. Stopped using MongoClient and revered to mongoose. &#10;created a logging.js file to think about reusing the same logger &#10;created globalservices.js to aqct as a place holder for reusable objects">
-      <created>1612451147439</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1612451147439</updated>
+      <workItem from="1618652014245" duration="16192000" />
     </task>
     <task id="LOCAL-00180" summary="found the bug when calling POST store/order to create a new order or add to an order. The API definition says it variantId is a string but the cartReducer.js was storing it as a number. Changed this to store as a string.">
       <created>1612465656100</created>
@@ -694,7 +711,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618649353719</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="trying to sort out ssl issues with redis on heroku">
+      <created>1618652689125</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1618652689125</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

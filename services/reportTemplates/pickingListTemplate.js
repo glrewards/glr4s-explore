@@ -1,5 +1,6 @@
-const { buildPathHtml } = require('./buildPaths');
+const { buildPathHtml,baseName } = require('./buildPaths');
 const fs = require('fs');
+const path = require('path');
 
 const createRow = (line) =>`
     <tr>
@@ -69,23 +70,23 @@ const doesFileExist = (filePath) => {
     }
 };
 
-function populateTable(data) {
+function populateTable(data, id) {
 
     const rows = data.map(createRow).join('');
-    console.log(rows);
+    //console.log(rows);
     const table = createTable(rows);
     const html = createHTML(table);
     console.log("created table");
-    console.log(html);
-    console.log(buildPathHtml);
+    //console.log(html);
     try {
-        if (doesFileExist(buildPathHtml)) {
+        let fileName = path.resolve(`${baseName}${id}.html`);
+        if (doesFileExist(path.resolve(fileName))) {
             console.log('Deleting old build file');
             //f the file exists delete the file from system
-            fs.unlinkSync(buildPathHtml);
+            fs.unlinkSync(fileName);
         }
-        console.log("creating file");
-        fs.writeFileSync(buildPathHtml, html);
+        console.log(`creating file: ${fileName}`);
+        fs.writeFileSync(fileName, html);
         console.log("created file");
     }catch(e){
         console.log(e.message);

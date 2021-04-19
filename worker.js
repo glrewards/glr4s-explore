@@ -1,12 +1,16 @@
-let throng = require('throng');
-let Queue = require("bull");
+const throng = require("throng");
+const Queue = require("bull");
+
+const { logger } = require("./globalservices");
+const tableGenerator = require("./services/reportTemplates/pickingListTemplate");
+const PDFGenerator = require("./services/reportTemplates/createPicklistPDF");
 
 // Connect to a local redis instance locally, and the Heroku-provided URL in production
 let REDIS_URL = process.env.REDIS_URL || "redis://127.0.0.1:6379";
-console.log(`JT LOG: ${REDIS_URL} `);
+
 // Spin up multiple processes to handle jobs to take advantage of more CPU cores
 // See: https://devcenter.heroku.com/articles/node-concurrency for more info
-let workers = process.env.WEB_CONCURRENCY || 2;
+let workers = process.env.WEB_CONCURRENCY || 10;
 
 // The maximum number of jobs each worker should process at once. This will need
 // to be tuned for your application. If each job is mostly waiting on network
@@ -15,36 +19,34 @@ let workers = process.env.WEB_CONCURRENCY || 2;
 let maxJobsPerWorker = 50;
 
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function start() {
-    console.log("worker started");
-    // Connect to the named work queue
-    let workQueue = new Queue('work', REDIS_URL);
+  logger.info("report worker started");
+  // Connect to the named work queue
+  let workQueue = new Queue("work", REDIS_URL);
 
+  workQueue.process("pickingListPDF", maxJobsPerWorker,  async (job,done) => {
+    // This is an example job that just slowly reports on progress
+    // while doing no work. Replace this with your own job logic.
+    let progress = 0;
+    logger.info("calling populate Table");
+    const html = tableGenerator.populateTable(job.data, job.id);
+    //logger.debug(`html for pickinglist is: ${html}`);
 
-    workQueue.process('pickingListPDF',maxJobsPerWorker, async (job) => {
-        // This is an example job that just slowly reports on progress
-        // while doing no work. Replace this with your own job logic.
-        let progress = 0;
-
-        // throw an error 15% of the time
-        if (Math.random() < 0.15) {
-            throw new Error("This job failed!")
-        }
-
-        while (progress < 100) {
-            console.log(`worker working: ${progress}`);
-            await sleep(500);
-            progress += 1;
-            job.progress(progress);
-        }
-
-        // A job can return values that will be stored in Redis as JSON
-        // This return value is unused in this demo application.
-        return { value: "This will be stored" };
-    });
+    // if html is null then this part of the process has failed and we should fail the job
+    if (html == null) {
+      //fail the job
+      throw new Error("HTML creation failed");
+    }
+    // TODO: now need to go on and create the pdf and then delete the html file.
+    const pdfPath = await PDFGenerator.getPDF(job.id);
+    //TODO: need to have a scheduled cleanup job to clear down all the pdfs HOWEVER they should
+    // go every time we recycle the dyno any way
+    console.log(`PDFPATH: ${pdfPath}`);
+    done(null, {file: pdfPath });
+  });
 }
 
 // Initialize the clustered worker process

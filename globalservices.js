@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 const Queue = require('bull');
 const keys = require('./config/keys');
+const winston = require("winston");
 
 // Connect to a local redis intance locally, and the Heroku-provided URL in production
 const REDIS_URL = keys.redisURL;
 const workQueue = new Queue('work', REDIS_URL);
+//const workQueueEvents = new QueueEvents('work',REDIS_URL);
 const options = {
     useNewUrlParser: true,
     //authSource: "admin",
@@ -24,6 +26,15 @@ const options = {
 mongoose.connect(keys.mongoURI, options);
 const db = mongoose.connection;
 
+const logger = winston.createLogger({
+    level: keys.glrLogLevel,
+    levels: winston.config.npm.levels,
+    defaultMeta: { service: "glr4Explore" },
+    transports: [new (winston.transports.Console)({ format: winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.colorize(),
+            winston.format.simple()
+        )})]
+});
 
-
-module.exports = {db,workQueue};
+module.exports = {db,workQueue,logger};

@@ -9,7 +9,8 @@ const path = require('path');
  */
 const buildPaths = {
     buildPathHtml: path.resolve('pickinglist.html'),
-    buildPathPdf: path.resolve('pickinglist.pdf')
+    buildPathPdf: path.resolve('pickinglist.pdf'),
+    baseName: 'pickinglist'
 };
 
 module.exports = buildPaths;
