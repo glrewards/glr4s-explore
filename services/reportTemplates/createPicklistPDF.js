@@ -16,6 +16,8 @@ const printPdf = async id => {
     const browser = await puppeteer.launch({ args: ["--no-sandbox"] }); // needed if we want this to run on heroku
     /* 1- Create a newPage() object. It is created in default browser context. */
     const page = await browser.newPage();
+    page.setDefaultNavigationTimeout(0);
+    page.setDefaultTimeout(0);
     /* 2- Will open our generated `.html` file in the new Page instance. */
     //console.log(buildPathHtml);
     let fileName = path.resolve(`${baseName}${id}.html`);

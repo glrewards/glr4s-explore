@@ -27,7 +27,7 @@ async function start() {
   // Connect to the named work queue
   let workQueue = new Queue("work", REDIS_URL);
 
-  workQueue.process("pickingListPDF", maxJobsPerWorker,  async (job,done) => {
+  workQueue.process("pickingListPDF", maxJobsPerWorker,  async (job) => {
     // This is an example job that just slowly reports on progress
     // while doing no work. Replace this with your own job logic.
     let progress = 0;
@@ -45,7 +45,7 @@ async function start() {
     //TODO: need to have a scheduled cleanup job to clear down all the pdfs HOWEVER they should
     // go every time we recycle the dyno any way
     console.log(`PDFPATH: ${pdfPath}`);
-    done(null, {file: pdfPath });
+    return {file: pdfPath };
   });
 }
 

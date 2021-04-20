@@ -262,7 +262,8 @@ module.exports = app => {
       res.status(400).send(err);
     }
   });
-  app.get("/reports/pickinglist/:orderId", requireLogin, async (req, res) => {
+  app.get("/reports/pickinglist/:orderId", async (req, res) => {
+    const timer = ms => new Promise(res => setTimeout(res,ms));
     const type = req.query.type;
     const orderId = req.params.orderId;
     logger.info("/reports/pickinglist/:orderId");
@@ -284,32 +285,27 @@ module.exports = app => {
         logger.info("creating picklist pdf");
         let task = await workQueue.add("pickingListPDF",response.data.lineItems);
         logger.debug(JSON.stringify(`job created. Id: ${task.id}`));
+
         let done = false;
         while (!done){
           let job = await workQueue.getJobFromId(task.id);
-          if (job === null) {
-            logger.error("job is null. was expecting something else");
-            done = true;
-          } else {
-            let state = await job.getState();
-            let progress = job._progress;
-            let reason = job.failedReason;
-            //logger.debug(`job data: {id: ${job.id},state: ${state}, progress: ${progress}, reason: ${reason} }`);
-            if ((state === 'active') || (state === 'waiting') || (state === 'paused') || (state === 'delayed')){
+          let state = await job.getState();
+          if((state === 'completed')||(state === 'failed')){
+            if (job.returnvalue === null){
               done = false;
-            }else if (state ==='completed'){
-              //we can get the file
-              console.log(JSON.stringify(await job.getState()));
-              console.log(JSON.stringify(job.returnvalue));
+            }else{
               file = fs.readFileSync(job.returnvalue.file);
               fs.unlinkSync(job.returnvalue.file);
               done = true;
+              res.type("application/pdf");
+              res.status(200).send(file)
+
             }
+          }else{
+            await timer(1000);
+            done = false;
           }
         }
-        res.type("application/pdf");
-        res.status(200).send(file);
-        res.end();
       }
     } catch (e) {
       logger.error(e.message);
