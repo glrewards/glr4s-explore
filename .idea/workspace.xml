@@ -26,9 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="deleting the pdf once we have read it into memory">
+    <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/globalservices.js" beforeDir="false" afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker.js" afterDir="false" />
@@ -371,14 +370,8 @@
       <workItem from="1618246546614" duration="7993000" />
       <workItem from="1618324327741" duration="10749000" />
       <workItem from="1618562898660" duration="5172000" />
-      <workItem from="1618652014245" duration="31201000" />
-    </task>
-    <task id="LOCAL-00182" summary="completed the member view of orders but without paginiation">
-      <created>1613487394326</created>
-      <option name="number" value="00182" />
-      <option name="presentableId" value="LOCAL-00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1613487394327</updated>
+      <workItem from="1618652014245" duration="31262000" />
+      <workItem from="1618925049343" duration="2663000" />
     </task>
     <task id="LOCAL-00183" summary="Introduced the new role of glradmin&#10;this has required:&#10; a change to the redirecting logic on the login container&#10; changes and clean up in the GLRHeader nav link creation logic - this was an early component and might need sorting out &#10; more logging was added but more clean ups are needed">
       <created>1613670365052</created>
@@ -716,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618847643778</updated>
     </task>
-    <option name="localTasksCounter" value="231" />
+    <task id="LOCAL-00231" summary="fixed intermittent issues but this will not work on heroku">
+      <created>1618925003704</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1618925003704</updated>
+    </task>
+    <option name="localTasksCounter" value="232" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -762,7 +762,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted old generated files" />
     <MESSAGE value="removed the test get route" />
     <MESSAGE value="try catch for puppeteer call and some logging" />
     <MESSAGE value="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally" />
@@ -787,7 +786,8 @@
     <MESSAGE value="trying to sort out ssl issues with redis on heroku" />
     <MESSAGE value="working version of pdf worker process but there is an intermittent issue with the returnvalue of the job" />
     <MESSAGE value="deleting the pdf once we have read it into memory" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleting the pdf once we have read it into memory" />
+    <MESSAGE value="fixed intermittent issues but this will not work on heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed intermittent issues but this will not work on heroku" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
