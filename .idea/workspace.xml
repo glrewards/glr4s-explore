@@ -27,16 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/Report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/globalservices.js" beforeDir="false" afterPath="$PROJECT_DIR$/globalservices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shopifyWebHookRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -391,14 +382,7 @@
       <workItem from="1618562898660" duration="5172000" />
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
-      <workItem from="1619188427762" duration="3044000" />
-    </task>
-    <task id="LOCAL-00184" summary="basic component structures added for the orderlist and SuperAdminDashboard.js created &#10;also updated the npx browser list">
-      <created>1613687526761</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1613687526761</updated>
+      <workItem from="1619188427762" duration="4081000" />
     </task>
     <task id="LOCAL-00185" summary="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)">
       <created>1613698689678</created>
@@ -736,7 +720,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618995731158</updated>
     </task>
-    <option name="localTasksCounter" value="233" />
+    <task id="LOCAL-00233" summary="converted pdf creation to use mongo">
+      <created>1619200400402</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1619200400402</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -782,7 +773,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try catch for puppeteer call and some logging" />
     <MESSAGE value="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally" />
     <MESSAGE value="updated node.js version to 14.x - to try out the .x AND to see if I can fix a bug with puppeteer" />
     <MESSAGE value="added this puppeteer.launch({ args: ['--no-sandbox'] } as advised here https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-is-downloaded-but-fails-to-launch-on-nodejs-14&#10;Also added the puppeteer buildpack" />
@@ -807,7 +797,8 @@
     <MESSAGE value="deleting the pdf once we have read it into memory" />
     <MESSAGE value="fixed intermittent issues but this will not work on heroku" />
     <MESSAGE value="trying to improve the number of rogue chromium process running" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to improve the number of rogue chromium process running" />
+    <MESSAGE value="converted pdf creation to use mongo" />
+    <option name="LAST_COMMIT_MESSAGE" value="converted pdf creation to use mongo" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
