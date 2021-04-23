@@ -28,5 +28,11 @@ module.exports = {
     glrLogLevel: process.env.GLR_LOG_LEVEL,
     secureSession: process.env.SECURE_SESSION,
     webhookSecret: process.env.WEBHOOK_SECRET,
-    redisURL: process.env.REDIS_URL
+    redisURL: process.env.REDIS_URL,
+    felixAWSAccessKeyId:process.env.FELIX_AWS_ACCESS_KEY_ID,
+    felixAWSSecretAccessKey: process.env.FELIX_AWS_SECRET_ACCESS_KEY,
+    felixAWSUserARN: process.env.FELIX_AWS_USER_ARN,
+    felixUserEmail: process.env.FELIX_USER_EMAIL,
+    felixUserPassword: process.env.FELIX_USER_PASSWORD
+
 };

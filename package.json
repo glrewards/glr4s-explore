@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node ./app.js",
-    "server": "nodemon ./app.js",
+    "server": "nodemon ./app.js ",
     "worker": "node ./worker.js",
     "devworker": "nodemon ./worker.js",
     "client": "npm run start --prefix client",
@@ -15,6 +15,7 @@
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.13.0",
     "axios": "^0.21.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
@@ -32,8 +33,11 @@
     "graphql-tag": "^2.11.0",
     "http-errors": "~1.6.2",
     "lodash": "^4.17.21",
+    "method-override": "^3.0.0",
     "mongodb": "^3.6.5",
     "mongoose": "^5.12.2",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",

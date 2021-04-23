@@ -1,14 +1,17 @@
 const requireLogin = require("../middlewares/requireLogin");
-const requireGLRPoints = require("../middlewares/requireGLRPoints");
-const requireStudent = require("../middlewares/requireStudent");
+//const requireGLRPoints = require("../middlewares/requireGLRPoints");
+//const requireStudent = require("../middlewares/requireStudent");
 const keys = require("../config/keys");
 const winston = require("winston");
 const axios = require("axios");
+const mongoose = require("mongoose");
 const tableGenerator = require("../services/reportTemplates/pickingListTemplate");
-const PDFGenerator = require("../services/reportTemplates/createPicklistPDF");
-const puppeteer = require("puppeteer");
+const PickingListModel = mongoose.model('PickingList');
+//const PDFGenerator = require("../services/reportTemplates/createPicklistPDF");
 const fs = require("fs");
+
 const {workQueue} = require('../globalservices');
+
 
 //const Order = mongoose.model("orders");
 //const Student = mongoose.model("students");
@@ -295,11 +298,12 @@ module.exports = app => {
             if (job.returnvalue === null){
               done = false;
             }else{
-              file = fs.readFileSync(job.returnvalue.file);
-              fs.unlinkSync(job.returnvalue.file);
+              //file = fs.readFileSync(job.returnvalue.file);
+              let fileDoc = await PickingListModel.findOne({fileName:job.returnvalue.file});
+              //fs.unlinkSync(job.returnvalue.file);
               done = true;
               res.type("application/pdf");
-              res.status(200).send(file)
+              res.status(200).send(fileDoc.file);
 
             }
           }else{

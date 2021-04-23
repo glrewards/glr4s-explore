@@ -1,11 +1,20 @@
 const fs = require("fs");
 const puppeteer = require("puppeteer");
 const path = require('path');
+const {logger} = require('../../globalservices');
+const keys = require('../../config/keys');
+const mongoose = require("mongoose");
+const plSchema = require("../../models/Report");
+const PickingListModel = mongoose.model('PickingList');
+
 // Build paths
 const { buildPathHtml, buildPathPdf, baseName } = require("./buildPaths");
 
+
+//const awsClient = new S3Client(undefined);
 const printPdf = async id => {
   console.log("Starting: Generating PDF Process, Kindly wait ..");
+
   /** Launch a headless browser */
   const browser = await puppeteer.launch({ args: ["--no-sandbox"] }); // needed if we want this to run on heroku
   /* 1- Create a newPage() object. It is created in default browser context. */
@@ -52,11 +61,12 @@ async function getPDF(id) {
   const pdf = await printPdf(id);
   let htmlFileName = path.resolve(`${baseName}${id}.html`);
   let pdfFileName = path.resolve(`${baseName}${id}.pdf`);
-  fs.writeFileSync(pdfFileName, pdf);
+  //fs.writeFileSync(pdfFileName, pdf);
+  await PickingListModel.create({fileName:pdfFileName, fileType: 'pdf', file: pdf});
   console.log("Deleting html file");
   //f the file exists delete the file from system
   fs.unlinkSync(htmlFileName);
-  console.log("Successfully created a PDF file");
+  console.log("Successfully created a PDF file on Mongo");
   return path.resolve(`${baseName}${id}.pdf`);
 }
 

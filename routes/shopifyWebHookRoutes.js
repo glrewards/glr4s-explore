@@ -2,11 +2,11 @@ const requireSecret = require("../middlewares/requireSecret");
 const requireLearningCentre = require("../middlewares/requireValidLearningCentre");
 const mongoose = require("mongoose");
 const keys = require("../config/keys");
-const winston = require("winston");
+//const winston = require("winston");
 const axios = require("axios");
-const Centre = mongoose.model("LearningCentre");
-const Cab = mongoose.model("Cabinet");
-const Shelf = mongoose.model("Shelf");
+//const Centre = mongoose.model("LearningCentre");
+//const Cab = mongoose.model("Cabinet");
+//const Shelf = mongoose.model("Shelf");
 const logger = require("../logging");
 
 

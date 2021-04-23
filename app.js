@@ -7,12 +7,14 @@ let cookieParser = require("cookie-parser");
 const keys = require("./config/keys");
 const {db} = require("./globalservices");
 const MongoStore = require("connect-mongo")(session);
+require("./models/Report");
 require("./models/rewards/Cabinet");
 require("./models/rewards/Shelf");
 require("./models/rewards/Reward");
 require("./models/rewards/RewardTemplate");
 require("./models/rewards/RewardType");
 require("./models/Student");
+
 //require("./models/Teacher");
 require("./models/User");
 //require("./models/shop/order/Order");
