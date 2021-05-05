@@ -3,4 +3,3 @@ mongo_scripts
 dev.js
 .idea/
 workspace.xml
-/config/.env

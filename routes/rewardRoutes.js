@@ -13,7 +13,6 @@ const logger = winston.createLogger({
     )})]
 });
 module.exports = app => {
-  //TODO: add requireLogin middleware
   app.get("/api/cabinet", requireLogin, async (req, res) => {
     logger.info("rewardRoutes: /api/cabinet ", req.query);
     try {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { Icon, Navbar, NavItem } from "react-materialize";
+import {Divider, Dropdown, Icon, Navbar, NavItem} from "react-materialize";
 
 class GLRHeader extends Component {
   constructor(props) {
@@ -98,9 +98,6 @@ class GLRHeader extends Component {
         return [
           this.renderRewardCabinet(),
           this.renderMyOrder(),
-          <NavItem href="/api/logout" key={"logout"}>
-            Logout
-          </NavItem>,
           this.renderGuardian(),
           this.renderAdminItem(),
           this.renderSuperAdmin(),
@@ -109,6 +106,9 @@ class GLRHeader extends Component {
             <div className="valign-wrapper flow-text">
               {this.renderGLRPoints()}
             </div>
+          </NavItem>,
+          <NavItem href="/api/logout" key={"logout"}>
+            Logout
           </NavItem>
         ];
     }
@@ -118,9 +118,35 @@ class GLRHeader extends Component {
     if (!this.props.auth.roles.includes("admin")) {
     } else {
       return (
-        <NavItem key={"admin"} className="sidenav-close">
-          <NavLink to="/admin">Centre Dashboard</NavLink>
-        </NavItem>
+        [
+          <Dropdown
+              id="dd_admin_1"
+              options={{
+                alignment: 'left',
+                autoTrigger: true,
+                closeOnClick: true,
+                constrainWidth: true,
+                container: null,
+                coverTrigger: false,
+                hover: false,
+                inDuration: 150,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 250
+              }}
+              trigger={<a href="#!">Admin{' '}<Icon right>arrow_drop_down</Icon></a>}
+          >
+            <a href="/admin">
+              Order Dashboard
+            </a>
+            <Divider />
+            <a href="/centremaint">
+              Centre Admin
+            </a>
+          </Dropdown>,
+        ]
       );
     }
   }

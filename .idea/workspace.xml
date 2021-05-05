@@ -27,8 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/reportTemplates/createPicklistPDF.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GLRHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GLRHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/rewardRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rewardRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,14 +386,8 @@
       <workItem from="1618562898660" duration="5172000" />
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
-      <workItem from="1619188427762" duration="4081000" />
-    </task>
-    <task id="LOCAL-00185" summary="fixed bug because of incomplete removal of mclient in the webhookroutes&#10;got orderList hooked up to an api call (meaning actors reducers and all parent components working)">
-      <created>1613698689678</created>
-      <option name="number" value="00185" />
-      <option name="presentableId" value="LOCAL-00185" />
-      <option name="project" value="LOCAL" />
-      <updated>1613698689678</updated>
+      <workItem from="1619188427762" duration="8933000" />
+      <workItem from="1620228523705" duration="2299000" />
     </task>
     <task id="LOCAL-00186" summary="Cleaned up GLRHeader.js. Removed NavItem and simplified to just use NavLink. This commit also includes unfinished changes to handle GLRAdmin Master Detail order view">
       <created>1613927609453</created>
@@ -727,7 +725,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619200400402</updated>
     </task>
-    <option name="localTasksCounter" value="234" />
+    <task id="LOCAL-00234" summary="changed timeout for file generation - heroku is taking too long">
+      <created>1619201313452</created>
+      <option name="number" value="00234" />
+      <option name="presentableId" value="LOCAL-00234" />
+      <option name="project" value="LOCAL" />
+      <updated>1619201313452</updated>
+    </task>
+    <option name="localTasksCounter" value="235" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -773,7 +778,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally" />
     <MESSAGE value="updated node.js version to 14.x - to try out the .x AND to see if I can fix a bug with puppeteer" />
     <MESSAGE value="added this puppeteer.launch({ args: ['--no-sandbox'] } as advised here https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-is-downloaded-but-fails-to-launch-on-nodejs-14&#10;Also added the puppeteer buildpack" />
     <MESSAGE value="removed some unused packages from package.json" />
@@ -798,7 +802,8 @@
     <MESSAGE value="fixed intermittent issues but this will not work on heroku" />
     <MESSAGE value="trying to improve the number of rogue chromium process running" />
     <MESSAGE value="converted pdf creation to use mongo" />
-    <option name="LAST_COMMIT_MESSAGE" value="converted pdf creation to use mongo" />
+    <MESSAGE value="changed timeout for file generation - heroku is taking too long" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed timeout for file generation - heroku is taking too long" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
