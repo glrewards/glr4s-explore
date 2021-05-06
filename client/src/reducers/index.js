@@ -15,10 +15,12 @@ import XODAchievementsReducer from "./XODAchivementReducer";
 import cabinetReducer from "./rewardReducer";
 import orderReducer from "./orderReducer";
 import UIReducer from "./UIReducer";
+import containerReducer from "./containerReducer";
 
 export default combineReducers({
     auth: authReducer,
     members: membersReducer,
+    container:containerReducer,
     cabinet: cabinetReducer,
     cart: cartReducer,
     order: orderReducer,

@@ -9,8 +9,10 @@
  */
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import UserSearch from "../user/UserSearch";
 import UserList from "../user/UserList";
+import {fetchMembers} from "../../actions/containerActions";
 import { connect } from "react-redux";
 import {Button, Chip, Col, Collection, CollectionItem, Row, Select} from "react-materialize";
 
@@ -22,7 +24,7 @@ class GroupManagementContainer extends React.Component {
   }
 
   handleSearch() {
-      console.log("do search");
+      dispatch
   }
 
   handleMemberClicked(event){
@@ -75,4 +77,9 @@ class GroupManagementContainer extends React.Component {
   }
 }
 
-export default GroupManagementContainer;
+function mapStateToProps(state) {
+    //not sure what state we need at this stage
+    const orderList = state.order.GLROrderList;
+    return {orderList: orderList}
+}
+export default connect(mapStateToProps)(GroupManagementContainer);
