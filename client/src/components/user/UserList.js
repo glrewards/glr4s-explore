@@ -13,12 +13,13 @@ class UserList extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     //create the rows
     let items = [];
     for (let i = 0; i < this.props.userList.length; i++) {
       items.push(
-        <CollectionItem key={this.props.userList[i].userId} className={"blue-text lighten-3 "}>
+        <CollectionItem id={this.props.userList[i].userId} key={this.props.userList[i].userId} className={"blue-text"} onClick={this.props.onUserSelected}>
           {this.props.userList[i].firstName +
             " " +
             this.props.userList[i].lastName}{" "}
@@ -26,9 +27,6 @@ class UserList extends Component {
               className="secondary-content"
               href="javascript:void(0)"
           >
-            <Icon>
-              send
-            </Icon>
           </a>
         </CollectionItem>
       );
@@ -49,6 +47,8 @@ class UserList extends Component {
 }
 
 UserList.propTypes = {
+  enabled: PropTypes.bool,
+  header: PropTypes.string,
   userList: PropTypes.array.isRequired,
   onUserSelected: PropTypes.func.isRequired
 };

@@ -33,7 +33,7 @@ module.exports = app => {
       res.send({ code: err.response.status, message: err });
     }
   });
-  app.get("/api/user/related/:userId", async (req, res) => {
+  app.get("/api/user/related/:userId", requireLogin, async (req, res) => {
     let uid = req.params.userId;
     let url = keys.glrAPIGateway + keys.glrAPIUser + "/related/" + uid;
     let options = {
@@ -53,4 +53,26 @@ module.exports = app => {
     }
 
   });
+
+  app.get("/api/user", async (req,res) => {
+
+    let url = keys.glrAPIGateway + keys.glrAPIUser;
+    let options = {
+      params: req.query,
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+      logger.info(`/api/user called`,req.query);
+      try{
+        const axiosResponse = await axios.get(url,options);
+        const data = axiosResponse.data;
+        res.send(data);
+      }catch (err){
+        console.error("error getting related users: ", err);
+        res.statusCode = err.response.status;
+        res.send({ code: err.response.status, message: err });
+      }
+  });
+
 };

@@ -82,7 +82,7 @@ class GLRHeader extends Component {
     ) {
       return (
         //<NavItem key={"cabinet"} className="sidenav-close">
-          <NavLink to={"/cabinet"}>Reward Cabinet</NavLink>
+          <NavLink key={"cab"} to={"/cabinet"}>Reward Cabinet</NavLink>
         //</NavItem>
           //<NavItem key={"cabinet"} href="cabinet" className="sidenav-close">Reward Cabinet </NavItem>
       );

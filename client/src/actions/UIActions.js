@@ -2,6 +2,7 @@ export const RELATED_USER_SELECTED = 'RELATED_USER_SELECTED';
 export const MASTER_ORDER_SELECTED = 'MASTER_ORDER_SELECTED';
 export const SEARCH_CENTRE = 'SEARCH_CENTRE';
 
+
 export function selectUser(userId) {
     console.log("action: selectUser()");
     return (dispatch, getState) => {
@@ -36,5 +37,11 @@ export function selectOrder(orderId) {
         });
         const payload = {masterOrderIndex: orderIndex, masterOrderId: orderId};
         dispatch({type: MASTER_ORDER_SELECTED, payload});
+    }
+}
+export function memberClicked(userId){
+    console.log("action: memberClicked()");
+    return (dispatch) => {
+        dispatch({type: MEMBER_CLICKED, payload: userId});
     }
 }
