@@ -3,7 +3,7 @@ import { SET_STUDENT_PAGES } from "../actions/types";
 import {
   MASTER_ORDER_SELECTED,
   RELATED_USER_SELECTED,
-  SEARCH_CENTRE
+  SEARCH
 } from "../actions/UIActions";
 import { SET_ORDER_USER } from "../actions/types";
 import { act } from "react-dom/test-utils";
@@ -28,22 +28,22 @@ export const ui = (state = {}, action) => {
         selectedmember: action.payload.userId
       });
     case MASTER_ORDER_SELECTED:
-      console.log("UIReducer: MASTER_ORDER_SELECTED: " + action.payload);
+      //console.log("UIReducer: MASTER_ORDER_SELECTED: " + action.payload);
       return Object.assign({}, state, action.payload);
-    case SEARCH_CENTRE:
+    case SEARCH:
       if (action.payload.value === "") {
           //we dont want the attribute
           return{
               ...state,
-              orderSearchParams: {
+              searchParams: {
                   [action.payload.field]: null
               }
           }
       } else {
         return {
           ...state,
-          orderSearchParams: {
-            ...state.orderSearchParams,
+          searchParams: {
+            ...state.searchParams,
             [action.payload.field]: action.payload.value
           }
         };

@@ -1,6 +1,6 @@
 export const RELATED_USER_SELECTED = 'RELATED_USER_SELECTED';
 export const MASTER_ORDER_SELECTED = 'MASTER_ORDER_SELECTED';
-export const SEARCH_CENTRE = 'SEARCH_CENTRE';
+export const SEARCH = 'SEARCH';
 
 
 export function selectUser(userId) {
@@ -18,11 +18,11 @@ export function selectUser(userId) {
     }
 }
 //fired off as soon as a user begins to type into the Input field
-export function searchOrders(fieldId, text) {
+export function search(fieldId, text) {
     let payload = {field: fieldId, value: text};
     return (dispatch) => {
         dispatch({
-            type: SEARCH_CENTRE,
+            type: SEARCH,
             payload: payload
         });
     }
@@ -39,9 +39,4 @@ export function selectOrder(orderId) {
         dispatch({type: MASTER_ORDER_SELECTED, payload});
     }
 }
-export function memberClicked(userId){
-    console.log("action: memberClicked()");
-    return (dispatch) => {
-        dispatch({type: MEMBER_CLICKED, payload: userId});
-    }
-}
+

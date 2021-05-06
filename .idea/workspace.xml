@@ -27,9 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,14 +380,7 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="17826000" />
-    </task>
-    <task id="LOCAL-00188" summary="working glr admin dashboard with basic master detail. Just need o decide on best way to print the picking list now.">
-      <created>1614032159980</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1614032159980</updated>
+      <workItem from="1620228523705" duration="21612000" />
     </task>
     <task id="LOCAL-00189" summary="added audit fix to the heroku post build">
       <created>1614032586627</created>
@@ -722,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620316951323</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="UI - containerReducer.js Create but not finished. Added to the combine reducers logic.">
+      <created>1620317962835</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1620317962835</updated>
+    </task>
+    <option name="localTasksCounter" value="238" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -768,7 +771,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed some unused packages from package.json" />
     <MESSAGE value="removed some unused packages from client/package.json" />
     <MESSAGE value="cleaned a few more items from package.json files and added npm audit fix to the client script" />
     <MESSAGE value="changed content type when returning pdf" />
@@ -793,7 +795,8 @@
     <MESSAGE value="changed timeout for file generation - heroku is taking too long" />
     <MESSAGE value="cleaned up GLRHeader.js admin functions will now appear under a drop down" />
     <MESSAGE value="memberRoutes.js added the route used by the client to call the user api to get members by first name and last name.&#10;UI - started to work on the GroupManagementContainer.js&#10;UI - containerActions.js = started work to integrate the UserSearch.js with the routes NOT FINISHED" />
-    <option name="LAST_COMMIT_MESSAGE" value="memberRoutes.js added the route used by the client to call the user api to get members by first name and last name.&#10;UI - started to work on the GroupManagementContainer.js&#10;UI - containerActions.js = started work to integrate the UserSearch.js with the routes NOT FINISHED" />
+    <MESSAGE value="UI - containerReducer.js Create but not finished. Added to the combine reducers logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="UI - containerReducer.js Create but not finished. Added to the combine reducers logic." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

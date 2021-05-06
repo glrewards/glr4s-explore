@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { ProgressBar, Row } from "react-materialize";
 import SuperAdminDashboard from "../admin/SuperAdminDashboard";
-import { searchOrders } from "../../actions/UIActions";
+import { search } from "../../actions/UIActions";
 import { fetchOrdersByParams } from "../../actions/orderActions";
 
 class SuperAdminDashboardContainer extends Component {
@@ -42,9 +42,9 @@ class SuperAdminDashboardContainer extends Component {
         "-" +
         this.appendLeadingZeroes(event.getDate());
 
-      this.props.dispatch(searchOrders("fromDate", parsedDate));
+      this.props.dispatch(search("fromDate", parsedDate));
     } else {
-      this.props.dispatch(searchOrders(event.target.id, event.target.value));
+      this.props.dispatch(search(event.target.id, event.target.value));
     }
   }
   render() {
@@ -61,8 +61,7 @@ function mapStateToProps(state) {
   console.log(state.ui);
   return {
     //we care about the orderSearchParams
-
-    searchParams: state.ui.orderSearchParams
+    searchParams: state.ui.searchParams
   };
 }
 

@@ -13,7 +13,6 @@ import { connect } from "react-redux";
 import UserSearch from "../user/UserSearch";
 import UserList from "../user/UserList";
 import {fetchMembers} from "../../actions/containerActions";
-import { connect } from "react-redux";
 import {Button, Chip, Col, Collection, CollectionItem, Row, Select} from "react-materialize";
 
 class GroupManagementContainer extends React.Component {
@@ -24,7 +23,7 @@ class GroupManagementContainer extends React.Component {
   }
 
   handleSearch() {
-      dispatch
+      this.props.dispatch(fetchMembers());
   }
 
   handleMemberClicked(event){

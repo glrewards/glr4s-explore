@@ -20,9 +20,13 @@ function receiveMembers(json) {
     };
 }
 export const fetchMembers = () => async dispatch =>{
-    let url = "api/members/" ;
+    let url = "api/user/" ;
+    let options = {
+        params:{centreId: "5f43e101e91adb0d8d40dbbe", firstName: "Enoch"}
+
+    }
     dispatch(requestMembers()); //update state to say we are fetching cabinet
-    const res = await axios.get(url);
-    //console.log("response data: ", res.data);
+    const res = await axios.get(url,options);
+    console.log("response data: ", res.data);
     dispatch(receiveMembers(res.data));
 }
