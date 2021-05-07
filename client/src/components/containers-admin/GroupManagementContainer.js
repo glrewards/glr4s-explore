@@ -35,9 +35,7 @@ handleInputChanged(event){
       console.log(event.nativeEvent);
   }
   render() {
-    const temp = [
-      { userId: "23123123werwq", firstName: "john", lastName: "Bloggs" }
-    ];
+
     const temp2 = [
       { userId: "dsfsdfewrewrew", firstName: "Joe", lastName: "Smith" },
       { userId: "21312313weqeqwe", firstName: "Sarah", lastName: "Jones" }
@@ -49,7 +47,7 @@ handleInputChanged(event){
         <UserSearch search={this.handleSearch} inputChanged={this.handleInputChanged}/>
         <Row>
           <Col s={5}>
-            <UserList userList={temp} onUserSelected={(e) => {this.handleMemberClicked(e)}} />
+            <UserList userList={this.props.container.members} onUserSelected={(e) => {this.handleMemberClicked(e)}} />
           </Col>
           <Col style={{ border: "dashed" }} s={2}>
             <Row>
@@ -82,8 +80,7 @@ handleInputChanged(event){
 }
 
 function mapStateToProps(state) {
-    //not sure what state we need at this stage
-    const orderList = state.order.GLROrderList;
-    return {orderList: orderList}
+    const container = state.container;
+    return {container: container}
 }
 export default connect(mapStateToProps)(GroupManagementContainer);

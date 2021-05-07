@@ -27,7 +27,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,14 +378,7 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="26346000" />
-    </task>
-    <task id="LOCAL-00192" summary="basic picklist in html form working. need to convert to pdf">
-      <created>1614104414881</created>
-      <option name="number" value="00192" />
-      <option name="presentableId" value="LOCAL-00192" />
-      <option name="project" value="LOCAL" />
-      <updated>1614104414882</updated>
+      <workItem from="1620228523705" duration="27363000" />
     </task>
     <task id="LOCAL-00193" summary="added setupProxy.js config to make /reports/ work from glr.ngrok.io">
       <created>1614153442285</created>
@@ -720,7 +716,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620376368104</updated>
     </task>
-    <option name="localTasksCounter" value="241" />
+    <task id="LOCAL-00241" summary="containerReducer.js add teh selected flag to each member">
+      <created>1620376885472</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1620376885472</updated>
+    </task>
+    <option name="localTasksCounter" value="242" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -766,7 +769,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create pdf picking list by default" />
     <MESSAGE value="date picker for admin search is working" />
     <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
     <MESSAGE value="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there" />
@@ -791,7 +793,8 @@
     <MESSAGE value="cleaned up UIActions.js and related user of the search parameters. Made the parameters and function names more generic as they can be used by more than one query building search form" />
     <MESSAGE value="Search for members in containerActions.js working. Added code to append the centreId" />
     <MESSAGE value="containerReducer.js started with simple fetching flag" />
-    <option name="LAST_COMMIT_MESSAGE" value="containerReducer.js started with simple fetching flag" />
+    <MESSAGE value="containerReducer.js add teh selected flag to each member" />
+    <option name="LAST_COMMIT_MESSAGE" value="containerReducer.js add teh selected flag to each member" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

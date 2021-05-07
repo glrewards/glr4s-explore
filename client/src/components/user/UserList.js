@@ -19,7 +19,7 @@ class UserList extends Component {
     let items = [];
     for (let i = 0; i < this.props.userList.length; i++) {
       items.push(
-        <CollectionItem id={this.props.userList[i].userId} key={this.props.userList[i].userId} className={"blue-text"} onClick={this.props.onUserSelected}>
+        <CollectionItem id={this.props.userList[i].username} key={this.props.userList[i].username} className={"blue-text"} onClick={this.props.onUserSelected}>
           {this.props.userList[i].firstName +
             " " +
             this.props.userList[i].lastName}{" "}

@@ -32,7 +32,13 @@ export const fetchMembers = () => async (dispatch,getState) =>{
         params:params
     }
     dispatch(requestMembers()); //update state to say we are fetching cabinet
-    const res = await axios.get(url,options);
-    console.log("response data: ", res.data);
-    dispatch(receiveMembers(res.data));
+    try {
+        const res = await axios.get(url, options);
+        console.log("response data: ", res.data);
+        dispatch(receiveMembers(res.data));
+    }catch (e){
+        console.log(e.message);
+        //trigger the reducer to clear the state
+        dispatch(receiveMembers([]));
+    }
 }
