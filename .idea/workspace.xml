@@ -28,11 +28,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/UIActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/UIActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/SuperAdminDashboardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/UIReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserSearch.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -380,14 +378,7 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="21612000" />
-    </task>
-    <task id="LOCAL-00189" summary="added audit fix to the heroku post build">
-      <created>1614032586627</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1614032586627</updated>
+      <workItem from="1620228523705" duration="24924000" />
     </task>
     <task id="LOCAL-00190" summary="added audit fix to the heroku post build">
       <created>1614032667349</created>
@@ -725,7 +716,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620317962835</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="cleaned up UIActions.js and related user of the search parameters. Made the parameters and function names more generic as they can be used by more than one query building search form">
+      <created>1620326375009</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1620326375009</updated>
+    </task>
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -771,7 +769,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed some unused packages from client/package.json" />
     <MESSAGE value="cleaned a few more items from package.json files and added npm audit fix to the client script" />
     <MESSAGE value="changed content type when returning pdf" />
     <MESSAGE value="create pdf picking list by default" />
@@ -796,7 +793,8 @@
     <MESSAGE value="cleaned up GLRHeader.js admin functions will now appear under a drop down" />
     <MESSAGE value="memberRoutes.js added the route used by the client to call the user api to get members by first name and last name.&#10;UI - started to work on the GroupManagementContainer.js&#10;UI - containerActions.js = started work to integrate the UserSearch.js with the routes NOT FINISHED" />
     <MESSAGE value="UI - containerReducer.js Create but not finished. Added to the combine reducers logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="UI - containerReducer.js Create but not finished. Added to the combine reducers logic." />
+    <MESSAGE value="cleaned up UIActions.js and related user of the search parameters. Made the parameters and function names more generic as they can be used by more than one query building search form" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up UIActions.js and related user of the search parameters. Made the parameters and function names more generic as they can be used by more than one query building search form" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import UserSearch from "../user/UserSearch";
 import UserList from "../user/UserList";
 import {fetchMembers} from "../../actions/containerActions";
+import {search} from "../../actions/UIActions";
 import {Button, Chip, Col, Collection, CollectionItem, Row, Select} from "react-materialize";
 
 class GroupManagementContainer extends React.Component {
@@ -20,12 +21,16 @@ class GroupManagementContainer extends React.Component {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleMemberClicked = this.handleMemberClicked.bind(this);
+    this.handleInputChanged = this.handleInputChanged.bind(this);
   }
 
   handleSearch() {
       this.props.dispatch(fetchMembers());
   }
+handleInputChanged(event){
+    this.props.dispatch(search(event.target.id, event.target.value));
 
+}
   handleMemberClicked(event){
       console.log(event.nativeEvent);
   }
@@ -41,7 +46,7 @@ class GroupManagementContainer extends React.Component {
       "col amber darken-4 waves-effect waves-purple valign-wrapper";
     return (
       <div>
-        <UserSearch search={this.handleSearch} />
+        <UserSearch search={this.handleSearch} inputChanged={this.handleInputChanged}/>
         <Row>
           <Col s={5}>
             <UserList userList={temp} onUserSelected={(e) => {this.handleMemberClicked(e)}} />

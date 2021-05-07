@@ -19,11 +19,17 @@ function receiveMembers(json) {
         receivedAt: Date.now()
     };
 }
-export const fetchMembers = () => async dispatch =>{
+export const fetchMembers = () => async (dispatch,getState) =>{
     let url = "api/user/" ;
-    let options = {
-        params:{centreId: "5f43e101e91adb0d8d40dbbe", firstName: "Enoch"}
+    const {auth} = getState();
+    let params = getState().ui.searchParams;
+    //params might not exist in which case we need to lust add the centre from Auth
+    //if they do exist we still need to add the centre from auth state.
+    if(!params) params = {};
+    params['centreId'] = auth._learningCentreId;
 
+    let options = {
+        params:params
     }
     dispatch(requestMembers()); //update state to say we are fetching cabinet
     const res = await axios.get(url,options);
