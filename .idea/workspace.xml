@@ -27,7 +27,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -376,14 +375,7 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="25895000" />
-    </task>
-    <task id="LOCAL-00191" summary="tweak to GuardianDashboardContainer.js">
-      <created>1614064275901</created>
-      <option name="number" value="00191" />
-      <option name="presentableId" value="LOCAL-00191" />
-      <option name="project" value="LOCAL" />
-      <updated>1614064275902</updated>
+      <workItem from="1620228523705" duration="26346000" />
     </task>
     <task id="LOCAL-00192" summary="basic picklist in html form working. need to convert to pdf">
       <created>1614104414881</created>
@@ -721,7 +713,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620375490355</updated>
     </task>
-    <option name="localTasksCounter" value="240" />
+    <task id="LOCAL-00240" summary="containerReducer.js started with simple fetching flag">
+      <created>1620376368104</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1620376368104</updated>
+    </task>
+    <option name="localTasksCounter" value="241" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -767,7 +766,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed content type when returning pdf" />
     <MESSAGE value="create pdf picking list by default" />
     <MESSAGE value="date picker for admin search is working" />
     <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
@@ -792,7 +790,8 @@
     <MESSAGE value="UI - containerReducer.js Create but not finished. Added to the combine reducers logic." />
     <MESSAGE value="cleaned up UIActions.js and related user of the search parameters. Made the parameters and function names more generic as they can be used by more than one query building search form" />
     <MESSAGE value="Search for members in containerActions.js working. Added code to append the centreId" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search for members in containerActions.js working. Added code to append the centreId" />
+    <MESSAGE value="containerReducer.js started with simple fetching flag" />
+    <option name="LAST_COMMIT_MESSAGE" value="containerReducer.js started with simple fetching flag" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
