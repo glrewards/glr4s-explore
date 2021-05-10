@@ -28,9 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/memberRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/memberRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,14 +378,7 @@
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
       <workItem from="1620228523705" duration="47937000" />
-      <workItem from="1620661694996" duration="2838000" />
-    </task>
-    <task id="LOCAL-00198" summary="added some logs to reporting services">
-      <created>1614191584583</created>
-      <option name="number" value="00198" />
-      <option name="presentableId" value="LOCAL-00198" />
-      <option name="project" value="LOCAL" />
-      <updated>1614191584583</updated>
+      <workItem from="1620661694996" duration="3755000" />
     </task>
     <task id="LOCAL-00199" summary="added back the creation of the html file to test on heroku">
       <created>1614331784700</created>
@@ -724,7 +716,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620653487432</updated>
     </task>
-    <option name="localTasksCounter" value="247" />
+    <task id="LOCAL-00247" summary="ui improved">
+      <created>1620664675536</created>
+      <option name="number" value="00247" />
+      <option name="presentableId" value="LOCAL-00247" />
+      <option name="project" value="LOCAL" />
+      <updated>1620664675536</updated>
+    </task>
+    <option name="localTasksCounter" value="248" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -770,7 +769,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mended UserDetailCard.js so that it did not crash if the address contained an object rather than a string. In reality the right thing to do here is implement proper versioning because the v2 of User.js contains a simple address string but the v3 contains an object." />
     <MESSAGE value="adding workder processes for heroku AND user of REDIS and BULL and THRONG" />
     <MESSAGE value="improved formatting of winston logging" />
     <MESSAGE value="basic worker functions implemented" />
@@ -795,7 +793,8 @@
     <MESSAGE value="adding to group UI working. selecting items in both lists working" />
     <MESSAGE value="Del button working" />
     <MESSAGE value="basic container update is working but far from ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic container update is working but far from ready" />
+    <MESSAGE value="ui improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui improved" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
