@@ -30,7 +30,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,8 +230,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.rest-api_1#1" />
         <item itemvalue="npm.dev (2)" />
+        <item itemvalue="HTTP Request.rest-api_1#1" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.worker.js" />
@@ -378,14 +378,7 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="27363000" />
-    </task>
-    <task id="LOCAL-00193" summary="added setupProxy.js config to make /reports/ work from glr.ngrok.io">
-      <created>1614153442285</created>
-      <option name="number" value="00193" />
-      <option name="presentableId" value="LOCAL-00193" />
-      <option name="project" value="LOCAL" />
-      <updated>1614153442285</updated>
+      <workItem from="1620228523705" duration="31369000" />
     </task>
     <task id="LOCAL-00194" summary="starting to implement schema versioning in model definitions">
       <created>1614160804978</created>
@@ -723,7 +716,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620376885472</updated>
     </task>
-    <option name="localTasksCounter" value="242" />
+    <task id="LOCAL-00242" summary="userList.js to use username instead of userId as the unique ID and key. This is because of inconsistencies in using userId and _id.&#10;containerActions.js added try catch to the fetch member calls. catching error now dispatches to the reducer an empty array - meaning we clean the UserList.js">
+      <created>1620377864365</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1620377864365</updated>
+    </task>
+    <option name="localTasksCounter" value="243" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,7 +769,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="date picker for admin search is working" />
     <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
     <MESSAGE value="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there" />
     <MESSAGE value="added address and geolocation to LearningCentre.js" />
@@ -794,7 +793,8 @@
     <MESSAGE value="Search for members in containerActions.js working. Added code to append the centreId" />
     <MESSAGE value="containerReducer.js started with simple fetching flag" />
     <MESSAGE value="containerReducer.js add teh selected flag to each member" />
-    <option name="LAST_COMMIT_MESSAGE" value="containerReducer.js add teh selected flag to each member" />
+    <MESSAGE value="userList.js to use username instead of userId as the unique ID and key. This is because of inconsistencies in using userId and _id.&#10;containerActions.js added try catch to the fetch member calls. catching error now dispatches to the reducer an empty array - meaning we clean the UserList.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="userList.js to use username instead of userId as the unique ID and key. This is because of inconsistencies in using userId and _id.&#10;containerActions.js added try catch to the fetch member calls. catching error now dispatches to the reducer an empty array - meaning we clean the UserList.js" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

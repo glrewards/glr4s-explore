@@ -42,3 +42,11 @@ export const fetchMembers = () => async (dispatch,getState) =>{
         dispatch(receiveMembers([]));
     }
 }
+
+export function itemClicked(itemKey){
+    return {
+        type: CONTAINER_MEMBER_CLICKED,
+        payload: itemKey
+    };
+
+}

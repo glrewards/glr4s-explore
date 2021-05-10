@@ -12,7 +12,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserSearch from "../user/UserSearch";
 import UserList from "../user/UserList";
-import {fetchMembers} from "../../actions/containerActions";
+import {fetchMembers, itemClicked} from "../../actions/containerActions";
 import {search} from "../../actions/UIActions";
 import {Button, Chip, Col, Collection, CollectionItem, Row, Select} from "react-materialize";
 
@@ -32,7 +32,9 @@ handleInputChanged(event){
 
 }
   handleMemberClicked(event){
-      console.log(event.nativeEvent);
+      console.log(event.nativeEvent.target.id);
+      //dispatch the clicked action
+      this.props.dispatch(itemClicked(event.nativeEvent.target.id));
   }
   render() {
 
