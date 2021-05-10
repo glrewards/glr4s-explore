@@ -28,8 +28,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,14 +380,8 @@
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
       <workItem from="1620228523705" duration="47937000" />
-      <workItem from="1620661694996" duration="3755000" />
-    </task>
-    <task id="LOCAL-00199" summary="added back the creation of the html file to test on heroku">
-      <created>1614331784700</created>
-      <option name="number" value="00199" />
-      <option name="presentableId" value="LOCAL-00199" />
-      <option name="project" value="LOCAL" />
-      <updated>1614331784700</updated>
+      <workItem from="1620661694996" duration="8252000" />
+      <workItem from="1620670156158" duration="302000" />
     </task>
     <task id="LOCAL-00200" summary="removed the creation of the html file to test on heroku. Will need to think about S3 if I want to implement this using puppeteer">
       <created>1614334581412</created>
@@ -723,7 +719,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620664675536</updated>
     </task>
-    <option name="localTasksCounter" value="248" />
+    <task id="LOCAL-00248" summary="updated some client packages">
+      <created>1620665752447</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1620665752447</updated>
+    </task>
+    <option name="localTasksCounter" value="249" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,7 +772,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding workder processes for heroku AND user of REDIS and BULL and THRONG" />
     <MESSAGE value="improved formatting of winston logging" />
     <MESSAGE value="basic worker functions implemented" />
     <MESSAGE value="minor" />
@@ -794,7 +796,8 @@
     <MESSAGE value="Del button working" />
     <MESSAGE value="basic container update is working but far from ready" />
     <MESSAGE value="ui improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui improved" />
+    <MESSAGE value="updated some client packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated some client packages" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -4,7 +4,9 @@ import {
   CONTAINER_MEMBER_CLICKED,
   CONTAINER_ADD_CLICKED,
   CONTAINER_DEL_CLICKED,
-    CONTAINER_FIELD_CHANGED
+  CONTAINER_DEL_OWNER_CLICKED,
+  CONTAINER_ADD_OWNER_CLICKED,
+  CONTAINER_FIELD_CHANGED
 } from "../actions/containerActions";
 
 import order from "./orderReducer";
@@ -13,53 +15,98 @@ function container(
   state = {
     isFetching: false,
     members: [],
-    group: []
+    group: [],
+    owners: []
   },
   action
 ) {
+  let group = [];
+  let remainingGroup = [];
+  let remainingMembers = [];
+  let selectedGroup = [];
+  let selectedMembers = [];
+  let mainList = [];
   switch (action.type) {
     case CONTAINER_FIELD_CHANGED:
       if (action.payload.value === "") {
         //we dont want the attribute
-        return Object.assign({},state,{[action.payload.field]: null });
+        return Object.assign({}, state, { [action.payload.field]: null });
       } else {
-        return Object.assign({},state,{[action.payload.field]: action.payload.value });
-
+        return Object.assign({}, state, {
+          [action.payload.field]: action.payload.value
+        });
       }
-    case CONTAINER_DEL_CLICKED:
+    case CONTAINER_DEL_OWNER_CLICKED:
       //this is the reverse pf the ADD_CLICKED
-      let remainingGroup = state.group.filter(member => {
+      remainingGroup = state.owners.filter(member => {
         if (!member.selected) {
           return true;
         }
       });
-      let selectedGroup = state.group.filter(member => {
+      selectedGroup = state.owners.filter(member => {
         if (member.selected) {
           member.selected = false;
           return true;
         }
       });
-      let mainList = state.members.concat(selectedGroup);
+      mainList = state.members.concat(selectedGroup);
+      return Object.assign({}, state, {
+        owners: remainingGroup,
+        members: mainList
+      });
+
+    case CONTAINER_DEL_CLICKED:
+      //this is the reverse pf the ADD_CLICKED
+      remainingGroup = state.group.filter(member => {
+        if (!member.selected) {
+          return true;
+        }
+      });
+      selectedGroup = state.group.filter(member => {
+        if (member.selected) {
+          member.selected = false;
+          return true;
+        }
+      });
+      mainList = state.members.concat(selectedGroup);
       return Object.assign({}, state, {
         group: remainingGroup,
         members: mainList
       });
-
-    case CONTAINER_ADD_CLICKED:
+    case CONTAINER_ADD_OWNER_CLICKED:
       // remove the selected Items from members array and add them to the group list.
       // reset the selected attribute at the same time.
-      let remainingMembers = state.members.filter(member => {
+      remainingMembers = state.members.filter(member => {
         if (!member.selected) {
           return true;
         }
       });
-      let selectedMembers = state.members.filter(member => {
+      selectedMembers = state.members.filter(member => {
         if (member.selected) {
           member.selected = false;
           return true;
         }
       });
-      let group = state.group.concat(selectedMembers);
+      group = state.owners.concat(selectedMembers);
+      return Object.assign({}, state, {
+        owners: group,
+        members: remainingMembers
+      });
+    case CONTAINER_ADD_CLICKED:
+      // remove the selected Items from members array and add them to the group list.
+      // reset the selected attribute at the same time.
+      remainingMembers = state.members.filter(member => {
+        if (!member.selected) {
+          return true;
+        }
+      });
+      selectedMembers = state.members.filter(member => {
+        if (member.selected) {
+          member.selected = false;
+          return true;
+        }
+      });
+      group = state.group.concat(selectedMembers);
       return Object.assign({}, state, {
         group: group,
         members: remainingMembers
@@ -68,27 +115,22 @@ function container(
     case CONTAINER_MEMBER_CLICKED:
       //find the item by the provided key
       // being lazy here - will check both user lists
-      const items = state.members;
+      console.log(action.payload);
+      const items = state[action.payload.collection.toLowerCase()];
+      console.log(items);
       if (items) {
         const index = items.findIndex(item => {
-          if (item.username === action.payload) {
+          if (item.username === action.payload.itemKey) {
             item.selected = !item.selected;
             return true;
           }
         });
         //items[index].selected = !items[index].selected;
       }
-      const itemsg = state.group;
-      if (itemsg) {
-        const indexg = itemsg.findIndex(item => {
-          if (item.username === action.payload) {
-            item.selected = !item.selected;
-            return true;
-          }
-        });
-        //itemsg[indexg].selected = !itemsg[indexg].selected;
-      }
-      return Object.assign({}, state, { members: items, group: itemsg });
+      let newState = {};
+      newState[action.payload.collection] = items;
+      console.log(newState);
+      return Object.assign({}, state, newState);
     case CONTAINER_REQUEST_MEMBERS:
       return Object.assign({}, state, {
         isFetching: true

@@ -16,7 +16,7 @@ import {
   fetchMembers,
   itemClicked,
   addMembers,
-  delMembers, setContainerFields, saveContainer
+  delMembers, setContainerFields, saveContainer, addOwners, delOwners
 } from "../../actions/containerActions";
 import { search } from "../../actions/UIActions";
 import {
@@ -39,6 +39,8 @@ class GroupManagementContainer extends React.Component {
     this.handleAddClicked = this.handleAddClicked.bind(this);
     this.handleDelClicked = this.handleDelClicked.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.handleAddOwnerClicked = this.handleAddOwnerClicked.bind(this);
+    this.handleDelOwnerClicked = this.handleDelOwnerClicked.bind(this);
   }
 
   handleSearch() {
@@ -48,9 +50,9 @@ class GroupManagementContainer extends React.Component {
     this.props.dispatch(search(event.target.id, event.target.value));
   }
   handleMemberClicked(event) {
-    console.log(event.nativeEvent.target.id);
+    console.log(event.nativeEvent);
     //dispatch the clicked action
-    this.props.dispatch(itemClicked(event.nativeEvent.target.id));
+    this.props.dispatch(itemClicked(event.nativeEvent.target));
   }
   handleAddClicked(event) {
     console.log("add clicked");
@@ -59,6 +61,15 @@ class GroupManagementContainer extends React.Component {
   handleDelClicked(event) {
     console.log("del clicked");
     this.props.dispatch(delMembers());
+  }
+
+  handleAddOwnerClicked(event) {
+    console.log("add owner clicked");
+    this.props.dispatch(addOwners());
+  }
+  handleDelOwnerClicked(event) {
+    console.log("del owner clicked");
+    this.props.dispatch(delOwners());
   }
 
   handleSave(){
@@ -83,12 +94,14 @@ class GroupManagementContainer extends React.Component {
         <UserSearch
           search={this.handleSearch}
           inputChanged={this.handleInputChanged}
+
         />
 
         <Row>
-          <Col s={5} >
+          <Col s={3} >
             <div style={{ height: "300px", overflowY: "scroll", borderStyle: "solid", borderWidth: "1px" }}>
             <UserList
+              id={"members"}
               userList={this.props.container.members}
               onUserSelected={e => {
                 this.handleMemberClicked(e);
@@ -103,26 +116,55 @@ class GroupManagementContainer extends React.Component {
                 style={{ "paddingLeft": "30px", "paddingRight": "30px" }}
                 onClick={this.handleAddClicked}
               >
-                Add{" "}
+                Add Member
               </Button>
-            </Row>{" "}
+            </Row>
             <Row style={centreStyle}>
               <Button
                 className={buttonClass}
                 style={{ "paddingLeft": "30px", "paddingRight": "30px" }}
                 onClick={this.handleDelClicked}
               >
-                {" "}
-                Del{" "}
+                Del Member
+              </Button>
+            </Row>
+            <Row style={centreStyle}>
+            <Button
+                className={buttonClass}
+                style={{ "paddingLeft": "30px", "paddingRight": "30px" }}
+                onClick={this.handleAddOwnerClicked}
+            >
+              Add Owner
+            </Button>
+          </Row>
+            <Row style={centreStyle}>
+              <Button
+                  className={buttonClass}
+                  style={{ "paddingLeft": "30px", "paddingRight": "30px" }}
+                  onClick={this.handleDelOwnerClicked}
+              >
+                Del Owner
               </Button>
             </Row>
           </Col>
-          <Col s={5}>
+          <Col s={3}>
             <div style={{ height: "300px", overflowY: "scroll", borderStyle: "solid", borderWidth: "1px" }}>
             <UserList
+                id={"group"}
+                header={"Members"}
               userList={this.props.container.group}
               onUserSelected={this.handleMemberClicked}
             />
+            </div>
+          </Col>
+          <Col s={3}>
+            <div style={{ height: "300px", overflowY: "scroll", borderStyle: "solid", borderWidth: "1px" }}>
+              <UserList
+                  id={"owners"}
+                  header={"Owners"}
+                  userList={this.props.container.owners}
+                  onUserSelected={this.handleMemberClicked}
+              />
             </div>
           </Col>
         </Row>

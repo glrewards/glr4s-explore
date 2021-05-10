@@ -7,6 +7,8 @@ export const CONTAINER_RECEIVED_MEMBERS  = 'CONTAINER_RECEIVED_MEMBERS ';
 export const CONTAINER_MEMBER_CLICKED = 'CONTAINER_MEMBER_CLICKED';
 export const CONTAINER_ADD_CLICKED = 'CONTAINER_ADD_CLICKED';
 export const CONTAINER_DEL_CLICKED = 'CONTAINER_DEL_CLICKED';
+export const CONTAINER_ADD_OWNER_CLICKED = 'CONTAINER_ADD_OWNER_CLICKED';
+export const CONTAINER_DEL_OWNER_CLICKED = 'CONTAINER_DEL_OWNER_CLICKED';
 export const CONTAINER_FIELD_CHANGED = 'CONTAINER_FIELD_CHANGED';
 
 export function setContainerFields(fieldId, text) {
@@ -25,6 +27,11 @@ function requestMembers(){
     }
 }
 
+export function addOwners(){
+    return{
+        type: CONTAINER_ADD_OWNER_CLICKED
+    }
+}
 
 export function addMembers(){
     return{
@@ -37,6 +44,11 @@ export function delMembers(){
     }
 }
 
+export function delOwners(){
+    return {
+        type: CONTAINER_DEL_OWNER_CLICKED
+    }
+}
 function receiveMembers(json) {
     return {
         type: CONTAINER_RECEIVED_MEMBERS,
@@ -74,10 +86,14 @@ export const  saveContainer = () => async (dispatch, getState) =>{
     const memberIds = getState().container.group.map(member => {
         return member._id;
     });
+    const ownerIds = getState().container.owners.map(owner =>{
+        return owner._id;
+    })
     const reqBody = {
         name: getState().container.name,
         type: getState().container.type,
-        members: memberIds
+        members: memberIds,
+        owners: ownerIds
     }
     try {
         const res = await axios.post(url,reqBody);
@@ -87,10 +103,11 @@ export const  saveContainer = () => async (dispatch, getState) =>{
     }
 }
 
-export function itemClicked(itemKey){
+export function itemClicked(target){
     return {
         type: CONTAINER_MEMBER_CLICKED,
-        payload: itemKey
+        payload: {itemKey: target.id,
+        collection: target.parentElement.id}
     };
 
 }

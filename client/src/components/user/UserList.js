@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import {
-  Card,
-  Icon,
   Row,
   Col,
   Collection,
@@ -45,7 +43,7 @@ class UserList extends Component {
       <div>
         <Row>
           <Col s={12}>
-            <Collection
+            <Collection header={this.props.header} id={this.props.id}
               className={"blue-text lighten-3 center-align"}
               style={{ listStyleType: "none" }}
             >
@@ -59,6 +57,7 @@ class UserList extends Component {
 }
 
 UserList.propTypes = {
+  id: PropTypes.string,
   enabled: PropTypes.bool,
   header: PropTypes.string,
   userList: PropTypes.array.isRequired,
