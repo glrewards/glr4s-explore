@@ -10,7 +10,6 @@ import {
   CONTAINER_SAVED, CONTAINER_SAVING
 } from "../actions/containerActions";
 
-import order from "./orderReducer";
 
 function container(
   state = {
@@ -36,7 +35,6 @@ function container(
       });
     case CONTAINER_SAVED:
       // we want to indicate a successful save
-
       return Object.assign({}, state, {
         saved: action.payload,
         saving: false

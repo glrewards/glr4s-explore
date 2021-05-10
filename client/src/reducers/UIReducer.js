@@ -6,7 +6,6 @@ import {
   SEARCH
 } from "../actions/UIActions";
 import { SET_ORDER_USER } from "../actions/types";
-import { act } from "react-dom/test-utils";
 
 export const ui = (state = {}, action) => {
   switch (action.type) {

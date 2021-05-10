@@ -7,7 +7,7 @@
  * buttons for moving users between the general list and the group
  *
  */
-import PropTypes from "prop-types";
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserSearch from "../user/UserSearch";
@@ -23,11 +23,10 @@ import {
   Button,
   Col,
   Row,
-  Toast,
-  TextInput, ProgressBar
+  TextInput
 } from "react-materialize";
 
-class GroupManagementContainer extends React.Component {
+class GroupManagementContainer extends Component {
   constructor(props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
@@ -74,10 +73,7 @@ class GroupManagementContainer extends React.Component {
     this.props.dispatch(saveContainer());
   }
   render() {
-    const temp2 = [
-      { userId: "dsfsdfewrewrew", firstName: "Joe", lastName: "Smith" },
-      { userId: "21312313weqeqwe", firstName: "Sarah", lastName: "Jones" }
-    ];
+
     const buttonClass =
       "col right amber darken-4 waves-effect waves-purple valign-wrapper";
     const centreStyle = {
