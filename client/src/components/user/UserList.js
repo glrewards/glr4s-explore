@@ -15,19 +15,28 @@ class UserList extends Component {
   }
 
   render() {
+
     //create the rows
     let items = [];
+    let style = "";
     for (let i = 0; i < this.props.userList.length; i++) {
+      //create classname string to highlight if it is a selected item
+
+      if (this.props.userList[i].selected) {
+        style = "blue lighten-5 blue-text"
+      } else
+        style = "blue-text"
       items.push(
-        <CollectionItem id={this.props.userList[i].username} key={this.props.userList[i].username} className={"blue-text"} onClick={this.props.onUserSelected}>
+        <CollectionItem
+          id={this.props.userList[i].username}
+          key={this.props.userList[i].username}
+          className={style}
+          onClick={this.props.onUserSelected}
+        >
           {this.props.userList[i].firstName +
             " " +
             this.props.userList[i].lastName}{" "}
-          <a
-              className="secondary-content"
-              href="javascript:void(0)"
-          >
-          </a>
+          <a className="secondary-content" href="javascript:void(0)"></a>
         </CollectionItem>
       );
     }
@@ -36,7 +45,10 @@ class UserList extends Component {
       <div>
         <Row>
           <Col s={12}>
-            <Collection className={"blue-text lighten-3 center-align"} style={{"listStyleType": "none"}}>
+            <Collection
+              className={"blue-text lighten-3 center-align"}
+              style={{ listStyleType: "none" }}
+            >
               {items}
             </Collection>
           </Col>

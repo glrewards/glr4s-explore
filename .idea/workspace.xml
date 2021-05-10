@@ -30,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,14 +379,7 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="31369000" />
-    </task>
-    <task id="LOCAL-00194" summary="starting to implement schema versioning in model definitions">
-      <created>1614160804978</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1614160804978</updated>
+      <workItem from="1620228523705" duration="38687000" />
     </task>
     <task id="LOCAL-00195" summary="more schema and model cleanup">
       <created>1614161366532</created>
@@ -723,7 +717,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620377864365</updated>
     </task>
-    <option name="localTasksCounter" value="243" />
+    <task id="LOCAL-00243" summary="memberclicked processing started">
+      <created>1620632466971</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1620632466971</updated>
+    </task>
+    <option name="localTasksCounter" value="244" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,7 +770,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug and added leading zero to the date processing in SuperAdminDashboardContainer.js" />
     <MESSAGE value="https://trello.com/c/DVHEhEt3 &#10;if no cabinet UI now says NO CABINET. Could be made to look better but function is there" />
     <MESSAGE value="added address and geolocation to LearningCentre.js" />
     <MESSAGE value="changed LearningCentre.js and User.js to contain and address nested object AND a nested schema for location. This was because location contains required attributes but I wanted location itself to be optional." />
@@ -794,7 +794,8 @@
     <MESSAGE value="containerReducer.js started with simple fetching flag" />
     <MESSAGE value="containerReducer.js add teh selected flag to each member" />
     <MESSAGE value="userList.js to use username instead of userId as the unique ID and key. This is because of inconsistencies in using userId and _id.&#10;containerActions.js added try catch to the fetch member calls. catching error now dispatches to the reducer an empty array - meaning we clean the UserList.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="userList.js to use username instead of userId as the unique ID and key. This is because of inconsistencies in using userId and _id.&#10;containerActions.js added try catch to the fetch member calls. catching error now dispatches to the reducer an empty array - meaning we clean the UserList.js" />
+    <MESSAGE value="memberclicked processing started" />
+    <option name="LAST_COMMIT_MESSAGE" value="memberclicked processing started" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

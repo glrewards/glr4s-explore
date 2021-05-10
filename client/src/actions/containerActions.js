@@ -4,11 +4,24 @@ import {RECEIVE_ORDER, REQUEST_ORDER} from "./orderActions";
 export const CONTAINER_REQUEST_MEMBERS = 'CONTAINER_REQUEST_MEMBERS ';
 export const CONTAINER_RECEIVED_MEMBERS  = 'CONTAINER_RECEIVED_MEMBERS ';
 export const CONTAINER_MEMBER_CLICKED = 'CONTAINER_MEMBER_CLICKED';
+export const CONTAINER_ADD_CLICKED = 'CONTAINER_ADD_CLICKED';
+export const CONTAINER_DEL_CLICKED = 'CONTAINER_DEL_CLICKED';
 
 
 function requestMembers(){
     return{
         type: CONTAINER_REQUEST_MEMBERS
+    }
+}
+
+export function addMembers(){
+    return{
+        type: CONTAINER_ADD_CLICKED
+    }
+}
+export function delMembers(){
+    return {
+        type: CONTAINER_DEL_CLICKED
     }
 }
 
