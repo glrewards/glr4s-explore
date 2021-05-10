@@ -17,6 +17,25 @@ function container(
   action
 ) {
   switch (action.type) {
+    case CONTAINER_DEL_CLICKED:
+      //this is the reverse pf the ADD_CLICKED
+      let remainingGroup = state.group.filter(member => {
+        if (!member.selected) {
+          return true;
+        }
+      });
+      let selectedGroup = state.group.filter(member => {
+        if (member.selected) {
+          member.selected = false;
+          return true;
+        }
+      });
+      let mainList = state.members.concat(selectedGroup);
+      return Object.assign({}, state, {
+        group: remainingGroup,
+        members: mainList
+      });
+
     case CONTAINER_ADD_CLICKED:
       // remove the selected Items from members array and add them to the group list.
       // reset the selected attribute at the same time.
@@ -31,7 +50,6 @@ function container(
           return true;
         }
       });
-
       let group = state.group.concat(selectedMembers);
       return Object.assign({}, state, {
         group: group,
@@ -45,7 +63,7 @@ function container(
       if (items) {
         const index = items.findIndex(item => {
           if (item.username === action.payload) {
-              item.selected = !item.selected;
+            item.selected = !item.selected;
             return true;
           }
         });
@@ -55,7 +73,7 @@ function container(
       if (itemsg) {
         const indexg = itemsg.findIndex(item => {
           if (item.username === action.payload) {
-              item.selected = !item.selected;
+            item.selected = !item.selected;
             return true;
           }
         });
