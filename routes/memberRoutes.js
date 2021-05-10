@@ -1,4 +1,5 @@
 const requireLogin = require("../middlewares/requireLogin");
+const requireAdmin = require("../middlewares/requireAdmin");
 const keys = require("../config/keys");
 const winston = require("winston");
 const axios = require("axios");
@@ -75,7 +76,7 @@ module.exports = app => {
       }
   });
 
-  app.post('/api/container', requireLogin, async (req,res) =>{
+  app.post('/api/container', requireLogin, requireAdmin, async (req,res) =>{
 
     let url = keys.glrAPIGateway + keys.glrAPIContainer + '/add';
     let options = {
@@ -86,6 +87,10 @@ module.exports = app => {
     };
     logger.info(`/api/container called`);
     logger.debug(req.body);
+    let container = req.body;
+    container['_learningCentreId'] = req.user._learningCentreId;
+    //the learning centre has to be the one belonging to the admin user
+
     try{
       const axiosResponse = await axios.post(url,req.body, options);
       const data = axiosResponse.data;

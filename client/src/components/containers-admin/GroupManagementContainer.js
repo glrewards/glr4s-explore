@@ -78,32 +78,23 @@ class GroupManagementContainer extends React.Component {
       "alignItems": "center"
     };
     return (
-      <div>
-        <Row>
-          <Col s={12}>
+      <div style={{borderStyle: "solid", borderWidth: "2px", borderColor: "grey"}}>
 
-            <TextInput className={"right"} id={"name"} label={"Name"} onChange={e => {
-              this.props.dispatch(setContainerFields(e.target.id,e.target.value));
-            }}/>
-            <TextInput id={"type"} label={"type"} onChange={e => {
-              this.props.dispatch(setContainerFields(e.target.id,e.target.value));
-            }}/>
-            <Button className={buttonClass} onClick={this.handleSave}> Save Container</Button>
-          </Col>
-        </Row>
         <UserSearch
           search={this.handleSearch}
           inputChanged={this.handleInputChanged}
         />
 
         <Row>
-          <Col s={5}>
+          <Col s={5} >
+            <div style={{ height: "300px", overflowY: "scroll", borderStyle: "solid", borderWidth: "1px" }}>
             <UserList
               userList={this.props.container.members}
               onUserSelected={e => {
                 this.handleMemberClicked(e);
               }}
             />
+          </div>
           </Col>
           <Col s={2}>
             <Row style={centreStyle}>
@@ -127,10 +118,24 @@ class GroupManagementContainer extends React.Component {
             </Row>
           </Col>
           <Col s={5}>
+            <div style={{ height: "300px", overflowY: "scroll", borderStyle: "solid", borderWidth: "1px" }}>
             <UserList
               userList={this.props.container.group}
               onUserSelected={this.handleMemberClicked}
             />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col s={12}>
+
+            <TextInput className={"right"} id={"name"} label={"Name"} onChange={e => {
+              this.props.dispatch(setContainerFields(e.target.id,e.target.value));
+            }}/>
+            <TextInput id={"type"} label={"type"} onChange={e => {
+              this.props.dispatch(setContainerFields(e.target.id,e.target.value));
+            }}/>
+            <Button className={buttonClass} onClick={this.handleSave}> Save Container</Button>
           </Col>
         </Row>
       </div>

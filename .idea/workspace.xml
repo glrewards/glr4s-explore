@@ -28,10 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/memberRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/memberRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,11 +222,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="HTTP Request.rest-api_1#1" />
       <item itemvalue="Node.js.worker.js" />
       <item itemvalue="npm.dev (2)" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.start" />
-      <item itemvalue="HTTP Request.rest-api_1#1" />
     </list>
     <recent_temporary>
       <list>
@@ -380,14 +378,8 @@
       <workItem from="1618652014245" duration="31262000" />
       <workItem from="1618925049343" duration="14027000" />
       <workItem from="1619188427762" duration="8933000" />
-      <workItem from="1620228523705" duration="46865000" />
-    </task>
-    <task id="LOCAL-00197" summary="added some logs to reporting services">
-      <created>1614189795770</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1614189795770</updated>
+      <workItem from="1620228523705" duration="47937000" />
+      <workItem from="1620661694996" duration="2838000" />
     </task>
     <task id="LOCAL-00198" summary="added some logs to reporting services">
       <created>1614191584583</created>
@@ -725,7 +717,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620645327729</updated>
     </task>
-    <option name="localTasksCounter" value="246" />
+    <task id="LOCAL-00246" summary="basic container update is working but far from ready">
+      <created>1620653487430</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1620653487432</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -771,7 +770,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed LearningCentre.js and User.js to contain and address nested object AND a nested schema for location. This was because location contains required attributes but I wanted location itself to be optional." />
     <MESSAGE value="mended UserDetailCard.js so that it did not crash if the address contained an object rather than a string. In reality the right thing to do here is implement proper versioning because the v2 of User.js contains a simple address string but the v3 contains an object." />
     <MESSAGE value="adding workder processes for heroku AND user of REDIS and BULL and THRONG" />
     <MESSAGE value="improved formatting of winston logging" />
@@ -796,7 +794,8 @@
     <MESSAGE value="memberclicked processing started" />
     <MESSAGE value="adding to group UI working. selecting items in both lists working" />
     <MESSAGE value="Del button working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Del button working" />
+    <MESSAGE value="basic container update is working but far from ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic container update is working but far from ready" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

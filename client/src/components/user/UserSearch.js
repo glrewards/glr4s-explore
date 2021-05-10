@@ -10,8 +10,10 @@ class UserSearch extends Component {
     const buttonClass =
       "col amber darken-4 right waves-effect waves-purple valign-wrapper";
     const titleStyle = {
-      borderRadius: "5px",
-      padding: "10px"
+      padding: "10px",
+      borderBottomStyle: "solid",
+      borderWidth: "2px",
+      borderColor: "grey"
     };
     return (
       <div>
