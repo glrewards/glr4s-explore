@@ -21,13 +21,10 @@ import {
 import { search } from "../../actions/UIActions";
 import {
   Button,
-  Chip,
   Col,
-  Collection,
-  CollectionItem,
   Row,
-  Select,
-  TextInput
+  Toast,
+  TextInput, ProgressBar
 } from "react-materialize";
 
 class GroupManagementContainer extends React.Component {
@@ -88,6 +85,15 @@ class GroupManagementContainer extends React.Component {
       "justifyContent": "center",
       "alignItems": "center"
     };
+
+    let status = "";
+    if (this.props.container.saved === 'ok'){
+      status = <div className={"light-green"}>saved</div>;
+    }else if (this.props.container.saved  === 'nok'){
+      status = <div className={"red"}>Not Saved</div>;
+    }else{
+      status = "";
+    }
     return (
       <div style={{borderStyle: "solid", borderWidth: "2px", borderColor: "grey"}}>
 
@@ -180,6 +186,7 @@ class GroupManagementContainer extends React.Component {
             <Button className={buttonClass} onClick={this.handleSave}> Save Container</Button>
           </Col>
         </Row>
+        {status}
       </div>
     );
   }

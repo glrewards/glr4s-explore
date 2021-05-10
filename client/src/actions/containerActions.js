@@ -10,6 +10,8 @@ export const CONTAINER_DEL_CLICKED = 'CONTAINER_DEL_CLICKED';
 export const CONTAINER_ADD_OWNER_CLICKED = 'CONTAINER_ADD_OWNER_CLICKED';
 export const CONTAINER_DEL_OWNER_CLICKED = 'CONTAINER_DEL_OWNER_CLICKED';
 export const CONTAINER_FIELD_CHANGED = 'CONTAINER_FIELD_CHANGED';
+export const CONTAINER_SAVING = 'CONTAINER_SAVING';
+export const CONTAINER_SAVED = 'CONTAINER_SAVED';
 
 export function setContainerFields(fieldId, text) {
     let payload = {field: fieldId, value: text};
@@ -21,6 +23,17 @@ export function setContainerFields(fieldId, text) {
     }
 }
 
+function containerSaving(){
+    return {
+        type: CONTAINER_SAVING
+    }
+}
+function containerSaved(value){
+    return {
+        type: CONTAINER_SAVED,
+        payload: value
+    }
+}
 function requestMembers(){
     return{
         type: CONTAINER_REQUEST_MEMBERS
@@ -96,9 +109,12 @@ export const  saveContainer = () => async (dispatch, getState) =>{
         owners: ownerIds
     }
     try {
+        dispatch(containerSaving());
         const res = await axios.post(url,reqBody);
         console.log("response data: ", res.data);
+        dispatch(containerSaved('ok'));
     }catch (e){
+        dispatch(containerSaved('nok'));
         console.log(e.message);
     }
 }

@@ -6,7 +6,8 @@ import {
   CONTAINER_DEL_CLICKED,
   CONTAINER_DEL_OWNER_CLICKED,
   CONTAINER_ADD_OWNER_CLICKED,
-  CONTAINER_FIELD_CHANGED
+  CONTAINER_FIELD_CHANGED,
+  CONTAINER_SAVED, CONTAINER_SAVING
 } from "../actions/containerActions";
 
 import order from "./orderReducer";
@@ -14,6 +15,7 @@ import order from "./orderReducer";
 function container(
   state = {
     isFetching: false,
+    saved: false,
     members: [],
     group: [],
     owners: []
@@ -27,6 +29,18 @@ function container(
   let selectedMembers = [];
   let mainList = [];
   switch (action.type) {
+    case CONTAINER_SAVING:
+      return Object.assign({}, state, {
+        saved: 'nok',
+        saving: true
+      });
+    case CONTAINER_SAVED:
+      // we want to indicate a successful save
+
+      return Object.assign({}, state, {
+        saved: action.payload,
+        saving: false
+      });
     case CONTAINER_FIELD_CHANGED:
       if (action.payload.value === "") {
         //we dont want the attribute

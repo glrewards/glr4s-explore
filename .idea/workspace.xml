@@ -30,7 +30,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/containerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/containerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-admin/GroupManagementContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/UserList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/containerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -381,14 +380,7 @@
       <workItem from="1619188427762" duration="8933000" />
       <workItem from="1620228523705" duration="47937000" />
       <workItem from="1620661694996" duration="8252000" />
-      <workItem from="1620670156158" duration="302000" />
-    </task>
-    <task id="LOCAL-00200" summary="removed the creation of the html file to test on heroku. Will need to think about S3 if I want to implement this using puppeteer">
-      <created>1614334581412</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1614334581412</updated>
+      <workItem from="1620670156158" duration="4412000" />
     </task>
     <task id="LOCAL-00201" summary="reverted create html template so that it genrates a file again - want to work out how this can be made to function on heroku">
       <created>1614939009795</created>
@@ -726,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620665752447</updated>
     </task>
-    <option name="localTasksCounter" value="249" />
+    <task id="LOCAL-00249" summary="Can now add owners - no check on the role of the owner">
+      <created>1620670508536</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1620670508537</updated>
+    </task>
+    <option name="localTasksCounter" value="250" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,7 +771,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="improved formatting of winston logging" />
     <MESSAGE value="basic worker functions implemented" />
     <MESSAGE value="minor" />
     <MESSAGE value="continuing to introduce the worker. promote to heroku to ensure config etc all correct and that it works from there" />
@@ -797,7 +795,8 @@
     <MESSAGE value="basic container update is working but far from ready" />
     <MESSAGE value="ui improved" />
     <MESSAGE value="updated some client packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated some client packages" />
+    <MESSAGE value="Can now add owners - no check on the role of the owner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can now add owners - no check on the role of the owner" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
