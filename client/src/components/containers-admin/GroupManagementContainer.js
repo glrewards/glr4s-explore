@@ -12,7 +12,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserSearch from "../user/UserSearch";
 import UserList from "../user/UserList";
-import { fetchMembers, itemClicked,addMembers, delMembers } from "../../actions/containerActions";
+import {
+  fetchMembers,
+  itemClicked,
+  addMembers,
+  delMembers, setContainerFields, saveContainer
+} from "../../actions/containerActions";
 import { search } from "../../actions/UIActions";
 import {
   Button,
@@ -21,7 +26,8 @@ import {
   Collection,
   CollectionItem,
   Row,
-  Select
+  Select,
+  TextInput
 } from "react-materialize";
 
 class GroupManagementContainer extends React.Component {
@@ -32,6 +38,7 @@ class GroupManagementContainer extends React.Component {
     this.handleInputChanged = this.handleInputChanged.bind(this);
     this.handleAddClicked = this.handleAddClicked.bind(this);
     this.handleDelClicked = this.handleDelClicked.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   handleSearch() {
@@ -53,24 +60,42 @@ class GroupManagementContainer extends React.Component {
     console.log("del clicked");
     this.props.dispatch(delMembers());
   }
+
+  handleSave(){
+    console.log("save clicked");
+    this.props.dispatch(saveContainer());
+  }
   render() {
     const temp2 = [
       { userId: "dsfsdfewrewrew", firstName: "Joe", lastName: "Smith" },
       { userId: "21312313weqeqwe", firstName: "Sarah", lastName: "Jones" }
     ];
     const buttonClass =
-      "col amber darken-4 waves-effect waves-purple valign-wrapper`";
+      "col right amber darken-4 waves-effect waves-purple valign-wrapper";
     const centreStyle = {
-      "display": "flex",
-      "justify-content": "center",
-    "align-items": "center"
-  }
+      display: "flex",
+      "justifyContent": "center",
+      "alignItems": "center"
+    };
     return (
       <div>
+        <Row>
+          <Col s={12}>
+
+            <TextInput className={"right"} id={"name"} label={"Name"} onChange={e => {
+              this.props.dispatch(setContainerFields(e.target.id,e.target.value));
+            }}/>
+            <TextInput id={"type"} label={"type"} onChange={e => {
+              this.props.dispatch(setContainerFields(e.target.id,e.target.value));
+            }}/>
+            <Button className={buttonClass} onClick={this.handleSave}> Save Container</Button>
+          </Col>
+        </Row>
         <UserSearch
           search={this.handleSearch}
           inputChanged={this.handleInputChanged}
         />
+
         <Row>
           <Col s={5}>
             <UserList
@@ -81,19 +106,19 @@ class GroupManagementContainer extends React.Component {
             />
           </Col>
           <Col s={2}>
-            <Row style={centreStyle} >
+            <Row style={centreStyle}>
               <Button
                 className={buttonClass}
-                style={{ "padding-left": "30px", "padding-right": "30px" }}
+                style={{ "paddingLeft": "30px", "paddingRight": "30px" }}
                 onClick={this.handleAddClicked}
               >
                 Add{" "}
               </Button>
             </Row>{" "}
-            <Row style={centreStyle} >
+            <Row style={centreStyle}>
               <Button
                 className={buttonClass}
-                style={{ "padding-left": "30px", "padding-right": "30px" }}
+                style={{ "paddingLeft": "30px", "paddingRight": "30px" }}
                 onClick={this.handleDelClicked}
               >
                 {" "}
@@ -102,11 +127,11 @@ class GroupManagementContainer extends React.Component {
             </Row>
           </Col>
           <Col s={5}>
-            <UserList userList={this.props.container.group} onUserSelected={this.handleMemberClicked}/>
+            <UserList
+              userList={this.props.container.group}
+              onUserSelected={this.handleMemberClicked}
+            />
           </Col>
-        </Row>
-        <Row style={centreStyle} >
-          <Button className={buttonClass}> Save Container</Button>
         </Row>
       </div>
     );

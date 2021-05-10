@@ -25,6 +25,7 @@ module.exports = {
     glrAPIUser: process.env.GLR_API_USER,
     glrAPIOrder: process.env.GLR_API_ORDER,
     glrAPIAdmin: process.env.GLR_API_ADMIN,
+    glrAPIContainer: process.env.GLR_API_CONTAINER,
     glrLogLevel: process.env.GLR_LOG_LEVEL,
     secureSession: process.env.SECURE_SESSION,
     webhookSecret: process.env.WEBHOOK_SECRET,

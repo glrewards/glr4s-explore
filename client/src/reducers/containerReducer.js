@@ -3,7 +3,8 @@ import {
   CONTAINER_REQUEST_MEMBERS,
   CONTAINER_MEMBER_CLICKED,
   CONTAINER_ADD_CLICKED,
-  CONTAINER_DEL_CLICKED
+  CONTAINER_DEL_CLICKED,
+    CONTAINER_FIELD_CHANGED
 } from "../actions/containerActions";
 
 import order from "./orderReducer";
@@ -17,6 +18,14 @@ function container(
   action
 ) {
   switch (action.type) {
+    case CONTAINER_FIELD_CHANGED:
+      if (action.payload.value === "") {
+        //we dont want the attribute
+        return Object.assign({},state,{[action.payload.field]: null });
+      } else {
+        return Object.assign({},state,{[action.payload.field]: action.payload.value });
+
+      }
     case CONTAINER_DEL_CLICKED:
       //this is the reverse pf the ADD_CLICKED
       let remainingGroup = state.group.filter(member => {

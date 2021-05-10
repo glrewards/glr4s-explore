@@ -54,7 +54,7 @@ module.exports = app => {
 
   });
 
-  app.get("/api/user", async (req,res) => {
+  app.get("/api/user", requireLogin, async (req,res) => {
 
     let url = keys.glrAPIGateway + keys.glrAPIUser;
     let options = {
@@ -74,5 +74,28 @@ module.exports = app => {
         res.send({ code: err.response.status, message: err });
       }
   });
+
+  app.post('/api/container', requireLogin, async (req,res) =>{
+
+    let url = keys.glrAPIGateway + keys.glrAPIContainer + '/add';
+    let options = {
+      params: req.query,
+      headers: {
+        "X-API-KEY": keys.glrAPIGatewayKey
+      }
+    };
+    logger.info(`/api/container called`);
+    logger.debug(req.body);
+    try{
+      const axiosResponse = await axios.post(url,req.body, options);
+      const data = axiosResponse.data;
+      res.send(data);
+    }catch (err){
+      console.error("error posting container: ", err);
+      res.statusCode = err.response.status;
+      res.send({ code: err.response.status, message: err });
+    }
+
+      });
 
 };

@@ -1,18 +1,30 @@
 import axios from "axios";
 import {RECEIVE_ORDER, REQUEST_ORDER} from "./orderActions";
+import {SEARCH} from "./UIActions";
 
 export const CONTAINER_REQUEST_MEMBERS = 'CONTAINER_REQUEST_MEMBERS ';
 export const CONTAINER_RECEIVED_MEMBERS  = 'CONTAINER_RECEIVED_MEMBERS ';
 export const CONTAINER_MEMBER_CLICKED = 'CONTAINER_MEMBER_CLICKED';
 export const CONTAINER_ADD_CLICKED = 'CONTAINER_ADD_CLICKED';
 export const CONTAINER_DEL_CLICKED = 'CONTAINER_DEL_CLICKED';
+export const CONTAINER_FIELD_CHANGED = 'CONTAINER_FIELD_CHANGED';
 
+export function setContainerFields(fieldId, text) {
+    let payload = {field: fieldId, value: text};
+    return (dispatch) => {
+        dispatch({
+            type: CONTAINER_FIELD_CHANGED,
+            payload: payload
+        });
+    }
+}
 
 function requestMembers(){
     return{
         type: CONTAINER_REQUEST_MEMBERS
     }
 }
+
 
 export function addMembers(){
     return{
@@ -53,6 +65,25 @@ export const fetchMembers = () => async (dispatch,getState) =>{
         console.log(e.message);
         //trigger the reducer to clear the state
         dispatch(receiveMembers([]));
+    }
+}
+
+export const  saveContainer = () => async (dispatch, getState) =>{
+    let url = "api/container/";
+    // build a valid request body
+    const memberIds = getState().container.group.map(member => {
+        return member._id;
+    });
+    const reqBody = {
+        name: getState().container.name,
+        type: getState().container.type,
+        members: memberIds
+    }
+    try {
+        const res = await axios.post(url,reqBody);
+        console.log("response data: ", res.data);
+    }catch (e){
+        console.log(e.message);
     }
 }
 
