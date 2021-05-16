@@ -3,7 +3,7 @@ let Queue = require('bull');
 const winston = require("winston");
 const keys = require("../config/keys");
 const requireLogin = require("../middlewares/requireLogin");
-let REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379';
+let REDIS_URL = keys.redisURL;
 
 // Create / Connect to a named work queue
 const workQueue = new Queue('work', REDIS_URL);

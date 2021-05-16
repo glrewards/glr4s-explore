@@ -38,9 +38,10 @@ const userSchema = new Schema({
     },
     "location": locationSchema,
     "_relatedUserIds": [{"type": Schema.Types.ObjectId, "ref": 'related'}],
+    "containers":[{"_containerId": Schema.Types.ObjectId,"name": String, "type": String, "code": String}],
     "favourites":[favouriteSchema],
     "resetNeeded": Boolean,
-    "schema_version": {type: String, default: 'v3'}
+    "schema_version": {type: String, default: 'v4'}
 });
 
 mongoose.model('users',userSchema);

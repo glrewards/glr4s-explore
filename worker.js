@@ -1,12 +1,13 @@
 const throng = require("throng");
 const Queue = require("bull");
+const keys = require('./config/keys');
 
 const { logger } = require("./globalservices");
 const tableGenerator = require("./services/reportTemplates/pickingListTemplate");
 const PDFGenerator = require("./services/reportTemplates/createPicklistPDF");
 
 // Connect to a local redis instance locally, and the Heroku-provided URL in production
-let REDIS_URL = process.env.REDIS_URL || "redis://127.0.0.1:6379";
+let REDIS_URL = keys.redisURL;
 
 // Spin up multiple processes to handle jobs to take advantage of more CPU cores
 // See: https://devcenter.heroku.com/articles/node-concurrency for more info
@@ -16,7 +17,7 @@ let workers = process.env.WEB_CONCURRENCY || 2;
 // to be tuned for your application. If each job is mostly waiting on network
 // responses it can be much higher. If each job is CPU-intensive, it might need
 // to be much lower.
-let maxJobsPerWorker = 50;
+let maxJobsPerWorker = 5;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -40,7 +41,6 @@ async function start() {
       //fail the job
       throw new Error("HTML creation failed");
     }
-    // TODO: now need to go on and create the pdf and then delete the html file.
     const pdfPath = await PDFGenerator.getPDF(job.id);
     //TODO: need to have a scheduled cleanup job to clear down all the pdfs HOWEVER they should
     // go every time we recycle the dyno any way
