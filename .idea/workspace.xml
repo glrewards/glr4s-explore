@@ -28,10 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/reportWorkerRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/reportWorkerRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,11 +227,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.dev (2)" />
-        <item itemvalue="HTTP Request.rest-api_1#1" />
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.worker.js" />
+        <item itemvalue="HTTP Request.rest-api_1#1" />
       </list>
     </recent_temporary>
   </component>
@@ -381,14 +377,9 @@
       <workItem from="1619188427762" duration="8933000" />
       <workItem from="1620228523705" duration="47937000" />
       <workItem from="1620661694996" duration="8252000" />
-      <workItem from="1620670156158" duration="12492000" />
-    </task>
-    <task id="LOCAL-00203" summary="deleted old generated files">
-      <created>1614940948985</created>
-      <option name="number" value="00203" />
-      <option name="presentableId" value="LOCAL-00203" />
-      <option name="project" value="LOCAL" />
-      <updated>1614940948985</updated>
+      <workItem from="1620670156158" duration="19233000" />
+      <workItem from="1622729147855" duration="31000" />
+      <workItem from="1622729226173" duration="700000" />
     </task>
     <task id="LOCAL-00204" summary="removed the test get route">
       <created>1614941030915</created>
@@ -726,7 +717,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620682958682</updated>
     </task>
-    <option name="localTasksCounter" value="252" />
+    <task id="LOCAL-00252" summary="changed a comment">
+      <created>1621170995181</created>
+      <option name="number" value="00252" />
+      <option name="presentableId" value="LOCAL-00252" />
+      <option name="project" value="LOCAL" />
+      <updated>1621170995182</updated>
+    </task>
+    <option name="localTasksCounter" value="253" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,7 +770,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="continuing to introduce the worker. promote to heroku to ensure config etc all correct and that it works from there" />
     <MESSAGE value="trying to sort out ssl issues with redis on heroku" />
     <MESSAGE value="working version of pdf worker process but there is an intermittent issue with the returnvalue of the job" />
     <MESSAGE value="deleting the pdf once we have read it into memory" />
@@ -797,7 +794,8 @@
     <MESSAGE value="Can now add owners - no check on the role of the owner" />
     <MESSAGE value="status update added" />
     <MESSAGE value="warning clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="warning clean up" />
+    <MESSAGE value="changed a comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed a comment" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
