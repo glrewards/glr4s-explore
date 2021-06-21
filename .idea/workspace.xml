@@ -28,6 +28,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +91,11 @@
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="glrewards" />
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="glr4s-explore" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/src/setupProxy.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/yarn-error.log" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/package.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -107,6 +116,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -227,9 +237,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.dev (2)" />
         <item itemvalue="Node.js.worker.js" />
         <item itemvalue="HTTP Request.rest-api_1#1" />
       </list>
@@ -380,13 +390,9 @@
       <workItem from="1620670156158" duration="19233000" />
       <workItem from="1622729147855" duration="31000" />
       <workItem from="1622729226173" duration="700000" />
-    </task>
-    <task id="LOCAL-00204" summary="removed the test get route">
-      <created>1614941030915</created>
-      <option name="number" value="00204" />
-      <option name="presentableId" value="LOCAL-00204" />
-      <option name="project" value="LOCAL" />
-      <updated>1614941030915</updated>
+      <workItem from="1623066273160" duration="937000" />
+      <workItem from="1623660226880" duration="1816000" />
+      <workItem from="1624279600326" duration="999000" />
     </task>
     <task id="LOCAL-00205" summary="try catch for puppeteer call and some logging">
       <created>1614941346554</created>
@@ -724,7 +730,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621170995182</updated>
     </task>
-    <option name="localTasksCounter" value="253" />
+    <task id="LOCAL-00253" summary="merged in dependabot changes">
+      <created>1623066355572</created>
+      <option name="number" value="00253" />
+      <option name="presentableId" value="LOCAL-00253" />
+      <option name="project" value="LOCAL" />
+      <updated>1623066355574</updated>
+    </task>
+    <option name="localTasksCounter" value="254" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -770,7 +783,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trying to sort out ssl issues with redis on heroku" />
     <MESSAGE value="working version of pdf worker process but there is an intermittent issue with the returnvalue of the job" />
     <MESSAGE value="deleting the pdf once we have read it into memory" />
     <MESSAGE value="fixed intermittent issues but this will not work on heroku" />
@@ -795,7 +807,8 @@
     <MESSAGE value="status update added" />
     <MESSAGE value="warning clean up" />
     <MESSAGE value="changed a comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed a comment" />
+    <MESSAGE value="merged in dependabot changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged in dependabot changes" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
