@@ -40,6 +40,7 @@ class MemberOrderContainer extends Component {
   }
 
   handleDeleteClicked(event) {
+    let lineId = event.nativeEvent.target.value;
     this.props.dispatch(
       lineItemsDelete(
         false,
@@ -84,12 +85,12 @@ class MemberOrderContainer extends Component {
                 fulfilledDate = new Date(order.dateFulfilled).toDateString();
               }
               return (
-                  <Row className="grey accent-1 text-accent-2 center-align"> <h2> {
+                  <Row className="blue accent-1 text-accent-2 center-align"> <h2> {
                 order.fulfillStatus + " : " + fulfilledDate}
 
               </h2>
               <OrderDetails
-                  isOpenOrder={order.dateFulfilled}
+                  isOpenOrder={(order.fulfillStatus === 'unfulfilled') ? true:false}
                   lineItems={order.lineItems}
                   onDeleteClicked={this.handleDeleteClicked}
               />

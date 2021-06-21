@@ -28,10 +28,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c0265afd-5f82-484e-9fd7-8abf5ffa226c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/orderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/orderActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreOrderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/CentreOrderListContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/containers-rewards/MemberOrderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rewards/OrderDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/orderReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -392,14 +393,7 @@
       <workItem from="1622729226173" duration="700000" />
       <workItem from="1623066273160" duration="937000" />
       <workItem from="1623660226880" duration="1816000" />
-      <workItem from="1624279600326" duration="999000" />
-    </task>
-    <task id="LOCAL-00205" summary="try catch for puppeteer call and some logging">
-      <created>1614941346554</created>
-      <option name="number" value="00205" />
-      <option name="presentableId" value="LOCAL-00205" />
-      <option name="project" value="LOCAL" />
-      <updated>1614941346554</updated>
+      <workItem from="1624279600326" duration="6218000" />
     </task>
     <task id="LOCAL-00206" summary="added file:/// scheme to the page.goto() as I am getting errors on heroku - works locally">
       <created>1614946453909</created>
@@ -737,7 +731,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623066355574</updated>
     </task>
-    <option name="localTasksCounter" value="254" />
+    <task id="LOCAL-00254" summary="updated react-script version">
+      <created>1624281067741</created>
+      <option name="number" value="00254" />
+      <option name="presentableId" value="LOCAL-00254" />
+      <option name="project" value="LOCAL" />
+      <updated>1624281067741</updated>
+    </task>
+    <option name="localTasksCounter" value="255" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -783,7 +784,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working version of pdf worker process but there is an intermittent issue with the returnvalue of the job" />
     <MESSAGE value="deleting the pdf once we have read it into memory" />
     <MESSAGE value="fixed intermittent issues but this will not work on heroku" />
     <MESSAGE value="trying to improve the number of rogue chromium process running" />
@@ -808,7 +808,8 @@
     <MESSAGE value="warning clean up" />
     <MESSAGE value="changed a comment" />
     <MESSAGE value="merged in dependabot changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged in dependabot changes" />
+    <MESSAGE value="updated react-script version" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated react-script version" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

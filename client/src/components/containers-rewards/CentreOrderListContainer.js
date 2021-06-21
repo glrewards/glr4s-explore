@@ -68,7 +68,7 @@ class CentreOrderListContainer extends Component {
       }
       return total;
     };
-    //loop throuh line items and sum
+    //loop through line items and sum
     if (this.props.orderDetail) {
       let total = this.props.orderDetail.lineItems.calcTotalPoints("glrpoints");
       return total;
@@ -126,7 +126,7 @@ class CentreOrderListContainer extends Component {
 
                   </h2>
                     <OrderDetails
-                        isOpenOrder={order.dateFulfilled}
+                        isOpenOrder={!order.dateFulfilled}
                         lineItems={order.lineItems}
                         onDeleteClicked={this.handleDeleteClicked}
                     />

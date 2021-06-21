@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import { Checkbox } from "react-materialize";
 
 export default class OrderDetail extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    console.log(this.props);
     if (!this.props.lineItems) {
       console.log(this.props);
       return <div>No data</div>;
@@ -38,15 +43,13 @@ export default class OrderDetail extends Component {
                         // which permits duplicate products on different lines
                       }
                       <td>
-                        <label id={line._id}>
-                          <Checkbox
-                              disabled = {this.props.isOpenOrder}
-                              label={""}
-                              type="checkbox"
-                              value={line._id}
-                          onChange={(event) => this.props.onDeleteClicked(event)}
-                          />
-                        </label>
+                        <Checkbox
+                          disabled={!this.props.isOpenOrder}
+                          id={line._id}
+                          type="checkbox"
+                          value={line._id}
+                          onChange={event => this.props.onDeleteClicked(event)}
+                        />
                       </td>
                     </tr>
                   );

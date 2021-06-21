@@ -56,12 +56,13 @@ function order(
       }
     case LINE_MARKED_DELETE:
       //just need to add it because we remove it if unchecked
+      console.log(`LINE_MARKED_DELETE ${action.lineId}`);
       return Object.assign({}, state, {
         deletes: [...state.deletes, action.lineId]
       });
     case LINE_UNMARKED_DELETE:
       let index = state.deletes.indexOf(action.lineId);
-      console.log(index);
+      console.log(`LINE_UNMARKED_DELETE ${index}`);
       if (index > -1) {
         return Object.assign({}, state, {
           deletes: [

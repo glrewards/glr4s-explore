@@ -27,7 +27,7 @@ function receiveGLROrderList(json){
     }
 }
 export function lineItemsDelete(studentId,checked,lineId){
-    console.log("lineItemsDelete student: ", studentId);
+    console.log(`lineItemsDelete student: ${studentId} line: ${lineId}`);
  if (studentId) {
      if (checked) {
          return {
